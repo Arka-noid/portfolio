@@ -49,3 +49,4 @@ The visual language is defined in `portfolio.jsx` (the original draft):
 
 - Do not commit PDF, PPTX, or other binary reference files
 - Do not commit `.env` or credential files
+- **Auto-deploy workflow:** After completing a set of changes, commit and push to `main` automatically to trigger Vercel auto-deploy — **unless** the current work involves sensitive data from reference files (CV, PPTX, credentials). In that case, stage only source code files and verify nothing sensitive is included before pushing.

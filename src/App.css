@@ -397,34 +397,124 @@ section {
 
 /* ── PUBLICATIONS ── */
 
-.pub-list {
+.pub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.pub-count {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+.pub-scholar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid rgba(0, 200, 255, 0.25);
+  transition: all 0.25s;
+}
+
+.pub-scholar-link:hover {
+  background: var(--cyan-dim);
+  box-shadow: 0 0 16px var(--cyan-glow);
+}
+
+.pub-year-group {
+  margin-bottom: 2.5rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.pub-year-label {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--cyan);
+  min-width: 60px;
+  padding-top: 0.2rem;
+  opacity: 0.7;
+}
+
+.pub-year-list {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
+  flex: 1;
 }
 
 .pub-item {
-  padding: 1.5rem;
+  padding: 1.2rem 1.5rem;
   background: var(--slate);
   border-left: 2px solid var(--cyan);
   border-top: 1px solid rgba(0, 200, 255, 0.07);
   border-right: 1px solid rgba(0, 200, 255, 0.07);
   border-bottom: 1px solid rgba(0, 200, 255, 0.07);
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.pub-item:hover {
+  border-color: rgba(0, 200, 255, 0.3);
+  transform: translateX(4px);
+}
+
+.pub-item-top {
+  margin-bottom: 0.5rem;
+}
+
+.pub-type {
+  font-size: 0.65rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+}
+
+.pub-type--journal {
+  background: var(--cyan-dim);
+  color: var(--cyan);
+}
+
+.pub-type--conference {
+  background: rgba(139, 92, 246, 0.12);
+  color: #a78bfa;
 }
 
 .pub-title {
   font-family: "Space Grotesk", sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--off-white);
   line-height: 1.5;
   margin-bottom: 0.4rem;
 }
 
-.pub-meta {
+.pub-authors {
   font-size: 0.78rem;
   color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+}
+
+.pub-venue {
+  font-size: 0.78rem;
+  color: var(--cyan);
   font-style: italic;
+  opacity: 0.7;
 }
 
 /* ── CONTACT ── */

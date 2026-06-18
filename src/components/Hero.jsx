@@ -107,9 +107,9 @@ export default function Hero() {
         </div>
         <div className="stat">
           <div className="stat-num">
-            3<span>+</span>
+            19<span>+</span>
           </div>
-          <div className="stat-label">EU projects</div>
+          <div className="stat-label">Publications</div>
         </div>
       </div>
     </div>

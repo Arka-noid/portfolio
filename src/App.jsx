@@ -1,26 +1,14 @@
-import { useScrollReveal } from "./hooks/useScrollReveal";
-import Nav from "./components/Nav";
-import Hero from "./components/Hero";
-import Experience from "./components/Experience";
-import Projects from "./components/Projects";
-import Competencies from "./components/Competencies";
-import Publications from "./components/Publications";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import BeamSteering from "./pages/lightnotes/BeamSteering";
 
 export default function App() {
-  useScrollReveal();
-
   return (
-    <div className="portfolio">
-      <Nav />
-      <Hero />
-      <Experience />
-      <Projects />
-      <Competencies />
-      <Publications />
-      <Contact />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/light-notes/beam-steering" element={<BeamSteering />} />
+      </Routes>
+    </BrowserRouter>
   );
 }

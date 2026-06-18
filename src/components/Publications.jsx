@@ -30,7 +30,13 @@ export default function Publications() {
             {publications
               .filter((p) => p.year === year)
               .map((p, i) => (
-                <div key={i} className="pub-item">
+                <a
+                  key={i}
+                  className="pub-item"
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <div className="pub-item-top">
                     <span className={`pub-type pub-type--${p.type}`}>
                       {p.type === "journal" ? "Journal" : "Conference"}
@@ -39,7 +45,7 @@ export default function Publications() {
                   <div className="pub-title">{p.title}</div>
                   <div className="pub-authors">{p.authors}</div>
                   <div className="pub-venue">{p.venue}</div>
-                </div>
+                </a>
               ))}
           </div>
         </div>

@@ -19,7 +19,14 @@ export default function Contact() {
           <a className="contact-link" href="tel:+393281873926">
             📞 +39 328 1873926
           </a>
-          <span className="contact-link">📍 Leuven, Belgium</span>
+          <a
+            className="contact-link"
+            href="https://www.linkedin.com/in/manuel-reza-50991384"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🔗 LinkedIn
+          </a>
         </div>
       </div>
     </div>

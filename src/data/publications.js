@@ -1,6 +1,9 @@
 export const SCHOLAR_URL =
   "https://scholar.google.com/citations?user=xXUzynsAAAAJ&hl=en";
 
+const scholarLink = (id) =>
+  `https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xXUzynsAAAAJ&citation_for_view=xXUzynsAAAAJ:${id}`;
+
 export const publications = [
   {
     title:
@@ -9,6 +12,16 @@ export const publications = [
     venue: "Laser & Photonics Reviews",
     year: 2026,
     type: "journal",
+    url: scholarLink("_kc_bZDykSQC"),
+  },
+  {
+    title:
+      "Linear Spectral Analysis under Nonlinear Laser Frequency Sweeps",
+    authors: "M. Prost, H. Qiu, M. Reza, G. Croes, J. Romme, B. Berteloot et al.",
+    venue: "Laser & Photonics Reviews",
+    year: 2025,
+    type: "journal",
+    url: scholarLink("mVmsd5A6BfQC"),
   },
   {
     title:
@@ -17,6 +30,7 @@ export const publications = [
     venue: "European Conference on Optical Communications (ECOC)",
     year: 2025,
     type: "conference",
+    url: scholarLink("4DMP91E08xMC"),
   },
   {
     title:
@@ -25,6 +39,7 @@ export const publications = [
     venue: "ACS Photonics",
     year: 2025,
     type: "journal",
+    url: scholarLink("ULOm3_A8WrAC"),
   },
   {
     title:
@@ -33,6 +48,52 @@ export const publications = [
     venue: "Optical Fiber Communication Conference (OFC)",
     year: 2025,
     type: "conference",
+    url: scholarLink("M3ejUd6NZC8C"),
+  },
+  {
+    title:
+      "High-Performance Silicon Optical Phase Shifter Targeting Large-Scale Programmable Photonic Circuits",
+    authors: "H. Qiu, M. Prost, D. Coenen, T.D. Kongnyuy, M. Reza, G. Croes et al.",
+    venue: "Optical Fiber Communication Conference (OFC)",
+    year: 2025,
+    type: "conference",
+    url: scholarLink("YOwf2qJgpHMC"),
+  },
+  {
+    title:
+      "Development of a Coherent-Detection LiDAR System Based on Hybrid SOI-InP Integration",
+    authors: "M. Prost, H. Qiu, G. Croes, M. Reza, J. Romme, B. Berteloot et al.",
+    venue: "European Conference on Integrated Optics (ECIO)",
+    year: 2025,
+    type: "conference",
+    url: scholarLink("qxL8FJ1GzNcC"),
+  },
+  {
+    title:
+      "A Tunable Optical 90° Hybrid Coupler in SOI for Wavelength-Independent Coherent Receivers",
+    authors: "M. Reza, H. Qiu, M. Prost, G. Croes et al.",
+    venue: "European Conference on Integrated Optics (ECIO)",
+    year: 2025,
+    type: "conference",
+    url: scholarLink("Zph67rFs4hoC"),
+  },
+  {
+    title:
+      "Scalable Butt-Coupled Integration of 800 nm Lasers on Silicon Nitride Using Micro-Transfer Printing",
+    authors: "M. Kiewiet, S. Cuyvers, M. Billet, K. Akritidis, V. Bonito Oliva et al.",
+    venue: "European Conference on Integrated Optics (ECIO)",
+    year: 2025,
+    type: "conference",
+    url: scholarLink("aqlVkmm33-oC"),
+  },
+  {
+    title:
+      "Photonic Integrated Filter in Silicon Nitride Technology for High-Performance Microwave Photonics Applications",
+    authors: "C. Porzi, M. Reza, M. Sorel, A. Bogoni et al.",
+    venue: "European Conference on Integrated Optics (ECIO)",
+    year: 2025,
+    type: "conference",
+    url: scholarLink("8k81kl-MbHgC"),
   },
   {
     title:
@@ -41,6 +102,7 @@ export const publications = [
     venue: "Journal of Lightwave Technology",
     year: 2024,
     type: "journal",
+    url: scholarLink("0EnyYjriUFMC"),
   },
   {
     title:
@@ -49,6 +111,7 @@ export const publications = [
     venue: "Proc. ECIO",
     year: 2023,
     type: "conference",
+    url: scholarLink("hqOjcs7Dif8C"),
   },
   {
     title:
@@ -57,6 +120,7 @@ export const publications = [
     venue: "Proc. ECIO",
     year: 2023,
     type: "conference",
+    url: scholarLink("UebtZRa9Y70C"),
   },
   {
     title:
@@ -65,6 +129,25 @@ export const publications = [
     venue: "IEEE Photonics Conference (IPC)",
     year: 2023,
     type: "conference",
+    url: scholarLink("5nxA0vEk-isC"),
+  },
+  {
+    title:
+      "Photonics Integrated Circuits for Distributed Radar Systems in Space",
+    authors: "G. Serafino, M. Reza, F. Camponeschi, L. Rinaldi, P. Ghelfi et al.",
+    venue: "IEEE Photonics Conference (IPC)",
+    year: 2023,
+    type: "conference",
+    url: scholarLink("3fE2CSJIrl8C"),
+  },
+  {
+    title:
+      "Recent Progresses in Silicon Waveguide Bragg Grating Filters",
+    authors: "M. Reza, C. Porzi, A. Lupi, A. Lugli, A. Lupo, A. Bogoni et al.",
+    venue: "Proc. ECIO",
+    year: 2023,
+    type: "conference",
+    url: scholarLink("kNdYIx-mwKoC"),
   },
   {
     title:
@@ -73,6 +156,7 @@ export const publications = [
     venue: "Journal of Lightwave Technology",
     year: 2022,
     type: "journal",
+    url: scholarLink("eQOLeE2rZwMC"),
   },
   {
     title:
@@ -81,6 +165,7 @@ export const publications = [
     venue: "Electronics",
     year: 2022,
     type: "journal",
+    url: scholarLink("_FxGoFyzp5QC"),
   },
   {
     title:
@@ -89,6 +174,7 @@ export const publications = [
     venue: "Conference on Lasers and Electro-Optics Pacific Rim (CLEO-PR)",
     year: 2022,
     type: "conference",
+    url: scholarLink("roLk4NBRz8UC"),
   },
   {
     title:
@@ -97,6 +183,7 @@ export const publications = [
     venue: "EUSAR — 14th European Conference on Synthetic Aperture Radar",
     year: 2022,
     type: "conference",
+    url: scholarLink("ufrVoPGSRksC"),
   },
   {
     title:
@@ -105,6 +192,7 @@ export const publications = [
     venue: "International Workshop on Fiber Optics in Access Networks (FOAN)",
     year: 2022,
     type: "conference",
+    url: scholarLink("WF5omc3nYNoC"),
   },
   {
     title:
@@ -113,6 +201,7 @@ export const publications = [
     venue: "Journal of Lightwave Technology",
     year: 2021,
     type: "journal",
+    url: scholarLink("IjCSPb-OGe4C"),
   },
   {
     title:
@@ -121,6 +210,7 @@ export const publications = [
     venue: "International Conference on Space Optics — ICSO 2020",
     year: 2021,
     type: "conference",
+    url: scholarLink("zYLM7Y9cAGgC"),
   },
   {
     title:
@@ -129,6 +219,43 @@ export const publications = [
     venue: "International Topical Meeting on Microwave Photonics (MWP)",
     year: 2020,
     type: "conference",
+    url: scholarLink("W7OEmFMy1HYC"),
+  },
+  {
+    title:
+      "Development of AlGaInSb/GaInSb Multi-Quantum Well Light Emitting Diodes for CO₂ Detection at 4.26 μm",
+    authors: "M. Reza, A. Sheridan, B. Roycroft, B.M. Corbett et al.",
+    venue: "Proc. SPIE — Quantum Sensing and Nano Electronics and Photonics",
+    year: 2018,
+    type: "conference",
+    url: scholarLink("2osOgNQ5qMEC"),
+  },
+  {
+    title:
+      "Strain-Compensated GaInSb/AlGaInSb Type-I MQW for CO₂ Detection",
+    authors: "M. Reza, A. Sheridan, B. Roycroft, B.M. Corbett et al.",
+    venue: "Proc. SPIE — Photonic Instrumentation Engineering",
+    year: 2017,
+    type: "conference",
+    url: scholarLink("Tyk-4Ss8FVUC"),
+  },
+  {
+    title:
+      "Development of AlGaInSb Multi Quantum-Well Light Emitting Diodes in the 3–5 μm Spectral Range",
+    authors: "M. Reza, A. Sheridan, B. Roycroft, B.M. Corbett et al.",
+    venue: "UK Semiconductors Conference",
+    year: 2017,
+    type: "conference",
+    url: scholarLink("Y0pCki6q_DkC"),
+  },
+  {
+    title:
+      "Etching Process for Producing Various Sloping Sidewall of III-V Antimonide-Based Materials for LED/PD Applications",
+    authors: "M. Reza, A. Sheridan, B. Roycroft, B.M. Corbett et al.",
+    venue: "Compound Semiconductor Week (CSW)",
+    year: 2016,
+    type: "conference",
+    url: scholarLink("qjMakFHDy7sC"),
   },
   {
     title:
@@ -137,6 +264,7 @@ export const publications = [
     venue: "Applied Optics",
     year: 2014,
     type: "journal",
+    url: scholarLink("9yKSN-GCB0IC"),
   },
   {
     title:
@@ -145,6 +273,7 @@ export const publications = [
     venue: "Optical Engineering",
     year: 2013,
     type: "journal",
+    url: scholarLink("u5HHmVD_uO8C"),
   },
   {
     title:
@@ -153,5 +282,15 @@ export const publications = [
     venue: "Pacific Rim Laser Damage: Optical Materials for High Power Lasers",
     year: 2013,
     type: "conference",
+    url: scholarLink("UeHWp8X0CEIC"),
+  },
+  {
+    title:
+      "HgGa₂S₄-Based RISTRA OPO Pumped at 1064 nm",
+    authors: "G. Marchev, M. Reza, V. Badikov, A. Esteban-Martin, G. Stöppler et al.",
+    venue: "Advanced Solid-State Lasers Congress",
+    year: 2013,
+    type: "conference",
+    url: scholarLink("d1gkVwhDpl0C"),
   },
 ];

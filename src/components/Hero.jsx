@@ -107,7 +107,7 @@ export default function Hero() {
         </div>
         <div className="stat">
           <div className="stat-num">
-            19<span>+</span>
+            30<span>+</span>
           </div>
           <div className="stat-label">Publications</div>
         </div>

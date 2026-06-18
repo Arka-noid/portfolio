@@ -2,6 +2,7 @@ import { useScrollReveal } from "./hooks/useScrollReveal";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import Experience from "./components/Experience";
+import Projects from "./components/Projects";
 import Competencies from "./components/Competencies";
 import Publications from "./components/Publications";
 import Contact from "./components/Contact";
@@ -15,6 +16,7 @@ export default function App() {
       <Nav />
       <Hero />
       <Experience />
+      <Projects />
       <Competencies />
       <Publications />
       <Contact />

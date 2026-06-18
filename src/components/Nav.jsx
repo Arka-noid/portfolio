@@ -1,4 +1,4 @@
-const sections = ["experience", "competencies", "publications", "contact"];
+const sections = ["experience", "projects", "competencies", "publications", "contact"];
 
 export default function Nav() {
   const scrollTo = (id) =>

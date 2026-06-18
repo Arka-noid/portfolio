@@ -345,6 +345,224 @@ section {
   opacity: 1;
 }
 
+/* ── PROJECTS ── */
+
+.proj-intro {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-top: -2rem;
+  margin-bottom: 3rem;
+  font-weight: 300;
+}
+
+.proj-timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.proj-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    #00c8ff 0%,
+    #00a89d 35%,
+    #4a6cf7 70%,
+    #8b5cf6 100%
+  );
+  opacity: 0.3;
+}
+
+.proj-category-marker {
+  position: relative;
+  padding: 1.5rem 0 0.8rem 2rem;
+}
+
+.proj-category-marker::before {
+  content: "";
+  position: absolute;
+  left: -3px;
+  top: 1.8rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--off-white);
+  opacity: 0.5;
+}
+
+.proj-category-label {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.7rem;
+  border: 1px solid;
+  opacity: 0.7;
+}
+
+.proj-card {
+  position: relative;
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 1.8rem;
+  background: var(--slate);
+  border: 1px solid rgba(0, 200, 255, 0.07);
+  border-left: 3px solid var(--cyan);
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.proj-card:hover {
+  border-color: rgba(0, 200, 255, 0.25);
+  border-left-width: 3px;
+  transform: translateX(4px);
+}
+
+.proj-card--classified {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--slate),
+    var(--slate) 12px,
+    rgba(30, 42, 69, 0.7) 12px,
+    rgba(30, 42, 69, 0.7) 24px
+  );
+  opacity: 0.75;
+}
+
+.proj-card--classified:hover {
+  transform: none;
+  opacity: 0.85;
+}
+
+.proj-card-header {
+  cursor: pointer;
+}
+
+.proj-card--classified .proj-card-header {
+  cursor: default;
+}
+
+.proj-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.proj-card-badge {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+}
+
+.proj-card-period {
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+.proj-card-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--off-white);
+  margin-bottom: 0.3rem;
+}
+
+.proj-card-tagline {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-style: italic;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+.proj-card-toggle {
+  font-size: 0.72rem;
+  color: var(--cyan);
+  opacity: 0.6;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  border: none;
+  background: none;
+  font-family: "Inter", sans-serif;
+  transition: opacity 0.2s;
+  padding: 0;
+}
+
+.proj-card-toggle:hover {
+  opacity: 1;
+}
+
+.proj-card-classified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: "Space Grotesk", sans-serif;
+  opacity: 0.6;
+}
+
+.proj-card-detail {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 200, 255, 0.08);
+}
+
+.proj-card-institution {
+  font-size: 0.78rem;
+  color: var(--cyan);
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+  opacity: 0.8;
+}
+
+.proj-card-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.proj-card-highlights {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.proj-card-highlights li {
+  font-size: 0.82rem;
+  color: var(--off-white);
+  line-height: 1.7;
+  padding: 0.2rem 0 0.2rem 1rem;
+  position: relative;
+}
+
+.proj-card-highlights li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
+  opacity: 0.5;
+  font-size: 0.7rem;
+}
+
+.proj-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
 /* ── COMPETENCIES ── */
 
 .competencies-grid {

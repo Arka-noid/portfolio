@@ -70,6 +70,17 @@ function ProjectCard({ project, isExpanded, onToggle }) {
               </span>
             ))}
           </div>
+          {project.caseStudy && (
+            <a
+              className="proj-case-study-link"
+              onClick={(e) => {
+                e.stopPropagation();
+                window.location.hash = project.caseStudy;
+              }}
+            >
+              View case study →
+            </a>
+          )}
         </div>
       )}
     </div>

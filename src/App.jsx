@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useScrollReveal } from "./hooks/useScrollReveal";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
@@ -7,8 +8,9 @@ import Competencies from "./components/Competencies";
 import Publications from "./components/Publications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import SpaceRadarCaseStudy from "./components/SpaceRadarCaseStudy";
 
-export default function App() {
+function Portfolio() {
   useScrollReveal();
 
   return (
@@ -23,4 +25,20 @@ export default function App() {
       <Footer />
     </div>
   );
+}
+
+export default function App() {
+  const [route, setRoute] = useState(window.location.hash);
+
+  useEffect(() => {
+    const onHash = () => setRoute(window.location.hash);
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
+
+  if (route === "#/project/space-radar") {
+    return <SpaceRadarCaseStudy />;
+  }
+
+  return <Portfolio />;
 }

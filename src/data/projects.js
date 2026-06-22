@@ -67,6 +67,7 @@ export const projects = [
       "SAR",
       "Space",
     ],
+    caseStudy: "#/project/space-radar",
   },
   {
     id: "satellite-network",

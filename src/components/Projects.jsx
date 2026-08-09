@@ -38,7 +38,14 @@ function ProjectCard({ project, isExpanded, onToggle }) {
         <h3 className="proj-card-title">{project.title}</h3>
         <p className="proj-card-tagline">{project.tagline}</p>
         {!isClassified && (
-          <button className="proj-card-toggle">
+          <button
+            className="proj-card-toggle"
+            aria-expanded={isExpanded}
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggle();
+            }}
+          >
             {isExpanded ? "Show less ↑" : "Show more ↓"}
           </button>
         )}
@@ -73,10 +80,8 @@ function ProjectCard({ project, isExpanded, onToggle }) {
           {project.caseStudy && (
             <a
               className="proj-case-study-link"
-              onClick={(e) => {
-                e.stopPropagation();
-                window.location.hash = project.caseStudy;
-              }}
+              href={project.caseStudy}
+              onClick={(e) => e.stopPropagation()}
             >
               View case study →
             </a>

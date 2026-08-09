@@ -10,6 +10,10 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import SpaceRadarCaseStudy from "./components/SpaceRadarCaseStudy";
 
+const routes = {
+  "#/project/space-radar": SpaceRadarCaseStudy,
+};
+
 function Portfolio() {
   useScrollReveal();
 
@@ -36,8 +40,9 @@ export default function App() {
     return () => window.removeEventListener("hashchange", onHash);
   }, []);
 
-  if (route === "#/project/space-radar") {
-    return <SpaceRadarCaseStudy />;
+  const Page = routes[route];
+  if (Page) {
+    return <Page />;
   }
 
   return <Portfolio />;

@@ -19,7 +19,9 @@ export default function Experience() {
               <span className="timeline-org">{item.org}</span>
               <span className="timeline-period">{item.period}</span>
             </div>
-            <div className="timeline-loc">📍 {item.loc}</div>
+            <div className="timeline-loc">
+              <span aria-hidden="true">📍</span> {item.loc}
+            </div>
             <ul className="timeline-bullets">
               {item.bullets.map((b, j) => (
                 <li key={j}>{b}</li>
@@ -28,7 +30,11 @@ export default function Experience() {
                 item.extra.map((b, j) => <li key={"e" + j}>{b}</li>)}
             </ul>
             {item.extra.length > 0 && (
-              <button className="timeline-expand" onClick={() => toggle(i)}>
+              <button
+                className="timeline-expand"
+                aria-expanded={!!expanded[i]}
+                onClick={() => toggle(i)}
+              >
                 {expanded[i] ? "Show less ↑" : "Show more ↓"}
               </button>
             )}

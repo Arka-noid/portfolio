@@ -1,14 +1,27 @@
 import { useEffect, useRef, useState } from "react";
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 import { publications } from "../data/publications";
-import Footer from "./Footer";
+import { filterPubsByKeywords } from "../utils/relatedPubs";
+import CaseStudyShell from "./casestudy/CaseStudyShell";
+import MetricCard from "./casestudy/MetricCard";
+import PhaseCard from "./casestudy/PhaseCard";
+import BlockDiagramSvg from "./casestudy/BlockDiagramSvg";
+import RelatedPubs from "./casestudy/RelatedPubs";
 
-const RELATED_KEYWORDS = ["SAR", "Satellite", "Spaceborne", "Space", "Beamform", "SCORE"];
-const relatedPubs = publications.filter((p) =>
-  RELATED_KEYWORDS.some((kw) => p.title.toLowerCase().includes(kw.toLowerCase()))
-);
+const RELATED_KEYWORDS = ["Radar", "Aperture", "Satellite", "Spaceborne", "Beamform"];
+const relatedPubs = filterPubsByKeywords(publications, RELATED_KEYWORDS);
 
-function StarfieldCanvas() {
+const ARCH_BLOCKS = [
+  { x: 0, label: "ANTENNA\nARRAY", sub: "X-band", color: "#e8edf5", w: 90 },
+  { x: 110, label: "RF\nFRONT-END", sub: "LNA + Filter", color: "#e8edf5", w: 90 },
+  { x: 220, label: "E/O\nCONVERSION", sub: "MZM", color: "#00C8FF", w: 90 },
+  { x: 330, label: "PHOTONIC\nBEAMFORMER", sub: "SiN + InP", color: "#00C8FF", w: 110 },
+  { x: 460, label: "O/E\nDETECTION", sub: "Balanced PD", color: "#00C8FF", w: 90 },
+  { x: 570, label: "DIGITAL\nBACK-END", sub: "ADC + DSP", color: "#e8edf5", w: 90 },
+];
+
+function StarfieldCanvas({ reduced }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -66,7 +79,9 @@ function StarfieldCanvas() {
       ctx.stroke();
 
       t++;
-      animFrame = requestAnimationFrame(draw);
+      if (!reduced) {
+        animFrame = requestAnimationFrame(draw);
+      }
     };
     draw();
 
@@ -74,14 +89,14 @@ function StarfieldCanvas() {
       cancelAnimationFrame(animFrame);
       window.removeEventListener("resize", resize);
     };
-  }, []);
+  }, [reduced]);
 
   return <canvas ref={canvasRef} className="cs-hero-canvas" />;
 }
 
-function SatelliteSvg() {
+function SatelliteSvg({ animate }) {
   return (
-    <svg viewBox="0 0 480 320" className="cs-satellite-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 480 320" className="cs-satellite-svg" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs>
         <linearGradient id="beam1" x1="240" y1="130" x2="140" y2="310" gradientUnits="userSpaceOnUse">
           <stop stopColor="#00C8FF" stopOpacity="0.4" />
@@ -102,10 +117,10 @@ function SatelliteSvg() {
       </defs>
 
       <polygon points="180,140 240,130 300,140 240,310" fill="url(#beam1)" opacity="0.5">
-        <animate attributeName="opacity" values="0.3;0.55;0.3" dur="4s" repeatCount="indefinite" />
+        {animate && <animate attributeName="opacity" values="0.3;0.55;0.3" dur="4s" repeatCount="indefinite" />}
       </polygon>
       <polygon points="200,140 260,130 320,140 300,310" fill="url(#beam2)" opacity="0.35">
-        <animate attributeName="opacity" values="0.2;0.4;0.2" dur="5s" repeatCount="indefinite" />
+        {animate && <animate attributeName="opacity" values="0.2;0.4;0.2" dur="5s" repeatCount="indefinite" />}
       </polygon>
 
       <g>
@@ -130,7 +145,7 @@ function SatelliteSvg() {
         <rect x="220" y="80" width="45" height="44" rx="2" fill="#111827" stroke="#00C8FF" strokeWidth="0.8" />
         <rect x="225" y="85" width="35" height="12" rx="1" fill="#0a0f1e" stroke="#00C8FF" strokeWidth="0.3" opacity="0.5" />
         <circle cx="242" cy="112" r="3" fill="#00C8FF" opacity="0.6" filter="url(#glow)">
-          <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite" />
+          {animate && <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite" />}
         </circle>
 
         <rect x="222" y="124" width="40" height="8" rx="1" fill="#111827" stroke="#00C8FF" strokeWidth="0.5" opacity="0.6" />
@@ -152,9 +167,9 @@ function SatelliteSvg() {
   );
 }
 
-function PhotonicChipSvg() {
+function PhotonicChipSvg({ animate }) {
   return (
-    <svg viewBox="0 0 600 280" className="cs-chip-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 600 280" className="cs-chip-svg" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of a hybrid photonic module: RF inputs enter a silicon nitride chip through phase shifters into a combiner, then cross a bond interface into an indium phosphide chip with modulator, amplifier, and photodetector stages.">
       <defs>
         <linearGradient id="sinChip" x1="0" y1="0" x2="0" y2="1">
           <stop stopColor="#0d2848" />
@@ -195,7 +210,7 @@ function PhotonicChipSvg() {
             d={`M 120 ${y} L 180 ${y}`}
             stroke="url(#wg)" strokeWidth="1.5" fill="none"
           >
-            <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur={`${2 + i * 0.3}s`} repeatCount="indefinite" />
+            {animate && <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur={`${2 + i * 0.3}s`} repeatCount="indefinite" />}
           </path>
 
           <rect x="170" y={y - 6} width="20" height="12" rx="2" fill="none" stroke="#00C8FF" strokeWidth="0.5" opacity="0.5" />
@@ -219,7 +234,7 @@ function PhotonicChipSvg() {
             d={`M 320 ${y} L 430 ${y}`}
             stroke="url(#wgInp)" strokeWidth="1.5" fill="none"
           >
-            <animate attributeName="stroke-opacity" values="0.4;0.9;0.4" dur={`${2.5 + i * 0.4}s`} repeatCount="indefinite" />
+            {animate && <animate attributeName="stroke-opacity" values="0.4;0.9;0.4" dur={`${2.5 + i * 0.4}s`} repeatCount="indefinite" />}
           </path>
           <rect x="350" y={y - 6} width="24" height="12" rx="2" fill="none" stroke="#8B5CF6" strokeWidth="0.5" opacity="0.5" />
           <text x="354" y={y + 3} fontFamily="monospace" fontSize="5" fill="#8B5CF6" opacity="0.4">{["MOD", "SOA", "PD"][i]}</text>
@@ -237,129 +252,23 @@ function PhotonicChipSvg() {
   );
 }
 
-function SystemArchSvg() {
-  const blocks = [
-    { x: 0, label: "ANTENNA\nARRAY", sub: "X-band", color: "#e8edf5", w: 90 },
-    { x: 110, label: "RF\nFRONT-END", sub: "LNA + Filter", color: "#e8edf5", w: 90 },
-    { x: 220, label: "E/O\nCONVERSION", sub: "MZM", color: "#00C8FF", w: 90 },
-    { x: 330, label: "PHOTONIC\nBEAMFORMER", sub: "SiN + InP", color: "#00C8FF", w: 110 },
-    { x: 460, label: "O/E\nDETECTION", sub: "Balanced PD", color: "#00C8FF", w: 90 },
-    { x: 570, label: "DIGITAL\nBACK-END", sub: "ADC + DSP", color: "#e8edf5", w: 90 },
-  ];
-
-  return (
-    <svg viewBox="0 0 680 140" className="cs-arch-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {blocks.map((b, i) => (
-        <g key={i}>
-          <rect
-            x={b.x + 5} y="20" width={b.w - 10} height="80" rx="2"
-            fill={b.color === "#00C8FF" ? "rgba(0,200,255,0.06)" : "rgba(232,237,245,0.04)"}
-            stroke={b.color} strokeWidth="0.8" opacity="0.8"
-          />
-          {b.label.split("\n").map((line, li) => (
-            <text
-              key={li}
-              x={b.x + b.w / 2}
-              y={48 + li * 14}
-              textAnchor="middle"
-              fontFamily="Space Grotesk, sans-serif"
-              fontSize="8"
-              fontWeight="600"
-              fill={b.color}
-              opacity="0.8"
-              letterSpacing="0.1em"
-            >
-              {line}
-            </text>
-          ))}
-          <text
-            x={b.x + b.w / 2} y="88"
-            textAnchor="middle"
-            fontFamily="monospace" fontSize="6"
-            fill={b.color} opacity="0.4"
-          >
-            {b.sub}
-          </text>
-          {i < blocks.length - 1 && (
-            <line
-              x1={b.x + b.w - 3} y1="60"
-              x2={blocks[i + 1].x + 7} y2="60"
-              stroke={b.color} strokeWidth="1" opacity="0.3"
-              markerEnd="none"
-            />
-          )}
-          {i < blocks.length - 1 && (
-            <polygon
-              points={`${blocks[i + 1].x + 3},56 ${blocks[i + 1].x + 3},64 ${blocks[i + 1].x + 8},60`}
-              fill={b.color} opacity="0.4"
-            />
-          )}
-        </g>
-      ))}
-      <rect x="218" y="10" width="340" height="100" rx="4" fill="none" stroke="#00C8FF" strokeWidth="0.5" strokeDasharray="4 3" opacity="0.25" />
-      <text x="388" y="125" textAnchor="middle" fontFamily="Space Grotesk, sans-serif" fontSize="7" fill="#00C8FF" opacity="0.35" letterSpacing="0.12em">PHOTONIC DOMAIN</text>
-    </svg>
-  );
-}
-
-function MetricCard({ value, unit, label }) {
-  return (
-    <div className="cs-metric reveal">
-      <div className="cs-metric-value">
-        {value}<span>{unit}</span>
-      </div>
-      <div className="cs-metric-label">{label}</div>
-    </div>
-  );
-}
-
-function PhaseCard({ phase, title, period, description, points }) {
-  return (
-    <div className="cs-phase reveal">
-      <div className="cs-phase-marker">
-        <span className="cs-phase-num">{phase}</span>
-        <div className="cs-phase-line" />
-      </div>
-      <div className="cs-phase-content">
-        <div className="cs-phase-period">{period}</div>
-        <h3 className="cs-phase-title">{title}</h3>
-        <p className="cs-phase-desc">{description}</p>
-        <ul className="cs-phase-points">
-          {points.map((p, i) => <li key={i}>{p}</li>)}
-        </ul>
-      </div>
-    </div>
-  );
-}
-
 export default function SpaceRadarCaseStudy() {
   useScrollReveal();
+  const reduced = usePrefersReducedMotion();
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (reduced) return;
     const onScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const goBack = () => {
-    window.location.hash = "";
-  };
+  }, [reduced]);
 
   return (
-    <div className="cs-page">
-      <nav className="cs-nav">
-        <a className="cs-back" onClick={goBack}>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
-          Portfolio
-        </a>
-        <span className="cs-nav-label">Case Study</span>
-      </nav>
-
+    <CaseStudyShell>
       {/* ── HERO ── */}
       <section className="cs-hero">
-        <StarfieldCanvas />
+        <StarfieldCanvas reduced={reduced} />
         <div className="cs-hero-content" style={{ transform: `translateY(${scrollY * 0.15}px)` }}>
           <div className="cs-hero-eyebrow reveal">Case Study · Aerospace</div>
           <h1 className="cs-hero-title reveal">
@@ -387,7 +296,7 @@ export default function SpaceRadarCaseStudy() {
           </div>
         </div>
         <div className="cs-hero-illustration" style={{ transform: `translateY(${scrollY * -0.08}px)` }}>
-          <SatelliteSvg />
+          <SatelliteSvg animate={!reduced} />
         </div>
       </section>
 
@@ -419,19 +328,19 @@ export default function SpaceRadarCaseStudy() {
           <div className="cs-col cs-challenge-cards reveal">
             <div className="cs-challenge-card">
               <div className="cs-challenge-icon">
-                <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="#00C8FF" strokeWidth="1.5">
+                <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="#00C8FF" strokeWidth="1.5" aria-hidden="true">
                   <rect x="4" y="8" width="24" height="16" rx="2" />
                   <line x1="4" y1="14" x2="28" y2="14" />
                   <line x1="4" y1="18" x2="28" y2="18" />
                   <line x1="16" y1="8" x2="16" y2="24" />
                 </svg>
               </div>
-              <h4>Size & Weight</h4>
+              <h4>Size &amp; Weight</h4>
               <p>Traditional RF beamformers scale poorly — every added beam means more hardware, more mass, more power.</p>
             </div>
             <div className="cs-challenge-card">
               <div className="cs-challenge-icon">
-                <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="#00C8FF" strokeWidth="1.5">
+                <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="#00C8FF" strokeWidth="1.5" aria-hidden="true">
                   <path d="M16 4 L28 10 L28 22 L16 28 L4 22 L4 10 Z" />
                   <line x1="16" y1="4" x2="16" y2="28" />
                   <line x1="4" y1="10" x2="28" y2="10" />
@@ -442,7 +351,7 @@ export default function SpaceRadarCaseStudy() {
             </div>
             <div className="cs-challenge-card">
               <div className="cs-challenge-icon">
-                <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="#00C8FF" strokeWidth="1.5">
+                <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="#00C8FF" strokeWidth="1.5" aria-hidden="true">
                   <circle cx="16" cy="16" r="10" />
                   <path d="M16 6 A10 10 0 0 1 26 16" strokeWidth="2.5" />
                   <circle cx="16" cy="16" r="2" fill="#00C8FF" />
@@ -467,7 +376,7 @@ export default function SpaceRadarCaseStudy() {
           the other lacked.
         </p>
         <div className="cs-chip-diagram reveal">
-          <PhotonicChipSvg />
+          <PhotonicChipSvg animate={!reduced} />
         </div>
         <div className="cs-platform-grid reveal">
           <div className="cs-platform-card">
@@ -503,7 +412,7 @@ export default function SpaceRadarCaseStudy() {
           the electrical domain for digital processing.
         </p>
         <div className="cs-arch-diagram reveal">
-          <SystemArchSvg />
+          <BlockDiagramSvg blocks={ARCH_BLOCKS} domain={{ x: 218, width: 340, label: "PHOTONIC DOMAIN" }} />
         </div>
         <div className="cs-scope-list reveal">
           <h3>My Contributions</h3>
@@ -592,19 +501,19 @@ export default function SpaceRadarCaseStudy() {
         </div>
         <div className="cs-outcome-bar reveal">
           <div className="cs-outcome">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8FF" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8FF" strokeWidth="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
             <span>Hybrid module fabricated and packaged for space compliance</span>
           </div>
           <div className="cs-outcome">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8FF" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8FF" strokeWidth="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
             <span>Simulation framework validated against measured data</span>
           </div>
           <div className="cs-outcome">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8FF" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8FF" strokeWidth="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
             <span>Results published in top-tier photonics and radar venues</span>
           </div>
           <div className="cs-outcome">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8FF" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8FF" strokeWidth="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
             <span>Collaboration with major European aerospace industry partners</span>
           </div>
         </div>
@@ -616,31 +525,8 @@ export default function SpaceRadarCaseStudy() {
           <div className="section-eyebrow">06 — Publications</div>
           <h2 className="section-title">Related Research</h2>
         </div>
-        <div className="cs-pubs">
-          {relatedPubs.map((pub, i) => (
-            <a key={i} href={pub.url} target="_blank" rel="noopener noreferrer" className="cs-pub reveal">
-              <div className="cs-pub-top">
-                <span className={`pub-type pub-type--${pub.type}`}>
-                  {pub.type}
-                </span>
-                <span className="cs-pub-year">{pub.year}</span>
-              </div>
-              <h4 className="cs-pub-title">{pub.title}</h4>
-              <p className="cs-pub-venue">{pub.venue}</p>
-            </a>
-          ))}
-        </div>
+        <RelatedPubs pubs={relatedPubs} />
       </section>
-
-      {/* ── BACK ── */}
-      <section className="cs-section cs-section--cta">
-        <a className="cs-back-cta reveal" onClick={goBack}>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
-          Back to Portfolio
-        </a>
-      </section>
-
-      <Footer />
-    </div>
+    </CaseStudyShell>
   );
 }

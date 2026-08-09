@@ -16,11 +16,22 @@
   --cyan-glow: rgba(0, 200, 255, 0.35);
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   background: var(--navy);
   color: var(--off-white);
   font-family: "Inter", sans-serif;
   line-height: 1.6;
+}
+
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
 }
 
 .portfolio {
@@ -52,6 +63,18 @@ nav {
   letter-spacing: 0.08em;
   color: var(--cyan);
   text-transform: uppercase;
+  text-decoration: none;
+}
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  background: none;
+  border: 1px solid rgba(0, 200, 255, 0.25);
+  color: var(--cyan);
+  cursor: pointer;
 }
 
 .nav-links {
@@ -197,6 +220,7 @@ section {
   padding: 7rem 3rem;
   max-width: 1100px;
   margin: 0 auto;
+  scroll-margin-top: 5.5rem;
 }
 
 .section-eyebrow {
@@ -251,7 +275,6 @@ section {
 .timeline-item {
   position: relative;
   padding: 0 0 3.5rem 2rem;
-  cursor: pointer;
 }
 
 .timeline-item::before {
@@ -418,7 +441,6 @@ section {
 
 .proj-card:hover {
   border-color: rgba(0, 200, 255, 0.25);
-  border-left-width: 3px;
   transform: translateX(4px);
 }
 

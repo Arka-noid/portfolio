@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
+import { publications } from "../data/publications";
+import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 
-function WaveguideCanvas() {
+function WaveguideCanvas({ reduced }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -55,7 +57,9 @@ function WaveguideCanvas() {
       ctx.fill();
 
       t++;
-      animFrame = requestAnimationFrame(draw);
+      if (!reduced) {
+        animFrame = requestAnimationFrame(draw);
+      }
     };
     draw();
 
@@ -63,18 +67,17 @@ function WaveguideCanvas() {
       cancelAnimationFrame(animFrame);
       window.removeEventListener("resize", resize);
     };
-  }, []);
+  }, [reduced]);
 
   return <canvas ref={canvasRef} className="hero-canvas" />;
 }
 
 export default function Hero() {
-  const scrollTo = (id) =>
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  const reduced = usePrefersReducedMotion();
 
   return (
     <div className="hero">
-      <WaveguideCanvas />
+      <WaveguideCanvas reduced={reduced} />
       <div className="hero-content">
         <div className="hero-eyebrow">
           Optical Systems Engineer · Product Integrator
@@ -88,7 +91,7 @@ export default function Hero() {
           10+ years bridging photonic devices, system architecture, and product
           integration — from cleanroom to TRL 6 prototypes.
         </p>
-        <a className="hero-cta" onClick={() => scrollTo("experience")}>
+        <a className="hero-cta" href="#experience">
           View experience ↓
         </a>
       </div>
@@ -101,13 +104,13 @@ export default function Hero() {
         </div>
         <div className="stat">
           <div className="stat-num">
-            TRL <span>6</span>
+            TRL <span>3→6</span>
           </div>
-          <div className="stat-label">Product readiness</div>
+          <div className="stat-label">Lab to product prototype</div>
         </div>
         <div className="stat">
           <div className="stat-num">
-            30<span>+</span>
+            {publications.length}
           </div>
           <div className="stat-label">Publications</div>
         </div>

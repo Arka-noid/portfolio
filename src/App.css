@@ -587,6 +587,16 @@ section {
 
 /* ── COMPETENCIES ── */
 
+#competencies {
+  background: var(--navy-mid);
+  max-width: none;
+}
+
+.competencies-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 .competencies-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -1483,6 +1493,159 @@ a.cs-pub:hover {
 .cs-back-cta:hover {
   background: var(--cyan-dim);
   box-shadow: 0 0 24px var(--cyan-glow);
+}
+
+/* ── MAIN RESPONSIVE ── */
+
+@media (max-width: 900px) {
+  nav {
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links--open {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: rgba(10, 15, 30, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 200, 255, 0.08);
+    padding: 0.5rem 0;
+  }
+
+  .nav-links--open li a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+  }
+
+  section {
+    padding: 5rem 1.5rem;
+  }
+
+  .hero {
+    padding: 0 1.5rem;
+  }
+
+  .hero-stats {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 3rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    text-align: left;
+  }
+
+  .pub-year-group {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .contact-section {
+    padding: 5rem 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    padding: 4rem 1.25rem;
+  }
+
+  .hero {
+    padding: 0 1.25rem;
+  }
+
+  .hero-stats {
+    gap: 1.5rem 2.5rem;
+  }
+
+  .stat-num {
+    font-size: 1.6rem;
+  }
+
+  .timeline {
+    padding-left: 1rem;
+  }
+
+  .timeline-item {
+    padding: 0 0 2.5rem 1.25rem;
+  }
+
+  .timeline-period {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .proj-timeline {
+    padding-left: 1rem;
+  }
+
+  .proj-category-marker {
+    padding-left: 1rem;
+  }
+
+  .proj-card {
+    margin-left: 1rem;
+    padding: 1.2rem;
+  }
+
+  .competencies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pub-year-label {
+    min-width: 0;
+  }
+
+  .contact-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+/* ── REDUCED MOTION ── */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .proj-card:hover,
+  .comp-card:hover,
+  .pub-item:hover,
+  a.cs-pub:hover {
+    transform: none;
+  }
+
+  .timeline-item:hover::before {
+    transform: none;
+  }
 }
 
 /* ── CS RESPONSIVE ── */

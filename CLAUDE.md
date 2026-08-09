@@ -67,6 +67,7 @@ src/
 ## Pending user-supplied content
 
 - `data/about.js`: education entries, extra languages, `photoUrl`, `cvUrl`
+- `data/images.js`: decorative photo slots (case-study hero backdrops, About side image) — sourcing guide in `public/images/README.md`; slots fail gracefully when null/broken
 - `data/publications.js`: `CITATIONS` count (update periodically from Scholar)
 - `index.html`: `og:image` and canonical URL once a production domain/image exist
 

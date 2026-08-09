@@ -8,8 +8,10 @@ import MetricCard from "./casestudy/MetricCard";
 import PhaseCard from "./casestudy/PhaseCard";
 import BlockDiagramSvg from "./casestudy/BlockDiagramSvg";
 import RelatedPubs from "./casestudy/RelatedPubs";
+import HeroPhoto from "./casestudy/HeroPhoto";
 import Perspective from "./Perspective";
 import { perspectives } from "../data/perspectives";
+import { siteImages } from "../data/images";
 
 const RELATED_KEYWORDS = ["Radar", "Aperture", "Satellite", "Spaceborne", "Beamform"];
 const relatedPubs = filterPubsByKeywords(publications, RELATED_KEYWORDS);
@@ -270,6 +272,7 @@ export default function SpaceRadarCaseStudy() {
     <CaseStudyShell>
       {/* ── HERO ── */}
       <section className="cs-hero">
+        <HeroPhoto src={siteImages.spaceRadarHero} />
         <StarfieldCanvas reduced={reduced} />
         <div className="cs-hero-content" style={{ transform: `translateY(${scrollY * 0.15}px)` }}>
           <div className="cs-hero-eyebrow reveal">Case Study · Aerospace</div>

@@ -1,5 +1,6 @@
 import { about } from "../data/about";
 import { perspectives } from "../data/perspectives";
+import { siteImages } from "../data/images";
 import Perspective from "./Perspective";
 
 export default function About() {
@@ -13,6 +14,18 @@ export default function About() {
         {about.photoUrl && (
           <div className="about-photo reveal">
             <img src={about.photoUrl} alt="Portrait of Manuel Reza" />
+          </div>
+        )}
+        {!about.photoUrl && siteImages.aboutSide && (
+          <div className="about-photo reveal" aria-hidden="true">
+            <img
+              src={siteImages.aboutSide}
+              alt=""
+              loading="lazy"
+              onError={(e) => {
+                e.currentTarget.parentElement.style.display = "none";
+              }}
+            />
           </div>
         )}
         <div className="about-body reveal">

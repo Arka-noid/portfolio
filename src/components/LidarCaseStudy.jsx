@@ -9,7 +9,9 @@ import MetricCard from "./casestudy/MetricCard";
 import PhaseCard from "./casestudy/PhaseCard";
 import BlockDiagramSvg from "./casestudy/BlockDiagramSvg";
 import RelatedPubs from "./casestudy/RelatedPubs";
+import HeroPhoto from "./casestudy/HeroPhoto";
 import Perspective from "./Perspective";
+import { siteImages } from "../data/images";
 
 const RELATED_KEYWORDS = ["LiDAR", "FMCW", "Phase Shifter", "Hybrid Coupler", "Frequency Sweep"];
 const relatedPubs = filterPubsByKeywords(publications, RELATED_KEYWORDS);
@@ -261,6 +263,7 @@ export default function LidarCaseStudy() {
     <CaseStudyShell>
       {/* ── HERO ── */}
       <section className="cs-hero">
+        <HeroPhoto src={siteImages.lidarHero} />
         <LidarSweepCanvas reduced={reduced} />
         <div className="cs-hero-content" style={{ transform: `translateY(${scrollY * 0.15}px)` }}>
           <div className="cs-hero-eyebrow reveal">Case Study · Autonomous Sensing</div>

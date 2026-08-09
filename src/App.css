@@ -1134,6 +1134,16 @@ footer {
   overflow: hidden;
 }
 
+.cs-hero-photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.45;
+  filter: saturate(0.75) brightness(0.85);
+  pointer-events: none;
+}
+
 .cs-hero-canvas {
   position: absolute;
   top: 0;

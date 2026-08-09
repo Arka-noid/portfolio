@@ -11,9 +11,11 @@ import Publications from "./components/Publications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import SpaceRadarCaseStudy from "./components/SpaceRadarCaseStudy";
+import LidarCaseStudy from "./components/LidarCaseStudy";
 
 const routes = {
   "#/project/space-radar": SpaceRadarCaseStudy,
+  "#/project/lidar": LidarCaseStudy,
 };
 
 function Portfolio() {

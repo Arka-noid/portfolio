@@ -8,6 +8,8 @@ import MetricCard from "./casestudy/MetricCard";
 import PhaseCard from "./casestudy/PhaseCard";
 import BlockDiagramSvg from "./casestudy/BlockDiagramSvg";
 import RelatedPubs from "./casestudy/RelatedPubs";
+import Perspective from "./Perspective";
+import { perspectives } from "../data/perspectives";
 
 const RELATED_KEYWORDS = ["Radar", "Aperture", "Satellite", "Spaceborne", "Beamform"];
 const relatedPubs = filterPubsByKeywords(publications, RELATED_KEYWORDS);
@@ -517,6 +519,7 @@ export default function SpaceRadarCaseStudy() {
             <span>Collaboration with major European aerospace industry partners</span>
           </div>
         </div>
+        <Perspective>{perspectives.spaceRadar}</Perspective>
       </section>
 
       {/* ── PUBLICATIONS ── */}

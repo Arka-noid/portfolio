@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { projects, categoryMeta } from "../data/projects";
+import { perspectives } from "../data/perspectives";
+import Perspective from "./Perspective";
 
 function CategoryMarker({ category, prevCategory }) {
   if (category === prevCategory) return null;
@@ -62,6 +64,11 @@ function ProjectCard({ project, isExpanded, onToggle }) {
       {isExpanded && !isClassified && (
         <div className="proj-card-detail">
           <p className="proj-card-institution">{project.institution}</p>
+          {project.market && (
+            <p className="proj-card-market">
+              <span>Market</span> {project.market}
+            </p>
+          )}
           <p className="proj-card-desc">{project.description}</p>
           {project.highlights.length > 0 && (
             <ul className="proj-card-highlights">
@@ -106,6 +113,7 @@ export default function Projects() {
           value chain.
         </p>
       </div>
+      <Perspective>{perspectives.projects}</Perspective>
       <div className="proj-timeline">
         {projects.map((project, i) => (
           <div key={project.id}>

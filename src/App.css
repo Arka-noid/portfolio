@@ -656,10 +656,50 @@ section {
   gap: 1rem;
 }
 
-.pub-count {
+.pub-metrics {
+  display: flex;
+  gap: 2rem;
+}
+
+.pub-metric {
   font-size: 0.85rem;
   color: var(--muted);
   font-weight: 300;
+}
+
+.pub-metric strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--off-white);
+  margin-right: 0.35rem;
+}
+
+.pub-subheading {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 1.5rem;
+}
+
+.pub-featured {
+  margin-bottom: 3.5rem;
+}
+
+.pub-note {
+  font-size: 0.65rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  margin-left: 0.5rem;
+  background: rgba(0, 200, 255, 0.16);
+  color: var(--cyan);
+  border: 1px solid rgba(0, 200, 255, 0.35);
 }
 
 .pub-scholar-link {
@@ -800,6 +840,188 @@ a.pub-item {
 
 .contact-link:hover {
   color: var(--cyan);
+}
+
+/* ── PERSPECTIVE CALLOUT ── */
+
+.perspective {
+  border-left: 2px solid var(--cyan);
+  background: rgba(0, 200, 255, 0.04);
+  padding: 1rem 1.5rem;
+  margin-bottom: 2.5rem;
+  max-width: 720px;
+}
+
+.perspective-label {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  opacity: 0.7;
+  margin-bottom: 0.4rem;
+}
+
+.perspective p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ── ABOUT ── */
+
+.about-layout {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.about-photo {
+  flex: 0 0 220px;
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid rgba(0, 200, 255, 0.2);
+  filter: grayscale(30%);
+}
+
+.about-body {
+  flex: 1;
+  max-width: 720px;
+}
+
+.about-body > p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 1.2rem;
+}
+
+.about-facts {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.about-fact-label {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 0.5rem;
+}
+
+.about-fact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-fact li {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.about-cv {
+  margin-top: 1rem;
+}
+
+/* ── SERVICES ── */
+
+.svc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.svc-card {
+  position: relative;
+  padding: 1.8rem;
+  background: var(--slate);
+  border: 1px solid rgba(0, 200, 255, 0.07);
+  border-top: 2px solid var(--cyan);
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.svc-card:hover {
+  border-color: rgba(0, 200, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.svc-num {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cyan);
+  opacity: 0.25;
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.svc-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--off-white);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.7rem;
+}
+
+.svc-pitch {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.svc-proof {
+  font-size: 0.78rem;
+  color: var(--off-white);
+  line-height: 1.65;
+  border-top: 1px solid rgba(0, 200, 255, 0.08);
+  padding-top: 0.8rem;
+}
+
+.svc-proof span {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-right: 0.5rem;
+}
+
+/* ── PROJECT MARKET TAG ── */
+
+.proj-card-market {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+
+.proj-card-market span {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-right: 0.5rem;
 }
 
 /* ── SCROLL REVEAL ── */
@@ -1557,6 +1779,15 @@ a.cs-pub:hover {
 
   .contact-section {
     padding: 5rem 1.5rem;
+  }
+
+  .about-layout {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .svc-grid {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -1,6 +1,10 @@
 export const SCHOLAR_URL =
   "https://scholar.google.com/citations?user=xXUzynsAAAAJ&hl=en";
 
+// Citation count shown in the publications header — update periodically
+// from the Scholar profile.
+export const CITATIONS = "570+";
+
 const scholarLink = (id) =>
   `https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xXUzynsAAAAJ&citation_for_view=xXUzynsAAAAJ:${id}`;
 
@@ -21,6 +25,7 @@ export const publications = [
     venue: "Laser & Photonics Reviews",
     year: 2025,
     type: "journal",
+    featured: true,
     url: scholarLink("mVmsd5A6BfQC"),
   },
   {
@@ -38,6 +43,7 @@ export const publications = [
     authors: "H. Qiu, M. Prost, D. Coenen, T.D. Kongnyuy, M. Reza, G. Croes, M. Ramezani et al.",
     venue: "ACS Photonics",
     year: 2025,
+    featured: true,
     type: "journal",
     url: scholarLink("ULOm3_A8WrAC"),
   },
@@ -48,6 +54,8 @@ export const publications = [
     venue: "Optical Fiber Communication Conference (OFC)",
     year: 2025,
     type: "conference",
+    featured: true,
+    note: "Postdeadline paper",
     url: scholarLink("M3ejUd6NZC8C"),
   },
   {
@@ -102,6 +110,7 @@ export const publications = [
     venue: "Journal of Lightwave Technology",
     year: 2024,
     type: "journal",
+    featured: true,
     url: scholarLink("0EnyYjriUFMC"),
   },
   {
@@ -165,6 +174,7 @@ export const publications = [
     venue: "Electronics",
     year: 2022,
     type: "journal",
+    featured: true,
     url: scholarLink("_FxGoFyzp5QC"),
   },
   {
@@ -201,6 +211,7 @@ export const publications = [
     venue: "Journal of Lightwave Technology",
     year: 2021,
     type: "journal",
+    featured: true,
     url: scholarLink("IjCSPb-OGe4C"),
   },
   {

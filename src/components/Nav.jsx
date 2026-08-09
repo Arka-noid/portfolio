@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const sections = ["experience", "projects", "competencies", "publications", "contact"];
+const sections = ["about", "experience", "projects", "services", "publications", "contact"];
 
 export default function Nav() {
   const [open, setOpen] = useState(false);

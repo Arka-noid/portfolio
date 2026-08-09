@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useScrollReveal } from "./hooks/useScrollReveal";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
+import About from "./components/About";
+import Services from "./components/Services";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Competencies from "./components/Competencies";
@@ -21,8 +23,10 @@ function Portfolio() {
     <div className="portfolio">
       <Nav />
       <Hero />
+      <About />
       <Experience />
       <Projects />
+      <Services />
       <Competencies />
       <Publications />
       <Contact />

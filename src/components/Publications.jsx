@@ -1,7 +1,29 @@
-import { publications, SCHOLAR_URL } from "../data/publications";
+import { publications, SCHOLAR_URL, CITATIONS } from "../data/publications";
+
+function PubItem({ pub }) {
+  return (
+    <a
+      className="pub-item"
+      href={pub.url}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div className="pub-item-top">
+        <span className={`pub-type pub-type--${pub.type}`}>
+          {pub.type === "journal" ? "Journal" : "Conference"}
+        </span>
+        {pub.note && <span className="pub-note">{pub.note}</span>}
+      </div>
+      <div className="pub-title">{pub.title}</div>
+      <div className="pub-authors">{pub.authors}</div>
+      <div className="pub-venue">{pub.venue}</div>
+    </a>
+  );
+}
 
 export default function Publications() {
   const years = [...new Set(publications.map((p) => p.year))];
+  const featured = publications.filter((p) => p.featured);
 
   return (
     <section id="publications">
@@ -9,9 +31,14 @@ export default function Publications() {
         <div className="section-eyebrow">Research</div>
         <h2 className="section-title">Publications</h2>
         <div className="pub-header">
-          <span className="pub-count">
-            {publications.length} publications across journals &amp; conferences
-          </span>
+          <div className="pub-metrics">
+            <span className="pub-metric">
+              <strong>{publications.length}</strong> publications
+            </span>
+            <span className="pub-metric">
+              <strong>{CITATIONS}</strong> citations
+            </span>
+          </div>
           <a
             className="pub-scholar-link"
             href={SCHOLAR_URL}
@@ -23,6 +50,18 @@ export default function Publications() {
         </div>
       </div>
 
+      {featured.length > 0 && (
+        <div className="pub-featured reveal">
+          <h3 className="pub-subheading">Selected publications</h3>
+          <div className="pub-year-list">
+            {featured.map((p, i) => (
+              <PubItem key={i} pub={p} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      <h3 className="pub-subheading reveal">All publications</h3>
       {years.map((year) => (
         <div key={year} className="pub-year-group reveal">
           <div className="pub-year-label">{year}</div>
@@ -30,22 +69,7 @@ export default function Publications() {
             {publications
               .filter((p) => p.year === year)
               .map((p, i) => (
-                <a
-                  key={i}
-                  className="pub-item"
-                  href={p.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div className="pub-item-top">
-                    <span className={`pub-type pub-type--${p.type}`}>
-                      {p.type === "journal" ? "Journal" : "Conference"}
-                    </span>
-                  </div>
-                  <div className="pub-title">{p.title}</div>
-                  <div className="pub-authors">{p.authors}</div>
-                  <div className="pub-venue">{p.venue}</div>
-                </a>
+                <PubItem key={i} pub={p} />
               ))}
           </div>
         </div>

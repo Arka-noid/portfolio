@@ -88,11 +88,12 @@ export default function Hero() {
           <span>Light</span> into Systems
         </h1>
         <p className="hero-sub">
-          10+ years bridging photonic devices, system architecture, and product
-          integration — from cleanroom to TRL 6 prototypes.
+          I take photonic systems from concept to working prototype — coherent
+          links and hybrid integration for the AI-datacenter era, FMCW LiDAR
+          for autonomous sensing, and microwave photonics for space &amp; defense.
         </p>
-        <a className="hero-cta" href="#experience">
-          View experience ↓
+        <a className="hero-cta" href="#services">
+          How I can help ↓
         </a>
       </div>
       <div className="hero-stats">

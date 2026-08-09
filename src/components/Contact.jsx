@@ -1,3 +1,5 @@
+import { SCHOLAR_URL } from "../data/publications";
+
 export default function Contact() {
   return (
     <div className="contact-section" id="contact">
@@ -9,15 +11,15 @@ export default function Contact() {
           Let's build something.
         </h2>
         <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: "0.5rem" }}>
-          Open to roles in optical systems, photonic integration, and deep-tech
-          product development.
+          Available for consulting engagements and senior roles — photonic
+          system architecture, TRL maturation, and EU project leadership.
         </p>
         <div className="contact-links">
           <a className="contact-link" href="mailto:ma.reza29@gmail.com">
-            ✉ ma.reza29@gmail.com
+            <span aria-hidden="true">✉</span> ma.reza29@gmail.com
           </a>
           <a className="contact-link" href="tel:+393281873926">
-            📞 +39 328 1873926
+            <span aria-hidden="true">📞</span> +39 328 1873926
           </a>
           <a
             className="contact-link"
@@ -25,7 +27,15 @@ export default function Contact() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            🔗 LinkedIn
+            <span aria-hidden="true">🔗</span> LinkedIn
+          </a>
+          <a
+            className="contact-link"
+            href={SCHOLAR_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span aria-hidden="true">🎓</span> Google Scholar
           </a>
         </div>
       </div>

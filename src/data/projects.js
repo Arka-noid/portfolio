@@ -67,6 +67,7 @@ export const projects = [
       "SAR",
       "Space",
     ],
+    market: "Space & defense",
     caseStudy: "#/project/space-radar",
   },
   {
@@ -89,6 +90,7 @@ export const projects = [
       "RF Photonics",
       "Coherent Detection",
     ],
+    market: "Space & defense",
   },
   {
     id: "defense-ew",
@@ -117,6 +119,8 @@ export const projects = [
       "Full design pipeline from simulation to tape-out",
     ],
     tags: ["FMCW LIDAR", "OPA", "Phase Shifters", "Coherent Detection"],
+    market: "Autonomous sensing",
+    caseStudy: "#/project/lidar",
   },
   {
     id: "platform-dev",
@@ -133,6 +137,7 @@ export const projects = [
       "Coordinated 10+ partner organizations across an EU project",
     ],
     tags: ["SiN", "PDK", "Process Integration", "EDA"],
+    market: "Enabling tech for CPO & optical I/O",
   },
   {
     id: "programmable-photonics",
@@ -152,6 +157,7 @@ export const projects = [
       "System Integration",
       "Product Development",
     ],
+    market: "AI-era photonic compute & switching",
   },
 ];
 

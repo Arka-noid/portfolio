@@ -97,6 +97,23 @@ nav {
   color: var(--cyan);
 }
 
+.nav-links a.nav-active {
+  color: var(--cyan);
+}
+
+.nav-cta {
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--cyan);
+  color: var(--cyan) !important;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.nav-cta:hover {
+  background: var(--cyan-dim);
+  box-shadow: 0 0 16px var(--cyan-glow);
+  color: var(--cyan) !important;
+}
+
 /* ── HERO ── */
 
 .hero {
@@ -1006,6 +1023,64 @@ a.pub-item {
   margin-right: 0.5rem;
 }
 
+/* ── HOME TEASERS ── */
+
+.teaser-cta {
+  margin-top: 2.5rem;
+}
+
+.teaser-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.teaser-card {
+  display: block;
+  padding: 1.8rem;
+  background: var(--slate);
+  border: 1px solid rgba(0, 200, 255, 0.07);
+  border-left: 2px solid var(--cyan);
+  text-decoration: none;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.teaser-card:hover {
+  border-color: rgba(0, 200, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.teaser-card-tag {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.teaser-card-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--off-white);
+  margin: 0.7rem 0 0.5rem;
+}
+
+.teaser-card-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.65;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.teaser-card-link {
+  font-size: 0.78rem;
+  color: var(--cyan);
+  font-family: "Space Grotesk", sans-serif;
+}
+
 /* ── PROJECT MARKET TAG ── */
 
 .proj-card-market {
@@ -1797,6 +1872,10 @@ a.cs-pub:hover {
   }
 
   .svc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .teaser-grid {
     grid-template-columns: 1fr;
   }
 }

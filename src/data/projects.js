@@ -68,7 +68,7 @@ export const projects = [
       "Space",
     ],
     market: "Space & defense",
-    caseStudy: "#/project/space-radar",
+    caseStudySlug: "space-radar",
   },
   {
     id: "satellite-network",
@@ -120,7 +120,7 @@ export const projects = [
     ],
     tags: ["FMCW LIDAR", "OPA", "Phase Shifters", "Coherent Detection"],
     market: "Autonomous sensing",
-    caseStudy: "#/project/lidar",
+    caseStudySlug: "lidar",
   },
   {
     id: "platform-dev",

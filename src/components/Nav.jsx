@@ -1,13 +1,20 @@
 import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
-const sections = ["about", "experience", "projects", "services", "publications", "contact"];
+const links = [
+  { to: "/services", label: "Services" },
+  { to: "/work", label: "Work" },
+  { to: "/about", label: "About" },
+];
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
     <nav>
-      <a className="nav-logo" href="#/" aria-label="Home">MR</a>
+      <Link className="nav-logo" to="/" aria-label="Home" onClick={() => setOpen(false)}>
+        MR
+      </Link>
       <button
         className="nav-toggle"
         aria-expanded={open}
@@ -24,11 +31,22 @@ export default function Nav() {
         </svg>
       </button>
       <ul id="nav-menu" className={`nav-links${open ? " nav-links--open" : ""}`}>
-        {sections.map((s) => (
-          <li key={s}>
-            <a href={`#${s}`} onClick={() => setOpen(false)}>{s}</a>
+        {links.map((l) => (
+          <li key={l.to}>
+            <NavLink
+              to={l.to}
+              onClick={() => setOpen(false)}
+              className={({ isActive }) => (isActive ? "nav-active" : undefined)}
+            >
+              {l.label}
+            </NavLink>
           </li>
         ))}
+        <li>
+          <Link className="nav-cta" to="/contact" onClick={() => setOpen(false)}>
+            Work with me
+          </Link>
+        </li>
       </ul>
     </nav>
   );

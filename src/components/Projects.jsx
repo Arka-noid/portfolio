@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { projects, categoryMeta } from "../data/projects";
 import { perspectives } from "../data/perspectives";
 import Perspective from "./Perspective";
@@ -84,14 +85,14 @@ function ProjectCard({ project, isExpanded, onToggle }) {
               </span>
             ))}
           </div>
-          {project.caseStudy && (
-            <a
+          {project.caseStudySlug && (
+            <Link
               className="proj-case-study-link"
-              href={project.caseStudy}
+              to={`/work/${project.caseStudySlug}`}
               onClick={(e) => e.stopPropagation()}
             >
               View case study →
-            </a>
+            </Link>
           )}
         </div>
       )}

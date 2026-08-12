@@ -57,13 +57,21 @@ nav {
 }
 
 .nav-logo {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--cyan);
-  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
+  line-height: 0;
+}
+
+.nav-logo img {
+  display: block;
+  height: 36px;
+  width: auto;
+  transition: opacity 0.25s ease;
+}
+
+.nav-logo:hover img {
+  opacity: 0.75;
 }
 
 .nav-toggle {
@@ -1807,6 +1815,10 @@ a.cs-pub:hover {
 @media (max-width: 900px) {
   nav {
     padding: 1rem 1.5rem;
+  }
+
+  .nav-logo img {
+    height: 30px;
   }
 
   .nav-toggle {

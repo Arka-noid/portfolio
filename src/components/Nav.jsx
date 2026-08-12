@@ -12,8 +12,8 @@ export default function Nav() {
 
   return (
     <nav>
-      <Link className="nav-logo" to="/" aria-label="Home" onClick={() => setOpen(false)}>
-        MR
+      <Link className="nav-logo" to="/" aria-label="Merilight — home" onClick={() => setOpen(false)}>
+        <img src="/logo-merilight.svg" alt="Merilight" width="106" height="36" />
       </Link>
       <button
         className="nav-toggle"

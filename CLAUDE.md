@@ -55,6 +55,7 @@ Each page component calls `useScrollReveal()` itself (pages mount/unmount per ro
 ## Design Identity
 
 - **Palette:** Dark navy (`#0A0F1E`) background, cyan (`#00C8FF`) accents, off-white text; category accents teal/indigo/violet
+- **Colour tokens:** all in `:root` in `App.css` — `--bg`, `--bg-alt`, `--surface`, `--text`, `--muted`, `--accent`, `--accent-soft`, `--accent-glow`, plus `--bg-rgb`/`--surface-rgb`/`--accent-rgb` for `rgba()` compositing. Names are semantic, not value-derived, so a palette change is a `:root` edit rather than a rename. Use the tokens; avoid new hardcoded literals. Canvas/SVG art in JSX carries its own hex values since it cannot read CSS variables.
 - **Typography:** Space Grotesk for headings/UI elements, Inter for body text
 - **Aesthetic:** Minimal, technical, clean — no rounded corners, uppercase labels, generous letter-spacing
 - **Motion:** Canvas hero animations (waveguide, starfield, LiDAR sweep), scroll-reveal (IntersectionObserver), SMIL-animated SVG diagrams, hover transforms. All motion respects `prefers-reduced-motion` (canvases render a static frame, SMIL is omitted via the `animate` prop).

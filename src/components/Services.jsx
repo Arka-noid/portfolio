@@ -1,6 +1,8 @@
 import { services } from "../data/services";
 import { perspectives } from "../data/perspectives";
+import { siteImages } from "../data/images";
 import Perspective from "./Perspective";
+import ThemedImage from "./ThemedImage";
 
 export default function Services() {
   return (
@@ -8,6 +10,13 @@ export default function Services() {
       <div className="reveal">
         <div className="section-eyebrow">Consulting</div>
         <h2 className="section-title">How I Can Help</h2>
+      </div>
+      <div className="reveal">
+        <ThemedImage
+          src={siteImages.servicesBanner}
+          variant="panel"
+          caption="Optical transceivers seated in a switch faceplate — where device physics meets deployed volume"
+        />
       </div>
       <Perspective>{perspectives.services}</Perspective>
       <div className="svc-grid">

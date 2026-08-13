@@ -917,7 +917,9 @@ a.pub-item {
   flex: 0 0 220px;
 }
 
-.about-photo img {
+/* Direct child only: the personal portrait. The decorative fallback goes
+   through ThemedImage, which brings its own frame and treatment. */
+.about-photo > img {
   width: 100%;
   height: auto;
   display: block;
@@ -1962,12 +1964,137 @@ a.cs-pub:hover {
   }
 }
 
+/* ── THEMED IMAGERY ── */
+
+/* Photographs are placeholders and decorative. They are desaturated and
+   tinted into the navy/cyan palette so a stock photo never competes with
+   the canvas art or the accent colour. */
+
+.themed-img {
+  margin: 0;
+}
+
+.themed-img-frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(var(--accent-rgb), 0.18);
+  background: var(--bg-alt);
+  line-height: 0;
+}
+
+.themed-img-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Strips the stock palette back to near-monochrome so the tint below,
+     not the original colour, decides how the image reads. */
+  filter: grayscale(0.82) contrast(1.06) brightness(0.68);
+  transition: filter 0.5s ease, transform 0.6s ease;
+}
+
+.themed-img:hover .themed-img-frame img {
+  filter: grayscale(0.55) contrast(1.08) brightness(0.78);
+  transform: scale(1.02);
+}
+
+/* Cyan-into-navy scrim plus a faint scanline, echoing the technical
+   diagrams rather than sitting on top of the photo as a flat wash. */
+.themed-img-tint {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(var(--bg-rgb), 0.16) 0px,
+      rgba(var(--bg-rgb), 0.16) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    linear-gradient(
+      145deg,
+      rgba(var(--accent-rgb), 0.3) 0%,
+      rgba(var(--bg-rgb), 0.25) 45%,
+      rgba(var(--bg-rgb), 0.88) 100%
+    );
+}
+
+/* Slow cyan sweep, the still-image cousin of the LiDAR sweep. */
+.themed-img-sweep {
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: 0;
+  width: 22%;
+  pointer-events: none;
+  transform: skewX(-12deg) translateX(-160%);
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(var(--accent-rgb), 0.14) 45%,
+    rgba(var(--accent-rgb), 0.22) 50%,
+    transparent
+  );
+  animation: themed-img-sweep 9s ease-in-out infinite;
+}
+
+@keyframes themed-img-sweep {
+  0% {
+    transform: skewX(-12deg) translateX(-160%);
+  }
+  55%,
+  100% {
+    transform: skewX(-12deg) translateX(560%);
+  }
+}
+
+.themed-img-caption {
+  margin-top: 0.7rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Inline figure inside a case study or section body. */
+.themed-img--figure .themed-img-frame {
+  aspect-ratio: 16 / 10;
+}
+
+/* Centred, width-limited figure slot inside a case-study section. */
+.cs-figure {
+  max-width: 760px;
+  margin: 3rem auto 0;
+}
+
+/* Wide banner splitting a page's sections. */
+.themed-img--panel .themed-img-frame {
+  aspect-ratio: 21 / 6;
+}
+
+@media (max-width: 600px) {
+  .themed-img--panel .themed-img-frame {
+    aspect-ratio: 16 / 9;
+  }
+}
+
 /* ── REDUCED MOTION ── */
 
 @media (prefers-reduced-motion: reduce) {
   * {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+  }
+
+  .themed-img-sweep {
+    display: none;
+  }
+
+  .themed-img:hover .themed-img-frame img {
+    transform: none;
   }
 
   .reveal {

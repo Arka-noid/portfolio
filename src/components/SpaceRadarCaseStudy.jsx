@@ -9,6 +9,7 @@ import PhaseCard from "./casestudy/PhaseCard";
 import BlockDiagramSvg from "./casestudy/BlockDiagramSvg";
 import RelatedPubs from "./casestudy/RelatedPubs";
 import HeroPhoto from "./casestudy/HeroPhoto";
+import ThemedImage from "./ThemedImage";
 import Perspective from "./Perspective";
 import { perspectives } from "../data/perspectives";
 import { siteImages } from "../data/images";
@@ -366,6 +367,13 @@ export default function SpaceRadarCaseStudy() {
               <p>Scan-on-receive architectures need simultaneous beam steering — photonic true-time delays enable this without squint.</p>
             </div>
           </div>
+        </div>
+        <div className="cs-figure reveal">
+          <ThemedImage
+            src={siteImages.insarFigure}
+            variant="figure"
+            caption="Interferometric SAR — each colour fringe is one wavelength of range change. Receiver phase fidelity is what makes this measurable."
+          />
         </div>
       </section>
 

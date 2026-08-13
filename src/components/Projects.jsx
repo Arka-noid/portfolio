@@ -2,7 +2,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { projects, categoryMeta } from "../data/projects";
 import { perspectives } from "../data/perspectives";
+import { siteImages } from "../data/images";
 import Perspective from "./Perspective";
+import ThemedImage from "./ThemedImage";
 
 function CategoryMarker({ category, prevCategory }) {
   if (category === prevCategory) return null;
@@ -113,6 +115,13 @@ export default function Projects() {
           From devices to systems to platforms — a journey across the photonics
           value chain.
         </p>
+      </div>
+      <div className="reveal">
+        <ThemedImage
+          src={siteImages.workBanner}
+          variant="panel"
+          caption="Flight hardware on orbit — the environment that sets the requirements upstream"
+        />
       </div>
       <Perspective>{perspectives.projects}</Perspective>
       <div className="proj-timeline">

@@ -29,6 +29,7 @@ src/
   layouts/RootLayout.jsx       Nav + <Outlet/> + Footer, shared chrome for every route
   pages/                       One component per route — thin, compose components/data
   components/                  Section-level building blocks reused by pages
+    ThemedImage.jsx            Blends any photo into the palette (see Imagery)
     casestudy/                 Shared case-study pieces (Shell, MetricCard,
                                PhaseCard, BlockDiagramSvg, RelatedPubs)
   data/                        All content as constant arrays/objects
@@ -59,6 +60,7 @@ Each page component calls `useScrollReveal()` itself (pages mount/unmount per ro
 - **Typography:** Space Grotesk for headings/UI elements, Inter for body text
 - **Aesthetic:** Minimal, technical, clean — no rounded corners, uppercase labels, generous letter-spacing
 - **Motion:** Canvas hero animations (waveguide, starfield, LiDAR sweep), scroll-reveal (IntersectionObserver), SMIL-animated SVG diagrams, hover transforms. All motion respects `prefers-reduced-motion` (canvases render a static frame, SMIL is omitted via the `animate` prop).
+- **Imagery:** All photography is placeholder stock and decorative. It renders through `components/ThemedImage.jsx`, which desaturates the image and applies a cyan-into-navy scrim, a faint scanline, and a slow cyan sweep (dropped under `prefers-reduced-motion`) so stock photos read as part of the site. Case-study hero backdrops use `casestudy/HeroPhoto.jsx` instead. Pick images for *subject*, not colour — the treatment handles the palette.
 - **Tone:** Sophisticated engineering feel — the site itself should demonstrate technical craft
 
 ## Content Structure (by page)
@@ -89,7 +91,7 @@ Each page component calls `useScrollReveal()` itself (pages mount/unmount per ro
 ## Pending user-supplied content
 
 - `data/about.js`: education entries, extra languages, `photoUrl`, `cvUrl`
-- `data/images.js`: decorative photo slots (case-study hero backdrops, About side image) — sourcing guide in `public/images/README.md`; slots fail gracefully when null/broken
+- `data/images.js`: `lidarHero` is still unsourced (wants a night-highway long exposure). The other five slots hold **placeholder** stock imagery — fine to ship, but swap for better art when available. Sourcing guide in `public/images/README.md`; slots fail gracefully when null/broken
 - `data/publications.js`: `CITATIONS` count (update periodically from Scholar)
 - `index.html`: `og:image` and canonical URL once a production domain/image exist
 

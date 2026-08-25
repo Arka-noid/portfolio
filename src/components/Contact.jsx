@@ -19,7 +19,7 @@ export default function Contact() {
           Available for consulting engagements — independent design review,
           system architecture and link budgets, TRL maturation, and technical
           due diligence. Most engagements start with a fixed-scope design
-          review, so you can see how I work before committing to more.
+          review, so you can see how we work before committing to more.
         </p>
         <div className="contact-links">
           <a className="contact-link" href="mailto:ma.reza29@gmail.com">

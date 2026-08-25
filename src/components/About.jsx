@@ -23,6 +23,9 @@ export default function About() {
           </div>
         )}
         <div className="about-body reveal">
+          {about.structure && (
+            <p className="about-structure">{about.structure}</p>
+          )}
           {about.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}

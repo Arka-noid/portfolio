@@ -9,7 +9,7 @@ export default function ServicesTeaser() {
     <section id="services">
       <div className="reveal">
         <div className="section-eyebrow">Consulting</div>
-        <h2 className="section-title">How I Can Help</h2>
+        <h2 className="section-title">How We Can Help</h2>
       </div>
       <Perspective>{perspectives.services}</Perspective>
       <ServiceProofStrip items={serviceProof} />

@@ -174,7 +174,16 @@ Never use, anywhere on the site:
 
 ### Required
 
-- First person singular. Manuel is speaking, not a company voice.
+- **Voice: "we" for the firm, "I" for the track record.** Merilight offers,
+  reviews and delivers — so Home, Services, Contact and the nav say "we". The
+  personal record is Manuel's and stays first person singular: /about, /work
+  ("my role", "what I did"), the case studies, the Expertise Stack and the
+  publications. Never let "we" claim a credential only Manuel holds, and never
+  let "I" describe what the business sells.
+- **State the structure, do not hide it.** `about.structure` says plainly that
+  Merilight is Manuel plus a network of specialists. A buyer who discovers a
+  "we" is one person feels misled; one who is told does not. This also leaves
+  room to bring collaborators in without rewriting the site.
 - Client outcome before personal capability, in every headline.
 - Every service states who it is for, what the client receives, and roughly how
   long it takes.

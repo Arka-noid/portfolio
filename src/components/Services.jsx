@@ -10,7 +10,7 @@ export default function Services() {
     <section id="services">
       <div className="reveal">
         <div className="section-eyebrow">Consulting</div>
-        <h2 className="section-title">How I Can Help</h2>
+        <h2 className="section-title">How We Can Help</h2>
       </div>
       <div className="reveal">
         <ThemedImage

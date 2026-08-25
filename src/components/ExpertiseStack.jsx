@@ -106,7 +106,7 @@ export default function ExpertiseStack({ compact = false }) {
 
       {compact && (
         <Link className="hero-cta teaser-cta reveal" to="/services">
-          What I do at each layer →
+          See the full stack →
         </Link>
       )}
     </section>

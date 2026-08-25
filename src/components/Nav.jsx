@@ -44,7 +44,7 @@ export default function Nav() {
         ))}
         <li>
           <Link className="nav-cta" to="/contact" onClick={() => setOpen(false)}>
-            Work with me
+            Work with us
           </Link>
         </li>
       </ul>

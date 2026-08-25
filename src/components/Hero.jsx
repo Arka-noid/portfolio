@@ -89,11 +89,11 @@ export default function Hero() {
           into your products.
         </h1>
         <p className="hero-sub">
-          Any problem you encounter that involves optical and photonic technologies - 
-          From architecture, to systems, characterization, and devices - 
-          we are there to solve it.
+          Optical and photonic problems, wherever they sit in the stack &mdash;
+          architecture, systems, characterization, devices. We work out where
+          yours actually is, then fix it.
         </p>
-        <Link className="hero-cta" to="/contact">
+        <Link className="hero-cta" to="/services">
           See our services →
         </Link>
       </div>
@@ -104,12 +104,6 @@ export default function Hero() {
           </div>
           <div className="stat-label">Years across the stack</div>
         </div>
-        {/* <div className="stat">
-          <div className="stat-num">
-            TRL <span>3→6</span>
-          </div>
-          <div className="stat-label">Lab to product prototype</div>
-        </div> */}
         <div className="stat">
           <div className="stat-num">
             10<span>+</span>

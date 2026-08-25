@@ -1,6 +1,6 @@
 # Merilight — Manuel Reza
 
-Multi-page consultancy site. **Merilight** is the consultancy; Manuel Reza is its named principal and the first-person voice of all copy. Lead-generation focused: services come first, career/publications support credibility rather than lead the narrative. A captivating, immersive experience — not a dry resume.
+Multi-page consultancy site. **Merilight** is the consultancy; Manuel Reza is its named principal. **Voice: "we" for the firm, "I" for the track record** — Home/Services/Contact/nav sell as "we"; /about, /work, the case studies, ExpertiseStack and publications narrate Manuel's personal record as "I". See `docs/positioning.md` §7 before changing any copy's voice. Lead-generation focused: services come first, career/publications support credibility rather than lead the narrative. A captivating, immersive experience — not a dry resume.
 
 **Positioning is settled and documented in `docs/positioning.md`** — the source of truth for every word on the site. Read it before writing or editing user-facing copy. It records the positioning statement, the buyer situations, the proof-point bank, banned phrasings, and the offer ladder. Copy that cannot be justified from that file is either wrong or means the file needs updating first.
 

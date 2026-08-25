@@ -87,4 +87,4 @@ export const serviceProof = [
 // Background credibility, deliberately not sold as a service — see
 // docs/positioning.md §8.
 export const serviceFootnote =
-  "Engagements often sit inside EU-funded consortia. I have led a Horizon work package and coordinated 10+ partner organizations, so the programme mechanics are familiar — but I am hired for the engineering, not the paperwork.";
+  "Engagements often sit inside EU-funded consortia. Manuel has led a Horizon work package and coordinated 10+ partner organizations, so the programme mechanics are familiar — but we are hired for the engineering, not the paperwork.";

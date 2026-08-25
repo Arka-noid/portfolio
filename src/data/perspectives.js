@@ -6,7 +6,7 @@ export const perspectives = {
   projects:
     "Photonics is leaving the lab: co-packaged optics in the AI datacenter, solid-state LiDAR on vehicles, radar photonics in orbit. Every market below is one of those fronts.",
   services:
-    "AI-era datacenters, autonomous sensing, and European space & defense programs are all pulling photonics from prototype to product — and the hard part is the systems engineering in between. That's where I work.",
+    "AI-era datacenters, autonomous sensing, and European space & defense programs are all pulling photonics from prototype to product — and the hard part is the systems engineering in between. That's where we work.",
   spaceRadar:
     "European space and defense programs are investing heavily in photonic payloads — the architectures pioneered here are groundwork for that wave.",
   lidar:

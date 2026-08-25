@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { publications } from "../data/publications";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 
@@ -80,34 +81,43 @@ export default function Hero() {
       <WaveguideCanvas reduced={reduced} />
       <div className="hero-content">
         <div className="hero-eyebrow">
-          Optical Systems Engineer · Product Integrator
+          Optical Systems Engineer · Independent Consultant
         </div>
         <h1 className="hero-title">
-          Engineering
+          Your photonic
           <br />
-          <span>Light</span> into Systems
+          demo works.
+          <br />
+          Will the <span>product</span>?
         </h1>
         <p className="hero-sub">
-          I take photonic systems from concept to working prototype — coherent
-          links and hybrid integration for the AI-datacenter era, FMCW LiDAR
-          for autonomous sensing, and microwave photonics for space &amp; defense.
+          I de-risk photonic hardware in the stretch between a working lab
+          result and a shipping prototype — architecture, link budgets,
+          independent design review, and the systems engineering that survives
+          industrial handover.
         </p>
-        <a className="hero-cta" href="#services">
-          How I can help ↓
-        </a>
+        <Link className="hero-cta" to="/contact">
+          Book a design review →
+        </Link>
       </div>
       <div className="hero-stats">
         <div className="stat">
           <div className="stat-num">
             10<span>+</span>
           </div>
-          <div className="stat-label">Years experience</div>
+          <div className="stat-label">Years across the stack</div>
         </div>
         <div className="stat">
           <div className="stat-num">
             TRL <span>3→6</span>
           </div>
           <div className="stat-label">Lab to product prototype</div>
+        </div>
+        <div className="stat">
+          <div className="stat-num">
+            10<span>+</span>
+          </div>
+          <div className="stat-label">Partner organizations</div>
         </div>
         <div className="stat">
           <div className="stat-num">

@@ -219,7 +219,10 @@ nav {
   bottom: 3rem;
   right: 3rem;
   display: flex;
-  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1.5rem 2.5rem;
+  max-width: min(640px, calc(100% - 6rem));
   z-index: 2;
 }
 
@@ -254,6 +257,12 @@ section {
   max-width: 1100px;
   margin: 0 auto;
   scroll-margin-top: 5.5rem;
+}
+
+/* The nav is fixed and ~10rem tall, so a page that opens on a section rather
+   than the hero would otherwise start its eyebrow underneath it. */
+.portfolio > section:first-of-type {
+  padding-top: 11rem;
 }
 
 .section-eyebrow {
@@ -1039,6 +1048,350 @@ a.pub-item {
   text-transform: uppercase;
   color: var(--accent);
   margin-right: 0.5rem;
+}
+
+.svc-for span,
+.svc-deliver span {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-right: 0.5rem;
+}
+
+.svc-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.svc-head .svc-num {
+  margin-bottom: 0;
+}
+
+.svc-shape {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: right;
+}
+
+.svc-for {
+  font-size: 0.82rem;
+  color: var(--text);
+  line-height: 1.65;
+  margin-bottom: 0.9rem;
+}
+
+.svc-deliver {
+  font-size: 0.82rem;
+  color: var(--text);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.svc-adjacent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin-top: 0.9rem;
+}
+
+.svc-adjacent li {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid rgba(var(--accent-rgb), 0.18);
+  padding: 0.28rem 0.6rem;
+}
+
+/* An odd final card would otherwise sit alone in half the row. */
+.svc-grid > .svc-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.svc-footnote {
+  margin-top: 2rem;
+  font-size: 0.82rem;
+  line-height: 1.75;
+  color: var(--muted);
+  font-weight: 300;
+  max-width: 62ch;
+  border-left: 1px solid rgba(var(--accent-rgb), 0.2);
+  padding-left: 1rem;
+}
+
+/* ── EXPERTISE STACK ── */
+
+.stack-intro {
+  max-width: 66ch;
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--muted);
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+}
+
+.stack-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.stack-body--compact {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.stack-col {
+  min-width: 0;
+}
+
+.stack-cap {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.5;
+  padding-left: 1.4rem;
+}
+
+.stack-cap:last-child {
+  text-align: left;
+  margin-top: 0.6rem;
+}
+
+.stack-cap:first-child {
+  margin-bottom: 0.6rem;
+}
+
+.stack-rows {
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.stack-rail {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+}
+
+.stack-rows ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stack-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  background: var(--surface);
+  border: 1px solid rgba(var(--accent-rgb), 0.07);
+  border-left: 2px solid rgba(var(--accent-rgb), 0.25);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.stack-row:hover {
+  border-color: rgba(var(--accent-rgb), 0.3);
+  border-left-color: var(--accent);
+}
+
+.stack-row--static {
+  cursor: default;
+}
+
+.stack-row--static:hover {
+  border-color: rgba(var(--accent-rgb), 0.07);
+  border-left-color: rgba(var(--accent-rgb), 0.25);
+}
+
+.stack-row--active {
+  background: rgba(var(--accent-rgb), 0.06);
+  border-left-color: var(--accent);
+  box-shadow: inset 0 0 24px rgba(var(--accent-rgb), 0.05);
+}
+
+.stack-row-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.stack-row-name {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--text);
+}
+
+.stack-row--active .stack-row-name {
+  color: var(--accent);
+}
+
+.stack-row-domain {
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.stack-depth {
+  display: flex;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.stack-depth span {
+  width: 5px;
+  height: 14px;
+  background: rgba(var(--accent-rgb), 0.14);
+}
+
+.stack-depth span.on {
+  background: var(--accent);
+  opacity: 0.75;
+}
+
+.stack-detail {
+  position: sticky;
+  top: 6rem;
+  padding: 1.8rem;
+  background: var(--surface);
+  border: 1px solid rgba(var(--accent-rgb), 0.07);
+  border-top: 2px solid var(--accent);
+}
+
+.stack-detail-eyebrow {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.7rem;
+}
+
+.stack-detail-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+  margin-bottom: 1rem;
+}
+
+.stack-what {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 1.1rem;
+}
+
+.stack-proof {
+  font-size: 0.8rem;
+  color: var(--text);
+  line-height: 1.7;
+  border-top: 1px solid rgba(var(--accent-rgb), 0.08);
+  padding-top: 0.9rem;
+  margin-bottom: 1.2rem;
+}
+
+.stack-proof span {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-right: 0.5rem;
+}
+
+.stack-evidence {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(var(--accent-rgb), 0.3);
+  padding-bottom: 2px;
+  transition: border-color 0.2s;
+}
+
+.stack-evidence:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* ── COUNTED PROOF STRIP ── */
+
+/* Separators live on the cells, not in the grid gap, so a row that does not
+   fill (five items over three columns) leaves empty space rather than a
+   coloured block. */
+.proof-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  list-style: none;
+  margin: 0 0 2.5rem;
+  border-top: 1px solid rgba(var(--accent-rgb), 0.14);
+  border-left: 1px solid rgba(var(--accent-rgb), 0.14);
+}
+
+.proof-strip li {
+  padding: 1.4rem 1.2rem;
+  border-right: 1px solid rgba(var(--accent-rgb), 0.14);
+  border-bottom: 1px solid rgba(var(--accent-rgb), 0.14);
+}
+
+.proof-num {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text);
+}
+
+.proof-num span {
+  color: var(--accent);
+}
+
+.proof-label {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.5;
 }
 
 /* ── HOME TEASERS ── */
@@ -1897,6 +2250,14 @@ a.cs-pub:hover {
     grid-template-columns: 1fr;
   }
 
+  .stack-body {
+    grid-template-columns: 1fr;
+  }
+
+  .stack-detail {
+    position: static;
+  }
+
   .teaser-grid {
     grid-template-columns: 1fr;
   }
@@ -1913,6 +2274,26 @@ a.cs-pub:hover {
 
   .hero-stats {
     gap: 1.5rem 2.5rem;
+  }
+
+  .proof-num {
+    font-size: 1.5rem;
+  }
+
+  .svc-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .svc-shape {
+    text-align: left;
+  }
+
+  .stack-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
   }
 
   .stat-num {

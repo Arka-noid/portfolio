@@ -11,8 +11,10 @@ export default function Contact() {
           Let's build something.
         </h2>
         <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: "0.5rem" }}>
-          Available for consulting engagements and senior roles — photonic
-          system architecture, TRL maturation, and EU project leadership.
+          Available for consulting engagements — independent design review,
+          system architecture and link budgets, TRL maturation, and technical
+          due diligence. Most engagements start with a fixed-scope design
+          review, so you can see how I work before committing to more.
         </p>
         <div className="contact-links">
           <a className="contact-link" href="mailto:ma.reza29@gmail.com">

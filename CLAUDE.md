@@ -1,6 +1,8 @@
-# Portfolio — Manuel Reza
+# Merilight — Manuel Reza
 
-Multi-page consultancy site for Manuel Reza. Lead-generation focused: services come first, career/publications support credibility rather than lead the narrative. A captivating, immersive experience — not a dry resume.
+Multi-page consultancy site. **Merilight** is the consultancy; Manuel Reza is its named principal and the first-person voice of all copy. Lead-generation focused: services come first, career/publications support credibility rather than lead the narrative. A captivating, immersive experience — not a dry resume.
+
+**Positioning is settled and documented in `docs/positioning.md`** — the source of truth for every word on the site. Read it before writing or editing user-facing copy. It records the positioning statement, the buyer situations, the proof-point bank, banned phrasings, and the offer ladder. Copy that cannot be justified from that file is either wrong or means the file needs updating first.
 
 ## Tech Stack
 
@@ -22,6 +24,7 @@ npm run preview   # Preview production build locally
 index.html                     SEO meta, OG/Twitter tags, JSON-LD Person schema, fonts
 vercel.json                    SPA catch-all rewrite (required for BrowserRouter on Vercel)
 public/favicon.svg             Hand-drawn SVG favicon
+docs/positioning.md            Message hierarchy — source of truth for all copy
 src/
   main.jsx                     Entry point — wraps <App/> in <BrowserRouter>
   App.jsx                      <Routes> tree (see Routing below)
@@ -29,6 +32,8 @@ src/
   layouts/RootLayout.jsx       Nav + <Outlet/> + Footer, shared chrome for every route
   pages/                       One component per route — thin, compose components/data
   components/                  Section-level building blocks reused by pages
+    ExpertiseStack.jsx         The seven-layer stack — the site's USP artefact
+    ServiceProofStrip.jsx      Counted-proof strip above the offer grid
     ThemedImage.jsx            Blends any photo into the palette (see Imagery)
     casestudy/                 Shared case-study pieces (Shell, MetricCard,
                                PhaseCard, BlockDiagramSvg, RelatedPubs)
@@ -41,8 +46,8 @@ src/
 
 | Route | Page |
 |---|---|
-| `/` | `pages/Home.jsx` — condensed landing (Hero → ServicesTeaser → CredibilityTeaser → Contact CTA) |
-| `/services` | `pages/ServicesPage.jsx` — full services offer, the primary sales page |
+| `/` | `pages/Home.jsx` — condensed landing (Hero → ServicesTeaser → ExpertiseStack teaser → CredibilityTeaser → Contact CTA) |
+| `/services` | `pages/ServicesPage.jsx` — full offer ladder + ExpertiseStack, the primary sales page |
 | `/work` | `pages/Work.jsx` — full projects timeline |
 | `/work/:slug` | `pages/CaseStudy.jsx` — looks up a bespoke case-study component by slug (see below) |
 | `/about` | `pages/AboutPage.jsx` — About + Experience + Competencies + Publications, as sections on one page |
@@ -65,8 +70,8 @@ Each page component calls `useScrollReveal()` itself (pages mount/unmount per ro
 
 ## Content Structure (by page)
 
-- **Home (`/`)** — Hero (waveguide canvas, "Engineering Light into Systems", CTA to Services) → `ServicesTeaser` (compact cards, links to `/services`) → `CredibilityTeaser` (featured case-study cards, links to `/work`) → `Contact` as a closing CTA
-- **Services (`/services`)** — full "How I Can Help" offer, four cards each with a proof point — the primary sales page
+- **Home (`/`)** — Hero (waveguide canvas, "Your photonic demo works. Will the product?", CTA to `/contact`) → `ServicesTeaser` (offer cards, links to `/services`) → `ExpertiseStack compact` (the stack, links to `/services`) → `CredibilityTeaser` (featured case-study cards, links to `/work`) → `Contact` as a closing CTA
+- **Services (`/services`)** — the full offer ladder (five productized engagements, each with who it is for, deliverable, shape and proof), a counted-proof strip, then `ExpertiseStack` — the primary sales page
 - **Work (`/work`)** — projects journey timeline (device → system → platform → product), 8 cards with market tags; two cards link to `/work/:slug` case studies
 - **Case study (`/work/:slug`)** — bespoke long-form page per story (challenge → approach → system design → results → related publications)
 - **About (`/about`)** — bio/value-chain narrative, then Experience timeline, Competencies grid, and Publications, composed as sections on one page (career/research content is supporting credibility, not the primary nav)
@@ -78,7 +83,7 @@ Each page component calls `useScrollReveal()` itself (pages mount/unmount per ro
 
 - Functional components with React hooks
 - Content is data-driven: all copy lives in `src/data/*` files, not hardcoded in JSX
-- Cross-page navigation uses `<Link>`/`<NavLink>` from `react-router-dom` (see `components/Nav.jsx`); in-page anchor scroll (`href="#section"` + CSS smooth scroll + `scroll-margin-top`) is only used for same-page jumps (e.g. Hero's CTA scrolling to the Services teaser on Home). Interactive elements must be keyboard-operable (`aria-expanded` on expanders)
+- Cross-page navigation uses `<Link>`/`<NavLink>` from `react-router-dom` (see `components/Nav.jsx`); in-page anchor scroll (`href="#section"` + CSS smooth scroll + `scroll-margin-top`) is reserved for same-page jumps. Interactive elements must be keyboard-operable (`aria-expanded` on expanders, `aria-pressed` on the ExpertiseStack rows). A control that has nothing to do should not be a control — the ExpertiseStack renders plain rows in `compact` mode rather than dead buttons
 - Responsive breakpoints: 900px and 600px, in `App.css` (separate blocks for main page and `.cs-*` case-study classes)
 - New top-level pages: add a component under `src/pages/`, register a `<Route>` in `App.jsx`, add a `Nav.jsx` link if it belongs in primary nav
 - New case studies: add a bespoke component (compose from `components/casestudy/`, keep per-story SVG/canvas art bespoke) and one entry in the slug registry in `pages/CaseStudy.jsx` — no new route needed
@@ -88,12 +93,23 @@ Each page component calls `useScrollReveal()` itself (pages mount/unmount per ro
 - Real lead-capture contact form (e.g. Formspree or a Vercel function) — `Contact.jsx` is currently mailto/tel/social links only
 - Per-page `<title>`/meta tags (e.g. via `react-helmet-async`) now that `/services`, `/work/:slug` etc. are independently shareable/indexable URLs
 
+## The USP, and how the site expresses it
+
+Breadth is presented as **diagnostic capability, not a skills list** — see
+`docs/positioning.md` §4. The on-site expression is `components/ExpertiseStack.jsx`,
+driven by `data/stack.js`: seven layers from materials up to product, each with a
+1–5 depth marker, one proof line, and a link to the evidence. **The depth marks
+are deliberately not uniform** — the honest 3 for packaging is what makes the 5s
+credible. Do not inflate them, and do not add a layer without real evidence in
+`data/experience.js` or `data/projects.js`.
+
 ## Pending user-supplied content
 
 - `data/about.js`: education entries, extra languages, `photoUrl`, `cvUrl`
 - `data/images.js`: `lidarHero` is still unsourced (wants a night-highway long exposure). The other five slots hold **placeholder** stock imagery — fine to ship, but swap for better art when available. Sourcing guide in `public/images/README.md`; slots fail gracefully when null/broken
 - `data/publications.js`: `CITATIONS` count (update periodically from Scholar)
-- `index.html`: `og:image` and canonical URL once a production domain/image exist
+- `index.html`: `og:image` once a production image exists
+- Testimonials/client references, portrait, education entries, legal entity and VAT details, and a day-rate band — all tracked as GitHub issues (trust layer and engagement model)
 
 ## Git Guidelines
 

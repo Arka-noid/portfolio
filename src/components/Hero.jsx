@@ -81,23 +81,20 @@ export default function Hero() {
       <WaveguideCanvas reduced={reduced} />
       <div className="hero-content">
         <div className="hero-eyebrow">
-          Optical Systems Engineer · Independent Consultant
+          Optical Systems Engineering · Consultancy and Design services
         </div>
         <h1 className="hero-title">
-          Your photonic
+          Shining <span>light</span>
           <br />
-          demo works.
-          <br />
-          Will the <span>product</span>?
+          into your products.
         </h1>
         <p className="hero-sub">
-          I de-risk photonic hardware in the stretch between a working lab
-          result and a shipping prototype — architecture, link budgets,
-          independent design review, and the systems engineering that survives
-          industrial handover.
+          Any problem you encounter that involves optical and photonic technologies - 
+          From architecture, to systems, characterization, and devices - 
+          we are there to solve it.
         </p>
         <Link className="hero-cta" to="/contact">
-          Book a design review →
+          See our services →
         </Link>
       </div>
       <div className="hero-stats">
@@ -107,12 +104,12 @@ export default function Hero() {
           </div>
           <div className="stat-label">Years across the stack</div>
         </div>
-        <div className="stat">
+        {/* <div className="stat">
           <div className="stat-num">
             TRL <span>3→6</span>
           </div>
           <div className="stat-label">Lab to product prototype</div>
-        </div>
+        </div> */}
         <div className="stat">
           <div className="stat-num">
             10<span>+</span>

@@ -1,25 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { projects, categoryMeta } from "../data/projects";
+import { projects, categoryMeta, markets } from "../data/projects";
 import { perspectives } from "../data/perspectives";
 import { siteImages } from "../data/images";
 import Perspective from "./Perspective";
 import ThemedImage from "./ThemedImage";
 
-function CategoryMarker({ category, prevCategory }) {
-  if (category === prevCategory) return null;
-  const meta = categoryMeta[category];
-  return (
-    <div className="proj-category-marker reveal">
-      <span
-        className="proj-category-label"
-        style={{ color: meta.color, borderColor: meta.color }}
-      >
-        {meta.label}
-      </span>
-    </div>
-  );
-}
+const ALL = "All";
 
 function ProjectCard({ project, isExpanded, onToggle }) {
   const meta = categoryMeta[project.category];
@@ -42,6 +29,9 @@ function ProjectCard({ project, isExpanded, onToggle }) {
         </div>
         <h3 className="proj-card-title">{project.title}</h3>
         <p className="proj-card-tagline">{project.tagline}</p>
+        <p className="proj-card-problem">
+          <span>The problem</span> {project.problem}
+        </p>
         {!isClassified && (
           <button
             className="proj-card-toggle"
@@ -51,7 +41,7 @@ function ProjectCard({ project, isExpanded, onToggle }) {
               onToggle();
             }}
           >
-            {isExpanded ? "Show less ↑" : "Show more ↓"}
+            {isExpanded ? "Show less ↑" : "What I did ↓"}
           </button>
         )}
         {isClassified && (
@@ -60,18 +50,15 @@ function ProjectCard({ project, isExpanded, onToggle }) {
               <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
               <path d="M7 11V7a5 5 0 0 1 10 0v4" />
             </svg>
-            Restricted
+            Restricted — outcome under NDA
           </div>
         )}
       </div>
       {isExpanded && !isClassified && (
         <div className="proj-card-detail">
-          <p className="proj-card-institution">{project.institution}</p>
-          {project.market && (
-            <p className="proj-card-market">
-              <span>Market</span> {project.market}
-            </p>
-          )}
+          <p className="proj-card-role">
+            <span>My role</span> {project.role}
+          </p>
           <p className="proj-card-desc">{project.description}</p>
           {project.highlights.length > 0 && (
             <ul className="proj-card-highlights">
@@ -80,6 +67,11 @@ function ProjectCard({ project, isExpanded, onToggle }) {
               ))}
             </ul>
           )}
+          {project.outcome && (
+            <p className="proj-card-outcome">
+              <span>Outcome</span> {project.outcome}
+            </p>
+          )}
           <div className="proj-card-tags">
             {project.tags.map((t, i) => (
               <span key={i} className="tag">
@@ -87,6 +79,7 @@ function ProjectCard({ project, isExpanded, onToggle }) {
               </span>
             ))}
           </div>
+          <p className="proj-card-institution">{project.institution}</p>
           {project.caseStudySlug && (
             <Link
               className="proj-case-study-link"
@@ -104,16 +97,22 @@ function ProjectCard({ project, isExpanded, onToggle }) {
 
 export default function Projects() {
   const [expanded, setExpanded] = useState({});
+  const [filter, setFilter] = useState(ALL);
   const toggle = (id) => setExpanded((p) => ({ ...p, [id]: !p[id] }));
+
+  const shown = markets
+    .filter((m) => filter === ALL || m === filter)
+    .map((m) => ({ market: m, items: projects.filter((p) => p.market === m) }))
+    .filter((g) => g.items.length > 0);
 
   return (
     <section id="projects">
       <div className="reveal">
-        <div className="section-eyebrow">Portfolio</div>
-        <h2 className="section-title">Projects</h2>
+        <div className="section-eyebrow">Evidence</div>
+        <h2 className="section-title">Work</h2>
         <p className="proj-intro">
-          From devices to systems to platforms — a journey across the photonics
-          value chain.
+          Eight projects, grouped by the market that paid for them. Each one
+          started as somebody's hard problem.
         </p>
       </div>
       <div className="reveal">
@@ -124,18 +123,38 @@ export default function Projects() {
         />
       </div>
       <Perspective>{perspectives.projects}</Perspective>
-      <div className="proj-timeline">
-        {projects.map((project, i) => (
-          <div key={project.id}>
-            <CategoryMarker
-              category={project.category}
-              prevCategory={i > 0 ? projects[i - 1].category : null}
-            />
-            <ProjectCard
-              project={project}
-              isExpanded={!!expanded[project.id]}
-              onToggle={() => toggle(project.id)}
-            />
+
+      <div className="proj-filters reveal" role="group" aria-label="Filter work by market">
+        {[ALL, ...markets].map((m) => (
+          <button
+            key={m}
+            type="button"
+            className={`proj-filter${filter === m ? " proj-filter--active" : ""}`}
+            aria-pressed={filter === m}
+            onClick={() => setFilter(m)}
+          >
+            {m}
+            <span className="proj-filter-count">
+              {m === ALL
+                ? projects.length
+                : projects.filter((p) => p.market === m).length}
+            </span>
+          </button>
+        ))}
+      </div>
+
+      <div className="proj-markets">
+        {shown.map((g) => (
+          <div key={g.market} className="proj-market-group">
+            <h3 className="proj-market-heading reveal">{g.market}</h3>
+            {g.items.map((project) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                isExpanded={!!expanded[project.id]}
+                onToggle={() => toggle(project.id)}
+              />
+            ))}
           </div>
         ))}
       </div>

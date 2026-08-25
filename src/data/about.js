@@ -22,3 +22,19 @@ export const about = {
   // TODO(user): confirm/add languages.
   languages: ["Italian — native", "English — fluent"],
 };
+
+// Trading details shown on /contact. EU B2B buyers check that an invoice can
+// actually be raised before they start a procurement conversation, so this is
+// a conversion detail, not boilerplate. Every field is optional — a null field
+// renders nothing, and if all are null the whole block is omitted.
+// TODO(user): fill in once the entity is registered.
+export const entity = {
+  name: null, // e.g. "Merilight BV"
+  vat: null, // e.g. "BE 0123.456.789"
+  registered: null, // e.g. "Leuven, Belgium"
+};
+
+// Shown next to the contact details. Defense- and pre-competitive work makes
+// this a selling point rather than a disclaimer — see docs/positioning.md §7.
+export const confidentiality =
+  "I work under NDA as a matter of course, and can sign yours before the first call. Some of the work on this site is described only at the level its agreements allow.";

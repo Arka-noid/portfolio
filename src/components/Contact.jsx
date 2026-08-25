@@ -1,6 +1,11 @@
 import { SCHOLAR_URL } from "../data/publications";
+import { entity, confidentiality } from "../data/about";
 
 export default function Contact() {
+  const entityLine = [entity.name, entity.registered, entity.vat && `VAT ${entity.vat}`]
+    .filter(Boolean)
+    .join(" · ");
+
   return (
     <div className="contact-section" id="contact">
       <div className="reveal">
@@ -40,6 +45,10 @@ export default function Contact() {
             <span aria-hidden="true">🎓</span> Google Scholar
           </a>
         </div>
+        {confidentiality && (
+          <p className="contact-nda">{confidentiality}</p>
+        )}
+        {entityLine && <p className="contact-entity">{entityLine}</p>}
       </div>
     </div>
   );

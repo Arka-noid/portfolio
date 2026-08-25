@@ -5,6 +5,20 @@ export const SCHOLAR_URL =
 // from the Scholar profile.
 export const CITATIONS = "570+";
 
+// Publications are grouped by domain rather than by year: the spread across
+// these six areas is the breadth evidence the positioning rests on
+// (docs/positioning.md §4), and a reverse-chronological list hides it.
+// Order is by weight of output, heaviest first. Every entry carries a
+// `domain` key from this map.
+export const PUB_DOMAINS = [
+  { id: "sar", label: "SAR & radar photonics" },
+  { id: "lidar", label: "LiDAR & coherent sensing" },
+  { id: "platform", label: "PIC platforms & integration" },
+  { id: "mwp", label: "Microwave photonics & RF filtering" },
+  { id: "midir", label: "Mid-infrared devices & gas sensing" },
+  { id: "nonlinear", label: "Nonlinear optics & laser sources" },
+];
+
 const scholarLink = (id) =>
   `https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xXUzynsAAAAJ&citation_for_view=xXUzynsAAAAJ:${id}`;
 
@@ -16,6 +30,7 @@ export const publications = [
     venue: "Laser & Photonics Reviews",
     year: 2026,
     type: "journal",
+    domain: "platform",
     url: scholarLink("_kc_bZDykSQC"),
   },
   {
@@ -25,6 +40,7 @@ export const publications = [
     venue: "Laser & Photonics Reviews",
     year: 2025,
     type: "journal",
+    domain: "lidar",
     featured: true,
     url: scholarLink("mVmsd5A6BfQC"),
   },
@@ -35,6 +51,7 @@ export const publications = [
     venue: "European Conference on Optical Communications (ECOC)",
     year: 2025,
     type: "conference",
+    domain: "lidar",
     url: scholarLink("4DMP91E08xMC"),
   },
   {
@@ -45,6 +62,7 @@ export const publications = [
     year: 2025,
     featured: true,
     type: "journal",
+    domain: "platform",
     url: scholarLink("ULOm3_A8WrAC"),
   },
   {
@@ -54,6 +72,7 @@ export const publications = [
     venue: "Optical Fiber Communication Conference (OFC)",
     year: 2025,
     type: "conference",
+    domain: "lidar",
     featured: true,
     note: "Postdeadline paper",
     url: scholarLink("M3ejUd6NZC8C"),
@@ -65,6 +84,7 @@ export const publications = [
     venue: "Optical Fiber Communication Conference (OFC)",
     year: 2025,
     type: "conference",
+    domain: "platform",
     url: scholarLink("YOwf2qJgpHMC"),
   },
   {
@@ -74,6 +94,7 @@ export const publications = [
     venue: "European Conference on Integrated Optics (ECIO)",
     year: 2025,
     type: "conference",
+    domain: "lidar",
     url: scholarLink("qxL8FJ1GzNcC"),
   },
   {
@@ -83,6 +104,7 @@ export const publications = [
     venue: "European Conference on Integrated Optics (ECIO)",
     year: 2025,
     type: "conference",
+    domain: "lidar",
     url: scholarLink("Zph67rFs4hoC"),
   },
   {
@@ -92,6 +114,7 @@ export const publications = [
     venue: "European Conference on Integrated Optics (ECIO)",
     year: 2025,
     type: "conference",
+    domain: "platform",
     url: scholarLink("aqlVkmm33-oC"),
   },
   {
@@ -101,6 +124,7 @@ export const publications = [
     venue: "European Conference on Integrated Optics (ECIO)",
     year: 2025,
     type: "conference",
+    domain: "mwp",
     url: scholarLink("8k81kl-MbHgC"),
   },
   {
@@ -110,6 +134,7 @@ export const publications = [
     venue: "Journal of Lightwave Technology",
     year: 2024,
     type: "journal",
+    domain: "sar",
     featured: true,
     url: scholarLink("0EnyYjriUFMC"),
   },
@@ -120,6 +145,7 @@ export const publications = [
     venue: "Proc. ECIO",
     year: 2023,
     type: "conference",
+    domain: "mwp",
     url: scholarLink("hqOjcs7Dif8C"),
   },
   {
@@ -129,6 +155,7 @@ export const publications = [
     venue: "Proc. ECIO",
     year: 2023,
     type: "conference",
+    domain: "sar",
     url: scholarLink("UebtZRa9Y70C"),
   },
   {
@@ -138,6 +165,7 @@ export const publications = [
     venue: "IEEE Photonics Conference (IPC)",
     year: 2023,
     type: "conference",
+    domain: "sar",
     url: scholarLink("5nxA0vEk-isC"),
   },
   {
@@ -147,6 +175,7 @@ export const publications = [
     venue: "IEEE Photonics Conference (IPC)",
     year: 2023,
     type: "conference",
+    domain: "sar",
     url: scholarLink("3fE2CSJIrl8C"),
   },
   {
@@ -156,6 +185,7 @@ export const publications = [
     venue: "Proc. ECIO",
     year: 2023,
     type: "conference",
+    domain: "platform",
     url: scholarLink("kNdYIx-mwKoC"),
   },
   {
@@ -165,6 +195,7 @@ export const publications = [
     venue: "Journal of Lightwave Technology",
     year: 2022,
     type: "journal",
+    domain: "mwp",
     url: scholarLink("eQOLeE2rZwMC"),
   },
   {
@@ -174,6 +205,7 @@ export const publications = [
     venue: "Electronics",
     year: 2022,
     type: "journal",
+    domain: "sar",
     featured: true,
     url: scholarLink("_FxGoFyzp5QC"),
   },
@@ -184,6 +216,7 @@ export const publications = [
     venue: "Conference on Lasers and Electro-Optics Pacific Rim (CLEO-PR)",
     year: 2022,
     type: "conference",
+    domain: "sar",
     url: scholarLink("roLk4NBRz8UC"),
   },
   {
@@ -193,6 +226,7 @@ export const publications = [
     venue: "EUSAR — 14th European Conference on Synthetic Aperture Radar",
     year: 2022,
     type: "conference",
+    domain: "sar",
     url: scholarLink("ufrVoPGSRksC"),
   },
   {
@@ -202,6 +236,7 @@ export const publications = [
     venue: "International Workshop on Fiber Optics in Access Networks (FOAN)",
     year: 2022,
     type: "conference",
+    domain: "mwp",
     url: scholarLink("WF5omc3nYNoC"),
   },
   {
@@ -211,6 +246,7 @@ export const publications = [
     venue: "Journal of Lightwave Technology",
     year: 2021,
     type: "journal",
+    domain: "sar",
     featured: true,
     url: scholarLink("IjCSPb-OGe4C"),
   },
@@ -221,6 +257,7 @@ export const publications = [
     venue: "International Conference on Space Optics — ICSO 2020",
     year: 2021,
     type: "conference",
+    domain: "sar",
     url: scholarLink("zYLM7Y9cAGgC"),
   },
   {
@@ -230,6 +267,7 @@ export const publications = [
     venue: "International Topical Meeting on Microwave Photonics (MWP)",
     year: 2020,
     type: "conference",
+    domain: "sar",
     url: scholarLink("W7OEmFMy1HYC"),
   },
   {
@@ -239,6 +277,7 @@ export const publications = [
     venue: "Proc. SPIE — Quantum Sensing and Nano Electronics and Photonics",
     year: 2018,
     type: "conference",
+    domain: "midir",
     url: scholarLink("2osOgNQ5qMEC"),
   },
   {
@@ -248,6 +287,7 @@ export const publications = [
     venue: "Proc. SPIE — Photonic Instrumentation Engineering",
     year: 2017,
     type: "conference",
+    domain: "midir",
     url: scholarLink("Tyk-4Ss8FVUC"),
   },
   {
@@ -257,6 +297,7 @@ export const publications = [
     venue: "UK Semiconductors Conference",
     year: 2017,
     type: "conference",
+    domain: "midir",
     url: scholarLink("Y0pCki6q_DkC"),
   },
   {
@@ -266,6 +307,7 @@ export const publications = [
     venue: "Compound Semiconductor Week (CSW)",
     year: 2016,
     type: "conference",
+    domain: "midir",
     url: scholarLink("qjMakFHDy7sC"),
   },
   {
@@ -275,6 +317,7 @@ export const publications = [
     venue: "Applied Optics",
     year: 2014,
     type: "journal",
+    domain: "nonlinear",
     url: scholarLink("9yKSN-GCB0IC"),
   },
   {
@@ -284,6 +327,7 @@ export const publications = [
     venue: "Optical Engineering",
     year: 2013,
     type: "journal",
+    domain: "nonlinear",
     url: scholarLink("u5HHmVD_uO8C"),
   },
   {
@@ -293,6 +337,7 @@ export const publications = [
     venue: "Pacific Rim Laser Damage: Optical Materials for High Power Lasers",
     year: 2013,
     type: "conference",
+    domain: "nonlinear",
     url: scholarLink("UeHWp8X0CEIC"),
   },
   {
@@ -302,6 +347,7 @@ export const publications = [
     venue: "Advanced Solid-State Lasers Congress",
     year: 2013,
     type: "conference",
+    domain: "nonlinear",
     url: scholarLink("d1gkVwhDpl0C"),
   },
 ];

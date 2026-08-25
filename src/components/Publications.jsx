@@ -1,4 +1,9 @@
-import { publications, SCHOLAR_URL, CITATIONS } from "../data/publications";
+import {
+  publications,
+  PUB_DOMAINS,
+  SCHOLAR_URL,
+  CITATIONS,
+} from "../data/publications";
 
 function PubItem({ pub }) {
   return (
@@ -12,6 +17,7 @@ function PubItem({ pub }) {
         <span className={`pub-type pub-type--${pub.type}`}>
           {pub.type === "journal" ? "Journal" : "Conference"}
         </span>
+        <span className="pub-year">{pub.year}</span>
         {pub.note && <span className="pub-note">{pub.note}</span>}
       </div>
       <div className="pub-title">{pub.title}</div>
@@ -22,8 +28,15 @@ function PubItem({ pub }) {
 }
 
 export default function Publications() {
-  const years = [...new Set(publications.map((p) => p.year))];
   const featured = publications.filter((p) => p.featured);
+  // Grouped by domain, not year: the spread across areas is the evidence,
+  // and a reverse-chronological list buries it.
+  const groups = PUB_DOMAINS.map((d) => ({
+    ...d,
+    items: publications
+      .filter((p) => p.domain === d.id)
+      .sort((a, b) => b.year - a.year),
+  })).filter((g) => g.items.length > 0);
 
   return (
     <section id="publications">
@@ -38,6 +51,9 @@ export default function Publications() {
             <span className="pub-metric">
               <strong>{CITATIONS}</strong> citations
             </span>
+            <span className="pub-metric">
+              <strong>{groups.length}</strong> research areas
+            </span>
           </div>
           <a
             className="pub-scholar-link"
@@ -48,12 +64,17 @@ export default function Publications() {
             View on Google Scholar &rarr;
           </a>
         </div>
+        <p className="pub-intro">
+          Grouped by subject rather than by date. The spread — from III-V
+          material growth through spaceborne radar to nonlinear laser sources —
+          is what lets me tell you which layer a problem sits in.
+        </p>
       </div>
 
       {featured.length > 0 && (
         <div className="pub-featured reveal">
           <h3 className="pub-subheading">Selected publications</h3>
-          <div className="pub-year-list">
+          <div className="pub-list">
             {featured.map((p, i) => (
               <PubItem key={i} pub={p} />
             ))}
@@ -62,15 +83,18 @@ export default function Publications() {
       )}
 
       <h3 className="pub-subheading reveal">All publications</h3>
-      {years.map((year) => (
-        <div key={year} className="pub-year-group reveal">
-          <div className="pub-year-label">{year}</div>
-          <div className="pub-year-list">
-            {publications
-              .filter((p) => p.year === year)
-              .map((p, i) => (
-                <PubItem key={i} pub={p} />
-              ))}
+      {groups.map((g) => (
+        <div key={g.id} className="pub-group reveal">
+          <h4 className="pub-group-label">
+            {g.label}
+            <span className="pub-group-count">
+              {g.items.length} {g.items.length === 1 ? "paper" : "papers"}
+            </span>
+          </h4>
+          <div className="pub-list">
+            {g.items.map((p, i) => (
+              <PubItem key={i} pub={p} />
+            ))}
           </div>
         </div>
       ))}

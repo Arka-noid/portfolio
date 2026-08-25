@@ -34,6 +34,7 @@ src/
   components/                  Section-level building blocks reused by pages
     ExpertiseStack.jsx         The seven-layer stack — the site's USP artefact
     ServiceProofStrip.jsx      Counted-proof strip above the offer grid
+    Testimonials.jsx           Client references; renders nothing when empty
     ThemedImage.jsx            Blends any photo into the palette (see Imagery)
     casestudy/                 Shared case-study pieces (Shell, MetricCard,
                                PhaseCard, BlockDiagramSvg, RelatedPubs)
@@ -54,7 +55,7 @@ src/
 | `/contact` | `pages/ContactPage.jsx` |
 | `*` | `pages/NotFound.jsx` |
 
-Each page component calls `useScrollReveal()` itself (pages mount/unmount per route, so the hook's `IntersectionObserver` needs to (re)run on every page, not once globally). `ScrollToTop.jsx` (mounted in `RootLayout`) resets scroll position on every route change.
+Each page component calls `useScrollReveal()` itself (pages mount/unmount per route, so the hook's `IntersectionObserver` needs to (re)run on every page, not once globally). The hook also runs a `MutationObserver`, so `.reveal` elements rendered *after* mount — filtered lists, expanded panels — get observed too; without it they stay at `opacity: 0` permanently. `ScrollToTop.jsx` (mounted in `RootLayout`) resets scroll position on every route change.
 
 **Case studies:** `pages/CaseStudy.jsx` reads `:slug` from the URL and renders the matching component from a small registry (`{ lidar: LidarCaseStudy, "space-radar": SpaceRadarCaseStudy }`); unknown slugs redirect to `/work`. Each story's canvas animation, custom SVG diagrams, and copy remain bespoke components (`components/LidarCaseStudy.jsx`, `components/SpaceRadarCaseStudy.jsx`) — only the *routing* is unified under `/work/:slug`, not the content, since the two stories' visuals are too distinct to templatize without regression risk. A new case study needs a new bespoke component plus one entry in the registry map; it does not need a new route.
 
@@ -71,16 +72,17 @@ Each page component calls `useScrollReveal()` itself (pages mount/unmount per ro
 ## Content Structure (by page)
 
 - **Home (`/`)** — Hero (waveguide canvas, "Your photonic demo works. Will the product?", CTA to `/contact`) → `ServicesTeaser` (offer cards, links to `/services`) → `ExpertiseStack compact` (the stack, links to `/services`) → `CredibilityTeaser` (featured case-study cards, links to `/work`) → `Contact` as a closing CTA
-- **Services (`/services`)** — the full offer ladder (five productized engagements, each with who it is for, deliverable, shape and proof), a counted-proof strip, then `ExpertiseStack` — the primary sales page
-- **Work (`/work`)** — projects journey timeline (device → system → platform → product), 8 cards with market tags; two cards link to `/work/:slug` case studies
+- **Services (`/services`)** — the full offer ladder (five productized engagements, each with who it is for, deliverable, shape and proof), a counted-proof strip, `ExpertiseStack`, then `Testimonials` — the primary sales page
+- **Work (`/work`)** — client evidence, not a career timeline. 8 projects grouped by **market** (`markets` in `data/projects.js`) with a filter; each card leads with the problem and, once expanded, closes with the outcome. The `category` badge (device/system/platform/product) still marks which layer of the stack the work sat in, tying each project back to the ExpertiseStack. Two cards link to `/work/:slug` case studies
 - **Case study (`/work/:slug`)** — bespoke long-form page per story (challenge → approach → system design → results → related publications)
-- **About (`/about`)** — bio/value-chain narrative, then Experience timeline, Competencies grid, and Publications, composed as sections on one page (career/research content is supporting credibility, not the primary nav)
+- **About (`/about`)** — bio/value-chain narrative, then Experience timeline, Competencies grid, and Publications, composed as sections on one page (career/research content is supporting credibility, not the primary nav). Publications are grouped by **domain** (`PUB_DOMAINS` in `data/publications.js`), not by year: the spread across six research areas is the breadth evidence, and reverse-chronological order buried it
 - **Contact (`/contact`)** — email/phone/LinkedIn/Scholar, the conversion destination
 
 "Market perspective" callouts (`components/Perspective.jsx`, text in `data/perspectives.js`) are woven into About, Projects, Services/ServicesTeaser, and both case studies.
 
 ## Conventions
 
+- **Unset content renders nothing.** Every optional slot degrades to absence, never to a placeholder: `siteImages` entries may be null, `about.photoUrl`/`education`/`entity` may be empty, and `Testimonials.jsx` returns `null` for an empty array. Ship components before their content exists; do not invent filler
 - Functional components with React hooks
 - Content is data-driven: all copy lives in `src/data/*` files, not hardcoded in JSX
 - Cross-page navigation uses `<Link>`/`<NavLink>` from `react-router-dom` (see `components/Nav.jsx`); in-page anchor scroll (`href="#section"` + CSS smooth scroll + `scroll-margin-top`) is reserved for same-page jumps. Interactive elements must be keyboard-operable (`aria-expanded` on expanders, `aria-pressed` on the ExpertiseStack rows). A control that has nothing to do should not be a control — the ExpertiseStack renders plain rows in `compact` mode rather than dead buttons
@@ -109,7 +111,9 @@ credible. Do not inflate them, and do not add a layer without real evidence in
 - `data/images.js`: `lidarHero` is still unsourced (wants a night-highway long exposure). The other five slots hold **placeholder** stock imagery — fine to ship, but swap for better art when available. Sourcing guide in `public/images/README.md`; slots fail gracefully when null/broken
 - `data/publications.js`: `CITATIONS` count (update periodically from Scholar)
 - `index.html`: `og:image` once a production image exists
-- Testimonials/client references, portrait, education entries, legal entity and VAT details, and a day-rate band — all tracked as GitHub issues (trust layer and engagement model)
+- `data/testimonials.js`: empty array — `Testimonials.jsx` renders nothing until real references exist. Get written permission for the wording, especially for anything touching defense work
+- `data/about.js`: `entity` (name, VAT, registered address) — EU B2B buyers check an invoice can be raised before starting procurement
+- A day-rate band, for the engagement-model section — tracked as a GitHub issue
 
 ## Git Guidelines
 

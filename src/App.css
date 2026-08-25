@@ -420,59 +420,64 @@ section {
   font-weight: 300;
 }
 
-.proj-timeline {
-  position: relative;
-  padding-left: 2rem;
+.proj-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
 }
 
-.proj-timeline::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: linear-gradient(
-    to bottom,
-    #00c8ff 0%,
-    #00a89d 35%,
-    #4a6cf7 70%,
-    #8b5cf6 100%
-  );
-  opacity: 0.3;
-}
-
-.proj-category-marker {
-  position: relative;
-  padding: 1.5rem 0 0.8rem 2rem;
-}
-
-.proj-category-marker::before {
-  content: "";
-  position: absolute;
-  left: -3px;
-  top: 1.8rem;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--text);
-  opacity: 0.5;
-}
-
-.proj-category-label {
+.proj-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  background: transparent;
+  border: 1px solid rgba(var(--accent-rgb), 0.18);
+  color: var(--muted);
   font-family: "Space Grotesk", sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.proj-filter:hover {
+  color: var(--text);
+  border-color: rgba(var(--accent-rgb), 0.4);
+}
+
+.proj-filter--active {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.07);
+}
+
+.proj-filter-count {
+  font-size: 0.62rem;
+  opacity: 0.6;
+}
+
+.proj-market-group {
+  margin-bottom: 3rem;
+}
+
+.proj-market-heading {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  padding: 0.2rem 0.7rem;
-  border: 1px solid;
-  opacity: 0.7;
+  color: var(--accent);
+  padding-bottom: 0.7rem;
+  margin-bottom: 1.4rem;
+  border-bottom: 1px solid rgba(var(--accent-rgb), 0.15);
 }
 
 .proj-card {
   position: relative;
-  margin-left: 2rem;
   margin-bottom: 1.5rem;
   padding: 1.5rem 1.8rem;
   background: var(--surface);
@@ -548,21 +553,65 @@ section {
   margin-bottom: 0.5rem;
 }
 
-.proj-card-toggle {
-  font-size: 0.72rem;
+.proj-card-problem {
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.75;
+  margin-top: 0.9rem;
+}
+
+.proj-card-problem span,
+.proj-card-role span,
+.proj-card-outcome span {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
   color: var(--accent);
-  opacity: 0.6;
+  margin-right: 0.5rem;
+}
+
+.proj-card-role {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.proj-card-outcome {
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.75;
+  margin: 1.2rem 0;
+  padding: 0.9rem 1.1rem;
+  background: rgba(var(--accent-rgb), 0.05);
+  border-left: 2px solid var(--accent);
+}
+
+
+/* Now the primary interaction on each card, so it reads as a control rather
+   than as a footnote. */
+.proj-card-toggle {
+  margin-top: 1rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.85;
   cursor: pointer;
-  letter-spacing: 0.05em;
   border: none;
   background: none;
-  font-family: "Inter", sans-serif;
-  transition: opacity 0.2s;
-  padding: 0;
+  border-bottom: 1px solid rgba(var(--accent-rgb), 0.3);
+  padding: 0 0 3px;
+  transition: opacity 0.2s, border-color 0.2s;
 }
 
 .proj-card-toggle:hover {
   opacity: 1;
+  border-bottom-color: var(--accent);
 }
 
 .proj-card-classified-badge {
@@ -765,27 +814,55 @@ section {
   box-shadow: 0 0 16px var(--accent-glow);
 }
 
-.pub-year-group {
-  margin-bottom: 2.5rem;
+.pub-intro {
+  max-width: 62ch;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--muted);
+  font-weight: 300;
+  margin-top: 1.2rem;
+}
+
+.pub-group {
+  margin-bottom: 2.75rem;
+}
+
+.pub-group-label {
   display: flex;
-  gap: 2rem;
-}
-
-.pub-year-label {
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
   font-family: "Space Grotesk", sans-serif;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--accent);
-  min-width: 60px;
-  padding-top: 0.2rem;
-  opacity: 0.7;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--text);
+  padding-bottom: 0.7rem;
+  margin-bottom: 1.1rem;
+  border-bottom: 1px solid rgba(var(--accent-rgb), 0.15);
 }
 
-.pub-year-list {
+.pub-group-count {
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.pub-year {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.pub-list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  flex: 1;
 }
 
 a.pub-item {
@@ -1132,6 +1209,83 @@ a.pub-item {
   padding-left: 1rem;
 }
 
+/* ── REFERENCES / TESTIMONIALS ── */
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.quote-card {
+  padding: 1.8rem;
+  background: var(--surface);
+  border: 1px solid rgba(var(--accent-rgb), 0.07);
+  border-top: 2px solid var(--accent);
+}
+
+.quote-card blockquote {
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: var(--text);
+  font-weight: 300;
+}
+
+.quote-card blockquote::before {
+  content: "\201C";
+  color: var(--accent);
+  margin-right: 0.15rem;
+}
+
+.quote-card blockquote::after {
+  content: "\201D";
+  color: var(--accent);
+  margin-left: 0.1rem;
+}
+
+.quote-card figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 1.2rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(var(--accent-rgb), 0.08);
+}
+
+.quote-name {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.quote-org {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+/* ── CONTACT TRUST DETAILS ── */
+
+.contact-nda {
+  max-width: 56ch;
+  margin: 2.5rem auto 0;
+  font-size: 0.78rem;
+  line-height: 1.75;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+.contact-entity {
+  margin-top: 1rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0.7;
+}
+
 /* ── EXPERTISE STACK ── */
 
 .stack-intro {
@@ -1450,24 +1604,6 @@ a.pub-item {
   font-size: 0.78rem;
   color: var(--accent);
   font-family: "Space Grotesk", sans-serif;
-}
-
-/* ── PROJECT MARKET TAG ── */
-
-.proj-card-market {
-  font-size: 0.75rem;
-  color: var(--muted);
-  margin-bottom: 0.6rem;
-}
-
-.proj-card-market span {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-right: 0.5rem;
 }
 
 /* ── SCROLL REVEAL ── */
@@ -2232,11 +2368,6 @@ a.cs-pub:hover {
     text-align: left;
   }
 
-  .pub-year-group {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
   .contact-section {
     padding: 5rem 1.5rem;
   }
@@ -2313,25 +2444,12 @@ a.cs-pub:hover {
     width: 100%;
   }
 
-  .proj-timeline {
-    padding-left: 1rem;
-  }
-
-  .proj-category-marker {
-    padding-left: 1rem;
-  }
-
   .proj-card {
-    margin-left: 1rem;
     padding: 1.2rem;
   }
 
   .competencies-grid {
     grid-template-columns: 1fr;
-  }
-
-  .pub-year-label {
-    min-width: 0;
   }
 
   .contact-section {

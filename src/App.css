@@ -752,20 +752,6 @@ section {
   margin-right: 0.35rem;
 }
 
-.pub-subheading {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 1.5rem;
-}
-
-.pub-featured {
-  margin-bottom: 3.5rem;
-}
-
 .pub-note {
   font-size: 0.65rem;
   font-family: "Space Grotesk", sans-serif;

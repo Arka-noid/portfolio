@@ -65,14 +65,20 @@ function PubGroup({ group }) {
 }
 
 export default function Publications() {
-  const featured = publications.filter((p) => p.featured);
   // Grouped by domain, not year: the spread across areas is the evidence,
   // and a reverse-chronological list buries it.
+  //
+  // `featured` now orders rather than duplicates — it used to drive a separate
+  // "Selected publications" block. Featured papers sort to the top of their
+  // group so the strongest work survives the PER_DOMAIN cap; the rest follow
+  // newest first.
   const groups = PUB_DOMAINS.map((d) => ({
     ...d,
     items: publications
       .filter((p) => p.domain === d.id)
-      .sort((a, b) => b.year - a.year),
+      .sort(
+        (a, b) => Boolean(b.featured) - Boolean(a.featured) || b.year - a.year
+      ),
   })).filter((g) => g.items.length > 0);
 
   return (
@@ -100,18 +106,6 @@ export default function Publications() {
         </p>
       </div>
 
-      {featured.length > 0 && (
-        <div className="pub-featured reveal">
-          <h3 className="pub-subheading">Selected publications</h3>
-          <div className="pub-list">
-            {featured.map((p, i) => (
-              <PubItem key={i} pub={p} />
-            ))}
-          </div>
-        </div>
-      )}
-
-      <h3 className="pub-subheading reveal">All publications</h3>
       {groups.map((g) => (
         <PubGroup key={g.id} group={g} />
       ))}

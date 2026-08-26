@@ -999,6 +999,44 @@ a.pub-item {
   filter: grayscale(30%);
 }
 
+/* The team card — portrait plus name and role, the way a firm lists a team.
+   Merilight's team is one person; about.structure says so in the next column. */
+.about-card {
+  margin: 0;
+}
+
+/* The source portrait is landscape, so it is cropped square rather than
+   rendered as a wide strip. Bias the crop upward to keep the face centred. */
+.about-card > img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: 50% 35%;
+}
+
+.about-card figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding-top: 0.9rem;
+  margin-top: 0.9rem;
+  border-top: 1px solid rgba(var(--accent-rgb), 0.14);
+}
+
+.about-card-name {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.about-card-role {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  line-height: 1.5;
+}
+
 .about-body {
   flex: 1;
   max-width: 720px;

@@ -12,12 +12,18 @@ export default function About() {
         <h2 className="section-title">From Device Physics to Product</h2>
       </div>
       <div className="about-layout">
-        {about.photoUrl && (
-          <div className="about-photo reveal">
-            <img src={about.photoUrl} alt="Portrait of Manuel Reza" />
-          </div>
-        )}
-        {!about.photoUrl && (
+        {/* The team card. One person, presented the way a firm presents its
+            team — see about.photoUrl. Falls back to the decorative image when
+            no portrait is set, so the slot never renders empty. */}
+        {about.photoUrl ? (
+          <figure className="about-photo about-card reveal">
+            <img src={about.photoUrl} alt={`Portrait of ${about.name}`} />
+            <figcaption>
+              <span className="about-card-name">{about.name}</span>
+              <span className="about-card-role">{about.role}</span>
+            </figcaption>
+          </figure>
+        ) : (
           <div className="about-photo reveal">
             <ThemedImage src={siteImages.aboutSide} variant="figure" />
           </div>

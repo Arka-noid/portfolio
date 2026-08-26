@@ -1,7 +1,10 @@
 export const about = {
-  // TODO(user): drop a portrait into public/ (e.g. "/portrait.jpg") and set
-  // the path here to show the photo. Leave null to hide the slot.
-  photoUrl: null,
+  // The team card on /about. Merilight is one person, so the card is one
+  // person — presenting the principal the way a firm presents its team,
+  // which is exactly what `structure` below says out loud.
+  photoUrl: "/manuel.jpg",
+  name: "Manuel Reza",
+  role: "Principal · Photonic systems engineer",
 
   // The site says "we" because Merilight is the firm — but a buyer who
   // *discovers* it is one person feels misled, while one who is *told* does

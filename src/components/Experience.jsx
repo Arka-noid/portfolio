@@ -15,6 +15,11 @@ export default function Experience() {
         {experience.map((item, i) => (
           <div key={i} className="timeline-item reveal">
             <div className="timeline-meta">
+              {item.logo && (
+                <span className={`timeline-logo partner-logo-${item.logoBg}`}>
+                  <img src={item.logo} alt={item.org} loading="lazy" />
+                </span>
+              )}
               <span className="timeline-role">{item.role}</span>
               <span className="timeline-org">{item.org}</span>
               <span className="timeline-period">{item.period}</span>

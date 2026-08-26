@@ -3,6 +3,7 @@ import { perspectives } from "../data/perspectives";
 import { siteImages } from "../data/images";
 import Perspective from "./Perspective";
 import ThemedImage from "./ThemedImage";
+import PartnerLogos from "./PartnerLogos";
 
 export default function About() {
   return (
@@ -30,6 +31,7 @@ export default function About() {
             <p key={i}>{p}</p>
           ))}
           <Perspective>{perspectives.about}</Perspective>
+          <PartnerLogos />
           {about.education.length > 0 && (
             <div className="about-facts">
               <div className="about-fact">

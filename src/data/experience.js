@@ -2,6 +2,8 @@ export const experience = [
   {
     role: "Photonic Designer / System Integrator",
     org: "imec",
+    logo: "/logos/imec_white.png",
+    logoBg: "dark",
     period: "2023–2026",
     loc: "Leuven, Belgium",
     bullets: [
@@ -20,6 +22,8 @@ export const experience = [
   {
     role: "Assistant Professor",
     org: "Scuola Superiore Sant'Anna",
+    logo: "/logos/uni-sant-anna-650x325-1.png",
+    logoBg: "light",
     period: "2020–2023",
     loc: "Pisa, Italy",
     bullets: [
@@ -31,22 +35,14 @@ export const experience = [
     extra: [
       "Satellite constellation studies for Earth observation (COSMOS project, Italian Space Agency).",
       "Designed system architectures for microwave photonic sensing and multi-antenna remote sensing platforms (CNIT, Elettronica S.p.A.).",
+      "Designed high-bandwidth circuits for photonic ADC applications and contributed to feasibility studies for extreme-bandwidth signal acquisition systems (CNIT).",
     ],
-  },
-  {
-    role: "R&D Engineer",
-    org: "CNIT",
-    period: "2021–2022",
-    loc: "Italy",
-    bullets: [
-      "Designed high-bandwidth circuits for photonic ADC applications.",
-      "Contributed to feasibility studies for extreme-bandwidth signal acquisition systems.",
-    ],
-    extra: [],
   },
   {
     role: "Post-doctoral Research Associate",
     org: "University of Glasgow",
+    logo: "/logos/university-of-glasgow.png",
+    logoBg: "light",
     period: "2015–2019",
     loc: "Glasgow, UK",
     bullets: [

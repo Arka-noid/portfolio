@@ -351,10 +351,26 @@ section {
 
 .timeline-meta {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 1rem;
   margin-bottom: 0.5rem;
   flex-wrap: wrap;
+}
+
+.timeline-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding: 0.3rem 0.6rem;
+}
+
+.timeline-logo img {
+  max-height: 16px;
+  max-width: 90px;
+  width: auto;
+  height: auto;
+  display: block;
 }
 
 .timeline-role {
@@ -1070,6 +1086,43 @@ a.pub-item {
 
 .about-cv {
   margin-top: 1rem;
+}
+
+.partner-logos {
+  margin: 2rem 0;
+}
+
+.partner-logos-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.partner-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  padding: 0.6rem 1.2rem;
+}
+
+.partner-logo img {
+  max-height: 42px;
+  max-width: 150px;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+.partner-logo-light {
+  background: #fff;
+}
+
+.partner-logo-dark {
+  background: var(--surface);
+  border: 1px solid rgba(var(--accent-rgb), 0.12);
 }
 
 /* ── SERVICES ── */

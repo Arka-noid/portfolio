@@ -4,6 +4,8 @@ import { siteImages } from "../data/images";
 import Perspective from "./Perspective";
 import ThemedImage from "./ThemedImage";
 import ServiceProofStrip from "./ServiceProofStrip";
+import SymptomRouter from "./SymptomRouter";
+import { symptoms } from "../data/symptoms";
 
 export default function Services() {
   return (
@@ -12,6 +14,7 @@ export default function Services() {
         <div className="section-eyebrow">Consulting</div>
         <h2 className="section-title">How We Can Help</h2>
       </div>
+      <SymptomRouter items={symptoms} />
       <div className="reveal">
         <ThemedImage
           src={siteImages.servicesBanner}
@@ -23,7 +26,7 @@ export default function Services() {
       <ServiceProofStrip items={serviceProof} />
       <div className="svc-grid">
         {services.map((s, i) => (
-          <div key={s.id} className="svc-card reveal">
+          <div key={s.id} id={`offer-${s.id}`} className="svc-card reveal">
             <div className="svc-head">
               <span className="svc-num">{String(i + 1).padStart(2, "0")}</span>
               <span className="svc-shape">{s.shape}</span>

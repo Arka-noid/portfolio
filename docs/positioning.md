@@ -190,6 +190,11 @@ Six to eight of these render as a compact router near the top of `/services`,
 above the offer grid, each linking to `#offer-<id>` on the same page. Eight are
 banked here so a future edit can drop one without inventing a replacement.
 
+The router's lead line is **"If one of these is your sentence, start there."**
+It is the instruction this section describes and nothing more: it makes no
+claim, names no figure, and does not restate the thesis — which is the whole
+point of putting the router above the offers rather than another paragraph.
+
 ---
 
 ## 6. Proof-point bank

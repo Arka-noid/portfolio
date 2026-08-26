@@ -3,12 +3,6 @@ export const about = {
   // the path here to show the photo. Leave null to hide the slot.
   photoUrl: null,
 
-  // TODO(user): to enable the CV button, either place a *sanitized, public*
-  // cv.pdf in public/ and set "/cv.pdf", or point at an external link
-  // (e.g. a Drive share). Per repo rules, binary reference files are not
-  // committed casually — add the PDF in a deliberate commit if self-hosting.
-  cvUrl: null,
-
   // The site says "we" because Merilight is the firm — but a buyer who
   // *discovers* it is one person feels misled, while one who is *told* does
   // not. Stating it plainly converts the weakness into a trust signal.
@@ -26,6 +20,13 @@ export const about = {
   // publishing — left empty so nothing unverified renders.
   education: [],
 };
+
+// Read directly above the timeline on /about. This one sentence is what keeps
+// the employment record from reading as a CV: it states why a firm is showing
+// one person's history at all, and frames what follows as provenance rather
+// than as a job history. See docs/positioning.md §1 and §7.
+export const recordIntro =
+  "Merilight has one engineer, so the firm's capability is one person's record. This is where it was built — three institutions, one stack, ten years of it.";
 
 // Trading details shown on /contact. EU B2B buyers check that an invoice can
 // actually be raised before they start a procurement conversation, so this is

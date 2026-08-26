@@ -16,6 +16,19 @@ site, and the person a client actually hires.
 
 The site sells consulting engagements. It is not a job-search surface. See §7.
 
+### The record, and why it is on the site
+
+Merilight has no client roster yet. Its only evidence is Manuel's employment
+record — which means the site has to carry a CV's worth of material while
+selling as a firm, and that is exactly where a site of this kind goes wrong: the
+buyer starts reading a consultancy and finds themselves reading a resume.
+
+The resolution is not to hide the record. It is to **state the relationship and
+then present the record as provenance**: Merilight is one engineer, so the firm's
+capability *is* one person's track record, and every institution on the site is
+the context that work was done in — never a job Manuel held, never a client
+Merilight served, never an endorsement. The operating rules are in §7.
+
 ---
 
 ## 2. Positioning statement
@@ -128,9 +141,9 @@ The market is a doorway, not an offer. Every market leads to the same ladder in
 ## 6. Proof-point bank
 
 Every number and claim below traces to `src/data/experience.js`,
-`src/data/projects.js`, `src/data/competencies.js` or
-`src/data/publications.js`. **Nothing may be used in copy that is not in these
-files.** If new evidence is needed, add it to the data first.
+`src/data/projects.js` or `src/data/publications.js`. **Nothing may be used in
+copy that is not in these files.** If new evidence is needed, add it to the data
+first.
 
 ### Countable
 
@@ -203,6 +216,9 @@ Never use, anywhere on the site:
 - A market presented as an offer. AI infrastructure in particular is a market
   (§5) and enters through Offer 01; it never becomes a fourth card, a fourth
   adjacent field, or a stack layer
+- A logo row whose label implies the organisations shown are Merilight's clients
+  or endorse the firm. The row may mix employers, research partners and
+  programmes, but the label has to be true of every mark in it
 - A claim of delivered datacenter, co-packaged-optics or transceiver **product**
   work. The record there is component and platform level — couplers, µTP SOAs,
   hybrid assembly, AWG/DWDM multiplexing, a mesh processor, a SiN PDK — and copy
@@ -221,6 +237,14 @@ Never use, anywhere on the site:
   person feels misled; one who is told does not — and "you brief the person
   who does the work" is an advantage over a firm that sells you a partner and
   staffs a junior.
+- **The record is provenance, not a resume.** The employment history is on the
+  site to explain where the firm's capability came from, so it is framed that
+  way and never as a job history. Concretely: no section labelled "Career",
+  "Experience" or "Skills"; no CV or resume download; no competency or skills
+  grid (the Expertise Stack carries capability, and §4 bans capability lists);
+  and no entry led by a job title — the organisation and the period lead, the
+  title sits under them. Employers are named as the context work was done in,
+  the way §6's proof sentences already do it.
 - Client outcome before personal capability, in every headline.
 - Every service states who it is for, what the client receives, and roughly how
   long it takes.

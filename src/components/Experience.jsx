@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { experience } from "../data/experience";
+import { recordIntro } from "../data/about";
 
+// The employment record, framed as provenance rather than as a CV — see
+// docs/positioning.md §7. The organisation and period lead each entry; the job
+// title stays visible underneath them, because hiding it would be evasive, but
+// it is not the headline.
 export default function Experience() {
   const [expanded, setExpanded] = useState({});
   const toggle = (i) => setExpanded((p) => ({ ...p, [i]: !p[i] }));
@@ -8,20 +13,22 @@ export default function Experience() {
   return (
     <section id="experience">
       <div className="reveal">
-        <div className="section-eyebrow">Career</div>
-        <h2 className="section-title">Experience</h2>
+        <div className="section-eyebrow">Track record</div>
+        <h2 className="section-title">Where this capability was built</h2>
       </div>
+      <p className="stack-intro reveal">{recordIntro}</p>
       <div className="timeline">
         {experience.map((item, i) => (
           <div key={i} className="timeline-item reveal">
             <div className="timeline-body">
               <div className="timeline-meta">
-                <span className="timeline-role">{item.role}</span>
                 <span className="timeline-org">{item.org}</span>
                 <span className="timeline-period">{item.period}</span>
               </div>
               <div className="timeline-loc">
-                <span aria-hidden="true">📍</span> {item.loc}
+                <span className="timeline-role">{item.role}</span>
+                <span aria-hidden="true"> · </span>
+                {item.loc}
               </div>
               <ul className="timeline-bullets">
                 {item.bullets.map((b, j) => (

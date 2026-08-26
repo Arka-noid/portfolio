@@ -9,8 +9,11 @@ export default function PartnerLogos() {
 
   return (
     <section className="partner-band">
+      {/* The row mixes employing institutions and project partners, so the
+          label has to be true of every mark in it and must not imply these
+          organisations are clients — see docs/positioning.md §7. */}
       <p className="partner-band-label reveal">
-        Institutions we have worked with
+        Institutions and partners behind this work
       </p>
       <div className="partner-band-row reveal">
         {partners.map((p) => (

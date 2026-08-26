@@ -380,15 +380,16 @@ section {
   flex-wrap: wrap;
 }
 
-.timeline-role {
+/* The organisation leads and the job title sits under it — the record is
+   provenance, not a CV. See docs/positioning.md §7. */
+.timeline-org {
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--text);
 }
 
-.timeline-org {
-  font-size: 0.85rem;
+.timeline-role {
   color: var(--accent);
   font-weight: 500;
 }
@@ -707,57 +708,6 @@ section {
 }
 
 .proj-card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-
-/* ── COMPETENCIES ── */
-
-#competencies {
-  background: var(--bg-alt);
-  max-width: none;
-}
-
-.competencies-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.competencies-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-}
-
-.comp-card {
-  background: var(--surface);
-  border: 1px solid rgba(var(--accent-rgb), 0.07);
-  padding: 1.8rem;
-  transition: border-color 0.25s, transform 0.25s;
-}
-
-.comp-card:hover {
-  border-color: rgba(var(--accent-rgb), 0.3);
-  transform: translateY(-2px);
-}
-
-.comp-icon {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.comp-title {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text);
-  letter-spacing: 0.04em;
-  margin-bottom: 0.75rem;
-  text-transform: uppercase;
-}
-
-.comp-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
@@ -1089,10 +1039,6 @@ a.pub-item {
   font-size: 0.82rem;
   color: var(--muted);
   line-height: 1.8;
-}
-
-.about-cv {
-  margin-top: 1rem;
 }
 
 /* ── PARTNER / INSTITUTION LOGOS ── */
@@ -2690,10 +2636,6 @@ a.cs-pub:hover {
     font-size: 1.02rem;
   }
 
-  .competencies-grid {
-    grid-template-columns: 1fr;
-  }
-
   .contact-section {
     padding: 4rem 1.25rem;
   }
@@ -2845,7 +2787,6 @@ a.cs-pub:hover {
   }
 
   .proj-card:hover,
-  .comp-card:hover,
   .pub-item:hover,
   a.cs-pub:hover {
     transform: none;

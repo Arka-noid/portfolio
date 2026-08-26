@@ -53,7 +53,7 @@ src/
 | `/services` | `pages/ServicesPage.jsx` — full offer ladder + ExpertiseStack, the primary sales page |
 | `/work` | `pages/Work.jsx` — full projects timeline |
 | `/work/:slug` | `pages/CaseStudy.jsx` — looks up a bespoke case-study component by slug (see below) |
-| `/about` | `pages/AboutPage.jsx` — About + Experience + Competencies + Publications, as sections on one page |
+| `/about` | `pages/AboutPage.jsx` — About + Experience + Publications, as sections on one page |
 | `/contact` | `pages/ContactPage.jsx` |
 | `*` | `pages/NotFound.jsx` |
 
@@ -78,7 +78,7 @@ Each page component calls `useScrollReveal()` itself (pages mount/unmount per ro
 - **Services (`/services`)** — the offer ladder (three productized engagements, each with who it is for, deliverable, shape and proof), a counted-proof strip, `MarketsStrip`, `ExpertiseStack`, then `Testimonials` — the primary sales page. **Integration Architecture Study is the flagship**; TRL maturation and PDK enablement are deliberately in the footnote rather than being cards, so the three offers stay the offer. See `docs/positioning.md` §9 before adding a fourth. **Markets are not offers** — `data/markets.js` names four fields (AI infrastructure & datacenter optics first) that all funnel into the same ladder; AI infrastructure never becomes a fourth card or a stack layer, and copy there stays at component/platform level (§7)
 - **Work (`/work`)** — client evidence, not a career timeline. 8 projects grouped by **market** (`markets` in `data/projects.js`) with a filter; each card leads with the problem and, once expanded, closes with the outcome. The `category` badge (device/system/platform/product) still marks which layer of the stack the work sat in, tying each project back to the ExpertiseStack. Two cards link to `/work/:slug` case studies
 - **Case study (`/work/:slug`)** — bespoke long-form page per story (challenge → approach → system design → results → related publications)
-- **About (`/about`)** — bio/value-chain narrative, then Experience timeline, Competencies grid, and Publications, composed as sections on one page (career/research content is supporting credibility, not the primary nav). Publications are grouped by **domain** (`PUB_DOMAINS` in `data/publications.js`), not by year: the spread across six research areas is the breadth evidence, and reverse-chronological order buried it
+- **About (`/about`)** — bio/value-chain narrative ("The principal"), then the employment record ("Track record"), then Publications, composed as sections on one page. **The record is provenance, not a resume** — the page exists to explain where the firm's capability came from, since Merilight has no client roster yet and its only evidence is Manuel's employment history. So: no "Career"/"Experience"/"Skills" labels, no CV download, no competency grid, and each timeline entry leads with the organisation and period with the job title demoted underneath. Read `docs/positioning.md` §1 and §7 before touching this page; `recordIntro` in `data/about.js` is the sentence that carries the framing. Publications are grouped by **domain** (`PUB_DOMAINS` in `data/publications.js`), not by year: the spread across six research areas is the breadth evidence, and reverse-chronological order buried it
 - **Contact (`/contact`)** — email/phone/Scholar, the conversion destination
 
 "Market perspective" callouts (`components/Perspective.jsx`, text in `data/perspectives.js`) are woven into About, Projects, Services/ServicesTeaser, and both case studies.
@@ -110,7 +110,7 @@ credible. Do not inflate them, and do not add a layer without real evidence in
 
 ## Pending user-supplied content
 
-- `data/about.js`: education entries, `photoUrl`, `cvUrl`
+- `data/about.js`: education entries, `photoUrl`
 - `data/images.js`: `lidarHero` is still unsourced (wants a night-highway long exposure). The other five slots hold **placeholder** stock imagery — fine to ship, but swap for better art when available. Sourcing guide in `public/images/README.md`; slots fail gracefully when null/broken
 - `data/publications.js`: `CITATIONS` count (update periodically from Scholar)
 - `index.html`: `og:image` once a production image exists

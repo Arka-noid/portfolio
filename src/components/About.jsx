@@ -8,7 +8,7 @@ export default function About() {
   return (
     <section id="about">
       <div className="reveal">
-        <div className="section-eyebrow">About</div>
+        <div className="section-eyebrow">The principal</div>
         <h2 className="section-title">From Device Physics to Product</h2>
       </div>
       <div className="about-layout">
@@ -41,11 +41,6 @@ export default function About() {
                 </ul>
               </div>
             </div>
-          )}
-          {about.cvUrl && (
-            <a className="hero-cta about-cv" href={about.cvUrl}>
-              Download CV ↓
-            </a>
           )}
         </div>
       </div>

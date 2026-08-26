@@ -1,7 +1,6 @@
-import { publications, CITATIONS } from "../data/publications";
-
-// Counted proof above the offer grid. Publication figures come straight from
-// the publications data so they cannot drift out of sync with the list.
+// Counted proof above the offer grid. Every tile comes from the array it is
+// handed — `serviceProof` in data/services.js, which derives the publication
+// figures from data/publications.js so they cannot drift out of sync.
 export default function ServiceProofStrip({ items }) {
   return (
     <ul className="proof-strip reveal">
@@ -14,12 +13,6 @@ export default function ServiceProofStrip({ items }) {
           <span className="proof-label">{it.label}</span>
         </li>
       ))}
-      <li>
-        <span className="proof-num">{publications.length}</span>
-        <span className="proof-label">
-          Publications · {CITATIONS} citations
-        </span>
-      </li>
     </ul>
   );
 }

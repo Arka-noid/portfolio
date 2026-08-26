@@ -1,4 +1,3 @@
-import { SCHOLAR_URL } from "../data/publications";
 import { entity, confidentiality } from "../data/about";
 
 export default function Contact() {
@@ -27,14 +26,6 @@ export default function Contact() {
           </a>
           <a className="contact-link" href="tel:+393281873926">
             <span aria-hidden="true">📞</span> +39 328 1873926
-          </a>
-          <a
-            className="contact-link"
-            href={SCHOLAR_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span aria-hidden="true">🎓</span> Google Scholar
           </a>
         </div>
         {confidentiality && (

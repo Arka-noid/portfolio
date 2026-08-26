@@ -168,7 +168,7 @@ export const projects = [
     id: "platform-dev",
     title: "Photonic Platform Development",
     category: "platform",
-    market: "Datacenter & AI compute",
+    market: "AI infrastructure & datacenter optics",
     period: "2023 – 2026",
     institution: "imec",
     tagline: "Building the foundation others design on",
@@ -180,17 +180,19 @@ export const projects = [
     highlights: [
       "Work-package lead for base photonic platform",
       "PDK with active and passive devices",
+      "AWG-based wavelength multiplexing for DWDM PIC architectures",
+      "Fiber-to-chip coupling interfaces — edge and grating couplers, SOI and SiN",
       "Coordinated 10+ partner organizations across an EU project",
     ],
     outcome:
       "A SiN PDK with active and passive devices, DoE-validated, plus the design and version-control workflows that let 10+ partner organizations build on it.",
-    tags: ["SiN", "PDK", "Process Integration", "EDA"],
+    tags: ["SiN", "PDK", "Process Integration", "AWG / DWDM", "Fiber Coupling", "EDA"],
   },
   {
     id: "programmable-photonics",
     title: "Programmable Photonic Processor",
     category: "product",
-    market: "Datacenter & AI compute",
+    market: "AI infrastructure & datacenter optics",
     period: "2024 – 2026",
     institution: "imec",
     tagline: "From research prototype to product",
@@ -198,7 +200,7 @@ export const projects = [
     problem:
       "A research prototype had to become something a customer could buy: photonics, driver electronics and control software integrated into one system, with a defensible answer to who it is for.",
     description:
-      "Joined the system integration effort for a programmable photonic processor combining photonic circuits, driver electronics, and control software. Participated in product positioning, user-story definition, and early-stage commercialization discussions.",
+      "Joined the system integration effort for a programmable photonic processor combining photonic circuits, driver electronics, and control software — a reconfigurable mesh, the class of circuit the industry is now pursuing for optical switching and analog optical compute. Participated in product positioning, user-story definition, and early-stage commercialization discussions.",
     highlights: [
       "Full-stack integration: photonics + electronics + software",
       "Contributed to product roadmap and market assessment",
@@ -220,12 +222,13 @@ export const categoryMeta = {
   product: { label: "Product", color: "#8B5CF6" },
 };
 
-// Filter/grouping order on /work — heaviest first, so the page opens on the
-// deepest body of evidence. Derived from the data so a new project cannot
-// introduce a market that the filter silently drops.
+// Filter/grouping order on /work — lead market first, then the rest by weight
+// of evidence, matching the order of `marketFocus` in data/markets.js (see
+// docs/positioning.md §5). A new project must not introduce a market missing
+// from this list, or the filter silently drops it.
 export const markets = [
+  "AI infrastructure & datacenter optics",
   "Space & defense",
-  "Datacenter & AI compute",
   "Autonomous sensing",
   "Life sciences & imaging",
   "Industrial & environmental sensing",

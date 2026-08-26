@@ -93,6 +93,10 @@ export default function Hero() {
           architecture, systems, characterization, devices. We work out where
           yours actually is, then fix it.
         </p>
+        <p className="hero-markets">
+          AI infrastructure &amp; datacenter optics · Space &amp; defense ·
+          Autonomous sensing · Imaging &amp; industrial sensing
+        </p>
         <Link className="hero-cta" to="/services">
           See our services →
         </Link>

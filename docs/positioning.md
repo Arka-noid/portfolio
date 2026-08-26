@@ -107,6 +107,22 @@ of anything being sold to them.
 *Language that lands:* independent, no product to sell you, is this real and
 how far is it from a product.
 
+### Markets we name
+
+The three buying situations above are *what* is sold. Markets are *whose*
+problem it is — the same three offers, addressed to a buyer who recognises
+their own field in the headline. Four, in this order:
+
+1. **AI infrastructure & datacenter optics** — optical interconnect, co-packaged
+   optics, optical I/O, programmable and analog optical compute. Named first: it
+   is where the demand is, and the building blocks are ones we have built.
+2. **Space & defense** — SAR and radar payloads, EW, satellite constellations.
+3. **Autonomous sensing** — FMCW LiDAR, coherent detection, beam steering.
+4. **Industrial, life-science & imaging** — gas sensing, OCT, metrology.
+
+The market is a doorway, not an offer. Every market leads to the same ladder in
+§9 and, in almost every case, to Offer 01.
+
 ---
 
 ## 6. Proof-point bank
@@ -147,11 +163,23 @@ files.** If new evidence is needed, add it to the data first.
 | Semiconductor process, fab & DFM | Full device lifecycle at Glasgow — material stack design, etch process development, cleanroom fabrication, electro-optical characterisation; DFT/DFM PDK work at imec |
 | Product strategy & technical DD | Product positioning, user-story definition and early commercialisation work on the programmable photonic processor; industrial transfer documentation; Innovate UK commercialisation-aligned projects |
 
+### By market (§5)
+
+| Market | Proof |
+|---|---|
+| AI infrastructure & datacenter optics | Fiber-to-chip coupling (edge and grating couplers) in SOI and SiN; micro-transfer-printed SOAs; hybrid SiN+InP multi-chip assembly; AWG-based wavelength multiplexing for DWDM PIC architectures; a programmable photonic mesh carried TRL 3→6; the first imec SiN platform PDK |
+| Space & defense | SCORE-SAR hybrid SiN–InP receiver for EU SPACEBEAM; full analog link budget in VPI; multi-static satellite radar network; multiband RF transceivers for defense programmes |
+| Autonomous sensing | 16-element optical phased array on SOI, 1.7° over 20°; photonic design of imec's first end-to-end FMCW LiDAR demonstrator |
+| Industrial, life-science & imaging | Mid-IR gas sensor devices with Gas Sensing Solutions Ltd.; chip-scale biomedical imaging (OCT) at Sant'Anna |
+
+The AI-infrastructure row is a **component and platform** record, not a delivery
+record — see the second guard in §7. It is stated at that level and is not
+qualified further on the site.
+
 ### Domains touched (breadth evidence, not service claims)
 
-Space radar and SAR · electronic warfare · automotive FMCW LiDAR · datacenter
-optics and CPO · biomedical imaging (OCT) · mid-IR gas sensing · quantum and
-visible photonic platforms.
+Electronic warfare · quantum and visible photonic platforms · photonic ADC and
+extreme-bandwidth acquisition.
 
 ---
 
@@ -172,6 +200,13 @@ Never use, anywhere on the site:
   "best-in-class"
 - Capability lists offered in place of outcomes
 - Any figure not present in `src/data/*`
+- A market presented as an offer. AI infrastructure in particular is a market
+  (§5) and enters through Offer 01; it never becomes a fourth card, a fourth
+  adjacent field, or a stack layer
+- A claim of delivered datacenter, co-packaged-optics or transceiver **product**
+  work. The record there is component and platform level — couplers, µTP SOAs,
+  hybrid assembly, AWG/DWDM multiplexing, a mesh processor, a SiN PDK — and copy
+  stays at that level, each item traceable to `src/data/*`
 
 ### Required
 
@@ -240,7 +275,9 @@ exactly that platform question.
 **Deliberately not cards.** TRL maturation and industrial handover, and
 platform/PDK enablement, are real and well-evidenced — they appear in the
 footnote as where an engagement leads, not as separate offers. Splitting them
-out is what produced a five-item menu.
+out is what produced a five-item menu. **Markets are not cards either** — AI
+infrastructure, space, autonomous sensing and imaging are how a buyer recognises
+themselves (§5), and each one arrives at this same ladder.
 
 **Sold as deliverables, never as products:** PoC GDS and layout (competing
 with design houses on capacity is a fight a solo consultant loses), circuit

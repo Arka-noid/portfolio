@@ -1005,12 +1005,15 @@ a.pub-item {
   margin: 0;
 }
 
-/* The source portrait is landscape, so it is cropped square rather than
-   rendered as a wide strip. Bias the crop upward to keep the face centred. */
+/* The source portrait is landscape, so it is cropped to a circle rather than
+   rendered as a wide strip. Bias the crop upward to keep the face centred.
+   The circle is a deliberate exception to the site's no-rounded-corners rule:
+   it reads as a person, which is the one place softness belongs. */
 .about-card > img {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: 50% 35%;
+  border-radius: 50%;
 }
 
 .about-card figcaption {

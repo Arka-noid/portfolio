@@ -28,14 +28,16 @@ export const siteImages = {
   // Real flight hardware rather than a render. NASA, public domain.
   workBanner: "/images/orbital-hardware.jpg",
 
-  // Services page banner — switch faceplate with OM3 fibre jumpers seated in
-  // SFP cages, the closest thing in the set to the actual subject matter.
-  // No longer rendered on /services: the full-bleed banner sat between the
-  // heading and the offers. Kept for the side slot below to pick up.
-  servicesBanner: "/images/fiber-switch.jpg",
+  // Backdrop behind the markets section — switch faceplate with OM3 fibre
+  // jumpers seated in SFP cages. Repointed here from the retired
+  // `servicesBanner` slot: markets lead with AI infrastructure & datacenter
+  // optics, so the subject fits better behind them than above the offers.
+  marketsBackdrop: "/images/fiber-switch.jpg",
 
-  // Services page side image, beside the heading and promise line. Null until
-  // art is chosen; the heading block then runs full width with no dead column.
+  // Services page side image, beside the heading and promise line. Still
+  // unsourced — wants a probe needle landing on a photonic die, or a fibre
+  // array butt-coupled to a chip edge. Macro, real hardware, no CGI. Until it
+  // exists the heading block runs full width with no dead column.
   servicesSide: null,
 
   // Inline figure in the space-radar case study: a phase-wrapped InSAR

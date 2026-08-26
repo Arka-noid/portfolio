@@ -1774,6 +1774,42 @@ a.pub-item {
   line-height: 1.5;
 }
 
+/* ── SECTION BACKDROP ── */
+
+/* A photograph behind a whole section rather than a banner interrupting it.
+   Echoes .cs-hero-photo, but the gradient is composited in SectionBackdrop.jsx
+   with var(--bg-rgb) so it follows a palette change. Decorative and inert: no
+   animation of its own, so the reduced-motion block needs no rule for it. */
+
+.section--backdrop {
+  position: relative;
+}
+
+/* Full-bleed rather than confined to the section's 1100px box: a backdrop that
+   stops short of the viewport edge reads as a panel someone dropped in, not as
+   the ground the section sits on. .portfolio clips the 100vw overflow. */
+.section-backdrop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  background-size: cover;
+  background-position: center;
+  /* Deliberately far back. The subject should be readable as texture when
+     looked for and invisible when reading the copy over it. */
+  opacity: 0.16;
+  filter: saturate(0.6) brightness(0.75);
+  pointer-events: none;
+}
+
+/* Lifts the section's own content above the backdrop layer. */
+.markets-body {
+  position: relative;
+  z-index: 1;
+}
+
 /* ── MARKETS ── */
 
 .markets-intro {

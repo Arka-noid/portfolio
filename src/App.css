@@ -1151,13 +1151,45 @@ a.pub-item {
 
 /* ── SERVICES ── */
 
+/* The heading block. .svc-split mirrors .cs-two-col rather than reusing it:
+   that class lives in the case-study namespace with its own responsive block,
+   and the two should stay separable. The class is applied by Services.jsx only
+   when the image slot is set, so an unset slot is a plain full-width block
+   rather than a two-column grid with an empty half. */
+
+.svc-head-block {
+  margin-bottom: 2.5rem;
+}
+
+.svc-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 3rem;
+  align-items: start;
+}
+
+/* The promise line follows the h2 directly, so the h2 gives up the 3.5rem it
+   normally uses to clear a section. */
+.svc-h2 {
+  margin-bottom: 1.2rem;
+}
+
+.svc-promise {
+  max-width: 60ch;
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: var(--muted);
+  font-weight: 300;
+  margin: 0;
+}
+
 /* Symptom router — docs/positioning.md §5.1. Rows are anchors into the offer
    grid below, so they borrow the .market-card idiom rather than inventing a
    second one: flat surface, accent-alpha hairline, an accented leading edge
    and an uppercase micro-label for the offer number. */
 
 .symptom-router {
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .symptom-lead {
@@ -1704,6 +1736,13 @@ a.pub-item {
   margin: 0 0 2.5rem;
   border-top: 1px solid rgba(var(--accent-rgb), 0.14);
   border-left: 1px solid rgba(var(--accent-rgb), 0.14);
+}
+
+/* On /services the counted proof reads as credibility after the pitch, so it
+   follows the offer grid and needs the gap the shorthand above zeroes out. On
+   the home page the strip still precedes the grid and is unaffected. */
+.svc-grid + .proof-strip {
+  margin-top: 3rem;
 }
 
 .proof-strip li {
@@ -2686,6 +2725,10 @@ a.cs-pub:hover {
   }
 
   .symptom-list {
+    grid-template-columns: 1fr;
+  }
+
+  .svc-split {
     grid-template-columns: 1fr;
   }
 }

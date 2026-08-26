@@ -30,7 +30,13 @@ export const siteImages = {
 
   // Services page banner — switch faceplate with OM3 fibre jumpers seated in
   // SFP cages, the closest thing in the set to the actual subject matter.
+  // No longer rendered on /services: the full-bleed banner sat between the
+  // heading and the offers. Kept for the side slot below to pick up.
   servicesBanner: "/images/fiber-switch.jpg",
+
+  // Services page side image, beside the heading and promise line. Null until
+  // art is chosen; the heading block then runs full width with no dead column.
+  servicesSide: null,
 
   // Inline figure in the space-radar case study: a phase-wrapped InSAR
   // interferogram. Kept small rather than full-bleed — the rainbow phase

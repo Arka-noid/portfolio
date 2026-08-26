@@ -108,7 +108,7 @@ credible. Do not inflate them, and do not add a layer without real evidence in
 
 ## Pending user-supplied content
 
-- `data/about.js`: education entries, extra languages, `photoUrl`, `cvUrl`
+- `data/about.js`: education entries, `photoUrl`, `cvUrl`
 - `data/images.js`: `lidarHero` is still unsourced (wants a night-highway long exposure). The other five slots hold **placeholder** stock imagery — fine to ship, but swap for better art when available. Sourcing guide in `public/images/README.md`; slots fail gracefully when null/broken
 - `data/publications.js`: `CITATIONS` count (update periodically from Scholar)
 - `index.html`: `og:image` once a production image exists

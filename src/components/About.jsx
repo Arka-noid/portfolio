@@ -30,28 +30,16 @@ export default function About() {
             <p key={i}>{p}</p>
           ))}
           <Perspective>{perspectives.about}</Perspective>
-          {(about.education.length > 0 || about.languages.length > 0) && (
+          {about.education.length > 0 && (
             <div className="about-facts">
-              {about.education.length > 0 && (
-                <div className="about-fact">
-                  <span className="about-fact-label">Education</span>
-                  <ul>
-                    {about.education.map((e, i) => (
-                      <li key={i}>{e}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {about.languages.length > 0 && (
-                <div className="about-fact">
-                  <span className="about-fact-label">Languages</span>
-                  <ul>
-                    {about.languages.map((l, i) => (
-                      <li key={i}>{l}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+              <div className="about-fact">
+                <span className="about-fact-label">Education</span>
+                <ul>
+                  {about.education.map((e, i) => (
+                    <li key={i}>{e}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
           )}
           {about.cvUrl && (

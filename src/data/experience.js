@@ -2,7 +2,7 @@ export const experience = [
   {
     role: "Photonic Designer / System Integrator",
     org: "imec",
-    period: "2023–Present",
+    period: "2023–2026",
     loc: "Leuven, Belgium",
     bullets: [
       "Led system-level transition of a programmable photonic mesh chip from TRL 3 to TRL 6 for a deep-tech startup.",

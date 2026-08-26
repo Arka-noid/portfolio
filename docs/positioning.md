@@ -84,27 +84,28 @@ corporate R&D budget, or an EU/space/defense programme.
 
 ### The three buying situations
 
-**A. Startup at a TRL gate.**
-Has a demo that works on a bench. Needs to reach a prototype an investor,
-customer or acquirer will accept. Fears the unknown unknowns between here and
-there.
-*Buys:* Design Review, then TRL Maturation.
-*Language that lands:* the gap between a demo and a product, industrial
-handover, what breaks at TRL 5.
+**A. A working system built from discrete parts, facing integration.**
+Has something that works in fiber, free space or discrete components, and a
+reason to want it smaller, cheaper or manufacturable. Does not know whether
+integration is feasible, what it costs in performance, or which platform it
+takes. This is the flagship buyer.
+*Buys:* Integration Architecture Study.
+*Language that lands:* what can move onto a chip and what cannot, hybrid vs
+monolithic, which platform for which function, what integration costs you.
 
-**B. Corporate or institute needing an independent architecture review.**
-Has an internal team with a strong opinion and needs an outside read before
-committing a budget or a tape-out. Values independence and the absence of a
-product to sell them.
-*Buys:* Design Review, System Architecture & Link Budget.
-*Language that lands:* independent, validated against measurement not
-simulation, second opinion before tape-out.
+**B. First hardware back, and a bench that cannot be trusted.**
+Has silicon and cannot make measurement agree with model. Does not know
+whether the chip, the model or the setup is at fault.
+*Buys:* Measurement & Characterization Enablement.
+*Language that lands:* measurement that agrees with the model, a setup your
+team can run, calibration you can defend.
 
-**C. Investor or acquirer needing technical due diligence.**
-Is being told a photonics story and cannot evaluate it. Needs someone who can
-read the claims and the roadmap in a week.
-*Buys:* Technical Due Diligence & Product Strategy.
-*Language that lands:* is this real, is it manufacturable, how far from product.
+**C. A gate: tape-out, funding milestone, or acquisition.**
+Needs an outside read before committing. Values independence and the absence
+of anything being sold to them.
+*Buys:* Design Review & Technical Due Diligence.
+*Language that lands:* independent, no product to sell you, is this real and
+how far is it from a product.
 
 ---
 
@@ -217,20 +218,43 @@ mentions grant writing or proposals.
 
 ## 9. The offer ladder
 
-Ordered by commitment. The first rung exists so a buyer can purchase Manuel once
-without a procurement process.
+Three offers, not five. With no client references yet, a long menu dilutes —
+a firm gets bought for one thing first, and the others follow. Ordered by
+where they sit in a client's programme rather than by commitment.
 
 | # | Offer | For | Deliverable | Shape |
 |---|---|---|---|---|
-| 01 | Photonic Design Review | A, B | Written findings and risk register | Fixed scope, 1–2 weeks |
-| 02 | System Architecture & Link Budget | B | Architecture and validated budget model | 3–8 weeks |
-| 03 | TRL Maturation & Industrial Handover | A | Verification plan, handover documentation | Ongoing engagement |
-| 04 | Platform, PDK & Design-Flow Enablement | B | PDK, DoE plan, team workflows | Ongoing engagement |
-| 05 | Technical Due Diligence & Product Strategy | C | Assessment memo | Fixed scope, 1–2 weeks |
+| 01 | **Integration Architecture Study** *(flagship)* | A | Architecture, platform selection, component inventory, read-out definition, a link-budget model they keep | 3–6 weeks |
+| 02 | Measurement & Characterization Enablement | B | A working, documented characterization setup | On-site, 2–8 weeks |
+| 03 | Design Review & Technical Due Diligence | C | Findings and a ranked risk register; assessment memo | Fixed scope, 1–2 weeks |
 
-The hero CTA sells rung 01. Everything else is reached from there.
+**Why integration architecture leads.** It is the highest-leverage and least
+reversible decision in a photonics programme, so a buyer will pay for
+judgment on it. Very few people can answer the multi-platform question —
+whether a system needs SiN *and* InP, whether it can be monolithic or must be
+hybrid — because answering it requires knowing what every platform can
+actually do. It is also the single best-evidenced thing Manuel has done:
+three separate discrete-to-integrated conversions, two of them turning on
+exactly that platform question.
 
----
+**Deliberately not cards.** TRL maturation and industrial handover, and
+platform/PDK enablement, are real and well-evidenced — they appear in the
+footnote as where an engagement leads, not as separate offers. Splitting them
+out is what produced a five-item menu.
+
+**Sold as deliverables, never as products:** PoC GDS and layout (competing
+with design houses on capacity is a fight a solo consultant loses), circuit
+simulation (commodity — every Lumerical shop sells it), 3D CAD (fixtures for
+a rig), microcontroller work (beginner level — fine inside a bench, not as a
+named capability). **Never sold at all:** FPGA. There is no FPGA evidence in
+the data.
+
+**Software.** Python, C, MATLAB, LabVIEW, plus Git/Jira discipline and EDA
+tooling — genuine scientific and instrumentation software, not product
+software engineering. Its value is that it turns deliverables from documents
+into things a client keeps and reruns: the link-budget model in 01, the
+automation and calibration in 02. Frame it that way; never sell "software
+engineering", which invites comparison with people who do only that.
 
 ## 10. Voice
 

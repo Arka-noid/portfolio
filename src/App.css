@@ -330,6 +330,29 @@ section {
 .timeline-item {
   position: relative;
   padding: 0 0 3.5rem 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+
+.timeline-body {
+  flex: 1;
+  min-width: 0;
+}
+
+/* The institution mark, sized to be recognisable rather than decorative.
+   flex-basis keeps it from stealing width from the bullets. */
+.timeline-logo {
+  flex: 0 0 150px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 0.2rem;
+}
+
+.timeline-logo img {
+  max-height: 56px;
+  max-width: 150px;
 }
 
 .timeline-item::before {
@@ -351,26 +374,10 @@ section {
 
 .timeline-meta {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 1rem;
   margin-bottom: 0.5rem;
   flex-wrap: wrap;
-}
-
-.timeline-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 28px;
-  padding: 0.3rem 0.6rem;
-}
-
-.timeline-logo img {
-  max-height: 16px;
-  max-width: 90px;
-  width: auto;
-  height: auto;
-  display: block;
 }
 
 .timeline-role {
@@ -1088,41 +1095,60 @@ a.pub-item {
   margin-top: 1rem;
 }
 
-.partner-logos {
-  margin: 2rem 0;
-}
+/* ── PARTNER / INSTITUTION LOGOS ── */
 
-.partner-logos-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 0.75rem;
-}
-
-.partner-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 64px;
-  padding: 0.6rem 1.2rem;
-}
-
+/* All logo art is transparent PNG. The set mixes light-ink and dark-ink
+   marks, so each is flattened to a single off-white tone: light-ink logos
+   just lose their colour, dark-ink logos are inverted first. The result is
+   one uniform row instead of four competing brand palettes. */
 .partner-logo img {
-  max-height: 42px;
-  max-width: 150px;
   width: auto;
   height: auto;
   display: block;
+  opacity: 0.55;
+  transition: opacity 0.25s;
 }
 
-.partner-logo-light {
-  background: #fff;
+.partner-logo-light img {
+  filter: grayscale(1) brightness(1.6);
 }
 
-.partner-logo-dark {
-  background: var(--surface);
-  border: 1px solid rgba(var(--accent-rgb), 0.12);
+.partner-logo-dark img {
+  filter: grayscale(1) invert(1) brightness(1.6);
+}
+
+.partner-logo:hover img {
+  opacity: 0.9;
+}
+
+.partner-band {
+  border-top: 1px solid rgba(var(--accent-rgb), 0.08);
+}
+
+.partner-band-label {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+/* space-around rather than a fixed grid: the logos have wildly different
+   aspect ratios, so even columns would leave ragged gaps. */
+.partner-band-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2.5rem 3.5rem;
+}
+
+.partner-band-row .partner-logo img {
+  max-height: 52px;
+  max-width: 190px;
 }
 
 /* ── SERVICES ── */
@@ -2619,13 +2645,37 @@ a.cs-pub:hover {
     padding-left: 1rem;
   }
 
+  /* Not enough width for a side-by-side mark — the logo leads the entry
+     instead, above the role. */
   .timeline-item {
     padding: 0 0 2.5rem 1.25rem;
+    flex-direction: column-reverse;
+    gap: 0.9rem;
+  }
+
+  .timeline-logo {
+    flex: none;
+    justify-content: flex-start;
+    padding-top: 0;
+  }
+
+  .timeline-logo img {
+    max-height: 38px;
+    max-width: 120px;
   }
 
   .timeline-period {
     margin-left: 0;
     width: 100%;
+  }
+
+  .partner-band-row {
+    gap: 2rem;
+  }
+
+  .partner-band-row .partner-logo img {
+    max-height: 38px;
+    max-width: 130px;
   }
 
   .proj-card {

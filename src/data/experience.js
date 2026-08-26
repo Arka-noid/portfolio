@@ -2,8 +2,11 @@ export const experience = [
   {
     role: "Photonic Designer / System Integrator",
     org: "imec",
+    // logoTone describes the logo's own ink: "light" ships white-on-transparent
+    // and needs no treatment, "dark" is dark-on-transparent and gets inverted
+    // so it reads on the navy background. See .partner-logo-* in App.css.
     logo: "/logos/imec_white.png",
-    logoBg: "dark",
+    logoTone: "light",
     period: "2023–2026",
     loc: "Leuven, Belgium",
     bullets: [
@@ -23,7 +26,7 @@ export const experience = [
     role: "Assistant Professor",
     org: "Scuola Superiore Sant'Anna",
     logo: "/logos/uni-sant-anna-650x325-1.png",
-    logoBg: "light",
+    logoTone: "dark",
     period: "2020–2023",
     loc: "Pisa, Italy",
     bullets: [
@@ -42,7 +45,7 @@ export const experience = [
     role: "Post-doctoral Research Associate",
     org: "University of Glasgow",
     logo: "/logos/university-of-glasgow.png",
-    logoBg: "light",
+    logoTone: "dark",
     period: "2015–2019",
     loc: "Glasgow, UK",
     bullets: [

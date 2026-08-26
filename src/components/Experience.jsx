@@ -14,34 +14,38 @@ export default function Experience() {
       <div className="timeline">
         {experience.map((item, i) => (
           <div key={i} className="timeline-item reveal">
-            <div className="timeline-meta">
-              {item.logo && (
-                <span className={`timeline-logo partner-logo-${item.logoBg}`}>
-                  <img src={item.logo} alt={item.org} loading="lazy" />
-                </span>
+            <div className="timeline-body">
+              <div className="timeline-meta">
+                <span className="timeline-role">{item.role}</span>
+                <span className="timeline-org">{item.org}</span>
+                <span className="timeline-period">{item.period}</span>
+              </div>
+              <div className="timeline-loc">
+                <span aria-hidden="true">📍</span> {item.loc}
+              </div>
+              <ul className="timeline-bullets">
+                {item.bullets.map((b, j) => (
+                  <li key={j}>{b}</li>
+                ))}
+                {expanded[i] &&
+                  item.extra.map((b, j) => <li key={"e" + j}>{b}</li>)}
+              </ul>
+              {item.extra.length > 0 && (
+                <button
+                  className="timeline-expand"
+                  aria-expanded={!!expanded[i]}
+                  onClick={() => toggle(i)}
+                >
+                  {expanded[i] ? "Show less ↑" : "Show more ↓"}
+                </button>
               )}
-              <span className="timeline-role">{item.role}</span>
-              <span className="timeline-org">{item.org}</span>
-              <span className="timeline-period">{item.period}</span>
             </div>
-            <div className="timeline-loc">
-              <span aria-hidden="true">📍</span> {item.loc}
-            </div>
-            <ul className="timeline-bullets">
-              {item.bullets.map((b, j) => (
-                <li key={j}>{b}</li>
-              ))}
-              {expanded[i] &&
-                item.extra.map((b, j) => <li key={"e" + j}>{b}</li>)}
-            </ul>
-            {item.extra.length > 0 && (
-              <button
-                className="timeline-expand"
-                aria-expanded={!!expanded[i]}
-                onClick={() => toggle(i)}
+            {item.logo && (
+              <div
+                className={`timeline-logo partner-logo partner-logo-${item.logoTone}`}
               >
-                {expanded[i] ? "Show less ↑" : "Show more ↓"}
-              </button>
+                <img src={item.logo} alt={item.org} loading="lazy" />
+              </div>
             )}
           </div>
         ))}

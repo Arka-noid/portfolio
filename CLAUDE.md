@@ -35,6 +35,7 @@ src/
     ExpertiseStack.jsx         The seven-layer stack — the site's USP artefact
     MarketsStrip.jsx           The four named markets (AI infra first) — §5
     ServiceProofStrip.jsx      Counted-proof strip above the offer grid
+    PartnerLogos.jsx           Institution logo band at the foot of the home page
     Testimonials.jsx           Client references; renders nothing when empty
     ThemedImage.jsx            Blends any photo into the palette (see Imagery)
     casestudy/                 Shared case-study pieces (Shell, MetricCard,
@@ -48,7 +49,7 @@ src/
 
 | Route | Page |
 |---|---|
-| `/` | `pages/Home.jsx` — condensed landing (Hero → ServicesTeaser → ExpertiseStack teaser → CredibilityTeaser → Contact CTA) |
+| `/` | `pages/Home.jsx` — condensed landing (Hero → ServicesTeaser → ExpertiseStack teaser → CredibilityTeaser → PartnerLogos → Contact CTA) |
 | `/services` | `pages/ServicesPage.jsx` — full offer ladder + ExpertiseStack, the primary sales page |
 | `/work` | `pages/Work.jsx` — full projects timeline |
 | `/work/:slug` | `pages/CaseStudy.jsx` — looks up a bespoke case-study component by slug (see below) |
@@ -68,11 +69,12 @@ Each page component calls `useScrollReveal()` itself (pages mount/unmount per ro
 - **Aesthetic:** Minimal, technical, clean — no rounded corners, uppercase labels, generous letter-spacing
 - **Motion:** Canvas hero animations (waveguide, starfield, LiDAR sweep), scroll-reveal (IntersectionObserver), SMIL-animated SVG diagrams, hover transforms. All motion respects `prefers-reduced-motion` (canvases render a static frame, SMIL is omitted via the `animate` prop).
 - **Imagery:** All photography is placeholder stock and decorative. It renders through `components/ThemedImage.jsx`, which desaturates the image and applies a cyan-into-navy scrim, a faint scanline, and a slow cyan sweep (dropped under `prefers-reduced-motion`) so stock photos read as part of the site. Case-study hero backdrops use `casestudy/HeroPhoto.jsx` instead. Pick images for *subject*, not colour — the treatment handles the palette.
+- **Institution logos:** `public/logos/*.png`, all **transparent-background and trimmed flush to the mark** (no padding baked into the file — otherwise `max-height` caps the empty box and the logo renders tiny). They are never shown in brand colour: `.partner-logo-*` in `App.css` flattens each to one off-white tone so a mixed set reads as a single row. Because the set mixes light-ink and dark-ink art, each entry declares its own ink — `logoTone` in `data/experience.js`, `tone` in `data/partners.js` — `"light"` for white-on-transparent (imec), `"dark"` for dark-on-transparent (everything else, which gets inverted). Getting this wrong makes a logo invisible against the navy
 - **Tone:** Sophisticated engineering feel — the site itself should demonstrate technical craft
 
 ## Content Structure (by page)
 
-- **Home (`/`)** — Hero (waveguide canvas, "Your photonic demo works. Will the product?", CTA to `/contact`) → `ServicesTeaser` (offer cards, links to `/services`) → `MarketsStrip compact` (the four named markets, AI infrastructure first) → `ExpertiseStack compact` (the stack, links to `/services`) → `CredibilityTeaser` (featured case-study cards, links to `/work`) → `Contact` as a closing CTA
+- **Home (`/`)** — Hero (waveguide canvas, "Your photonic demo works. Will the product?", CTA to `/contact`) → `ServicesTeaser` (offer cards, links to `/services`) → `MarketsStrip compact` (the four named markets, AI infrastructure first) → `ExpertiseStack compact` (the stack, links to `/services`) → `CredibilityTeaser` (featured case-study cards, links to `/work`) → `PartnerLogos` (institution logo band) → `Contact` as a closing CTA
 - **Services (`/services`)** — the offer ladder (three productized engagements, each with who it is for, deliverable, shape and proof), a counted-proof strip, `MarketsStrip`, `ExpertiseStack`, then `Testimonials` — the primary sales page. **Integration Architecture Study is the flagship**; TRL maturation and PDK enablement are deliberately in the footnote rather than being cards, so the three offers stay the offer. See `docs/positioning.md` §9 before adding a fourth. **Markets are not offers** — `data/markets.js` names four fields (AI infrastructure & datacenter optics first) that all funnel into the same ladder; AI infrastructure never becomes a fourth card or a stack layer, and copy there stays at component/platform level (§7)
 - **Work (`/work`)** — client evidence, not a career timeline. 8 projects grouped by **market** (`markets` in `data/projects.js`) with a filter; each card leads with the problem and, once expanded, closes with the outcome. The `category` badge (device/system/platform/product) still marks which layer of the stack the work sat in, tying each project back to the ExpertiseStack. Two cards link to `/work/:slug` case studies
 - **Case study (`/work/:slug`)** — bespoke long-form page per story (challenge → approach → system design → results → related publications)

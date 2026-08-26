@@ -138,6 +138,60 @@ The market is a doorway, not an offer. Every market leads to the same ladder in
 
 ---
 
+## 5.1 Symptoms, in the buyer's words
+
+§5 describes the three buying situations from the outside — what is true of the
+organisation. This section says the same three things from the inside, as the
+sentence the buyer would actually say out loud. A visitor who recognises their
+own sentence has self-identified, and the sentence carries them to the offer
+that answers it.
+
+**Voice.** These are quotations of the buyer, so the "we" in them is the
+*client's* team, not Merilight. This is the one place on the site where "we" is
+not the firm — the rule in §7 is unaffected, because the line is set as the
+buyer's speech. Sentences are short and declarative, and none of them names the
+cure; the offer does that.
+
+**Traceability.** Every symptom restates a `problem`, `forWho`, `context` or
+`proof` field that is already in `src/data/*`, or a "language that lands" line
+from §5. No symptom introduces a figure, a platform or a capability that is not
+already on the site (§6).
+
+| # | Symptom (buyer voice) | Situation | Offer | Anchor | Traces to |
+|---|---|---|---|---|---|
+| 1 | "It works on the bench in fiber. We don't know what it costs to put it on a chip." | A | 01 | `integration-architecture` | §5A "language that lands"; `services.js` 01 `forWho` + `problem` ("what integrating costs you in performance") |
+| 2 | "No single platform gives us every function the system needs." | A | 01 | `integration-architecture` | `projects.js` space-radar `problem`; `services.js` 01 `proof` |
+| 3 | "We have a mass and power budget, and an architecture that won't fit inside it." | A | 01 | `integration-architecture` | `markets.js` space-defense `context` ("mass, power and space qualification decide the architecture"); `projects.js` space-radar `problem` ("inside its mass and bandwidth budget") |
+| 4 | "The design depends on the packaging, and the packaging isn't decided yet." | A | 01 | `integration-architecture` | `stack.js` packaging layer `whatIDo` ("the interfaces where a working chip stops working") + `proof` |
+| 5 | "First silicon is back and the measurements don't agree with the model." | B | 02 | `characterization` | §5B "language that lands"; `services.js` 02 `problem` |
+| 6 | "Every device has to be calibrated by hand before it does anything, and it isn't repeatable." | B | 02 | `characterization` | `projects.js` biomedical-imaging `outcome` ("calibration automated rather than done by hand — the difference between a demo and something another group can actually use"); `services.js` 02 `proof` + `deliverable` |
+| 7 | "Tape-out is weeks away and nobody outside the team has read the design." | C | 03 | `review-diligence` | §5C "language that lands"; `services.js` 03 `forWho` ("before a tape-out") |
+| 8 | "We're asked how far this is from a product, and we have no defensible answer." | C | 03 | `review-diligence` | `projects.js` programmable-photonics `problem` ("a defensible answer to who it is for"); `services.js` 03 `problem` |
+
+### Two things this table is not
+
+**Symptom 4 is a trigger, not a claim of packaging mastery.** `stack.js` declares
+depth 3 for packaging and §4 forbids inflating it. The symptom is admissible
+because packaging being undecided is a reason the *architecture* cannot be
+settled — which is Offer 01's question, answered at the layer where the depth
+is genuinely 5. Word it as the thing that blocks the design, never as an offer
+to do the packaging. If a future edit makes symptom 4 read as "we package
+modules", it is wrong.
+
+**Two corrections against the original draft, made for traceability.** Symptom 3
+originally read "mass, power and volume"; volume appears in no data file, so it
+is out. Symptom 6 was attributed to `projects.js` lidar, which does not mention
+calibration — the hand-calibration evidence is in `biomedical-imaging`, and that
+is the anchor.
+
+### How they are used
+
+Six to eight of these render as a compact router near the top of `/services`,
+above the offer grid, each linking to `#offer-<id>` on the same page. Eight are
+banked here so a future edit can drop one without inventing a replacement.
+
+---
+
 ## 6. Proof-point bank
 
 Every number and claim below traces to `src/data/experience.js`,
@@ -231,7 +285,9 @@ Never use, anywhere on the site:
   personal record is Manuel's and stays first person singular: /about, /work
   ("my role", "what I did"), the case studies, the Expertise Stack and the
   publications. Never let "we" claim a credential only Manuel holds, and never
-  let "I" describe what the business sells.
+  let "I" describe what the business sells. The one exception is a symptom
+  quoted in the buyer's own voice (§5.1), where the "we" is the client's team;
+  it is set as their speech and never as Merilight's.
 - **State the structure, do not hide it.** `about.structure` says plainly that
   Merilight is Manuel, working alone. A buyer who discovers a "we" is one
   person feels misled; one who is told does not — and "you brief the person
@@ -287,6 +343,23 @@ where they sit in a client's programme rather than by commitment.
 | 02 | Measurement & Characterization Enablement | B | A working, documented characterization setup | On-site, 2–8 weeks |
 | 03 | Design Review & Technical Due Diligence | C | Findings and a ranked risk register; assessment memo | Fixed scope, 1–2 weeks |
 
+### The `/services` page promise line
+
+The line under the page heading, and the source for the JSX in [5.4]. Firm
+surface, so the voice is "we" (§7):
+
+- **Eyebrow:** Consulting
+- **Heading:** Which layer is your problem in?
+- **Promise line:** "Three engagements, one job: find where a photonic programme
+  will actually fail, before the budget is committed to finding out."
+
+It restates §2's promise ("de-risk photonic hardware in the stretch between a
+working lab result and a shipping prototype") in the diagnostic frame §4
+requires, and it names the number three so the offer grid below reads as the
+whole menu rather than a sample of one. It claims no figure, so §6 does not
+apply to it. The heading deliberately echoes the Expertise Stack's own question
+— the stack sits further down the same page and answers it layer by layer.
+
 **Why integration architecture leads.** It is the highest-leverage and least
 reversible decision in a photonics programme, so a buyer will pay for
 judgment on it. Very few people can answer the multi-platform question —
@@ -301,7 +374,12 @@ platform/PDK enablement, are real and well-evidenced — they appear in the
 footnote as where an engagement leads, not as separate offers. Splitting them
 out is what produced a five-item menu. **Markets are not cards either** — AI
 infrastructure, space, autonomous sensing and imaging are how a buyer recognises
-themselves (§5), and each one arrives at this same ladder.
+themselves (§5), and each one arrives at this same ladder. **Symptoms are not
+cards either** — the eight lines in §5.1 are the same doorway worn the other way
+round: a market is the field a buyer is in, a symptom is the sentence they would
+say, and both route into these three engagements and nothing else. A symptom never becomes a
+fourth offer, a service card, or a stack layer, and the router that renders them
+links only to the three anchors already on this page.
 
 **Sold as deliverables, never as products:** PoC GDS and layout (competing
 with design houses on capacity is a fight a solo consultant loses), circuit

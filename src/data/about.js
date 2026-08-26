@@ -11,10 +11,10 @@ export const about = {
 
   // The site says "we" because Merilight is the firm — but a buyer who
   // *discovers* it is one person feels misled, while one who is *told* does
-  // not. Stating the structure converts the weakness into a trust signal, and
-  // leaves room to bring collaborators in. Rendered at the top of /about.
+  // not. Stating it plainly converts the weakness into a trust signal.
+  // Rendered at the top of /about.
   structure:
-    "Merilight is Manuel Reza. When a project needs more hands than one pair, I bring in specialists I have worked with before — and you always know exactly who is on your project.",
+    "Merilight is Manuel Reza — an independent engineer, not an agency. The person you brief is the person who does the work.",
 
   paragraphs: [
     "I'm an optical systems engineer who has worked at every altitude of the photonics value chain — from designing and etching III-V quantum-well devices in a Glasgow cleanroom, to architecting microwave-photonic receivers for spaceborne radar in Pisa, to maturing silicon photonics platforms and products at imec in Leuven.",

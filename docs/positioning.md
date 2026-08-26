@@ -181,9 +181,10 @@ Never use, anywhere on the site:
   publications. Never let "we" claim a credential only Manuel holds, and never
   let "I" describe what the business sells.
 - **State the structure, do not hide it.** `about.structure` says plainly that
-  Merilight is Manuel plus a network of specialists. A buyer who discovers a
-  "we" is one person feels misled; one who is told does not. This also leaves
-  room to bring collaborators in without rewriting the site.
+  Merilight is Manuel, working alone. A buyer who discovers a "we" is one
+  person feels misled; one who is told does not — and "you brief the person
+  who does the work" is an advantage over a firm that sells you a partner and
+  staffs a junior.
 - Client outcome before personal capability, in every headline.
 - Every service states who it is for, what the client receives, and roughly how
   long it takes.

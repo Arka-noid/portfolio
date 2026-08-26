@@ -51,7 +51,7 @@ src/
 |---|---|
 | `/` | `pages/Home.jsx` — condensed landing (Hero → ServicesTeaser → ExpertiseStack teaser → CredibilityTeaser → PartnerLogos → Contact CTA) |
 | `/services` | `pages/ServicesPage.jsx` — full offer ladder + ExpertiseStack, the primary sales page |
-| `/work` | `pages/Work.jsx` — full projects timeline |
+| `/work` | `pages/Work.jsx` — client evidence, labelled **"Case studies"** in the nav (the route keeps the `/work` path so shared case-study links stay valid) |
 | `/work/:slug` | `pages/CaseStudy.jsx` — looks up a bespoke case-study component by slug (see below) |
 | `/about` | `pages/AboutPage.jsx` — About + Experience + Publications, as sections on one page |
 | `/contact` | `pages/ContactPage.jsx` |

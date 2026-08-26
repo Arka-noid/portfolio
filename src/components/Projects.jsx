@@ -109,7 +109,7 @@ export default function Projects() {
     <section id="projects">
       <div className="reveal">
         <div className="section-eyebrow">Evidence</div>
-        <h2 className="section-title">Work</h2>
+        <h2 className="section-title">Case studies</h2>
         <p className="proj-intro">
           Eight projects, grouped by the market that paid for them. Each one
           started as somebody's hard problem.

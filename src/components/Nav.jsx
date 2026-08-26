@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
+// The route stays /work — the labels changed, not the URLs, so shared
+// case-study links keep resolving. "Work" read as ambiguous and collided with
+// the old "Work with us" CTA, which read as a careers link.
 const links = [
   { to: "/services", label: "Services" },
-  { to: "/work", label: "Work" },
+  { to: "/work", label: "Case studies" },
   { to: "/about", label: "About" },
 ];
 
@@ -44,7 +47,7 @@ export default function Nav() {
         ))}
         <li>
           <Link className="nav-cta" to="/contact" onClick={() => setOpen(false)}>
-            Work with us
+            Get in touch
           </Link>
         </li>
       </ul>

@@ -29,7 +29,7 @@ export default function CredibilityTeaser() {
         ))}
       </div>
       <Link className="hero-cta teaser-cta reveal" to="/work">
-        See full work →
+        See all case studies →
       </Link>
     </section>
   );

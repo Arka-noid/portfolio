@@ -22,19 +22,11 @@ export default function Contact() {
           review, so you can see how we work before committing to more.
         </p>
         <div className="contact-links">
-          <a className="contact-link" href="mailto:ma.reza29@gmail.com">
-            <span aria-hidden="true">✉</span> ma.reza29@gmail.com
+          <a className="contact-link" href="mailto:info@merilight.com">
+            <span aria-hidden="true">✉</span> info@merilight.com
           </a>
           <a className="contact-link" href="tel:+393281873926">
             <span aria-hidden="true">📞</span> +39 328 1873926
-          </a>
-          <a
-            className="contact-link"
-            href="https://www.linkedin.com/in/manuel-reza-50991384"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span aria-hidden="true">🔗</span> LinkedIn
           </a>
           <a
             className="contact-link"

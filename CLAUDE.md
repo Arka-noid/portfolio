@@ -79,7 +79,7 @@ Each page component calls `useScrollReveal()` itself (pages mount/unmount per ro
 - **Work (`/work`)** — client evidence, not a career timeline. 8 projects grouped by **market** (`markets` in `data/projects.js`) with a filter; each card leads with the problem and, once expanded, closes with the outcome. The `category` badge (device/system/platform/product) still marks which layer of the stack the work sat in, tying each project back to the ExpertiseStack. Two cards link to `/work/:slug` case studies
 - **Case study (`/work/:slug`)** — bespoke long-form page per story (challenge → approach → system design → results → related publications)
 - **About (`/about`)** — bio/value-chain narrative, then Experience timeline, Competencies grid, and Publications, composed as sections on one page (career/research content is supporting credibility, not the primary nav). Publications are grouped by **domain** (`PUB_DOMAINS` in `data/publications.js`), not by year: the spread across six research areas is the breadth evidence, and reverse-chronological order buried it
-- **Contact (`/contact`)** — email/phone/LinkedIn/Scholar, the conversion destination
+- **Contact (`/contact`)** — email/phone/Scholar, the conversion destination
 
 "Market perspective" callouts (`components/Perspective.jsx`, text in `data/perspectives.js`) are woven into About, Projects, Services/ServicesTeaser, and both case studies.
 

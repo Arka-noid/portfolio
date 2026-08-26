@@ -19,8 +19,14 @@ export const PUB_DOMAINS = [
   { id: "nonlinear", label: "Nonlinear optics & laser sources" },
 ];
 
+// Fallback link for entries with no publisher URL resolved yet. A Scholar
+// citation page still lands the reader on the abstract and a publisher link,
+// so an unresolved entry degrades gracefully rather than breaking.
 const scholarLink = (id) =>
   `https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xXUzynsAAAAJ&citation_for_view=xXUzynsAAAAJ:${id}`;
+
+// Featured entries link straight to the publisher (DOI where one exists), since
+// those are the ones a reader actually opens. The rest still use scholarLink.
 
 export const publications = [
   {
@@ -63,7 +69,7 @@ export const publications = [
     featured: true,
     type: "journal",
     domain: "platform",
-    url: scholarLink("ULOm3_A8WrAC"),
+    url: "https://doi.org/10.1021/acsphotonics.4c02518",
   },
   {
     title:
@@ -75,7 +81,7 @@ export const publications = [
     domain: "lidar",
     featured: true,
     note: "Postdeadline paper",
-    url: scholarLink("M3ejUd6NZC8C"),
+    url: "https://opg.optica.org/abstract.cfm?uri=OFC-2025-Th4A.5",
   },
   {
     title:
@@ -136,7 +142,7 @@ export const publications = [
     type: "journal",
     domain: "sar",
     featured: true,
-    url: scholarLink("0EnyYjriUFMC"),
+    url: "https://doi.org/10.1109/JLT.2023.3318473",
   },
   {
     title:
@@ -207,7 +213,7 @@ export const publications = [
     type: "journal",
     domain: "sar",
     featured: true,
-    url: scholarLink("_FxGoFyzp5QC"),
+    url: "https://doi.org/10.3390/electronics11244151",
   },
   {
     title:
@@ -248,7 +254,7 @@ export const publications = [
     type: "journal",
     domain: "sar",
     featured: true,
-    url: scholarLink("IjCSPb-OGe4C"),
+    url: "https://doi.org/10.1109/JLT.2021.3119225",
   },
   {
     title:

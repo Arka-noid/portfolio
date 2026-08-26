@@ -795,6 +795,12 @@ section {
   transition: all 0.25s;
 }
 
+.pub-scholar-footer {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(var(--accent-rgb), 0.14);
+}
+
 .pub-scholar-link:hover {
   background: var(--accent-soft);
   box-shadow: 0 0 16px var(--accent-glow);

@@ -55,14 +55,6 @@ export default function Publications() {
               <strong>{groups.length}</strong> research areas
             </span>
           </div>
-          <a
-            className="pub-scholar-link"
-            href={SCHOLAR_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View on Google Scholar &rarr;
-          </a>
         </div>
         <p className="pub-intro">
           Grouped by subject rather than by date. The spread — from III-V
@@ -98,6 +90,19 @@ export default function Publications() {
           </div>
         </div>
       ))}
+
+      {/* Sits with the list rather than in the header: it is what a reader
+          wants once they have scrolled the papers, not before. */}
+      <div className="pub-scholar-footer reveal">
+        <a
+          className="pub-scholar-link"
+          href={SCHOLAR_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View on Google Scholar &rarr;
+        </a>
+      </div>
     </section>
   );
 }

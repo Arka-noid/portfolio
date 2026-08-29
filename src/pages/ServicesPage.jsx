@@ -20,10 +20,10 @@ export default function ServicesPage() {
   return (
     <>
       <Services />
-      <Perspective>{perspectives.services}</Perspective>
-      <MarketsStrip />
+      {/* <Perspective>{perspectives.services}</Perspective> */}
+      {/* <MarketsStrip /> */}
       <ExpertiseStack />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Contact />
     </>
   );

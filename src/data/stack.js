@@ -10,8 +10,8 @@
 export const stackLayers = [
   {
     id: "product",
-    name: "Product & program",
-    domain: "Roadmap · TRL gates · industrial transfer",
+    name: "Productization",
+    domain: "Product integration · Electronics · Software · Documentation",
     depth: 4,
     depthLabel: "Led a TRL 3→6 transition",
     whatIDo:
@@ -20,18 +20,7 @@ export const stackLayers = [
       "Led the system-level transition of a programmable photonic mesh chip from TRL 3 to TRL 6 for a deep-tech startup at imec, and wrote the technical guidelines for the industrial handover.",
     evidence: { label: "Programmable photonic processor", to: "/work" },
   },
-  {
-    id: "rf-system",
-    name: "RF & system",
-    domain: "Link budgets · beamforming · coherent detection · SAR",
-    depth: 5,
-    depthLabel: "Architected and modelled end to end",
-    whatIDo:
-      "Follow the signal across the optical/RF boundary, where most photonic systems actually fail. Architecture, link budgets built to be argued with, and trade-offs made explicit before they become schedule.",
-    proof:
-      "Full analog link budget for a spaceborne SAR receiver in VPI Design Suite, behind a hybrid photonic beamforming network for the EU SPACEBEAM programme — validated against measured hardware.",
-    evidence: { label: "Photonics for space radar", to: "/work/space-radar" },
-  },
+  
   {
     id: "packaging",
     name: "Packaging & module",
@@ -45,21 +34,33 @@ export const stackLayers = [
     evidence: { label: "Satellite radar network", to: "/work" },
   },
   {
-    id: "platform",
-    name: "PIC platform & PDK",
-    domain: "SOI · SiN · InP · DFT/DFM · EDA flows",
+    id: "rf-system",
+    name: "System architecture",
+    domain: "Link budgets · beamforming · coherent detection · SAR",
     depth: 5,
-    depthLabel: "Built and validated a platform PDK",
+    depthLabel: "Architected and modelled end to end",
     whatIDo:
-      "Make a design team reproducible: PDK content, design-for-test and design-for-manufacture rules, DoE-driven validation, and the version control underneath it all.",
+      "Follow the signal across the optical/RF boundary, where most photonic systems actually fail. Architecture, link budgets built to be argued with, and trade-offs made explicit before they become schedule.",
     proof:
-      "Supported the first imec SiN platform PDK through DoE and validation benchmarks, and led development of the SiN platform for telecom, visible and quantum applications across 10+ partner organizations.",
-    evidence: { label: "Photonic platform development", to: "/work" },
+      "Full analog link budget for a spaceborne SAR receiver in VPI Design Suite, behind a hybrid photonic beamforming network for the EU SPACEBEAM programme — validated against measured hardware.",
+    evidence: { label: "Photonics for space radar", to: "/work/space-radar" },
   },
+  // {
+  //   id: "platform",
+  //   name: "PIC platform & PDK",
+  //   domain: "SOI · SiN · InP · DFT/DFM · EDA flows",
+  //   depth: 5,
+  //   depthLabel: "Built and validated a platform PDK",
+  //   whatIDo:
+  //     "Make a design team reproducible: PDK content, design-for-test and design-for-manufacture rules, DoE-driven validation, and the version control underneath it all.",
+  //   proof:
+  //     "Supported the first imec SiN platform PDK through DoE and validation benchmarks, and led development of the SiN platform for telecom, visible and quantum applications across 10+ partner organizations.",
+  //   evidence: { label: "Photonic platform development", to: "/work" },
+  // },
   {
     id: "device",
-    name: "Device design",
-    domain: "OPAs · modulators · filters · couplers · antennas",
+    name: "Device design & PDK",
+    domain: "EDA flows · modulators · filters · couplers · antennas",
     depth: 5,
     depthLabel: "Designed, taped out, measured",
     whatIDo:

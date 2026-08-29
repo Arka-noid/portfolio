@@ -39,13 +39,13 @@ export default function ExpertiseStack({ compact = false }) {
         <div className="section-eyebrow">Expertise</div>
         <h2 className="section-title">Which layer is your problem in?</h2>
       </div>
-      <p className="stack-intro reveal">{stackIntro}</p>
+      {/* <p className="stack-intro reveal">{stackIntro}</p> */}
 
       <div className={`stack-body reveal${compact ? " stack-body--compact" : ""}`}>
         <div className="stack-col">
           <span className="stack-cap">Product</span>
           <div className="stack-rows">
-            <StackRail animate={!reduced} />
+            {/* <StackRail animate={!reduced} /> */}
             <ul>
               {stackLayers.map((l) => {
                 const inner = (
@@ -54,7 +54,7 @@ export default function ExpertiseStack({ compact = false }) {
                       <span className="stack-row-name">{l.name}</span>
                       <span className="stack-row-domain">{l.domain}</span>
                     </span>
-                    <span
+                    {/* <span
                       className="stack-depth"
                       role="img"
                       aria-label={`Depth ${l.depth} of 5 — ${l.depthLabel}`}
@@ -62,7 +62,7 @@ export default function ExpertiseStack({ compact = false }) {
                       {DEPTH_SCALE.map((n) => (
                         <span key={n} className={n <= l.depth ? "on" : undefined} />
                       ))}
-                    </span>
+                    </span> */}
                   </>
                 );
                 // Without the detail panel there is nothing for a click to do,
@@ -86,7 +86,7 @@ export default function ExpertiseStack({ compact = false }) {
               })}
             </ul>
           </div>
-          <span className="stack-cap">Atoms</span>
+          <span className="stack-cap">Material</span>
         </div>
 
         {!compact && (

@@ -11,7 +11,6 @@ export default function ServicesTeaser() {
         <div className="section-eyebrow">Consulting</div>
         <h2 className="section-title">How We Can Help</h2>
       </div>
-      <Perspective>{perspectives.services}</Perspective>
       <ServiceProofStrip items={serviceProof} />
       <div className="svc-grid">
         {services.map((s, i) => (

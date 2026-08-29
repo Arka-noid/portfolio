@@ -15,9 +15,9 @@
 export const marketFocus = [
   {
     id: "ai-infrastructure",
-    label: "AI infrastructure & datacenter optics",
+    label: "AI infrastructure & datacenter",
     context:
-      "Optical interconnect, co-packaged optics and optical I/O as link budgets push past 1.6T — plus the programmable and analog optical circuits being built to compute with light rather than only carry it.",
+      "Optical interconnect, co-packaged optics and optical I/O as link budgets push past 1.6Tb/s per lane",
     proof:
       "Fiber-to-chip coupling in SOI and SiN, micro-transfer-printed SOAs, hybrid SiN–InP multi-chip assembly, AWG-based wavelength multiplexing for DWDM architectures, and a programmable photonic mesh processor carried from TRL 3 to TRL 6.",
     evidence: { label: "See the platform and processor work", to: "/work" },
@@ -26,7 +26,7 @@ export const marketFocus = [
     id: "space-defense",
     label: "Space & defense",
     context:
-      "Photonic payloads for Earth observation and radar, where mass, power and space qualification decide the architecture before performance does.",
+      "Photonic payloads for Earth observation and radars",
     proof:
       "The SCORE-SAR hybrid SiN–InP receiver for EU SPACEBEAM, a full analog link budget modelled in VPI, and a multi-static satellite radar network study.",
     evidence: { label: "Read the space radar case study", to: "/work/space-radar" },
@@ -35,7 +35,7 @@ export const marketFocus = [
     id: "autonomous-sensing",
     label: "Autonomous sensing",
     context:
-      "Coherent FMCW LiDAR and solid-state beam steering, where the sensor has to survive a bill of materials as well as a road.",
+      "Coherent FMCW LiDAR and solid-state beam steering",
     proof:
       "A 16-element optical phased array on SOI steering 20° at 1.7° beamwidth, and the photonic design behind a first end-to-end FMCW LiDAR demonstrator.",
     evidence: { label: "Read the LiDAR case study", to: "/work/lidar" },
@@ -44,7 +44,7 @@ export const marketFocus = [
     id: "sensing-imaging",
     label: "Industrial, life-science & imaging",
     context:
-      "Instruments that have to leave the optical table — gas sensing, chip-scale imaging, metrology — where integration is what makes the product possible at all.",
+      "Gas sensing, computer vision, biomedical sensors with microfluidics, optical coherence tomography",
     proof:
       "Mid-infrared gas sensor devices developed with an industrial partner from epitaxy through to characterization, and chip-scale biomedical imaging architectures at Sant'Anna.",
     evidence: { label: "See the sensing projects", to: "/work" },

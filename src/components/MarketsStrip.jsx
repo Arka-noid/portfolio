@@ -18,14 +18,14 @@ export default function MarketsStrip({ compact = false }) {
       <div className="markets-body">
         <div className="reveal">
           <div className="section-eyebrow">Markets</div>
-          <h2 className="section-title">Where this work is going</h2>
+          <h2 className="section-title">Application domains</h2>
         </div>
-        <p className="markets-intro reveal">{marketIntro}</p>
+        
 
         <ul className={`markets-grid${compact ? " markets-grid--compact" : ""}`}>
           {marketFocus.map((m, i) => (
             <li key={m.id} className="market-card reveal">
-              <span className="market-index">{String(i + 1).padStart(2, "0")}</span>
+              
               <h3 className="market-label">{m.label}</h3>
               <p className="market-context">{m.context}</p>
               {!compact && (

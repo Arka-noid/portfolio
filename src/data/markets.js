@@ -12,10 +12,18 @@
 // string array for the /work filter, and the two must not collide on import.
 //
 // Voice: this renders on Home and /services, which are firm surfaces — "we".
+//
+// `image` is the card's own photographic backdrop: a path under /images, or
+// null for no photo (the card then renders on flat --surface, as before).
+// It sits in this file rather than in data/images.js because it belongs to the
+// market, not to a page slot — but the same rules apply, see
+// public/images/README.md: real hardware over CGI, chosen for subject and not
+// for colour, since the card treatment desaturates and tints whatever is here.
 export const marketFocus = [
   {
     id: "ai-infrastructure",
     label: "AI infrastructure & datacenter",
+    image: "/images/datacenter-racks.jpg",
     context:
       "Optical interconnect, co-packaged optics and optical I/O as link budgets push past 1.6Tb/s per lane",
     proof:
@@ -25,6 +33,7 @@ export const marketFocus = [
   {
     id: "space-defense",
     label: "Space & defense",
+    image: "/images/earth-night.jpg",
     context:
       "Photonic payloads for Earth observation and radars",
     proof:
@@ -34,6 +43,7 @@ export const marketFocus = [
   {
     id: "autonomous-sensing",
     label: "Autonomous sensing",
+    image: "/images/lidar-point-cloud.png",
     context:
       "Coherent FMCW LiDAR and solid-state beam steering",
     proof:
@@ -43,6 +53,7 @@ export const marketFocus = [
   {
     id: "sensing-imaging",
     label: "Industrial, life-science & imaging",
+    image: "/images/pulse-oximeter.jpg",
     context:
       "Gas sensing, computer vision, biomedical sensors with microfluidics, optical coherence tomography",
     proof:

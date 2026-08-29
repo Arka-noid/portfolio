@@ -1850,6 +1850,53 @@ a.pub-item {
   transform: translateY(-2px);
 }
 
+/* Per-card photographic backdrop — `image` in data/markets.js. Same idea as
+   ThemedImage, split across two layers because a filter also applies to a
+   node's children: `.market-card-photo` carries the desaturated photo, and
+   the wrapper's ::after lays the navy-into-cyan scrim over it unfiltered.
+   Decorative and inert — aria-hidden, no motion, nothing to reduce. */
+.market-card-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.market-card-photo {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  filter: grayscale(0.8) contrast(1.05) brightness(0.75);
+  opacity: 0.28;
+  transition: opacity 0.25s, filter 0.25s;
+}
+
+.market-card:hover .market-card-photo {
+  opacity: 0.4;
+  filter: grayscale(0.6) contrast(1.08) brightness(0.8);
+}
+
+/* Keeps the text side readable and lets the photo survive on the outer edge,
+   where nothing but the card border sits on top of it. */
+.market-card-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(var(--surface-rgb), 0.95) 0%,
+    rgba(var(--surface-rgb), 0.82) 55%,
+    rgba(var(--accent-rgb), 0.07) 100%
+  );
+}
+
+/* Lifts the card's own content above the backdrop layers. */
+.market-card-body {
+  position: relative;
+  z-index: 1;
+}
+
 .market-index {
   font-family: "Space Grotesk", sans-serif;
   font-size: 0.62rem;

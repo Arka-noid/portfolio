@@ -8,9 +8,11 @@ import SectionBackdrop from "./SectionBackdrop";
 //
 // `compact` is the home-page teaser — label and context only. There is nothing
 // to click there beyond the section CTA, so no per-item control is rendered.
-// The backdrop is guarded behind !compact for the same reason: the home page
-// already carries the hero canvas and the logo band, and a third photographic
-// layer there is noise.
+// The section-wide backdrop is guarded behind !compact: the home page already
+// carries the hero canvas and the logo band, and a third full-width
+// photographic layer there is noise. The per-card backdrops below are not —
+// they are dim, card-sized and carry the market's subject, so they run in both
+// modes; a market with no `image` simply keeps the flat surface.
 export default function MarketsStrip({ compact = false }) {
   return (
     <section id="markets" className={compact ? undefined : "section--backdrop"}>
@@ -25,19 +27,28 @@ export default function MarketsStrip({ compact = false }) {
         <ul className={`markets-grid${compact ? " markets-grid--compact" : ""}`}>
           {marketFocus.map((m, i) => (
             <li key={m.id} className="market-card reveal">
-              
-              <h3 className="market-label">{m.label}</h3>
-              <p className="market-context">{m.context}</p>
-              {!compact && (
-                <>
-                  <p className="market-proof">
-                    <span>Proof</span> {m.proof}
-                  </p>
-                  <Link className="market-evidence" to={m.evidence.to}>
-                    {m.evidence.label} →
-                  </Link>
-                </>
+              {m.image && (
+                <span className="market-card-bg" aria-hidden="true">
+                  <span
+                    className="market-card-photo"
+                    style={{ backgroundImage: `url(${m.image})` }}
+                  />
+                </span>
               )}
+              <div className="market-card-body">
+                <h3 className="market-label">{m.label}</h3>
+                <p className="market-context">{m.context}</p>
+                {!compact && (
+                  <>
+                    <p className="market-proof">
+                      <span>Proof</span> {m.proof}
+                    </p>
+                    <Link className="market-evidence" to={m.evidence.to}>
+                      {m.evidence.label} →
+                    </Link>
+                  </>
+                )}
+              </div>
             </li>
           ))}
         </ul>

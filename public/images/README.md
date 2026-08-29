@@ -18,6 +18,32 @@ visual impact and topical fit, not final art. Swap any of it freely.
 | `insarFigure` | `insar-interferogram.jpg` | Phase-wrapped InSAR interferogram | [NASA PIA02713](https://images.nasa.gov) (public domain) |
 | `lidarHero` | *unsourced* | Night highway / city-lights long exposure | [Unsplash](https://unsplash.com/s/photos/night-highway-long-exposure) · [Pexels](https://www.pexels.com/search/night%20highway/) |
 
+## Market card backdrops
+
+The four market cards carry their own photo, wired as `image` in
+`src/data/markets.js` rather than as a slot here — it belongs to the market,
+not to a page position. Same rules apply; the card dims and tints whatever is
+set, and a null `image` leaves the card on flat `--surface`.
+
+| Market | File | Subject | Source |
+|---|---|---|---|
+| `ai-infrastructure` | `datacenter-racks.jpg` | Datacenter cold aisle, blue-lit racks | **licence unverified** |
+| `space-defense` | `earth-night.jpg` | Earth at night from orbit (shared with the space-radar hero) | [Unsplash](https://unsplash.com/license) (NASA) |
+| `autonomous-sensing` | `lidar-point-cloud.png` | Ouster OS1-64 point cloud, Folsom/Dore St, San Francisco | Ouster, via Wikimedia Commons — **check the CC terms, attribution is likely required** |
+| `sensing-imaging` | `pulse-oximeter.jpg` | Pulse oximeter clipped to a finger — optical biosensing, no face | [Unsplash](https://unsplash.com/license) (Engin Akyurt) |
+
+Two caveats before this ships:
+
+- **Provenance.** `datacenter-racks.jpg` arrived under a scraped filename with
+  no known source, and the Ouster point cloud is a Wikimedia file whose licence
+  probably demands a credit line. Confirm both, or replace them — everything
+  else here is Unsplash/NASA, i.e. free of attribution duty.
+- `lidar-point-cloud.png` is only 330 px wide, so it is upscaled on the card.
+  The dimming hides most of that, but a larger frame would be better.
+
+`earth-night.jpg` is deliberately reused rather than duplicated under a second
+name.
+
 ## Rendering — you do not need to match the palette
 
 Photographs render through `components/ThemedImage.jsx`, which desaturates the

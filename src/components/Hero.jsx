@@ -89,19 +89,23 @@ export default function Hero() {
           into your products.
         </h1>
         <p className="hero-sub">
-          Optical and photonic problems, wherever they sit in the stack &mdash;
-          architecture, systems, characterization, devices. We work out where
-          yours actually is, then fix it.
+          Optical and photonic problems on every layer: from  
+          architecture to systems, measurement and characterization, 
+          components and devices. 
+          We work out where is your problem, then fix it.
         </p>
         <p className="hero-markets">
-          AI infrastructure &amp; datacenter optics · Space &amp; defense ·
-          Autonomous sensing · Imaging &amp; industrial sensing
+          AI infrastructure &amp; datacenter optics · 
+          Telecommunications · 
+          Space &amp; defense ·
+          Autonomous sensing · 
+          Imaging &amp; industrial sensing
         </p>
         <Link className="hero-cta" to="/services">
           See our services →
         </Link>
       </div>
-      <div className="hero-stats">
+      {/* <div className="hero-stats">
         <div className="stat">
           <div className="stat-num">
             10<span>+</span>
@@ -120,7 +124,7 @@ export default function Hero() {
           </div>
           <div className="stat-label">Publications</div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

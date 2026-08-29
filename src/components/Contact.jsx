@@ -15,10 +15,8 @@ export default function Contact() {
           Let's build something.
         </h2>
         <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: "0.5rem" }}>
-          Available for consulting engagements — independent design review,
-          system architecture and link budgets, TRL maturation, and technical
-          due diligence. Most engagements start with a fixed-scope design
-          review, so you can see how we work before committing to more.
+          Available for consulting engagements, independent design review, characterization setup installation,
+          system architecture and link budgets and design services. 
         </p>
         <div className="contact-links">
           <a className="contact-link" href="mailto:info@merilight.com">

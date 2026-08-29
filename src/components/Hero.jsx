@@ -81,25 +81,19 @@ export default function Hero() {
       <WaveguideCanvas reduced={reduced} />
       <div className="hero-content">
         <div className="hero-eyebrow">
-          Optical Systems Engineering · Consultancy and Design services
+          Optical systems engineering · Consulting and design
         </div>
         <h1 className="hero-title">
           Shining <span>light</span>
           <br />
           into your products.
         </h1>
+        {/* The markets used to be listed again here; the Markets section sits
+            directly below on the home page, so the line was repetition. */}
         <p className="hero-sub">
-          Optical and photonic problems on every layer: from  
-          architecture to systems, measurement and characterization, 
-          components and devices. 
-          We work out where is your problem, then fix it.
-        </p>
-        <p className="hero-markets">
-          AI infrastructure &amp; datacenter optics · 
-          Telecommunications · 
-          Space &amp; defense ·
-          Autonomous sensing · 
-          Imaging &amp; industrial sensing
+          We work across the photonic stack — materials, devices, packaging,
+          system architecture, product. Most projects fail in the gaps between
+          those layers. We find the gap, then close it.
         </p>
         <Link className="hero-cta" to="/services">
           See our services →

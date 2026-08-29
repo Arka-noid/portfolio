@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { marketFocus, marketIntro } from "../data/markets";
+import { marketFocus } from "../data/markets";
 import { siteImages } from "../data/images";
 import SectionBackdrop from "./SectionBackdrop";
 
@@ -22,10 +22,9 @@ export default function MarketsStrip({ compact = false }) {
           <div className="section-eyebrow">Markets</div>
           <h2 className="section-title">Application domains</h2>
         </div>
-        
 
         <ul className={`markets-grid${compact ? " markets-grid--compact" : ""}`}>
-          {marketFocus.map((m, i) => (
+          {marketFocus.map((m) => (
             <li key={m.id} className="market-card reveal">
               {m.image && (
                 <span className="market-card-bg" aria-hidden="true">
@@ -53,11 +52,8 @@ export default function MarketsStrip({ compact = false }) {
           ))}
         </ul>
 
-        {compact && (
-          <Link className="hero-cta teaser-cta reveal" to="/services">
-            See how we work in them →
-          </Link>
-        )}
+        {/* No teaser CTA here: the hero and the stack section below both link
+            to /services already, and a third identical call is repetition. */}
       </div>
     </section>
   );

@@ -11,7 +11,7 @@ export const stackLayers = [
   {
     id: "product",
     name: "Productization",
-    domain: "Product integration · Electronics · Software · Documentation",
+    domain: "Product integration · electronics · software · documentation",
     depth: 4,
     depthLabel: "Led a TRL 3→6 transition",
     whatIDo:
@@ -20,7 +20,6 @@ export const stackLayers = [
       "Led the system-level transition of a programmable photonic mesh chip from TRL 3 to TRL 6 for a deep-tech startup at imec, and wrote the technical guidelines for the industrial handover.",
     evidence: { label: "Programmable photonic processor", to: "/work" },
   },
-  
   {
     id: "packaging",
     name: "Packaging & module",
@@ -66,7 +65,7 @@ export const stackLayers = [
     whatIDo:
       "The building blocks themselves — simulated, laid out, fabricated and then measured, so the model and the hardware are reconciled rather than assumed to agree.",
     proof:
-      "16-element optical phased array on SOI reaching 1.7° beamwidth over a 20° steering range; MZMs, Bragg grating filters, phase shifters, directional couplers and optical antennas across multiple tape-outs.",
+      "16-element optical phased array on SOI reaching 1.7° beamwidth over a 20° steering range; MZMs, Bragg grating filters, phase shifters, directional couplers and optical antennas across multiple tape-outs; the first imec SiN platform PDK supported through DoE and validation benchmarks.",
     evidence: { label: "Integrated LiDAR system", to: "/work/lidar" },
   },
   {

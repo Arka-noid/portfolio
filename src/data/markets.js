@@ -51,5 +51,9 @@ export const marketFocus = [
   },
 ];
 
+// Renders on /services and, via MarketsStrip compact, on the home page. It no
+// longer restates the "the hard part is the systems engineering in between"
+// thesis: on /services that line belongs to the page promise (positioning §9),
+// and three restatements of it used to land within one scroll.
 export const marketIntro =
-  "The same three engagements, addressed to four fields. Photonics is being pulled out of the lab in all of them at once, and the hard part is always the systems engineering in between.";
+  "The same three engagements, addressed to four fields. Photonics is being pulled out of the lab in all of them at once — what changes between them is which constraint decides the architecture first.";

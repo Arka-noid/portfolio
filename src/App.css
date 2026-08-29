@@ -1151,6 +1151,119 @@ a.pub-item {
 
 /* ── SERVICES ── */
 
+/* The heading block. .svc-split mirrors .cs-two-col rather than reusing it:
+   that class lives in the case-study namespace with its own responsive block,
+   and the two should stay separable. The class is applied by Services.jsx only
+   when the image slot is set, so an unset slot is a plain full-width block
+   rather than a two-column grid with an empty half. */
+
+.svc-head-block {
+  margin-bottom: 2.5rem;
+}
+
+.svc-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 3rem;
+  align-items: start;
+}
+
+/* The promise line follows the h2 directly, so the h2 gives up the 3.5rem it
+   normally uses to clear a section. */
+.svc-h2 {
+  margin-bottom: 1.2rem;
+}
+
+.svc-promise {
+  max-width: 60ch;
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: var(--muted);
+  font-weight: 300;
+  margin: 0;
+}
+
+/* Symptom router — docs/positioning.md §5.1. Rows are anchors into the offer
+   grid below, so they borrow the .market-card idiom rather than inventing a
+   second one: flat surface, accent-alpha hairline, an accented leading edge
+   and an uppercase micro-label for the offer number. */
+
+.symptom-router {
+  margin-bottom: 2.5rem;
+}
+
+.symptom-lead {
+  max-width: 66ch;
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--muted);
+  font-weight: 300;
+  margin-bottom: 1.4rem;
+}
+
+.symptom-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.symptom-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 100%;
+  padding: 0.85rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid rgba(var(--accent-rgb), 0.07);
+  border-left: 2px solid rgba(var(--accent-rgb), 0.35);
+  text-decoration: none;
+  transition: border-color 0.25s, transform 0.25s, color 0.25s;
+}
+
+.symptom-row:hover {
+  border-color: rgba(var(--accent-rgb), 0.3);
+  border-left-color: var(--accent);
+  transform: translateX(2px);
+}
+
+.symptom-row:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-left-color: var(--accent);
+}
+
+.symptom-text {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  font-weight: 300;
+  color: var(--muted);
+  transition: color 0.25s;
+}
+
+.symptom-row:hover .symptom-text,
+.symptom-row:focus-visible .symptom-text {
+  color: var(--text);
+}
+
+.symptom-offer {
+  flex-shrink: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: rgba(var(--accent-rgb), 0.55);
+  transition: color 0.25s;
+}
+
+.symptom-row:hover .symptom-offer,
+.symptom-row:focus-visible .symptom-offer {
+  color: var(--accent);
+}
+
 .svc-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1159,6 +1272,9 @@ a.pub-item {
 
 .svc-card {
   position: relative;
+  /* The router jumps here from above, and the nav is fixed and ~10rem tall —
+     without this the card's title lands underneath it. */
+  scroll-margin-top: 11rem;
   padding: 1.8rem;
   background: var(--surface);
   border: 1px solid rgba(var(--accent-rgb), 0.07);
@@ -1622,6 +1738,13 @@ a.pub-item {
   border-left: 1px solid rgba(var(--accent-rgb), 0.14);
 }
 
+/* On /services the counted proof reads as credibility after the pitch, so it
+   follows the offer grid and needs the gap the shorthand above zeroes out. On
+   the home page the strip still precedes the grid and is unaffected. */
+.svc-grid + .proof-strip {
+  margin-top: 3rem;
+}
+
 .proof-strip li {
   padding: 1.4rem 1.2rem;
   border-right: 1px solid rgba(var(--accent-rgb), 0.14);
@@ -1649,6 +1772,42 @@ a.pub-item {
   text-transform: uppercase;
   color: var(--muted);
   line-height: 1.5;
+}
+
+/* ── SECTION BACKDROP ── */
+
+/* A photograph behind a whole section rather than a banner interrupting it.
+   Echoes .cs-hero-photo, but the gradient is composited in SectionBackdrop.jsx
+   with var(--bg-rgb) so it follows a palette change. Decorative and inert: no
+   animation of its own, so the reduced-motion block needs no rule for it. */
+
+.section--backdrop {
+  position: relative;
+}
+
+/* Full-bleed rather than confined to the section's 1100px box: a backdrop that
+   stops short of the viewport edge reads as a panel someone dropped in, not as
+   the ground the section sits on. .portfolio clips the 100vw overflow. */
+.section-backdrop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  background-size: cover;
+  background-position: center;
+  /* Deliberately far back. The subject should be readable as texture when
+     looked for and invisible when reading the copy over it. */
+  opacity: 0.16;
+  filter: saturate(0.6) brightness(0.75);
+  pointer-events: none;
+}
+
+/* Lifts the section's own content above the backdrop layer. */
+.markets-body {
+  position: relative;
+  z-index: 1;
 }
 
 /* ── MARKETS ── */
@@ -2600,6 +2759,14 @@ a.cs-pub:hover {
   .markets-grid {
     grid-template-columns: 1fr;
   }
+
+  .symptom-list {
+    grid-template-columns: 1fr;
+  }
+
+  .svc-split {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 600px) {
@@ -2686,6 +2853,19 @@ a.cs-pub:hover {
 
   .market-label {
     font-size: 1.02rem;
+  }
+
+  .symptom-router {
+    margin-bottom: 2.2rem;
+  }
+
+  .symptom-row {
+    padding: 0.75rem 0.9rem;
+    gap: 0.75rem;
+  }
+
+  .symptom-text {
+    font-size: 0.82rem;
   }
 
   .contact-section {

@@ -13,7 +13,8 @@ visual impact and topical fit, not final art. Swap any of it freely.
 | `spaceRadarHero` | `earth-night.jpg` | Earth at night from orbit, city lights | [Unsplash](https://unsplash.com/license) (NASA) |
 | `aboutSide` | `wafer-dies.jpg` | Wafer die macro, gold/orange | [Unsplash](https://unsplash.com/license) |
 | `workBanner` | `orbital-hardware.jpg` | Cygnus capsule on the ISS robotic arm | [NASA](https://images.nasa.gov) (public domain) |
-| `servicesBanner` | `fiber-switch.jpg` | OM3 fibre jumpers in SFP cages | [Unsplash](https://unsplash.com/license) |
+| `marketsBackdrop` | `fiber-switch.jpg` | OM3 fibre jumpers in SFP cages | [Unsplash](https://unsplash.com/license) |
+| `servicesSide` | *unsourced* | Probe needle on a photonic die, or a fibre array butt-coupled to a chip edge — macro, real hardware | [Unsplash](https://unsplash.com/s/photos/semiconductor-probe-station) |
 | `insarFigure` | `insar-interferogram.jpg` | Phase-wrapped InSAR interferogram | [NASA PIA02713](https://images.nasa.gov) (public domain) |
 | `lidarHero` | *unsourced* | Night highway / city-lights long exposure | [Unsplash](https://unsplash.com/s/photos/night-highway-long-exposure) · [Pexels](https://www.pexels.com/search/night%20highway/) |
 
@@ -25,6 +26,12 @@ imagery reads as part of the site instead of pasted onto it. A slow cyan sweep
 animates across, echoing the LiDAR sweep; it is dropped entirely under
 `prefers-reduced-motion`. Case-study hero backdrops use `casestudy/HeroPhoto.jsx`
 instead, which gradient-masks into the page.
+
+Section backdrops use `components/SectionBackdrop.jsx`, which sits behind a
+whole section at low opacity under a gradient mask — a photograph that is
+present without being in the way. Unlike `HeroPhoto`, its gradient composites
+with `var(--bg-rgb)`, so it follows a palette change rather than pinning itself
+to the current navy.
 
 Practical consequence: **choose for subject, not for colour.** The treatment
 handles the palette. Dark or low-contrast originals still need the least work,

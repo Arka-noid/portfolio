@@ -91,9 +91,9 @@ export default function Hero() {
         {/* The markets used to be listed again here; the Markets section sits
             directly below on the home page, so the line was repetition. */}
         <p className="hero-sub">
-          We work across the photonic stack — materials, devices, packaging,
-          system architecture, product. Most projects fail in the gaps between
-          those layers. We find the gap, then close it.
+          We are here to solve your problems in optical and photonic technologies - 
+          From packaging, to system integration, architecture, device design and characterization - 
+          we can solve it.
         </p>
         <Link className="hero-cta" to="/services">
           See our services →

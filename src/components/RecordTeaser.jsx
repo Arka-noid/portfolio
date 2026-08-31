@@ -16,7 +16,7 @@ export default function RecordTeaser() {
         <div className="section-eyebrow">The team</div>
         <h2 className="section-title">The person behind Merilight</h2>
       </div>
-      <p className="stack-intro reveal">{recordIntro}</p>
+      {/* <p className="stack-intro reveal">{recordIntro}</p> */}
       <Link className="person-strip reveal" to="/profile">
         {principal.photoUrl && (
           <img
@@ -30,7 +30,7 @@ export default function RecordTeaser() {
           <span className="about-card-name">{principal.name}</span>
           <span className="about-card-role">{principal.role}</span>
         </span>
-        <span className="person-strip-cta">Meet the principal →</span>
+        {/* <span className="person-strip-cta">Meet the principal →</span> */}
       </Link>
     </section>
   );

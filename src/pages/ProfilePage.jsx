@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import Principal from "../components/Principal";
 import Experience from "../components/Experience";
+import Publications from "../components/Publications";
 
 // The person and the record they built, on their own route. Deliberately
 // absent from the primary nav — the site sells engagements first — so it
@@ -14,6 +15,7 @@ export default function ProfilePage() {
     <>
       <Principal />
       <Experience />
+      <Publications />
       <div className="profile-back reveal">
         <Link className="hero-cta" to="/about">
           ← About Merilight

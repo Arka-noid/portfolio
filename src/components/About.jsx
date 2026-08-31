@@ -9,7 +9,7 @@ export default function About() {
   return (
     <section id="about">
       <div className="reveal">
-        <div className="section-eyebrow">The firm</div>
+        {/* <div className="section-eyebrow">The firm</div> */}
         <h2 className="section-title">What Merilight is</h2>
       </div>
       <div className="about-layout">
@@ -20,9 +20,9 @@ export default function About() {
           <ThemedImage src={siteImages.aboutSide} variant="figure" />
         </div>
         <div className="about-body reveal">
-          {firm.structure && (
+          {/* {firm.structure && (
             <p className="about-structure">{firm.structure}</p>
-          )}
+          )} */}
           {firm.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}

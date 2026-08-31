@@ -15,7 +15,7 @@ export default function Contact() {
           Let's build something.
         </h2>
         <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: "0.5rem" }}>
-          Design reviews, system architecture and link budgets, device design,
+          System integration, productization, design reviews, link budgets, device design,
           characterization setups.
         </p>
         <div className="contact-links">

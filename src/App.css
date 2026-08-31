@@ -2017,6 +2017,68 @@ a.pub-item {
   font-family: "Space Grotesk", sans-serif;
 }
 
+/* ── PERSON STRIP ── */
+
+/* The introduction to /profile on /about: face, name, role and the way
+   through, all in one row and all one link — a bare button asked the buyer to
+   click before meeting anyone. Frame borrowed from .teaser-card so it reads as
+   part of the same set. */
+.person-strip {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  margin-top: 2.5rem;
+  padding: 1.2rem 1.6rem;
+  background: var(--surface);
+  border: 1px solid rgba(var(--accent-rgb), 0.07);
+  border-left: 2px solid var(--accent);
+  text-decoration: none;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.person-strip:hover {
+  border-color: rgba(var(--accent-rgb), 0.3);
+  transform: translateY(-2px);
+}
+
+/* Same upward-biased crop and treatment as .about-card > img — and the same
+   deliberate exception to the site's no-rounded-corners rule, for the same
+   reason: it reads as a person. */
+.person-strip-photo {
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  object-position: 50% 35%;
+  border-radius: 50%;
+  filter: grayscale(30%);
+}
+
+.person-strip-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+/* Cannot be a nested link, so it is a span wearing .stack-evidence's clothes. */
+.person-strip-cta {
+  margin-left: auto;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid rgba(var(--accent-rgb), 0.3);
+  padding-bottom: 2px;
+  transition: border-color 0.2s;
+}
+
+.person-strip:hover .person-strip-cta {
+  border-bottom-color: var(--accent);
+}
+
 /* ── SCROLL REVEAL ── */
 
 .reveal {
@@ -2949,6 +3011,17 @@ a.cs-pub:hover {
 
   .profile-back {
     padding: 0 1.25rem 4rem;
+  }
+
+  /* The link drops under the name rather than squeezing beside it. */
+  .person-strip {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .person-strip-cta {
+    margin-left: 0;
+    width: 100%;
   }
 
   .contact-links {

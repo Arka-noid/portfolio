@@ -1,17 +1,35 @@
-export const about = {
-  // The team card on /about. Merilight is one person, so the card is one
-  // person — presenting the principal the way a firm presents its team,
-  // which is exactly what `structure` below says out loud.
-  photoUrl: "/manuel.jpg",
-  name: "Manuel Reza",
-  role: "Principal · Photonic systems engineer",
+// The firm and the person are two exports because they are two pages. /about
+// speaks as Merilight and says "we"; /profile speaks as Manuel and says "I".
+// Keeping both voices in one object is what let them leak into one page — see
+// docs/positioning.md §7.
 
+// Rendered on /about, beside the hardware photograph.
+export const firm = {
   // The site says "we" because Merilight is the firm — but a buyer who
   // *discovers* it is one person feels misled, while one who is *told* does
   // not. Stating it plainly converts the weakness into a trust signal.
-  // Rendered at the top of /about.
   structure:
     "Merilight is Manuel Reza — an independent engineer, not an agency. The person you brief is the person who does the work.",
+
+  // Firm voice throughout: what Merilight is, why the gaps are where products
+  // fail, and how it is engaged. Traces to docs/positioning.md §1–§5; no
+  // figure or claim here that is not already elsewhere in src/data (§6).
+  paragraphs: [
+    "Merilight is an independent consultancy in photonic systems engineering. We work in the stretch between a working lab result and a shipping prototype — the part of a programme where the physics is already proven and the engineering risk is not.",
+    "Photonic products fail in the gaps between device physics, RF and manufacturing, and most of the help available covers exactly one of them: simulation shops run the tools you lack, design houses stop at the chip boundary, RF consultants stop at the optical one. We work across all of them, which is why the first question we answer is not how to fix your problem but which layer it is actually in.",
+    "We are engaged three ways: an architecture study before a platform is committed, measurement and characterization enablement when first silicon disagrees with the model, and an independent review before a tape-out or a funding gate. The work is European-weighted, done under NDA as a matter of course, and delivered by the person you briefed.",
+  ],
+};
+
+// Rendered on /profile, above the employment record. First person throughout —
+// this is Manuel's own account, and it is the reason the firm can make the
+// claims above.
+export const principal = {
+  // The portrait card. Merilight is one person, so the card is one person —
+  // presenting the principal the way a firm presents its team.
+  photoUrl: "/manuel.jpg",
+  name: "Manuel Reza",
+  role: "Principal · Photonic systems engineer",
 
   paragraphs: [
     "I'm an optical systems engineer who has worked at every altitude of the photonics value chain — from designing and etching III-V quantum-well devices in a Glasgow cleanroom, to architecting microwave-photonic receivers for spaceborne radar in Pisa, to maturing silicon photonics platforms and products at imec in Leuven.",
@@ -24,10 +42,12 @@ export const about = {
   education: [],
 };
 
-// Read directly above the timeline on /about. This one sentence is what keeps
-// the employment record from reading as a CV: it states why a firm is showing
-// one person's history at all, and frames what follows as provenance rather
-// than as a job history. See docs/positioning.md §1 and §7.
+// Read on /about, under the teaser that points at /profile. This one sentence
+// is what keeps the employment record from reading as a CV: it states why a
+// firm is showing one person's history at all, and frames what the reader is
+// about to open as provenance rather than as a job history. It sits on /about
+// deliberately — the framing has to be read before the record is.
+// See docs/positioning.md §1 and §7.
 export const recordIntro =
   "Merilight has one engineer, so the firm's capability is one person's record. This is where it was built — three institutions, one stack, ten years of it.";
 

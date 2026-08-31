@@ -20,8 +20,11 @@ export const siteImages = {
   // long exposure works best. Still unsourced. e.g. "/images/night-road.jpg"
   lidarHero: null,
 
-  // About section side image — wafer die macro.
-  // Shown only while no personal photo is set in data/about.js.
+  // /about side image — wafer die macro. Permanent now that /about is the
+  // firm and the portrait has moved to /profile: the buyer sizing up a
+  // consultancy should meet hardware here, not a face. Placeholder — an
+  // assembled/packaged photonic module would say "product" more directly than
+  // bare dies do. Also the fallback if principal.photoUrl is ever unset.
   aboutSide: "/images/wafer-dies.jpg",
 
   // Work/projects page banner — Cygnus cargo vehicle on the ISS robotic arm.

@@ -1,53 +1,31 @@
-import { about } from "../data/about";
-import { perspectives } from "../data/perspectives";
+import { firm } from "../data/about";
 import { siteImages } from "../data/images";
-import Perspective from "./Perspective";
 import ThemedImage from "./ThemedImage";
 
+// /about is the firm, and only the firm — it speaks as "we" throughout. The
+// principal, his portrait and his first-person account live on /profile, which
+// is what keeps the two voices from mixing on one page (positioning §7).
 export default function About() {
   return (
     <section id="about">
       <div className="reveal">
-        <div className="section-eyebrow">The principal</div>
-        <h2 className="section-title">From Device Physics to Product</h2>
+        <div className="section-eyebrow">The firm</div>
+        <h2 className="section-title">What Merilight is</h2>
       </div>
       <div className="about-layout">
-        {/* The team card. One person, presented the way a firm presents its
-            team — see about.photoUrl. Falls back to the decorative image when
-            no portrait is set, so the slot never renders empty. */}
-        {about.photoUrl ? (
-          <figure className="about-photo about-card reveal">
-            <img src={about.photoUrl} alt={`Portrait of ${about.name}`} />
-            <figcaption>
-              <span className="about-card-name">{about.name}</span>
-              <span className="about-card-role">{about.role}</span>
-            </figcaption>
-          </figure>
-        ) : (
-          <div className="about-photo reveal">
-            <ThemedImage src={siteImages.aboutSide} variant="figure" />
-          </div>
-        )}
+        {/* Hardware rather than a face: the buyer is sizing up a firm here.
+            The slot is decorative and fails gracefully — a null or broken
+            source removes its own frame. */}
+        <div className="about-photo reveal">
+          <ThemedImage src={siteImages.aboutSide} variant="figure" />
+        </div>
         <div className="about-body reveal">
-          {about.structure && (
-            <p className="about-structure">{about.structure}</p>
+          {firm.structure && (
+            <p className="about-structure">{firm.structure}</p>
           )}
-          {about.paragraphs.map((p, i) => (
+          {firm.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
-          <Perspective>{perspectives.about}</Perspective>
-          {about.education.length > 0 && (
-            <div className="about-facts">
-              <div className="about-fact">
-                <span className="about-fact-label">Education</span>
-                <ul>
-                  {about.education.map((e, i) => (
-                    <li key={i}>{e}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </section>

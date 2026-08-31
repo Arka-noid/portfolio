@@ -11,7 +11,7 @@ visual impact and topical fit, not final art. Swap any of it freely.
 | Slot | File | Subject | Source |
 |---|---|---|---|
 | `spaceRadarHero` | `earth-night.jpg` | Earth at night from orbit, city lights | [Unsplash](https://unsplash.com/license) (NASA) |
-| `aboutSide` | `wafer-dies.jpg` | Wafer die macro, gold/orange | [Unsplash](https://unsplash.com/license) |
+| `aboutSide` | `wafer-dies.jpg` | Wafer die macro, gold/orange — standing in for an assembled/packaged photonic module, which would read as "outcome" rather than "substrate" | [Unsplash](https://unsplash.com/license) |
 | `workBanner` | `orbital-hardware.jpg` | Cygnus capsule on the ISS robotic arm | [NASA](https://images.nasa.gov) (public domain) |
 | `marketsBackdrop` | `fiber-switch.jpg` | OM3 fibre jumpers in SFP cages | [Unsplash](https://unsplash.com/license) |
 | `servicesSide` | *unsourced* | Probe needle on a photonic die, or a fibre array butt-coupled to a chip edge — macro, real hardware | [Unsplash](https://unsplash.com/s/photos/semiconductor-probe-station) |

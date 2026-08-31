@@ -286,14 +286,17 @@ Never use, anywhere on the site:
 ### Required
 
 - **Voice: "we" for the firm, "I" for the track record.** Merilight offers,
-  reviews and delivers — so Home, Services, Contact and the nav say "we". The
-  personal record is Manuel's and stays first person singular: /about, /work
-  ("my role", "what I did"), the case studies, the Expertise Stack and the
-  publications. Never let "we" claim a credential only Manuel holds, and never
-  let "I" describe what the business sells. The one exception is a symptom
+  reviews and delivers — so Home, Services, About, Contact and the nav say
+  "we". The personal record is Manuel's and stays first person singular:
+  /profile, /work ("my role", "what I did"), the case studies, the Expertise
+  Stack and the publications. Never let "we" claim a credential only Manuel
+  holds, and never let "I" describe what the business sells. **The two voices
+  are separated by page, not by paragraph**: /about carries no first-person
+  copy at all, because a buyer sizing up a firm should not meet a person's
+  autobiography halfway down it — the person is one click away on /profile. The one exception is a symptom
   quoted in the buyer's own voice (§5.1), where the "we" is the client's team;
   it is set as their speech and never as Merilight's.
-- **State the structure, do not hide it.** `about.structure` says plainly that
+- **State the structure, do not hide it.** `firm.structure` says plainly that
   Merilight is Manuel, working alone. A buyer who discovers a "we" is one
   person feels misled; one who is told does not — and "you brief the person
   who does the work" is an advantage over a firm that sells you a partner and
@@ -307,10 +310,11 @@ Never use, anywhere on the site:
   title sits under them. Employers are named as the context work was done in,
   the way §6's proof sentences already do it. The record also sits on its own
   page (`/profile`) rather than inside /about: a full history in the middle of
-  the firm's introduction reads as a resume however it is labelled. /about
-  keeps the provenance sentence and a link, so the framing is read before the
-  history is opened, and /profile stays out of the primary nav — the site sells
-  engagements first.
+  the firm's introduction reads as a resume however it is labelled. /profile
+  carries the person *and* the record — portrait, name, first-person account,
+  then the timeline — while /about keeps only the provenance sentence and a
+  link, so the framing is read before the history is opened. /profile stays out
+  of the primary nav; the site sells engagements first.
 - Client outcome before personal capability, in every headline.
 - Every service states who it is for, what the client receives, and roughly how
   long it takes.

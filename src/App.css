@@ -1010,8 +1010,9 @@ a.pub-item {
   filter: grayscale(30%);
 }
 
-/* The team card — portrait plus name and role, the way a firm lists a team.
-   Merilight's team is one person; about.structure says so in the next column. */
+/* The portrait card on /profile — portrait plus name and role, the way a firm
+   lists a team. Merilight's team is one person; firm.structure says so on
+   /about, which is where the two pages meet. */
 .about-card {
   margin: 0;
 }

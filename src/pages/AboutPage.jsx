@@ -1,6 +1,6 @@
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import About from "../components/About";
-import Experience from "../components/Experience";
+import RecordTeaser from "../components/RecordTeaser";
 import Publications from "../components/Publications";
 
 export default function AboutPage() {
@@ -9,7 +9,7 @@ export default function AboutPage() {
   return (
     <>
       <About />
-      <Experience />
+      <RecordTeaser />
       <Publications />
     </>
   );

@@ -305,7 +305,12 @@ Never use, anywhere on the site:
   grid (the Expertise Stack carries capability, and §4 bans capability lists);
   and no entry led by a job title — the organisation and the period lead, the
   title sits under them. Employers are named as the context work was done in,
-  the way §6's proof sentences already do it.
+  the way §6's proof sentences already do it. The record also sits on its own
+  page (`/profile`) rather than inside /about: a full history in the middle of
+  the firm's introduction reads as a resume however it is labelled. /about
+  keeps the provenance sentence and a link, so the framing is read before the
+  history is opened, and /profile stays out of the primary nav — the site sells
+  engagements first.
 - Client outcome before personal capability, in every headline.
 - Every service states who it is for, what the client receives, and roughly how
   long it takes.

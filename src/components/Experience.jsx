@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { experience } from "../data/experience";
-import { recordIntro } from "../data/about";
 
 // The employment record, framed as provenance rather than as a CV — see
 // docs/positioning.md §7. The organisation and period lead each entry; the job
 // title stays visible underneath them, because hiding it would be evasive, but
 // it is not the headline.
+//
+// Rendered on its own route (/profile), not on /about: a full history in the
+// middle of the firm's introduction reads as a resume. /about carries the
+// provenance sentence and a link here instead — see components/RecordTeaser.jsx.
 export default function Experience() {
   const [expanded, setExpanded] = useState({});
   const toggle = (i) => setExpanded((p) => ({ ...p, [i]: !p[i] }));
@@ -16,7 +19,6 @@ export default function Experience() {
         <div className="section-eyebrow">Track record</div>
         <h2 className="section-title">Where this capability was built</h2>
       </div>
-      <p className="stack-intro reveal">{recordIntro}</p>
       <div className="timeline">
         {experience.map((item, i) => (
           <div key={i} className="timeline-item reveal">

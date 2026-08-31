@@ -15,8 +15,8 @@ export const firm = {
   // fail, and how it is engaged. Traces to docs/positioning.md §1–§5; no
   // figure or claim here that is not already elsewhere in src/data (§6).
   paragraphs: [
-    "Merilight is an independent consultancy in photonic systems engineering. We work in the stretch between a working lab result and a shipping prototype — the part of a programme where the physics is already proven and the engineering risk is not.",
-    "Photonic products fail in the gaps between device physics, RF and manufacturing, and most of the help available covers exactly one of them: simulation shops run the tools you lack, design houses stop at the chip boundary, RF consultants stop at the optical one. We work across all of them, which is why the first question we answer is not how to fix your problem but which layer it is actually in.",
+    "Merilight is an independent consultancy in optical photonic systems engineering. We work in the space from a functional lab result to shipping prototype.",
+    "Photonic products fail in the gaps between device physics, and most of the help available covers exactly one of them: simulation shops run the tools you lack, design houses stop at the chip boundary, RF consultants stop at the optical one. We work across all of them, which is why the first question we answer is not how to fix your problem but which layer it is actually in.",
     "We are engaged three ways: an architecture study before a platform is committed, measurement and characterization enablement when first silicon disagrees with the model, and an independent review before a tape-out or a funding gate. The work is European-weighted, done under NDA as a matter of course, and delivered by the person you briefed.",
   ],
 };

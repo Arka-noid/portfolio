@@ -2813,7 +2813,7 @@ a.cs-pub:hover {
   }
 
   .nav-logo img {
-    height: 30px;
+    height: 56px;
   }
 
   .nav-toggle {
@@ -2907,6 +2907,10 @@ a.cs-pub:hover {
 }
 
 @media (max-width: 600px) {
+  .nav-logo img {
+    height: 44px;
+  }
+
   section {
     padding: 4rem 1.25rem;
   }

@@ -16,7 +16,9 @@ export default function Nav() {
   return (
     <nav>
       <Link className="nav-logo" to="/" aria-label="Merilight — home" onClick={() => setOpen(false)}>
-        <img src="/logo-merilight.svg" alt="Merilight" width="106" height="36" />
+        {/* width/height only reserve the aspect ratio (499.43 × 173.48) before
+            the SVG loads — CSS sets the real height per breakpoint. */}
+        <img src="/logo-merilight.svg" alt="Merilight" width="345" height="120" />
       </Link>
       <button
         className="nav-toggle"

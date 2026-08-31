@@ -1,40 +1,21 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- The "merilight" wordmark is outlined (Object to Path), not live <text>.
+     It was set in Bahnschrift, a Windows-only font; this file is loaded via
+     <img>, which cannot pull page webfonts, so live text fell back to a wider
+     face on iOS/Android and overran the tight viewBox. Keep it as paths. -->
 <svg
    viewBox="-57.4 -96.7 499.42567 173.48002"
    version="1.1"
    id="svg8"
-   sodipodi:docname="logo-merilight.svg"
    width="499.42566"
    height="173.48001"
-   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview8"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="1.51"
-     inkscape:cx="330.13245"
-     inkscape:cy="115.56291"
-     inkscape:window-width="1920"
-     inkscape:window-height="1009"
-     inkscape:window-x="1912"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg8" />
   <defs
      id="defs3">
     <linearGradient
-       id="linearGradient30"
-       inkscape:collect="always">
+       id="linearGradient30">
       <stop
          style="stop-color:#38daf9;stop-opacity:0.98823529;"
          offset="0"
@@ -45,8 +26,7 @@
          id="stop31" />
     </linearGradient>
     <linearGradient
-       id="linearGradient23"
-       inkscape:collect="always">
+       id="linearGradient23">
       <stop
          style="stop-color:#37d5f7;stop-opacity:0.98431373;"
          offset="0"
@@ -79,7 +59,6 @@
          id="stop3" />
     </radialGradient>
     <radialGradient
-       inkscape:collect="always"
        xlink:href="#focusGradient"
        id="radialGradient8"
        gradientUnits="userSpaceOnUse"
@@ -88,7 +67,6 @@
        r="128.89999"
        gradientTransform="translate(313.16566,-9.959992)" />
     <radialGradient
-       inkscape:collect="always"
        xlink:href="#focusGradient"
        id="radialGradient9"
        gradientUnits="userSpaceOnUse"
@@ -97,7 +75,6 @@
        r="128.89999"
        gradientTransform="translate(313.16566,-9.959992)" />
     <radialGradient
-       inkscape:collect="always"
        xlink:href="#focusGradient"
        id="radialGradient10"
        gradientUnits="userSpaceOnUse"
@@ -106,7 +83,6 @@
        r="128.89999"
        gradientTransform="translate(313.16566,-9.959992)" />
     <radialGradient
-       inkscape:collect="always"
        xlink:href="#focusGradient"
        id="radialGradient11"
        gradientUnits="userSpaceOnUse"
@@ -115,7 +91,6 @@
        r="128.89999"
        gradientTransform="translate(313.16566,-9.959992)" />
     <radialGradient
-       inkscape:collect="always"
        xlink:href="#focusGradient"
        id="radialGradient12"
        gradientUnits="userSpaceOnUse"
@@ -124,7 +99,6 @@
        r="128.89999"
        gradientTransform="translate(313.16566,-9.959992)" />
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient23"
        id="linearGradient24"
        x1="-282.56711"
@@ -133,7 +107,6 @@
        y2="-9.9005671"
        gradientUnits="userSpaceOnUse" />
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient23"
        id="linearGradient25"
        gradientUnits="userSpaceOnUse"
@@ -142,7 +115,6 @@
        x2="-7.4366384"
        y2="-9.9005671" />
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient23"
        id="linearGradient28"
        gradientUnits="userSpaceOnUse"
@@ -151,7 +123,6 @@
        x2="-7.4366384"
        y2="-9.9005671" />
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient23"
        id="linearGradient29"
        gradientUnits="userSpaceOnUse"
@@ -160,7 +131,6 @@
        x2="-7.4366384"
        y2="-9.9005671" />
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient30"
        id="linearGradient31"
        x1="66.059822"
@@ -218,25 +188,17 @@
       <path
          style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#38d9f9;fill-opacity:0.988235;stroke:none;stroke-opacity:1;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
          d="m -37.912829,-11.900744 30.4761905,2 -30.4761905,2 -0.02121,-2.0441942 z"
-         sodipodi:nodetypes="sssss"
          id="path20" />
       <path
          style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:url(#linearGradient28);fill-opacity:1;stroke:none;stroke-opacity:1;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
          d="m -280.5671,-7.900744 -5.5625,-2 5.5625,-2 0.1,2 z"
-         sodipodi:nodetypes="sssss"
          id="path21" />
     </g>
   </g>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:68.8676px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:url(#linearGradient31);stroke:none;stroke-width:4.30423;stroke-dasharray:none;stroke-opacity:1"
-     x="-53.583035"
-     y="-29.760454"
+  <path
+     style="fill:url(#linearGradient31);stroke-width:4.30423"
+     d="m -6.5055739,-29.760454 v -21.151231 q 0,-3.698943 -1.9167252,-5.716548 -1.8830989,-2.017606 -5.3802809,-2.017606 -3.194542,0 -4.943134,1.950352 -1.748591,1.950352 -1.748591,5.514788 l -1.378697,-6.725351 q 1.681338,-3.497183 4.371478,-5.380281 2.690141,-1.883099 5.951936,-1.883099 5.6829225,0 8.7765842,3.73257 3.12728841,3.698944 3.12728841,10.491549 v 21.184857 z m -41.6971791,0 v -34.904575 h 6.859858 v 34.904575 z m 20.848589,0 v -21.151231 q 0,-3.698943 -1.815845,-5.716548 -1.815844,-2.017606 -5.144893,-2.017606 -3.362676,0 -5.212148,1.782218 -1.815845,1.782218 -1.815845,5.010387 l -0.706162,-6.725351 q 1.614085,-3.160916 4.203345,-4.87588 2.622887,-1.714965 5.783802,-1.714965 5.514789,0 8.541197,3.73257 3.026408,3.698944 3.026408,10.491549 v 21.184857 z m 52.424114,0.504401 q -7.297007,0 -11.298591,-4.068837 -4.0015842,-4.068838 -4.0015842,-11.567605 v -3.934331 q 0,-7.801407 3.8334502,-12.072006 3.867077,-4.270598 10.861443,-4.270598 6.590844,0 10.188907,4.842253 3.63169,4.842253 3.63169,13.58521 v 2.28662 h -23.53873 v -5.514788 h 17.015139 v 0 q -0.302641,-4.236972 -2.219366,-6.624472 -1.883098,-2.387499 -5.07764,-2.387499 -3.867077,0 -6.01919,2.555633 -2.152112,2.555634 -2.152112,7.229753 v 4.438732 q 0,4.337852 2.286619,6.658098 2.320247,2.320246 6.489965,2.320246 2.084858,0 4.136091,-0.840669 2.051232,-0.840669 3.665316,-2.353873 v 0 l 4.505986,4.505986 v 0 q -2.589261,2.48838 -5.817429,3.867077 -3.228169,1.34507 -6.489964,1.34507 z m 22.630808,-0.504401 v -34.904575 h 6.859858 v 34.904575 z m 19.200878,-26.632392 q -0.907922,-1.109683 -2.286619,-1.681338 -1.378697,-0.571655 -3.194542,-0.571655 -3.261796,0 -5.077641,1.815845 -1.782218,1.782218 -1.782218,4.97676 l -0.706162,-6.725351 q 1.580458,-3.093662 4.136092,-4.842253 2.58926,-1.748592 5.682922,-1.748592 2.387499,0 4.304225,0.706162 1.950351,0.672535 3.396302,2.017605 z m 10.188908,-15.401055 v -6.859859 h 6.859858 v 6.859859 z m 0,42.033447 v -34.904575 h 6.859858 v 34.904575 z M 101.23456,-78.65376 v 39.881335 q 0,1.24419 0.53803,1.950352 0.57165,0.706162 1.58045,0.706162 h 3.22817 v 6.523591 H 102.546 q -3.867075,0 -6.019187,-2.421127 Q 94.3747,-34.434573 94.3747,-38.839679 V -78.65376 Z m 13.0808,6.859859 v -6.859859 h 6.85986 v 6.859859 z m 0,42.033447 v -34.904575 h 6.85986 v 34.904575 z m 28.98627,14.190492 q -3.93433,0 -7.06161,-1.479578 -3.09367,-1.44595 -4.80863,-4.102464 v 0 l 4.64049,-4.203345 v 0 q 1.34507,1.849472 3.19454,2.858274 1.8831,1.008803 3.93433,1.008803 3.93434,0 6.08645,-2.185739 2.15211,-2.152113 2.15211,-6.12007 v -34.870948 h 6.85986 v 33.862145 q 0,7.26338 -3.93433,11.231337 -3.90071,4.001585 -11.06321,4.001585 z m -0.6389,-13.585211 q -5.78381,0 -8.94472,-3.698943 -3.12729,-3.73257 -3.12729,-10.491548 v -7.700528 q 0,-6.792605 3.06004,-10.491548 3.09366,-3.73257 8.6757,-3.73257 3.09366,0 5.64929,1.614084 2.58926,1.614085 4.16972,4.539612 l -0.70616,7.128873 q 0,-2.219366 -0.80704,-3.799824 -0.80704,-1.580457 -2.35387,-2.387499 -1.51321,-0.840669 -3.69895,-0.840669 -3.3963,0 -5.2794,2.118485 -1.84947,2.118486 -1.84947,5.951937 v 7.599647 q 0,3.799823 1.84947,5.884682 1.8831,2.051233 5.2794,2.051233 2.18574,0 3.69895,-0.840669 1.54683,-0.874296 2.35387,-2.48838 0.80704,-1.614085 0.80704,-3.867078 l 0.47077,7.36426 q -0.94154,2.353873 -3.26179,4.236972 -2.28662,1.849471 -5.98556,1.849471 z m 26.06073,-0.605281 V -78.65376 h 6.85985 v 48.893306 z m 21.18485,0 v -21.151231 q 0,-3.698943 -1.91672,-5.716548 -1.8831,-2.017606 -5.38028,-2.017606 -3.36268,0 -5.21215,1.748591 -1.81585,1.748592 -1.81585,4.943134 l -0.70616,-6.725352 q 1.61409,-3.093661 4.20335,-4.774999 2.62288,-1.714965 5.7838,-1.714965 5.68292,0 8.77658,3.73257 3.12729,3.698944 3.12729,10.491549 v 21.184857 z m 26.36338,0.168134 q -4.30423,0 -6.25458,-2.3875 -1.91672,-2.3875 -1.91672,-6.859859 v -35.98063 h 6.85986 v 36.047884 q 0,1.24419 0.5044,1.950352 0.5044,0.706162 1.47957,0.706162 h 3.29543 v 6.523591 z m -11.76937,-28.885385 v -6.187324 h 15.73733 v 6.187324 z"
      id="text29"
-     transform="scale(1.0760569,0.92931887)"><tspan
-       id="tspan29"
-       x="-53.583035"
-       y="-29.760454"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:68.8676px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;opacity:1;fill:url(#linearGradient31);stroke-width:4.30423"
-       sodipodi:role="line">merilight</tspan></text>
+     transform="scale(1.0760569,0.92931887)"
+     aria-label="merilight" />
 </svg>

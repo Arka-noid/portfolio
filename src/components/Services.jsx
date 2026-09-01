@@ -1,4 +1,4 @@
-import { services, serviceProof } from "../data/services";
+import { services, serviceProof, serviceFootnote } from "../data/services";
 import { symptoms } from "../data/symptoms";
 import { siteImages } from "../data/images";
 import ThemedImage from "./ThemedImage";
@@ -59,7 +59,7 @@ export default function Services() {
           return (
             <article key={s.id} id={`offer-${s.id}`} className="svc-strip reveal">
               <div className="svc-strip-aside">
-                <span className="svc-num">{String(i + 1).padStart(2, "0")}</span>
+                {/* <span className="svc-num">{String(i + 1).padStart(2, "0")}</span> */}
                 <h3 className="svc-title">{s.title}</h3>
                 <p className="svc-shape">{s.shape}</p>
                 <p className="svc-for">
@@ -83,18 +83,13 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
-                {s.adjacent.length > 0 && (
-                  <ul className="svc-adjacent">
-                    {s.adjacent.map((a) => (
-                      <li key={a}>{a}</li>
-                    ))}
-                  </ul>
-                )}
               </div>
             </article>
           );
         })}
       </div>
+
+      <p className="svc-scope-note reveal">{serviceFootnote}</p>
 
       <ServiceProofStrip items={serviceProof} /> 
     </section>

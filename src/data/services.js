@@ -14,8 +14,6 @@ import { publications, CITATIONS } from "./publications";
 //
 // Each entry is a buyable engagement, not a skill: who it is for, the problem
 // it removes, the concrete deliverables inside it, and roughly how long it takes.
-// `adjacent` names the adjacent field an offer reaches into, so breadth is
-// attached to a sellable outcome rather than listed on its own.
 // Rendered by components/Services.jsx (full) and ServicesTeaser.jsx (home).
 export const services = [
   {
@@ -42,7 +40,6 @@ export const services = [
     shape: "1–2 weeks review · 3–6 weeks full study",
     proof:
       "I converted fiber-based microwave photonic receivers into integrated architectures at Scuola Superiore Sant'Anna — including the hybrid SiN–InP SCORE-SAR receiver for EU SPACEBEAM, where no single platform could supply every function the system needed, with the full analog link budget modelled in VPI and validated against measured hardware. Designed and validated across four material platforms — SOI, SiN, InP and III-V antimonides — behind 32 peer-reviewed publications.",
-    adjacent: ["RF, microwave & radar", "Product strategy"],
   },
   {
     id: "prototype-integration",
@@ -68,7 +65,6 @@ export const services = [
     shape: "4–10 weeks · on-site or remote",
     proof:
       "I built the electronics-to-optics chain for a 16-element optical phased array — a custom multi-channel current-source PCB with a MATLAB control interface — and, on a programmable photonic mesh at imec, the multi-channel DAC/ADC drive between control software and chip plus the timing and triggering that kept read-out synchronised to the optical event. Hybrid SiN + InP multi-chip assembly packaged for space compliance testing.",
-    adjacent: ["Semiconductor process, fab & DFM"],
   },
   {
     id: "characterization",
@@ -90,7 +86,6 @@ export const services = [
     shape: "On-site · 2–8 weeks",
     proof:
       "I automated the calibration of a 16-element phased array — beam optimization in software rather than by hand, which is the difference between a demo and something another group can actually use — and ran electro-optical characterization end to end, from cleanroom to FTIR, at Glasgow.",
-    adjacent: ["Semiconductor process, fab & DFM"],
   },
 ];
 
@@ -115,4 +110,4 @@ export const serviceProof = [
 // Where the work leads, and the background that supports it — kept as prose
 // rather than as further cards, so the three offers above stay the offer.
 export const serviceFootnote =
-  "A prototype often continues into a product. I led the TRL 3→6 transition of a programmable photonic mesh chip for a deep-tech startup at imec, and took a silicon nitride platform PDK through DoE validation with 10+ partner organizations — so an engagement can run from the first driven prototype through to industrial handover. Work frequently sits inside EU-funded consortia; the programme mechanics are familiar, but we are hired for the engineering, not the paperwork. The same is true across markets: an optical interconnect or optical-I/O programme is assembled from fiber-to-chip coupling, micro-transfer-printed lasers, hybrid multi-chip assembly and wavelength multiplexing — the blocks I have designed, integrated and measured for other systems.";
+  "These three engagements are the usual starting points, not the boundary of the work. A review can continue into prototype bring-up, a bench can expose architecture changes, and a first driven prototype can run through validation, documentation, and industrial handover.";

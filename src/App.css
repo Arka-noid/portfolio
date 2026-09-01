@@ -22,6 +22,14 @@
   --accent-rgb: 0, 200, 255;
   --accent-soft: rgba(var(--accent-rgb), 0.12);
   --accent-glow: rgba(var(--accent-rgb), 0.35);
+
+  /* Hairlines. Every border on the site is accent at a low alpha; these name
+     the three weights actually in use, so line density is one edit rather
+     than sixty scattered rgba() literals. Anything outside these three is a
+     deliberate one-off (a button outline, an accented rail) and stays inline. */
+  --line: rgba(var(--accent-rgb), 0.07); /* panel border, internal divider */
+  --line-strong: rgba(var(--accent-rgb), 0.15); /* heading rule, proof strip */
+  --line-hover: rgba(var(--accent-rgb), 0.3); /* panel border, hovered */
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -47,8 +55,251 @@ body {
   overflow-x: hidden;
 }
 
-/* ── NAV ── */
+/* ══ SHARED IDIOMS ══
+   The site is built from a handful of repeated forms — a surface panel, an
+   uppercase micro-label, an underlined evidence link, an em-dash bullet. Each
+   is declared once here as a selector list, and every component below carries
+   only what makes it different.
 
+   Selector lists rather than utility classes so the markup stays semantic:
+   .market-card is still .market-card, and a new panel joins the list rather
+   than remembering to wear a .panel class. These rules come first in the file,
+   so any component rule further down wins on order at equal specificity. */
+
+/* ── Surface panel ──
+   Flat slate, accent hairline, and — for most — an accented leading edge. The
+   edge lists are separate so that hovering can restore them: `border-color` in
+   the hover rule is a shorthand and washes all four sides, which is why the
+   accent rail used to fade out on hover of a project, market or teaser card
+   while .symptom-row and .stack-row (which re-asserted it) brightened. */
+.proj-card,
+a.pub-item,
+.symptom-row,
+.svc-card,
+.svc-strip,
+.quote-card,
+.stack-row,
+.stack-detail,
+.market-card,
+.teaser-card,
+.person-strip,
+.cs-challenge-card,
+.cs-platform-card,
+.cs-scope-item,
+.cs-metric,
+a.cs-pub {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+/* Panels that carry a cyan rail on their leading edge. */
+.proj-card,
+a.pub-item,
+.svc-strip,
+.market-card,
+.teaser-card,
+.person-strip,
+.cs-challenge-card,
+a.cs-pub {
+  border-left: 2px solid var(--accent);
+}
+
+/* Panels whose rail sits on top instead — a card being read, not a row being
+   scanned. */
+.svc-card,
+.quote-card,
+.stack-detail {
+  border-top: 2px solid var(--accent);
+}
+
+/* Rows whose rail starts dim and lights up on hover, because the row is a
+   control: the rail is the affordance. */
+.symptom-row {
+  border-left: 2px solid rgba(var(--accent-rgb), 0.35);
+}
+
+.stack-row {
+  border-left: 2px solid rgba(var(--accent-rgb), 0.25);
+}
+
+.proj-card:hover,
+a.pub-item:hover,
+.symptom-row:hover,
+.svc-card:hover,
+.svc-strip:hover,
+.stack-row:hover,
+.market-card:hover,
+.teaser-card:hover,
+.person-strip:hover,
+.cs-challenge-card:hover,
+a.cs-pub:hover {
+  border-color: var(--line-hover);
+  border-left-color: var(--accent);
+}
+
+/* Top-railed panels re-assert the edge the shorthand above just washed. */
+.svc-card:hover {
+  border-top-color: var(--accent);
+}
+
+/* ── Uppercase micro-label ──
+   The site's smallest type: an accent tag introducing a line of copy ("For",
+   "You get", "Proof") or captioning a card. */
+.proj-card-problem span,
+.proj-card-role span,
+.proj-card-outcome span,
+.svc-proof span,
+.svc-for span,
+.svc-deliver span,
+.stack-proof span,
+.stack-detail-eyebrow,
+.market-proof span,
+.teaser-card-tag,
+.symptom-offer {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Inline labels sit on the same line as the copy they introduce. */
+.proj-card-problem span,
+.proj-card-role span,
+.proj-card-outcome span,
+.svc-proof span,
+.svc-for span,
+.svc-deliver span,
+.stack-proof span,
+.market-proof span {
+  margin-right: 0.5rem;
+}
+
+/* ── Evidence link ──
+   Where a claim hands off to the thing that backs it. Underlined rather than
+   boxed: it is a way through, not a call to action. */
+.stack-evidence,
+.market-evidence,
+.person-strip-cta {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-hover);
+  padding-bottom: 2px;
+  transition: border-color 0.2s;
+}
+
+.stack-evidence:hover,
+.market-evidence:hover,
+.person-strip:hover .person-strip-cta {
+  border-bottom-color: var(--accent);
+}
+
+/* ── Outlined CTA ──
+   The site's only button shape. The large form leads a page; the small form
+   sits inside one. */
+.hero-cta,
+.cs-back-cta,
+.pub-scholar-link,
+.proj-case-study-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.hero-cta,
+.cs-back-cta {
+  padding: 0.85rem 2rem;
+  border: 1px solid var(--accent);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+}
+
+.pub-scholar-link,
+.proj-case-study-link {
+  gap: 0.4rem;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid rgba(var(--accent-rgb), 0.25);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+}
+
+.hero-cta:hover,
+.cs-back-cta:hover {
+  background: var(--accent-soft);
+  box-shadow: 0 0 24px var(--accent-glow);
+}
+
+.pub-scholar-link:hover,
+.proj-case-study-link:hover {
+  background: var(--accent-soft);
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+
+/* ── Em-dash bullet ──
+   Used wherever a list needs marking without a disc. */
+.timeline-bullets li,
+.proj-card-highlights li,
+.cs-platform-card li,
+.cs-phase-points li {
+  position: relative;
+  padding: 0.2rem 0 0.2rem 1rem;
+  line-height: 1.7;
+}
+
+.timeline-bullets li::before,
+.proj-card-highlights li::before,
+.cs-platform-card li::before,
+.cs-phase-points li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  opacity: 0.5;
+  font-size: 0.7rem;
+}
+
+/* ── Section intro ──
+   The paragraph between a section title and its content. */
+.stack-intro,
+.symptom-lead {
+  max-width: 66ch;
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--muted);
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+}
+
+/* ── Proof line ──
+   A claim closed off by the evidence for it, divided from the copy above. */
+.svc-proof,
+.stack-proof,
+.market-proof {
+  font-size: 0.8rem;
+  color: var(--text);
+  line-height: 1.7;
+  border-top: 1px solid var(--line);
+  padding-top: 0.9rem;
+}
+
+/* ── Fixed page header ──
+   Only one of these now: case studies dropped their own .cs-nav for the
+   global one (see components/casestudy/CaseStudyShell.jsx). */
 nav {
   position: fixed;
   top: 0;
@@ -61,8 +312,41 @@ nav {
   padding: 1.2rem 3rem;
   background: rgba(var(--bg-rgb), 0.85);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(var(--accent-rgb), 0.08);
+  border-bottom: 1px solid var(--line);
 }
+
+/* ── Full-bleed hero canvas ── */
+.hero-canvas,
+.cs-hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* ── Diagram well ──
+   The recessed box a case-study SVG sits in. */
+.cs-chip-diagram,
+.cs-arch-diagram {
+  background: rgba(var(--bg-rgb), 0.5);
+  border: 1px solid var(--line);
+  overflow-x: auto;
+}
+
+.cs-chip-svg,
+.cs-arch-svg {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  height: auto;
+}
+
+/* ── NAV ── */
+
+/* The bar itself is the shared fixed page header above; only what is inside
+   it differs between the site nav and the case-study nav. */
 
 .nav-logo {
   display: inline-flex;
@@ -143,13 +427,7 @@ nav {
 }
 
 .hero-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   opacity: 0.6;
-  pointer-events: none;
 }
 
 .hero-content {
@@ -202,29 +480,6 @@ nav {
   line-height: 1.9;
   max-width: 520px;
   margin-bottom: 2.5rem;
-}
-
-.hero-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.85rem 2rem;
-  background: transparent;
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.25s;
-  text-decoration: none;
-}
-
-.hero-cta:hover {
-  background: var(--accent-soft);
-  box-shadow: 0 0 24px var(--accent-glow);
 }
 
 .hero-stats {
@@ -415,19 +670,6 @@ section {
 .timeline-bullets li {
   font-size: 0.88rem;
   color: var(--muted);
-  line-height: 1.7;
-  padding: 0.25rem 0;
-  padding-left: 1rem;
-  position: relative;
-}
-
-.timeline-bullets li::before {
-  content: "—";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  opacity: 0.5;
-  font-size: 0.7rem;
 }
 
 .timeline-expand {
@@ -510,21 +752,19 @@ section {
   color: var(--accent);
   padding-bottom: 0.7rem;
   margin-bottom: 1.4rem;
-  border-bottom: 1px solid rgba(var(--accent-rgb), 0.15);
+  border-bottom: 1px solid var(--line-strong);
 }
 
 .proj-card {
   position: relative;
   margin-bottom: 1.5rem;
   padding: 1.5rem 1.8rem;
-  background: var(--surface);
-  border: 1px solid rgba(var(--accent-rgb), 0.07);
-  border-left: 3px solid var(--accent);
-  transition: border-color 0.25s, transform 0.25s;
+  /* Wider rail than the other panels — the project list is long and the
+     cards are the page, so they carry the heaviest leading edge on the site. */
+  border-left-width: 3px;
 }
 
 .proj-card:hover {
-  border-color: rgba(var(--accent-rgb), 0.25);
   transform: translateX(4px);
 }
 
@@ -597,18 +837,6 @@ section {
   margin-top: 0.9rem;
 }
 
-.proj-card-problem span,
-.proj-card-role span,
-.proj-card-outcome span {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-right: 0.5rem;
-}
-
 .proj-card-role {
   font-size: 0.8rem;
   color: var(--muted);
@@ -641,7 +869,7 @@ section {
   cursor: pointer;
   border: none;
   background: none;
-  border-bottom: 1px solid rgba(var(--accent-rgb), 0.3);
+  border-bottom: 1px solid var(--line-hover);
   padding: 0 0 3px;
   transition: opacity 0.2s, border-color 0.2s;
 }
@@ -666,7 +894,7 @@ section {
 .proj-card-detail {
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(var(--accent-rgb), 0.08);
+  border-top: 1px solid var(--line);
 }
 
 .proj-card-institution {
@@ -693,18 +921,6 @@ section {
 .proj-card-highlights li {
   font-size: 0.82rem;
   color: var(--text);
-  line-height: 1.7;
-  padding: 0.2rem 0 0.2rem 1rem;
-  position: relative;
-}
-
-.proj-card-highlights li::before {
-  content: "—";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  opacity: 0.5;
-  font-size: 0.7rem;
 }
 
 .proj-card-tags {
@@ -765,31 +981,10 @@ section {
   border: 1px solid rgba(var(--accent-rgb), 0.35);
 }
 
-.pub-scholar-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.8rem;
-  font-family: "Space Grotesk", sans-serif;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--accent);
-  text-decoration: none;
-  padding: 0.5rem 1.2rem;
-  border: 1px solid rgba(var(--accent-rgb), 0.25);
-  transition: all 0.25s;
-}
-
 .pub-scholar-footer {
   margin-top: 2.5rem;
   padding-top: 2rem;
-  border-top: 1px solid rgba(var(--accent-rgb), 0.14);
-}
-
-.pub-scholar-link:hover {
-  background: var(--accent-soft);
-  box-shadow: 0 0 16px var(--accent-glow);
+  border-top: 1px solid var(--line-strong);
 }
 
 .pub-intro {
@@ -817,7 +1012,7 @@ section {
   color: var(--text);
   padding-bottom: 0.7rem;
   margin-bottom: 1.1rem;
-  border-bottom: 1px solid rgba(var(--accent-rgb), 0.15);
+  border-bottom: 1px solid var(--line-strong);
 }
 
 .pub-group-count {
@@ -848,17 +1043,10 @@ a.pub-item {
   text-decoration: none;
   color: inherit;
   padding: 0.8rem 1.1rem;
-  background: var(--surface);
-  border-left: 2px solid var(--accent);
-  border-top: 1px solid rgba(var(--accent-rgb), 0.07);
-  border-right: 1px solid rgba(var(--accent-rgb), 0.07);
-  border-bottom: 1px solid rgba(var(--accent-rgb), 0.07);
-  transition: border-color 0.25s, transform 0.25s;
   cursor: pointer;
 }
 
 .pub-item:hover {
-  border-color: rgba(var(--accent-rgb), 0.3);
   transform: translateX(4px);
 }
 
@@ -932,7 +1120,7 @@ a.pub-item {
 .contact-section {
   text-align: center;
   padding: 7rem 3rem;
-  border-top: 1px solid rgba(var(--accent-rgb), 0.08);
+  border-top: 1px solid var(--line);
 }
 
 .contact-links {
@@ -1034,7 +1222,7 @@ a.pub-item {
   gap: 0.3rem;
   padding-top: 0.9rem;
   margin-top: 0.9rem;
-  border-top: 1px solid rgba(var(--accent-rgb), 0.14);
+  border-top: 1px solid var(--line-strong);
 }
 
 .about-card-name {
@@ -1121,7 +1309,7 @@ a.pub-item {
 }
 
 .partner-band {
-  border-top: 1px solid rgba(var(--accent-rgb), 0.08);
+  border-top: 1px solid var(--line);
 }
 
 .partner-band-label {
@@ -1175,15 +1363,6 @@ a.pub-item {
   margin-bottom: 1.2rem;
 }
 
-.svc-promise {
-  max-width: 60ch;
-  font-size: 1.02rem;
-  line-height: 1.8;
-  color: var(--muted);
-  font-weight: 300;
-  margin: 0;
-}
-
 /* Symptom router — docs/positioning.md §5.1. Rows are anchors into the offer
    grid below, so they borrow the .market-card idiom rather than inventing a
    second one: flat surface, accent-alpha hairline, an accented leading edge
@@ -1193,12 +1372,9 @@ a.pub-item {
   margin-bottom: 2.5rem;
 }
 
+/* Tighter than the other section intros: the rows it introduces are the
+   next thing to read, not a section below it. */
 .symptom-lead {
-  max-width: 66ch;
-  font-size: 0.95rem;
-  line-height: 1.85;
-  color: var(--muted);
-  font-weight: 300;
   margin-bottom: 1.4rem;
 }
 
@@ -1218,16 +1394,10 @@ a.pub-item {
   gap: 1rem;
   height: 100%;
   padding: 0.85rem 1.1rem;
-  background: var(--surface);
-  border: 1px solid rgba(var(--accent-rgb), 0.07);
-  border-left: 2px solid rgba(var(--accent-rgb), 0.35);
   text-decoration: none;
-  transition: border-color 0.25s, transform 0.25s, color 0.25s;
 }
 
 .symptom-row:hover {
-  border-color: rgba(var(--accent-rgb), 0.3);
-  border-left-color: var(--accent);
   transform: translateX(2px);
 }
 
@@ -1250,12 +1420,12 @@ a.pub-item {
   color: var(--text);
 }
 
+/* Dimmed until the row is hovered. It is an offer number ("01"), so there is
+   no case to transform — moot for digits, but the group's uppercase would be
+   wrong the moment the label gains a word. */
 .symptom-offer {
   flex-shrink: 0;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
+  text-transform: none;
   color: rgba(var(--accent-rgb), 0.55);
   transition: color 0.25s;
 }
@@ -1277,14 +1447,9 @@ a.pub-item {
      without this the card's title lands underneath it. */
   scroll-margin-top: 11rem;
   padding: 1.8rem;
-  background: var(--surface);
-  border: 1px solid rgba(var(--accent-rgb), 0.07);
-  border-top: 2px solid var(--accent);
-  transition: border-color 0.25s, transform 0.25s;
 }
 
 .svc-card:hover {
-  border-color: rgba(var(--accent-rgb), 0.3);
   transform: translateY(-2px);
 }
 
@@ -1314,35 +1479,6 @@ a.pub-item {
   line-height: 1.7;
   font-weight: 300;
   margin-bottom: 1rem;
-}
-
-.svc-proof {
-  font-size: 0.78rem;
-  color: var(--text);
-  line-height: 1.65;
-  border-top: 1px solid rgba(var(--accent-rgb), 0.08);
-  padding-top: 0.8rem;
-}
-
-.svc-proof span {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-right: 0.5rem;
-}
-
-.svc-for span,
-.svc-deliver span {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-right: 0.5rem;
 }
 
 .svc-head {
@@ -1425,22 +1561,14 @@ a.pub-item {
      ~10rem tall — without this the strip's title lands underneath it. */
   scroll-margin-top: 11rem;
   padding: 2rem 2.2rem;
-  background: var(--surface);
-  border: 1px solid rgba(var(--accent-rgb), 0.07);
-  border-left: 2px solid var(--accent);
-  transition: border-color 0.25s, transform 0.25s;
 }
 
 .svc-strip:hover {
-  border-color: rgba(var(--accent-rgb), 0.3);
-  /* Re-asserted after the shorthand above, which would otherwise wash the
-     accent rail out to the same faint line as the other three edges. */
-  border-left-color: var(--accent);
   transform: translateX(3px);
 }
 
 .svc-strip-aside {
-  border-right: 1px solid rgba(var(--accent-rgb), 0.1);
+  border-right: 1px solid var(--line);
   padding-right: 2.5rem;
 }
 
@@ -1473,17 +1601,6 @@ a.pub-item {
   margin-bottom: 1.2rem;
 }
 
-.svc-footnote {
-  margin-top: 2rem;
-  font-size: 0.82rem;
-  line-height: 1.75;
-  color: var(--muted);
-  font-weight: 300;
-  max-width: 62ch;
-  border-left: 1px solid rgba(var(--accent-rgb), 0.2);
-  padding-left: 1rem;
-}
-
 /* ── ABOUT: WHO "WE" IS ── */
 
 .about-structure {
@@ -1507,9 +1624,6 @@ a.pub-item {
 
 .quote-card {
   padding: 1.8rem;
-  background: var(--surface);
-  border: 1px solid rgba(var(--accent-rgb), 0.07);
-  border-top: 2px solid var(--accent);
 }
 
 .quote-card blockquote {
@@ -1537,7 +1651,7 @@ a.pub-item {
   gap: 0.25rem;
   margin-top: 1.2rem;
   padding-top: 0.9rem;
-  border-top: 1px solid rgba(var(--accent-rgb), 0.08);
+  border-top: 1px solid var(--line);
 }
 
 .quote-name {
@@ -1575,15 +1689,6 @@ a.pub-item {
 }
 
 /* ── EXPERTISE STACK ── */
-
-.stack-intro {
-  max-width: 66ch;
-  font-size: 0.95rem;
-  line-height: 1.85;
-  color: var(--muted);
-  font-weight: 300;
-  margin-bottom: 2.5rem;
-}
 
 .stack-body {
   display: grid;
@@ -1649,26 +1754,20 @@ a.pub-item {
   width: 100%;
   text-align: left;
   padding: 0.85rem 1rem;
-  background: var(--surface);
-  border: 1px solid rgba(var(--accent-rgb), 0.07);
-  border-left: 2px solid rgba(var(--accent-rgb), 0.25);
   color: inherit;
   font: inherit;
   cursor: pointer;
   transition: background 0.2s, border-color 0.2s;
 }
 
-.stack-row:hover {
-  border-color: rgba(var(--accent-rgb), 0.3);
-  border-left-color: var(--accent);
-}
-
+/* In compact mode the rows are plain, not buttons — so they must not answer
+   the hover the shared panel rule gives them. */
 .stack-row--static {
   cursor: default;
 }
 
 .stack-row--static:hover {
-  border-color: rgba(var(--accent-rgb), 0.07);
+  border-color: var(--line);
   border-left-color: rgba(var(--accent-rgb), 0.25);
 }
 
@@ -1725,18 +1824,9 @@ a.pub-item {
   position: sticky;
   top: 6rem;
   padding: 1.8rem;
-  background: var(--surface);
-  border: 1px solid rgba(var(--accent-rgb), 0.07);
-  border-top: 2px solid var(--accent);
 }
 
 .stack-detail-eyebrow {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--accent);
   margin-bottom: 0.7rem;
 }
 
@@ -1758,39 +1848,7 @@ a.pub-item {
 }
 
 .stack-proof {
-  font-size: 0.8rem;
-  color: var(--text);
-  line-height: 1.7;
-  border-top: 1px solid rgba(var(--accent-rgb), 0.08);
-  padding-top: 0.9rem;
   margin-bottom: 1.2rem;
-}
-
-.stack-proof span {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-right: 0.5rem;
-}
-
-.stack-evidence {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(var(--accent-rgb), 0.3);
-  padding-bottom: 2px;
-  transition: border-color 0.2s;
-}
-
-.stack-evidence:hover {
-  border-bottom-color: var(--accent);
 }
 
 /* ── COUNTED PROOF STRIP ── */
@@ -1803,8 +1861,8 @@ a.pub-item {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   list-style: none;
   margin: 0 0 2.5rem;
-  border-top: 1px solid rgba(var(--accent-rgb), 0.14);
-  border-left: 1px solid rgba(var(--accent-rgb), 0.14);
+  border-top: 1px solid var(--line-strong);
+  border-left: 1px solid var(--line-strong);
 }
 
 /* On /services the counted proof reads as credibility after the pitch, so it
@@ -1817,8 +1875,8 @@ a.pub-item {
 
 .proof-strip li {
   padding: 1.4rem 1.2rem;
-  border-right: 1px solid rgba(var(--accent-rgb), 0.14);
-  border-bottom: 1px solid rgba(var(--accent-rgb), 0.14);
+  border-right: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
 }
 
 .proof-num {
@@ -1882,15 +1940,6 @@ a.pub-item {
 
 /* ── MARKETS ── */
 
-.markets-intro {
-  max-width: 66ch;
-  font-size: 0.95rem;
-  line-height: 1.85;
-  color: var(--muted);
-  font-weight: 300;
-  margin-bottom: 2.5rem;
-}
-
 .markets-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1909,14 +1958,9 @@ a.pub-item {
 .market-card {
   position: relative;
   padding: 1.8rem;
-  background: var(--surface);
-  border: 1px solid rgba(var(--accent-rgb), 0.07);
-  border-left: 2px solid var(--accent);
-  transition: border-color 0.25s, transform 0.25s;
 }
 
 .market-card:hover {
-  border-color: rgba(var(--accent-rgb), 0.3);
   transform: translateY(-2px);
 }
 
@@ -1967,14 +2011,6 @@ a.pub-item {
   z-index: 1;
 }
 
-.market-index {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  color: rgba(var(--accent-rgb), 0.55);
-}
-
 .market-label {
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.15rem;
@@ -1993,39 +2029,7 @@ a.pub-item {
 }
 
 .market-proof {
-  font-size: 0.8rem;
-  color: var(--text);
-  line-height: 1.7;
-  border-top: 1px solid rgba(var(--accent-rgb), 0.08);
-  padding-top: 0.9rem;
   margin: 1.2rem 0;
-}
-
-.market-proof span {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-right: 0.5rem;
-}
-
-.market-evidence {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(var(--accent-rgb), 0.3);
-  padding-bottom: 2px;
-  transition: border-color 0.2s;
-}
-
-.market-evidence:hover {
-  border-bottom-color: var(--accent);
 }
 
 /* ── HOME TEASERS ── */
@@ -2043,25 +2047,11 @@ a.pub-item {
 .teaser-card {
   display: block;
   padding: 1.8rem;
-  background: var(--surface);
-  border: 1px solid rgba(var(--accent-rgb), 0.07);
-  border-left: 2px solid var(--accent);
   text-decoration: none;
-  transition: border-color 0.25s, transform 0.25s;
 }
 
 .teaser-card:hover {
-  border-color: rgba(var(--accent-rgb), 0.3);
   transform: translateY(-2px);
-}
-
-.teaser-card-tag {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--accent);
 }
 
 .teaser-card-title {
@@ -2098,15 +2088,10 @@ a.pub-item {
   gap: 1.4rem;
   margin-top: 2.5rem;
   padding: 1.2rem 1.6rem;
-  background: var(--surface);
-  border: 1px solid rgba(var(--accent-rgb), 0.07);
-  border-left: 2px solid var(--accent);
   text-decoration: none;
-  transition: border-color 0.25s, transform 0.25s;
 }
 
 .person-strip:hover {
-  border-color: rgba(var(--accent-rgb), 0.3);
   transform: translateY(-2px);
 }
 
@@ -2130,22 +2115,11 @@ a.pub-item {
   min-width: 0;
 }
 
-/* Cannot be a nested link, so it is a span wearing .stack-evidence's clothes. */
+/* Cannot be a nested link, so it is a span wearing the evidence link's
+   clothes — hence its place in that group above, and the hover that fires
+   from the strip around it rather than from the span itself. */
 .person-strip-cta {
   margin-left: auto;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  border-bottom: 1px solid rgba(var(--accent-rgb), 0.3);
-  padding-bottom: 2px;
-  transition: border-color 0.2s;
-}
-
-.person-strip:hover .person-strip-cta {
-  border-bottom-color: var(--accent);
 }
 
 /* ── SCROLL REVEAL ── */
@@ -2177,7 +2151,7 @@ footer {
 .footer-link {
   color: inherit;
   text-decoration: none;
-  border-bottom: 1px solid rgba(var(--accent-rgb), 0.3);
+  border-bottom: 1px solid var(--line-hover);
   transition: color 0.3s, border-color 0.3s;
 }
 
@@ -2198,26 +2172,7 @@ footer {
 /* ── PROJECT CASE STUDY LINK ── */
 
 .proj-case-study-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
   margin-top: 1rem;
-  font-size: 0.78rem;
-  font-family: "Space Grotesk", sans-serif;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--accent);
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  border: 1px solid rgba(var(--accent-rgb), 0.25);
-  transition: all 0.25s;
-  text-decoration: none;
-}
-
-.proj-case-study-link:hover {
-  background: var(--accent-soft);
-  box-shadow: 0 0 16px var(--accent-glow);
 }
 
 /* ── CASE STUDY PAGE ── */
@@ -2226,48 +2181,6 @@ footer {
   min-height: 100vh;
   background: var(--bg);
   overflow-x: hidden;
-}
-
-.cs-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.2rem 3rem;
-  background: rgba(var(--bg-rgb), 0.9);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(var(--accent-rgb), 0.08);
-}
-
-.cs-back {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--accent);
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.82rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  cursor: pointer;
-  text-decoration: none;
-  transition: opacity 0.2s;
-}
-
-.cs-back:hover {
-  opacity: 0.7;
-}
-
-.cs-nav-label {
-  font-size: 0.72rem;
-  color: var(--muted);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-family: "Space Grotesk", sans-serif;
 }
 
 /* ── CS HERO ── */
@@ -2292,13 +2205,7 @@ footer {
 }
 
 .cs-hero-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   opacity: 0.8;
-  pointer-events: none;
 }
 
 .cs-hero-content {
@@ -2395,8 +2302,8 @@ footer {
 .cs-section--dark {
   max-width: none;
   background: var(--bg-alt);
-  border-top: 1px solid rgba(var(--accent-rgb), 0.05);
-  border-bottom: 1px solid rgba(var(--accent-rgb), 0.05);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .cs-section--dark > * {
@@ -2450,14 +2357,7 @@ footer {
 
 .cs-challenge-card {
   padding: 1.2rem 1.5rem;
-  background: var(--surface);
-  border: 1px solid rgba(var(--accent-rgb), 0.07);
-  border-left: 3px solid var(--accent);
-  transition: border-color 0.25s;
-}
-
-.cs-challenge-card:hover {
-  border-color: rgba(var(--accent-rgb), 0.3);
+  border-left-width: 3px;
 }
 
 .cs-challenge-icon {
@@ -2487,17 +2387,10 @@ footer {
 .cs-chip-diagram {
   margin: 2.5rem 0;
   padding: 2rem;
-  background: rgba(var(--bg-rgb), 0.5);
-  border: 1px solid rgba(var(--accent-rgb), 0.08);
-  overflow-x: auto;
 }
 
 .cs-chip-svg {
-  width: 100%;
   max-width: 700px;
-  margin: 0 auto;
-  display: block;
-  height: auto;
 }
 
 /* ── PLATFORM GRID ── */
@@ -2509,11 +2402,10 @@ footer {
   margin-top: 2rem;
 }
 
+/* No accent rail and a quieter hover than the interactive panels: these are
+   read, not clicked. */
 .cs-platform-card {
   padding: 1.8rem;
-  background: var(--surface);
-  border: 1px solid rgba(var(--accent-rgb), 0.07);
-  transition: border-color 0.25s;
 }
 
 .cs-platform-card:hover {
@@ -2548,18 +2440,6 @@ footer {
 .cs-platform-card li {
   font-size: 0.8rem;
   color: var(--text);
-  line-height: 1.7;
-  padding: 0.15rem 0 0.15rem 1rem;
-  position: relative;
-}
-
-.cs-platform-card li::before {
-  content: "—";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  opacity: 0.5;
-  font-size: 0.7rem;
 }
 
 /* ── SYSTEM ARCHITECTURE ── */
@@ -2567,17 +2447,10 @@ footer {
 .cs-arch-diagram {
   margin: 2rem 0 3rem;
   padding: 2rem 1rem;
-  background: rgba(var(--bg-rgb), 0.5);
-  border: 1px solid rgba(var(--accent-rgb), 0.08);
-  overflow-x: auto;
 }
 
 .cs-arch-svg {
-  width: 100%;
   max-width: 750px;
-  margin: 0 auto;
-  display: block;
-  height: auto;
 }
 
 /* ── SCOPE / CONTRIBUTIONS ── */
@@ -2606,13 +2479,10 @@ footer {
   display: flex;
   gap: 1rem;
   padding: 1.2rem;
-  background: var(--surface);
-  border: 1px solid rgba(var(--accent-rgb), 0.05);
-  transition: border-color 0.25s;
 }
 
 .cs-scope-item:hover {
-  border-color: rgba(var(--accent-rgb), 0.15);
+  border-color: var(--line-strong);
 }
 
 .cs-scope-num {
@@ -2719,18 +2589,6 @@ footer {
 .cs-phase-points li {
   font-size: 0.82rem;
   color: var(--text);
-  line-height: 1.7;
-  padding: 0.2rem 0 0.2rem 1rem;
-  position: relative;
-}
-
-.cs-phase-points li::before {
-  content: "—";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  opacity: 0.5;
-  font-size: 0.7rem;
 }
 
 /* ── METRICS ── */
@@ -2742,12 +2600,10 @@ footer {
   margin-bottom: 3rem;
 }
 
+/* As with .cs-platform-card: no rail, quieter hover — a number being read. */
 .cs-metric {
   text-align: center;
   padding: 2rem 1rem;
-  background: var(--surface);
-  border: 1px solid rgba(var(--accent-rgb), 0.07);
-  transition: border-color 0.25s;
 }
 
 .cs-metric:hover {
@@ -2809,14 +2665,9 @@ a.cs-pub {
   text-decoration: none;
   color: inherit;
   padding: 1.2rem 1.5rem;
-  background: var(--surface);
-  border: 1px solid rgba(var(--accent-rgb), 0.07);
-  border-left: 2px solid var(--accent);
-  transition: border-color 0.25s, transform 0.25s;
 }
 
 a.cs-pub:hover {
-  border-color: rgba(var(--accent-rgb), 0.3);
   transform: translateX(4px);
 }
 
@@ -2851,29 +2702,6 @@ a.cs-pub:hover {
 
 /* ── BACK CTA ── */
 
-.cs-back-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.85rem 2rem;
-  background: transparent;
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.25s;
-  text-decoration: none;
-}
-
-.cs-back-cta:hover {
-  background: var(--accent-soft);
-  box-shadow: 0 0 24px var(--accent-glow);
-}
-
 /* ── MAIN RESPONSIVE ── */
 
 @media (max-width: 900px) {
@@ -2903,7 +2731,7 @@ a.cs-pub:hover {
     gap: 0;
     background: rgba(var(--bg-rgb), 0.97);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(var(--accent-rgb), 0.08);
+    border-bottom: 1px solid var(--line);
     padding: 0.5rem 0;
   }
 
@@ -2959,7 +2787,7 @@ a.cs-pub:hover {
   /* Stacked, the rail becomes a divider under the identity block. */
   .svc-strip-aside {
     border-right: none;
-    border-bottom: 1px solid rgba(var(--accent-rgb), 0.1);
+    border-bottom: 1px solid var(--line);
     padding-right: 0;
     padding-bottom: 1.2rem;
   }
@@ -3257,8 +3085,17 @@ a.cs-pub:hover {
     transform: none;
   }
 
+  /* Every panel that shifts on hover, not just the three that used to be
+     listed here — the others were only being sped up to 0.01ms by the
+     blanket rule above, which still moves them. */
   .proj-card:hover,
-  .pub-item:hover,
+  a.pub-item:hover,
+  .symptom-row:hover,
+  .svc-card:hover,
+  .svc-strip:hover,
+  .market-card:hover,
+  .teaser-card:hover,
+  .person-strip:hover,
   a.cs-pub:hover {
     transform: none;
   }
@@ -3327,10 +3164,6 @@ a.cs-pub:hover {
 }
 
 @media (max-width: 600px) {
-  .cs-nav {
-    padding: 1rem 1.5rem;
-  }
-
   .cs-hero {
     padding: 6rem 1.5rem 3rem;
   }

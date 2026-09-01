@@ -109,5 +109,12 @@ export const serviceProof = [
 
 // Where the work leads, and the background that supports it — kept as prose
 // rather than as further cards, so the three offers above stay the offer.
+export const serviceScopeStages = [
+  "Architecture",
+  "Prototype",
+  "Validation",
+  "Industrial handover",
+];
+
 export const serviceFootnote =
   "These three engagements are the usual starting points, not the boundary of the work. A review can continue into prototype bring-up, a bench can expose architecture changes, and a first driven prototype can run through validation, documentation, and industrial handover.";

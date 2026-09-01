@@ -10,7 +10,7 @@
 export const stackLayers = [
   {
     id: "product",
-    name: "Productization",
+    name: "Product integration & handover",
     domain: "Product integration · electronics · software · documentation",
     depth: 4,
     depthLabel: "Led a TRL 3→6 transition",
@@ -22,7 +22,7 @@ export const stackLayers = [
   },
   {
     id: "packaging",
-    name: "Packaging & module",
+    name: "Packaging & optoelectronic integration",
     domain: "Fibre-to-chip · multi-chip assembly · µ-transfer printing",
     depth: 3,
     depthLabel: "Specified and integrated",
@@ -34,7 +34,7 @@ export const stackLayers = [
   },
   {
     id: "rf-system",
-    name: "System architecture",
+    name: "Optical & RF system architecture",
     domain: "Link budgets · beamforming · coherent detection · SAR",
     depth: 5,
     depthLabel: "Architected and modelled end to end",
@@ -58,7 +58,7 @@ export const stackLayers = [
   // },
   {
     id: "device",
-    name: "Device design & PDK",
+    name: "PIC design & tapeout",
     domain: "EDA flows · modulators · filters · couplers · antennas",
     depth: 5,
     depthLabel: "Designed, taped out, measured",
@@ -70,7 +70,7 @@ export const stackLayers = [
   },
   {
     id: "process",
-    name: "Process & fabrication",
+    name: "Fabrication & characterization",
     domain: "Cleanroom · dry etch · metrology · characterisation",
     depth: 5,
     depthLabel: "Developed the process myself",
@@ -82,7 +82,7 @@ export const stackLayers = [
   },
   {
     id: "materials",
-    name: "Materials & epitaxy",
+    name: "Photonic materials & device physics",
     domain: "III-V · quantum wells · band structure",
     depth: 4,
     depthLabel: "Designed and characterised",

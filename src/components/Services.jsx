@@ -1,4 +1,9 @@
-import { services, serviceProof, serviceFootnote } from "../data/services";
+import {
+  services,
+  serviceProof,
+  serviceFootnote,
+  serviceScopeStages,
+} from "../data/services";
 import { symptoms } from "../data/symptoms";
 import { siteImages } from "../data/images";
 import ThemedImage from "./ThemedImage";
@@ -53,7 +58,7 @@ export default function Services() {
           engagements read as a ladder down the page instead of a 2×2 block with
           one card orphaned across the bottom row. */}
       <div className="svc-strips">
-        {services.map((s, i) => {
+        {services.map((s) => {
           const serviceSymptoms = (symptomsByOffer.get(s.id) || []).slice(0, 2);
 
           return (
@@ -89,7 +94,15 @@ export default function Services() {
         })}
       </div>
 
-      <p className="svc-scope-note reveal">{serviceFootnote}</p>
+      <div className="svc-continuation reveal">
+        <div className="section-eyebrow">Beyond the starting point</div>
+        <ol className="svc-continuation-track">
+          {serviceScopeStages.map((stage) => (
+            <li key={stage}>{stage}</li>
+          ))}
+        </ol>
+        <p>{serviceFootnote}</p>
+      </div>
 
       <ServiceProofStrip items={serviceProof} /> 
     </section>

@@ -75,8 +75,9 @@ The most important rule in the brief.
   not uniform — the 3 for packaging is what makes the 5s credible.
 
 The on-site expression is the **Expertise Stack** (`components/ExpertiseStack.jsx`,
-driven by `data/stack.js`): six layers, each with a depth marker, one proof line
-and a link to the evidence, headed *"Which layer is your problem in?"*
+driven by `data/stack.js`): six layers, each with one proof line and a link to
+the evidence. The compact teaser asks *"Which layer is your problem in?"*; the
+full Services-page treatment is headed *"Evidence behind the engagements."*
 
 ---
 
@@ -150,12 +151,12 @@ first.
 
 | Layer | Proof |
 |---|---|
-| Materials & epitaxy | 22 strain-balanced quantum wells at 4.26 µm; 9× electroluminescence improvement over bulk (Glasgow) |
-| Process & fabrication | Novel ICP-RIE dry-etch recipe for AlGaInSb, a non-standard III-V system (Glasgow) |
-| Device design & PDK | 16-element optical phased array on SOI, 1.7° beamwidth over 20° steering; MZMs, Bragg filters, couplers, antennas; first imec SiN platform PDK through DoE and validation benchmarks |
-| Packaging & module | Hybrid SiN+InP multi-chip assembly packaged for space compliance testing; micro-transfer-printed SOAs; edge and grating couplers |
-| System architecture | Full analog link budget for a spaceborne SAR receiver in VPI; hybrid photonic beamforming network (SPACEBEAM) |
-| Productization | Programmable photonic mesh chip TRL 3→6 for a deep-tech startup; system documentation for industrial technology transfer |
+| Photonic materials & device physics | 22 strain-balanced quantum wells at 4.26 µm; 9× electroluminescence improvement over bulk (Glasgow) |
+| Fabrication & characterization | Novel ICP-RIE dry-etch recipe for AlGaInSb, a non-standard III-V system (Glasgow) |
+| PIC design & tapeout | 16-element optical phased array on SOI, 1.7° beamwidth over 20° steering; MZMs, Bragg filters, couplers, antennas; first imec SiN platform PDK through DoE and validation benchmarks |
+| Packaging & optoelectronic integration | Hybrid SiN+InP multi-chip assembly packaged for space compliance testing; micro-transfer-printed SOAs; edge and grating couplers |
+| Optical & RF system architecture | Full analog link budget for a spaceborne SAR receiver in VPI; hybrid photonic beamforming network (SPACEBEAM) |
+| Product integration & handover | Programmable photonic mesh chip TRL 3→6 for a deep-tech startup; system documentation for industrial technology transfer |
 
 ### By adjacent field (§8)
 

@@ -71,8 +71,8 @@ export const services = [
 // and a hardcoded tile made a four-item array render five.
 export const serviceProof = [
   { value: "10", suffix: "+", label: "Years across the stack" },
-  { value: "4", label: "Material platforms designed on" },
-  { value: "3", label: "Systems taken from discrete to integrated" },
+  // { value: "4", label: "Material platforms designed on" },
+  // { value: "3", label: "Systems taken from discrete to integrated" },
   { value: "10", suffix: "+", label: "Partner organizations coordinated" },
   {
     value: publications.length,

@@ -1,7 +1,5 @@
 import { useScrollReveal } from "../hooks/useScrollReveal";
-import { perspectives } from "../data/perspectives";
 import Services from "../components/Services";
-import Perspective from "../components/Perspective";
 import MarketsStrip from "../components/MarketsStrip";
 import ExpertiseStack from "../components/ExpertiseStack";
 import Testimonials from "../components/Testimonials";
@@ -20,7 +18,6 @@ export default function ServicesPage() {
   return (
     <>
       <Services />
-      {/* <Perspective>{perspectives.services}</Perspective> */}
       {/* <MarketsStrip /> */}
       <ExpertiseStack />
       {/* <Testimonials /> */}

@@ -75,8 +75,7 @@ export default function Services() {
         ))}
       </div>
 
-      <ServiceProofStrip items={serviceProof} />
-      <p className="svc-footnote reveal">{serviceFootnote}</p>
+      <ServiceProofStrip items={serviceProof} /> 
     </section>
   );
 }

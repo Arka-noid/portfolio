@@ -95,12 +95,11 @@ export const stackLayers = [
 ];
 
 export const stackIntro =
-  "Most photonics projects do not fail in any single layer. \
-  They fail because of the gaps between the layers: \
-  a device that perfectly works but cannot be coupled; \
-  a link budget that assumed that fabrication is flawless; \
-  a demonstrator that works because one person knows which knob to turn. \
-  We have worked at every layer below, which is what lets us find this gap.";
+  "Most photonics projects do not fail inside one layer. \
+  They fail at the boundaries: a device that meets specification but cannot be coupled, \
+  a link budget built on unrealistic fabrication assumptions, or a demonstrator that only \
+  one person can operate. \
+  I have worked across every layer below, so I can follow the failure across the boundary rather than guess where it began.";
 
 export const stackTeaserIntro =
   "The value does not sit in any specific layer. It is the ability to connect the dots.";

@@ -30,7 +30,7 @@ export const services = [
     shape: "1–2 weeks review · 3–6 weeks full study",
     proof:
       "I converted fiber-based microwave photonic receivers into integrated architectures at Scuola Superiore Sant'Anna — including the hybrid SiN–InP SCORE-SAR receiver for EU SPACEBEAM, where no single platform could supply every function the system needed, with the full analog link budget modelled in VPI and validated against measured hardware. Designed and validated across four material platforms — SOI, SiN, InP and III-V antimonides — behind 32 peer-reviewed publications.",
-    adjacent: ["RF, microwave & radar", "Product strategy & due diligence"],
+    adjacent: ["RF, microwave & radar", "Product strategy"],
   },
   {
     id: "prototype-integration",

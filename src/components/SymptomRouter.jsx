@@ -32,7 +32,7 @@ export default function SymptomRouter({ items }) {
   return (
     <div className="symptom-router">
       <p className="symptom-lead reveal">
-        If one of these is your sentence, start there.
+        If any of these problems resonates, start here.
       </p>
       <ul className="symptom-list">
         {rows.map((s) => {

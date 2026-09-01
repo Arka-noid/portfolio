@@ -38,11 +38,11 @@ export const symptoms = [
     text: "We have a mass and power budget, and an architecture that won't fit inside it.",
     offer: "system-architecture",
   },
-  {
-    id: "unreviewed-tapeout",
-    text: "Tape-out is weeks away and nobody outside the team has read the design.",
-    offer: "system-architecture",
-  },
+  // {
+  //   id: "unreviewed-tapeout",
+  //   text: "Tape-out is weeks away and nobody outside the team has read the design.",
+  //   offer: "system-architecture",
+  // },
   {
     id: "no-driver",
     text: "We have a chip and nothing to drive it.",

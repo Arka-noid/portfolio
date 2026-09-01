@@ -19,16 +19,16 @@ function ProjectCard({ project, isExpanded, onToggle }) {
     >
       <div className="proj-card-header" onClick={isClassified ? undefined : onToggle}>
         <div className="proj-card-top">
-          <span
+          {/* <span
             className="proj-card-badge"
             style={{ background: meta.color + "1A", color: meta.color }}
           >
             {isClassified ? "Classified" : meta.label}
-          </span>
-          <span className="proj-card-period">{project.period}</span>
+          </span> */}
+          {/* <span className="proj-card-period">{project.period}</span> */}
         </div>
         <h3 className="proj-card-title">{project.title}</h3>
-        <p className="proj-card-tagline">{project.tagline}</p>
+        {/* <p className="proj-card-tagline">{project.tagline}</p> */}
         <p className="proj-card-problem">
           <span>The problem</span> {project.problem}
         </p>
@@ -79,7 +79,7 @@ function ProjectCard({ project, isExpanded, onToggle }) {
               </span>
             ))}
           </div>
-          <p className="proj-card-institution">{project.institution}</p>
+          {/* <p className="proj-card-institution">{project.institution}</p> */}
           {project.caseStudySlug && (
             <Link
               className="proj-case-study-link"

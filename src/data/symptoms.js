@@ -1,4 +1,4 @@
-// The symptom router — see docs/positioning.md §5.1.
+// Buyer symptoms — see docs/positioning.md §5.1.
 //
 // A symptom is a doorway, not an offer. §5 describes the three buying
 // situations from the outside; these are the same three said from the inside,
@@ -6,9 +6,9 @@
 // recognises their own sentence has self-identified, and `offer` carries them
 // to the engagement that answers it.
 //
-// Like markets, they never become cards (§9): every symptom routes into one of
-// the three engagements in services.js and nothing else. Do not add a symptom
-// that has no offer, and do not promote one into a fourth card.
+// Like markets, they never become offers (§9): every symptom belongs inside one
+// of the three engagements in services.js and nothing else. Do not add a
+// symptom that has no offer, and do not promote one into a fourth card.
 //
 // Voice: these are quotations of the buyer, so the "we" inside them is the
 // client's team, not Merilight — the one exception to §7, and only because the
@@ -18,10 +18,8 @@
 // src/data/*, or a "language that lands" line from §5. Nothing here introduces
 // a figure or a claim that is not already on the site (§6).
 //
-// `offer` values are services[].id, and are rendered as `#offer-${offer}`
-// anchors on /services. SymptomRouter filters out any row whose `offer` is not
-// a live service id — so a renamed offer empties the router silently rather
-// than erroring. Change one, check the other.
+// `offer` values are services[].id, and group the quotes inside the matching
+// /services strip. Change an offer id here and in services.js together.
 export const symptoms = [
   {
     id: "fiber-to-chip-cost",

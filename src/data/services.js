@@ -13,7 +13,7 @@ import { publications, CITATIONS } from "./publications";
 // diligence are the short form of 01, not a fourth card.
 //
 // Each entry is a buyable engagement, not a skill: who it is for, the problem
-// it removes, what the client receives, and roughly how long it takes.
+// it removes, the concrete deliverables inside it, and roughly how long it takes.
 // `adjacent` names the adjacent field an offer reaches into, so breadth is
 // attached to a sellable outcome rather than listed on its own.
 // Rendered by components/Services.jsx (full) and ServicesTeaser.jsx (home).
@@ -25,8 +25,20 @@ export const services = [
       "Teams with something working in fiber, free space or discrete components, facing the question of what the integrated system should actually be — and teams weeks from a tape-out that nobody outside the group has read.",
     problem:
       "Architecture is the most expensive decision in a photonics programme and the hardest one to reverse. It has to be answered before the budget is committed: what moves onto a chip, what stays off it, which platform — or which combination of platforms — it takes, how the link budget closes, and what integrating costs you in performance.",
-    deliverable:
-      "A system architecture and a written assessment: the signal chain, platform selection with the reasoning behind it, a component inventory checked against real PDKs, the read-out and control definition, a link-budget model you keep and can rerun, and a ranked list of where the integration will hurt. As a short engagement, the same read applied to an existing design — a pre-tape-out layout review, or a technical due-diligence memo for an investor or acquirer.",
+    items: [
+      {
+        label: "Pre-Tapeout & Layout Reviews",
+        text: "Mitigating packaging, thermal, and testability risks before committing to foundry runs.",
+      },
+      {
+        label: "Link Budget & Performance Analysis",
+        text: "Modeling and optimizing optical link budgets for high-speed fiber links, free-space optical systems, and sensing architectures.",
+      },
+      {
+        label: "Microwave Photonics",
+        text: "RF-over-fiber system modeling, high-frequency signal integrity, and optoelectronic interface definition.",
+      },
+    ],
     shape: "1–2 weeks review · 3–6 weeks full study",
     proof:
       "I converted fiber-based microwave photonic receivers into integrated architectures at Scuola Superiore Sant'Anna — including the hybrid SiN–InP SCORE-SAR receiver for EU SPACEBEAM, where no single platform could supply every function the system needed, with the full analog link budget modelled in VPI and validated against measured hardware. Designed and validated across four material platforms — SOI, SiN, InP and III-V antimonides — behind 32 peer-reviewed publications.",
@@ -34,13 +46,25 @@ export const services = [
   },
   {
     id: "prototype-integration",
-    title: "Optoelectronic Prototyping & Integration",
+    title: "Optoelectronic Prototyping & System Integration",
     forWho:
       "Teams whose chip or optical subsystem works in isolation and now has to become one piece of hardware — driven, coupled, controlled and repeatable.",
     problem:
       "This is where optical programmes stall, and it is rarely for want of a specialist. It is the seam between them: a PIC with no board to drive it, coupling and thermal budgets that belong to nobody, control code living as a script on one laptop. Each domain is waiting on another, and the schedule goes with it.",
-    deliverable:
-      "A working integrated prototype: custom driver, current-source and read-out electronics built for your optical components; embedded and programmable-logic control for multi-channel drive, timing and acquisition; coupling and packaging interfaces specified with the thermal and mechanical budgets that go with them; control software; and documentation your team can rebuild it from.",
+    items: [
+      {
+        label: "Custom Drive & Read-Out Electronics",
+        text: "Designing high-speed, low-noise driver, transimpedance, and power-control boards tailored to optical components.",
+      },
+      {
+        label: "Packaging, Thermal & Fixture Interfaces",
+        text: "Specifying coupling interfaces, thermal budgets, custom fixtures, and chassis constraints so the prototype holds optical alignment.",
+      },
+      {
+        label: "Embedded Control & Firmware",
+        text: "Building programmable-logic and microcontroller control for multi-channel DAC/ADC interfacing, precision thermal loops, timing, and acquisition.",
+      },
+    ],
     shape: "4–10 weeks · on-site or remote",
     proof:
       "I built the electronics-to-optics chain for a 16-element optical phased array — a custom multi-channel current-source PCB with a MATLAB control interface — and, on a programmable photonic mesh at imec, the multi-channel DAC/ADC drive between control software and chip plus the timing and triggering that kept read-out synchronised to the optical event. Hybrid SiN + InP multi-chip assembly packaged for space compliance testing.",
@@ -53,8 +77,16 @@ export const services = [
       "Teams whose first hardware is back from the foundry and whose bench cannot yet tell them the truth about it.",
     problem:
       "When measurement and model disagree, the fault is usually not the chip — it is the bench: alignment, thermal drift, a sweep that is not doing what you think it is doing, a calibration one person does by hand and nobody else can repeat. Until the setup can be trusted, every decision downstream of it is guesswork.",
-    deliverable:
-      "A characterization rig that runs unattended: optical path, control electronics, instrument automation and a closed-loop calibration procedure that holds without someone tuning it — plus the documentation that lets your team run it without us.",
+    items: [
+      {
+        label: "In-Situ Test Automation",
+        text: "Building characterization rigs with production-ready Python and instrument-control scripts for rapid, repeatable data collection.",
+      },
+      {
+        label: "Closed-Loop Calibration",
+        text: "Implementing algorithms for dynamic optical phase alignment, automated wavelength tuning, and hardware-in-the-loop validation.",
+      },
+    ],
     shape: "On-site · 2–8 weeks",
     proof:
       "I automated the calibration of a 16-element phased array — beam optimization in software rather than by hand, which is the difference between a demo and something another group can actually use — and ran electro-optical characterization end to end, from cleanroom to FTIR, at Glasgow.",

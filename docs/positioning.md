@@ -107,9 +107,8 @@ OCT, metrology). A market is a doorway, never an offer.
 
 §5 describes the buying situations from the outside. These say the same things
 from the inside, as the sentence the buyer would say out loud — a visitor who
-recognises their own sentence has self-identified, and the row carries them to
-the offer that answers it. Rendered as a router above the offer grid on
-`/services`, lead line *"If one of these is your sentence, start there."*
+recognises their own sentence has self-identified. Rendered as quoted symptoms
+inside the `/services` strip for the offer that answers them.
 
 **Voice.** These are quotations of the buyer, so the "we" in them is the
 *client's* team. It is the one place on the site where "we" is not the firm, and
@@ -119,13 +118,13 @@ cure; the offer does.
 **Traceability.** Every symptom restates a `problem`, `forWho`, `context` or
 `proof` already in `src/data/*`, or a "language that lands" line from §5. No
 symptom introduces a figure, platform or capability that is not already on the
-site (§6). A symptom is never promoted into a fourth card (§9), and the router
-links only to the three anchors on the page.
+site (§6). A symptom is never promoted into a fourth card (§9), and each one is
+grouped under one of the three live service ids.
 
-**The live list is `src/data/symptoms.js`** — nine rendered rows (four into 01,
-three into 02, two into 03) plus one banked in a comment, so a future swap has a
-spare rather than an invention. It is not duplicated here; the rules above are
-what this section exists to fix.
+**The live list is `src/data/symptoms.js`** — the rendered buyer quotes grouped
+inside the three service strips, plus one banked in a comment, so a future swap
+has a spare rather than an invention. It is not duplicated here; the rules
+above are what this section exists to fix.
 
 ---
 

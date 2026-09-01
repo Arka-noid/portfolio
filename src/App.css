@@ -144,14 +144,14 @@ a.cs-pub:hover {
 }
 
 /* ── Uppercase micro-label ──
-   The site's smallest type: an accent tag introducing a line of copy ("For",
-   "You get", "Proof") or captioning a card. */
+  The site's smallest type: an accent tag introducing a line of copy, bullet
+  label or captioning a card. */
 .proj-card-problem span,
 .proj-card-role span,
 .proj-card-outcome span,
 .svc-proof span,
 .svc-for span,
-.svc-deliver span,
+.svc-item-label,
 .stack-proof span,
 .stack-detail-eyebrow,
 .market-proof span,
@@ -171,7 +171,7 @@ a.cs-pub:hover {
 .proj-card-outcome span,
 .svc-proof span,
 .svc-for span,
-.svc-deliver span,
+.svc-item-label,
 .stack-proof span,
 .market-proof span {
   margin-right: 0.5rem;
@@ -1510,11 +1510,47 @@ a.pub-item {
   margin-bottom: 0.9rem;
 }
 
-.svc-deliver {
+.svc-items {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0 0 1.2rem;
+  padding-left: 1.1rem;
+  color: var(--text);
+}
+
+.svc-items li {
   font-size: 0.82rem;
   color: var(--text);
   line-height: 1.65;
-  margin-bottom: 1rem;
+  padding-left: 0.2rem;
+}
+
+.svc-quotes {
+  display: grid;
+  gap: 0.55rem;
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.svc-quotes blockquote {
+  margin: 0;
+  padding: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.svc-quotes blockquote::before {
+  content: "\201C";
+  color: var(--accent);
+}
+
+.svc-quotes blockquote::after {
+  content: "\201D";
+  color: var(--accent);
 }
 
 .svc-adjacent {
@@ -1592,12 +1628,16 @@ a.pub-item {
 }
 
 .svc-strip .svc-for,
-.svc-strip .svc-deliver {
+.svc-strip .svc-items {
   margin-bottom: 0;
 }
 
 .svc-strip .svc-pitch {
   font-size: 0.88rem;
+  margin-bottom: 1.2rem;
+}
+
+.svc-strip .svc-items {
   margin-bottom: 1.2rem;
 }
 

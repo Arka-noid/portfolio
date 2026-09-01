@@ -15,12 +15,18 @@ export const firm = {
   // fail, and how it is engaged. Traces to docs/positioning.md §1–§5; no
   // figure or claim here that is not already elsewhere in src/data (§6).
   paragraphs: [
-    "Merilight is an independent consultancy in optical and photonic systems engineering. \
-    We operate in the space from a functional lab result to prototype.",
+    "We are an engineering boutique specialized in solving problems in optical and photonic systems",
 
-    "Our value proposition is to help you through the many challenges you may encounter with these novel technologies \
-    Our experience taught us that photonic products often do not see the light (pun-intended) because \
-    of the gaps between PIC layout, packaging, and testable system architecture ",
+    "We help teams moving from devices and demonstrations to working systems by resolving problems across \
+    optical architecture, packaging, electronics, control software, and test \
+    especially when performance is uncertain, timelines are tight, \
+    and an in-house team needs specialist support to make a critical decision. ",
+
+    "My work includes optical-system architecture, fiber and free-space link budgets, \
+    coherent and microwave-photonic systems, tape-out and design reviews, prototype integration, \
+    and automated characterization setups.",
+
+    "Merilight exists for the moments when a photonics project cannot afford another blind iteration.",
 
     // "",
   ],

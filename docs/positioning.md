@@ -76,8 +76,9 @@ The most important rule in the brief.
 
 The on-site expression is the **Expertise Stack** (`components/ExpertiseStack.jsx`,
 driven by `data/stack.js`): six layers, each with one proof line and a link to
-the evidence. The compact teaser asks *"Which layer is your problem in?"*; the
-full Services-page treatment is headed *"Evidence behind the engagements."*
+the evidence. The compact Home treatment is an unframed material-to-product
+rail headed *"From material physics to product handover."*; the full
+Services-page treatment is headed *"Evidence behind the engagements."*
 
 ---
 
@@ -288,21 +289,21 @@ proves it, then make the bench tell you the truth about what you built.
 | # | Offer | For | Deliverable | Shape |
 |---|---|---|---|---|
 | 01 | **Optical System & PIC Architecture** *(flagship)* | A | Architecture, platform selection, component inventory, read-out definition, a link-budget model they keep, ranked integration risks. Short form: pre-tape-out layout review or technical DD memo | 1–2 weeks review · 3–6 weeks full study |
-| 02 | Optoelectronic Prototyping & Integration | B | A driven, coupled, controlled prototype: driver and read-out electronics, embedded and programmable-logic control, packaging/thermal budgets, control software, rebuild documentation | 4–10 weeks, on-site or remote |
-| 03 | Automated Characterization & Bench Enablement | C | A characterization rig that runs unattended, with closed-loop calibration and documentation | On-site · 2–8 weeks |
+| 02 | Optoelectronic Prototype Integration | B | A driven, coupled, controlled prototype: driver and read-out electronics, embedded and programmable-logic control, packaging/thermal budgets, control software, rebuild documentation | 4–10 weeks, on-site or remote |
+| 03 | Automated Test & Calibration | C | A characterization rig that runs unattended, with closed-loop calibration and documentation | On-site · 2–8 weeks |
 
 ### The `/services` page promise line
 
 Firm surface, so the voice is "we" (§7):
 
-- **Eyebrow:** Consulting
+- **Eyebrow:** Services
 - **Heading:** From photonic concept to working hardware.
-- **Promise:** "Photonics rarely fails on paper. It fails where optics meets
-  boards, packaging, control and test. Three engagements, one job: get your
-  hardware across that gap."
+- **Promise:** "Decide the architecture. Integrate the hardware. Trust the
+  measurements."
 
-It restates §2 and names the number three, so the grid below reads as the whole
-menu rather than a sample. It claims no figure, so §6 does not apply to it.
+It follows the three engagements in programme order, so the grid below reads as
+a complete path rather than a capability list. It claims no figure, so §6 does
+not apply to it.
 
 **Why architecture leads.** It is the highest-leverage and least reversible
 decision in a photonics programme, so a buyer will pay for judgment on it — and

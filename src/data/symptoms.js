@@ -22,13 +22,13 @@
 // /services strip. Change an offer id here and in services.js together.
 export const symptoms = [
   {
-    id: "fiber-to-chip-cost",
-    text: "It works on the bench in fiber. We don't know what it costs to put it on a chip.",
+    id: "on-chip-boundary",
+    text: "What belongs on the chip, and what stays off?",
     offer: "system-architecture",
   },
   {
-    id: "no-single-platform",
-    text: "No single platform gives us every function the system needs.",
+    id: "tapeout-packaging-risk",
+    text: "Will this architecture survive tapeout and packaging?",
     offer: "system-architecture",
   },
   {
@@ -47,23 +47,23 @@ export const symptoms = [
     offer: "prototype-integration",
   },
   {
-    id: "packaging-undecided",
-    text: "The design depends on the packaging, and the packaging isn't decided yet.",
+    id: "optical-table-demo",
+    text: "The demo still depends on an optical table and one operator.",
     offer: "prototype-integration",
   },
   {
-    id: "optical-table-demo",
-    text: "The demo only works on the optical table, with one person tuning it.",
+    id: "packaging-undecided",
+    text: "The design depends on packaging that is not decided yet.",
     offer: "prototype-integration",
   },
   {
     id: "model-mismatch",
-    text: "First silicon is back and the measurements don't agree with the model.",
+    text: "The measurements do not agree with the model.",
     offer: "characterization",
   },
   {
     id: "hand-calibration",
-    text: "Every device has to be calibrated by hand before it does anything, and it isn't repeatable.",
+    text: "Calibration is manual, slow, and difficult to repeat.",
     offer: "characterization",
   },
   // Banked, not rendered — nine rows above is already the length a router can

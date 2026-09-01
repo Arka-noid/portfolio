@@ -43,7 +43,9 @@ export default function Services() {
           <h2 className="section-title svc-h2">
             From photonic concept to working hardware.
           </h2>
-          
+          <p className="svc-promise">
+            Decide the architecture. Integrate the hardware. Trust the measurements.
+          </p>
         </div>
         {sideImage && (
           <ThemedImage src={sideImage} variant="panel" />

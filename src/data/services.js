@@ -20,21 +20,21 @@ export const services = [
     id: "system-architecture",
     title: "Optical System & PIC Architecture",
     forWho:
-      "Teams with something working in fiber, free space or discrete components, facing the question of what the integrated system should actually be — and teams weeks from a tape-out that nobody outside the group has read.",
+      "Teams moving an optical concept onto a PIC, or approaching tapeout without an independent system review.",
     problem:
-      "Architecture is the most expensive decision in a photonics programme and the hardest one to reverse. It has to be answered before the budget is committed: what moves onto a chip, what stays off it, which platform — or which combination of platforms — it takes, how the link budget closes, and what integrating costs you in performance.",
+      "Decide what moves on chip, choose the right platform, and close the link budget before expensive decisions become fixed.",
     items: [
       {
         label: "Pre-Tapeout & Layout Reviews",
-        text: "Mitigating packaging, thermal, and testability risks before committing to foundry runs.",
+        text: "Find packaging, thermal, and testability risks before foundry commitment.",
       },
       {
         label: "Link Budget & Performance Analysis",
-        text: "Modeling and optimizing optical link budgets for high-speed fiber links, free-space optical systems, and sensing architectures.",
+        text: "Close performance across high-speed fiber, free-space, and sensing links.",
       },
       {
         label: "Microwave Photonics",
-        text: "RF-over-fiber system modeling, high-frequency signal integrity, and optoelectronic interface definition.",
+        text: "Model RF-over-fiber links and define high-frequency optoelectronic interfaces.",
       },
     ],
     shape: "1–2 weeks review · 3–6 weeks full study",
@@ -43,23 +43,23 @@ export const services = [
   },
   {
     id: "prototype-integration",
-    title: "Optoelectronic Prototyping & System Integration",
+    title: "Optoelectronic Prototype Integration",
     forWho:
-      "Teams whose chip or optical subsystem works in isolation and now has to become one piece of hardware — driven, coupled, controlled and repeatable.",
+      "Teams turning a working chip or optical subsystem into driven, coupled, and controlled hardware.",
     problem:
-      "This is where optical programmes stall, and it is rarely for want of a specialist. It is the seam between them: a PIC with no board to drive it, coupling and thermal budgets that belong to nobody, control code living as a script on one laptop. Each domain is waiting on another, and the schedule goes with it.",
+      "Turn an isolated chip or optical subsystem into integrated hardware your team can operate and reproduce.",
     items: [
       {
-        label: "Custom Drive & Read-Out Electronics",
-        text: "Designing high-speed, low-noise driver, transimpedance, and power-control boards tailored to optical components.",
+        label: "Drive & Read-Out Electronics",
+        text: "Build high-speed, low-noise electronics around the optical hardware.",
       },
       {
-        label: "Packaging, Thermal & Fixture Interfaces",
-        text: "Specifying coupling interfaces, thermal budgets, custom fixtures, and chassis constraints so the prototype holds optical alignment.",
+        label: "Packaging & Thermal Interfaces",
+        text: "Define coupling, alignment, thermal, and enclosure constraints.",
       },
       {
-        label: "Embedded Control & Firmware",
-        text: "Building programmable-logic and microcontroller control for multi-channel DAC/ADC interfacing, precision thermal loops, timing, and acquisition.",
+        label: "Embedded Control",
+        text: "Implement multi-channel drive, acquisition, timing, and thermal control.",
       },
     ],
     shape: "4–10 weeks · on-site or remote",
@@ -68,19 +68,19 @@ export const services = [
   },
   {
     id: "characterization",
-    title: "Automated Characterization & Bench Enablement",
+    title: "Automated Test & Calibration",
     forWho:
-      "Teams whose first hardware is back from the foundry and whose bench cannot yet tell them the truth about it.",
+      "Teams with first hardware back, but no repeatable way to trust the measurements.",
     problem:
-      "When measurement and model disagree, the fault is usually not the chip — it is the bench: alignment, thermal drift, a sweep that is not doing what you think it is doing, a calibration one person does by hand and nobody else can repeat. Until the setup can be trusted, every decision downstream of it is guesswork.",
+      "Replace manual alignment and uncertain measurements with a bench that runs repeatably and agrees with the model.",
     items: [
       {
-        label: "In-Situ Test Automation",
-        text: "Building characterization rigs with production-ready Python and instrument-control scripts for rapid, repeatable data collection.",
+        label: "Automated Characterization",
+        text: "Build repeatable Python-controlled measurement rigs.",
       },
       {
         label: "Closed-Loop Calibration",
-        text: "Implementing algorithms for dynamic optical phase alignment, automated wavelength tuning, and hardware-in-the-loop validation.",
+        text: "Automate phase alignment, wavelength tuning, and hardware-in-the-loop validation.",
       },
     ],
     shape: "On-site · 2–8 weeks",

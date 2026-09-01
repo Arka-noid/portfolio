@@ -1363,6 +1363,14 @@ a.pub-item {
   margin-bottom: 1.2rem;
 }
 
+.svc-promise {
+  max-width: 720px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
 /* Symptom router — docs/positioning.md §5.1. Rows are anchors into the offer
    grid below, so they borrow the .market-card idiom rather than inventing a
    second one: flat surface, accent-alpha hairline, an accented leading edge
@@ -1773,12 +1781,60 @@ a.pub-item {
   align-items: start;
 }
 
-.stack-body--compact {
-  grid-template-columns: minmax(0, 1fr);
-}
-
 .stack-col {
   min-width: 0;
+}
+
+.stack-teaser-intro {
+  max-width: 720px;
+  margin-bottom: 2rem;
+}
+
+.stack-teaser {
+  margin-bottom: 2rem;
+}
+
+.stack-teaser-layers {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stack-teaser-layers::before {
+  content: "";
+  position: absolute;
+  top: 0.3rem;
+  left: 0.35rem;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.2), var(--accent));
+}
+
+.stack-teaser-layers li {
+  position: relative;
+  padding-top: 1.25rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.stack-teaser-layers li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.62rem;
+  height: 0.62rem;
+  border: 1px solid var(--accent);
+  background: var(--bg);
 }
 
 .stack-cap {
@@ -1834,17 +1890,6 @@ a.pub-item {
   font: inherit;
   cursor: pointer;
   transition: background 0.2s, border-color 0.2s;
-}
-
-/* In compact mode the rows are plain, not buttons — so they must not answer
-   the hover the shared panel rule gives them. */
-.stack-row--static {
-  cursor: default;
-}
-
-.stack-row--static:hover {
-  border-color: var(--line);
-  border-left-color: rgba(var(--accent-rgb), 0.25);
 }
 
 .stack-row--active {
@@ -3005,6 +3050,27 @@ a.cs-pub:hover {
   }
 
   .svc-continuation-track li {
+    min-height: 2.8rem;
+    padding: 0 0 1rem 1.5rem;
+  }
+
+  .stack-teaser-layers {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-left: 0.25rem;
+  }
+
+  .stack-teaser-layers::before {
+    top: 0.35rem;
+    bottom: 0.35rem;
+    left: 0.3rem;
+    right: auto;
+    width: 1px;
+    height: auto;
+    background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.2), var(--accent));
+  }
+
+  .stack-teaser-layers li {
     min-height: 2.8rem;
     padding: 0 0 1rem 1.5rem;
   }

@@ -72,7 +72,7 @@ export const services = [
     forWho:
       "Teams with bare hardware, but limited experience in optical measurements and without a repeatable way to trust the measurements.",
     problem:
-      "Replace manual alignment and uncertain measurements with a bench that runs repeatably and reliably.",
+      "Install an optical characterization bench and replace uncertain measurements with a bench that runs repeatably and reliably.",
     items: [
       {
         label: "Automated Characterization",

@@ -106,7 +106,7 @@ export default function Services() {
         <p>{serviceFootnote}</p>
       </div>
 
-      <ServiceProofStrip items={serviceProof} /> 
+      {/* <ServiceProofStrip items={serviceProof} />  */}
     </section>
   );
 }

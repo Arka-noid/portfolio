@@ -1405,6 +1405,74 @@ a.pub-item {
   grid-column: 1 / -1;
 }
 
+/* ── OFFER STRIPS (/services) ──
+   The full offer ladder, one full-width strip per engagement. The home-page
+   teaser keeps .svc-grid: short copy, two-up, deliberately a different shape
+   so the landing page does not look like the sales page. */
+
+.svc-strips {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.svc-strip {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.6fr);
+  gap: 2.5rem;
+  /* The symptom router jumps here from above, and the nav is fixed and
+     ~10rem tall — without this the strip's title lands underneath it. */
+  scroll-margin-top: 11rem;
+  padding: 2rem 2.2rem;
+  background: var(--surface);
+  border: 1px solid rgba(var(--accent-rgb), 0.07);
+  border-left: 2px solid var(--accent);
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.svc-strip:hover {
+  border-color: rgba(var(--accent-rgb), 0.3);
+  /* Re-asserted after the shorthand above, which would otherwise wash the
+     accent rail out to the same faint line as the other three edges. */
+  border-left-color: var(--accent);
+  transform: translateX(3px);
+}
+
+.svc-strip-aside {
+  border-right: 1px solid rgba(var(--accent-rgb), 0.1);
+  padding-right: 2.5rem;
+}
+
+.svc-strip .svc-num {
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+}
+
+.svc-strip .svc-title {
+  font-size: 1.05rem;
+  line-height: 1.4;
+  margin-bottom: 0.7rem;
+}
+
+/* Right-aligned in the card head, where it shares a flex row with the
+   number; in the strip it sits under the title and reads as a caption. */
+.svc-strip .svc-shape {
+  display: block;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.svc-strip .svc-for,
+.svc-strip .svc-deliver {
+  margin-bottom: 0;
+}
+
+.svc-strip .svc-pitch {
+  font-size: 0.88rem;
+  margin-bottom: 1.2rem;
+}
+
 .svc-footnote {
   margin-top: 2rem;
   font-size: 0.82rem;
@@ -1742,7 +1810,8 @@ a.pub-item {
 /* On /services the counted proof reads as credibility after the pitch, so it
    follows the offer grid and needs the gap the shorthand above zeroes out. On
    the home page the strip still precedes the grid and is unaffected. */
-.svc-grid + .proof-strip {
+.svc-grid + .proof-strip,
+.svc-strips + .proof-strip {
   margin-top: 3rem;
 }
 
@@ -2879,6 +2948,20 @@ a.cs-pub:hover {
 
   .svc-grid {
     grid-template-columns: 1fr;
+  }
+
+  .svc-strip {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+    padding: 1.6rem 1.5rem;
+  }
+
+  /* Stacked, the rail becomes a divider under the identity block. */
+  .svc-strip-aside {
+    border-right: none;
+    border-bottom: 1px solid rgba(var(--accent-rgb), 0.1);
+    padding-right: 0;
+    padding-bottom: 1.2rem;
   }
 
   .stack-body {

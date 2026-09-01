@@ -29,15 +29,11 @@ export default function Services() {
     <section id="services">
       <div className={`svc-head-block reveal${sideImage ? " svc-split" : ""}`}>
         <div>
-          <div className="section-eyebrow">Consulting</div>
+          <div className="section-eyebrow">Services</div>
           <h2 className="section-title svc-h2">
             From photonic concept to working hardware.
           </h2>
-          <p className="svc-promise">
-            Photonics rarely fails on paper. It fails where optics meets boards,
-            packaging, control and test. Three engagements, one job: get your
-            hardware across that gap.
-          </p>
+          
         </div>
         {sideImage && (
           <ThemedImage src={sideImage} variant="panel" />
@@ -46,32 +42,38 @@ export default function Services() {
 
       <SymptomRouter items={symptoms} />
 
-      <div className="svc-grid">
+      {/* Full-width strips rather than the two-up card grid the home-page
+          teaser uses. Each offer's copy is long — a problem paragraph and a
+          deliverable paragraph — and in a half-width card that ran to a dozen
+          short lines. The strip splits it: identity (number, title, shape, who
+          it is for) on the left rail, the argument on the right, so the three
+          engagements read as a ladder down the page instead of a 2×2 block
+          with one card orphaned across the bottom row. */}
+      <div className="svc-strips">
         {services.map((s, i) => (
-          <div key={s.id} id={`offer-${s.id}`} className="svc-card reveal">
-            <div className="svc-head">
+          <article key={s.id} id={`offer-${s.id}`} className="svc-strip reveal">
+            <div className="svc-strip-aside">
               <span className="svc-num">{String(i + 1).padStart(2, "0")}</span>
-              <span className="svc-shape">{s.shape}</span>
+              <h3 className="svc-title">{s.title}</h3>
+              <p className="svc-shape">{s.shape}</p>
+              <p className="svc-for">
+                <span>For</span> {s.forWho}
+              </p>
             </div>
-            <h3 className="svc-title">{s.title}</h3>
-            <p className="svc-for">
-              <span>For</span> {s.forWho}
-            </p>
-            <p className="svc-pitch">{s.problem}</p>
-            <p className="svc-deliver">
-              <span>You get</span> {s.deliverable}
-            </p>
-            <p className="svc-proof">
-              <span>Proof</span> {s.proof}
-            </p>
-            {s.adjacent.length > 0 && (
-              <ul className="svc-adjacent">
-                {s.adjacent.map((a) => (
-                  <li key={a}>{a}</li>
-                ))}
-              </ul>
-            )}
-          </div>
+            <div className="svc-strip-main">
+              <p className="svc-pitch">{s.problem}</p>
+              <p className="svc-deliver">
+                <span>You get</span> {s.deliverable}
+              </p>
+              {s.adjacent.length > 0 && (
+                <ul className="svc-adjacent">
+                  {s.adjacent.map((a) => (
+                    <li key={a}>{a}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </article>
         ))}
       </div>
 

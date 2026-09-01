@@ -22,24 +22,24 @@ export const services = [
     forWho:
       "Teams moving an optical concept onto a PIC, or approaching tapeout without an independent system review.",
     problem:
-      "Decide what moves on chip, choose the right platform, and close the link budget before expensive decisions become fixed.",
+      "Decide what goes on chip, choose the right platform, and close the link budget before expensive decisions become fixed.",
     items: [
       {
         label: "Pre-Tapeout & Layout Reviews",
-        text: "Find packaging, thermal, and testability risks before foundry commitment.",
+        text: "Find packaging, thermal, and testability risks before committing to the foundry.",
       },
       {
         label: "Link Budget & Performance Analysis",
-        text: "Close performance across high-speed fiber, free-space, and sensing links.",
+        text: "Analyze performance across high-speed fiber, free-space, and sensing links.",
       },
       {
         label: "Microwave Photonics",
-        text: "Model RF-over-fiber links and define high-frequency optoelectronic interfaces.",
+        text: "Model RF-over-fiber links and define high-frequency optoelectronic schemes.",
       },
     ],
     shape: "1–2 weeks review · 3–6 weeks full study",
     proof:
-      "I converted fiber-based microwave photonic receivers into integrated architectures at Scuola Superiore Sant'Anna — including the hybrid SiN–InP SCORE-SAR receiver for EU SPACEBEAM, where no single platform could supply every function the system needed, with the full analog link budget modelled in VPI and validated against measured hardware. Designed and validated across four material platforms — SOI, SiN, InP and III-V antimonides — behind 32 peer-reviewed publications.",
+      "I converted fiber-based microwave photonic receivers into integrated architectures — including the hybrid SiN–InP SCORE-SAR receiver, where no single platform could supply every function the system needed.Designed and validated across several material platforms — SOI, SiN, InP and III-V",
   },
   {
     id: "prototype-integration",
@@ -64,28 +64,28 @@ export const services = [
     ],
     shape: "4–10 weeks · on-site or remote",
     proof:
-      "I built the electronics-to-optics chain for a 16-element optical phased array — a custom multi-channel current-source PCB with a MATLAB control interface — and, on a programmable photonic mesh at imec, the multi-channel DAC/ADC drive between control software and chip plus the timing and triggering that kept read-out synchronised to the optical event. Hybrid SiN + InP multi-chip assembly packaged for space compliance testing.",
+      "I built the electronics-to-optics chain for optical phased arrays - a custom multi-channel current-source PCB with a MATLAB control interface - and, on a programmable photonic mesh at imec, the multi-channel DAC/ADC drive between control software and chip plus the timing and triggering that kept read-out synchronised to the optical event. Hybrid SiN + InP multi-chip assembly packaged for space compliance testing.",
   },
   {
     id: "characterization",
     title: "Automated Test & Calibration",
     forWho:
-      "Teams with first hardware back, but no repeatable way to trust the measurements.",
+      "Teams with bare hardware, but limited experience in optical measurements and without a repeatable way to trust the measurements.",
     problem:
-      "Replace manual alignment and uncertain measurements with a bench that runs repeatably and agrees with the model.",
+      "Replace manual alignment and uncertain measurements with a bench that runs repeatably and reliably.",
     items: [
       {
         label: "Automated Characterization",
-        text: "Build repeatable Python-controlled measurement rigs.",
+        text: "Build repeatable script-controlled measurement rigs.",
       },
       {
         label: "Closed-Loop Calibration",
-        text: "Automate phase alignment, wavelength tuning, and hardware-in-the-loop validation.",
+        text: "Automate alignment, wavelength tuning, and hardware-in-the-loop validation.",
       },
     ],
     shape: "On-site · 2–8 weeks",
     proof:
-      "I automated the calibration of a 16-element phased array — beam optimization in software rather than by hand, which is the difference between a demo and something another group can actually use — and ran electro-optical characterization end to end, from cleanroom to FTIR, at Glasgow.",
+      "I automated the calibration of a phased array — beam optimization in software rather than by hand, which is the difference between a demo and something another group can actually use — and ran electro-optical characterization end to end, from cleanroom to FTIR, at Glasgow.",
   },
 ];
 

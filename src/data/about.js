@@ -18,9 +18,11 @@ export const firm = {
     "Merilight is an independent consultancy in optical and photonic systems engineering. \
     We operate in the space from a functional lab result to prototype.",
 
-    "",
+    "Our value proposition is to help you through the many challenges you may encounter with these novel technologies \
+    Our experience taught us that photonic products often do not see the light (pun-intended) because \
+    of the gaps between PIC layout, packaging, and testable system architecture ",
 
-    "",
+    // "",
   ],
 };
 

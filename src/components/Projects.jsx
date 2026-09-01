@@ -110,16 +110,16 @@ export default function Projects() {
       <div className="reveal">
         <div className="section-eyebrow">Evidence</div>
         <h2 className="section-title">Case studies</h2>
-        <p className="proj-intro">
+        {/* <p className="proj-intro">
           Eight projects, grouped by the market that paid for them. Each one
           started as somebody's hard problem.
-        </p>
+        </p> */}
       </div>
       <div className="reveal">
         <ThemedImage
           src={siteImages.workBanner}
           variant="panel"
-          caption="Flight hardware on orbit — the environment that sets the requirements upstream"
+          // caption="Flight hardware on orbit — the environment that sets the requirements upstream"
         />
       </div>
       <Perspective>{perspectives.projects}</Perspective>

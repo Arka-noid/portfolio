@@ -4,7 +4,7 @@ export const perspectives = {
   about:
     "The building blocks I work with daily — coherent receivers, fiber-to-chip coupling, micro-transfer printed lasers, wavelength multiplexing — are the same ones AI infrastructure needs for co-packaged optics and optical I/O as interconnects push past 1.6T.",
   projects:
-    "Photonics is leaving the lab: optical interconnect and co-packaged optics inside AI infrastructure, solid-state LiDAR on vehicles, radar photonics in orbit. Every market below is one of those fronts.",
+    "Photonics is leaving the lab: optical interconnect and co-packaged optics inside AI infrastructure, solid-state LiDAR on vehicles, radar photonics in orbit.",
   services:
     "AI infrastructure is pulling photonics into the compute path — interconnect, optical I/O, and circuits that compute with light — while autonomous sensing and European space & defense programs pull it out of the lab from the other side.",
   spaceRadar:

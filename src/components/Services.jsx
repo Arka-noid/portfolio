@@ -97,7 +97,7 @@ export default function Services() {
       </div>
 
       <div className="svc-continuation reveal">
-        <div className="section-eyebrow">Beyond the starting point</div>
+        <div className="section-eyebrow">And beyond</div>
         <ol className="svc-continuation-track">
           {serviceScopeStages.map((stage) => (
             <li key={stage}>{stage}</li>

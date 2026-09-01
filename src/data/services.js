@@ -117,4 +117,7 @@ export const serviceScopeStages = [
 ];
 
 export const serviceFootnote =
-  "These three engagements are the usual starting points, not the boundary of the work. A review can continue into prototype bring-up, a bench can expose architecture changes, and a first driven prototype can run through validation, documentation, and industrial handover.";
+  "These engagements are just part of the journey, but we can operate further. \
+  A review can continue into prototype bring-up, a bench can expose architecture changes, \
+  and a first driven prototype can run through validation, documentation, and industrial handover. \
+  We can support the journey at every stage.";

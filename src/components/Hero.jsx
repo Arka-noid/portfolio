@@ -91,9 +91,8 @@ export default function Hero() {
         {/* The markets used to be listed again here; the Markets section sits
             directly below on the home page, so the line was repetition. */}
         <p className="hero-sub">
-          We are here to solve your problems in optical and photonic technologies - 
-          From packaging, to system integration, architecture, device design and characterization - 
-          we can solve it.
+          We bring optical and photonic expertise to the boundaries to bring your products to life, 
+          connecting devices, electronics, packaging and control into hardware that performs as one.
         </p>
         <Link className="hero-cta" to="/services">
           See our services →

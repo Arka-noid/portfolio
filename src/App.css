@@ -1357,6 +1357,46 @@ a.pub-item {
   align-items: start;
 }
 
+.service-teaser-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.service-teaser-item {
+  border-top: 1px solid var(--line-strong);
+  padding-top: 1.1rem;
+}
+
+.service-teaser-num {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+}
+
+.service-teaser-item h3 {
+  margin-bottom: 0.65rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.service-teaser-item p {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.65;
+  font-weight: 300;
+}
+
 /* The promise line follows the h2 directly, so the h2 gives up the 3.5rem it
    normally uses to clear a section. */
 .svc-h2 {
@@ -2889,6 +2929,11 @@ a.cs-pub:hover {
 
   .svc-grid {
     grid-template-columns: 1fr;
+  }
+
+  .service-teaser-list {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .svc-strip {

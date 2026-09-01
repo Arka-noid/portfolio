@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      {/* <ServicesTeaser /> */}
+      <ServicesTeaser />
       <MarketsStrip compact />
       <ExpertiseStack compact />
       {/* <CredibilityTeaser /> */}

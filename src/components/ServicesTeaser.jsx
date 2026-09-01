@@ -1,34 +1,26 @@
 import { Link } from "react-router-dom";
-import { services, serviceProof } from "../data/services";
-import { perspectives } from "../data/perspectives";
-import Perspective from "./Perspective";
-import ServiceProofStrip from "./ServiceProofStrip";
+import { services } from "../data/services";
 
 export default function ServicesTeaser() {
   return (
     <section id="services">
       <div className="reveal">
-        <div className="section-eyebrow">Consulting</div>
-        <h2 className="section-title">How We Can Help</h2>
+        <div className="section-eyebrow">Services</div>
+        <h2 className="section-title">Three ways to move the hardware forward.</h2>
       </div>
-      <ServiceProofStrip items={serviceProof} />
-      <div className="svc-grid">
+      <ol className="service-teaser-list">
         {services.map((s, i) => (
-          <div key={s.id} className="svc-card reveal">
-            <div className="svc-head">
-              <span className="svc-num">{String(i + 1).padStart(2, "0")}</span>
-              <span className="svc-shape">{s.shape}</span>
-            </div>
-            <h3 className="svc-title">{s.title}</h3>
-            <p className="svc-for">
-              <span>For</span> {s.forWho}
-            </p>
-            <p className="svc-pitch">{s.problem}</p>
-          </div>
+          <li key={s.id} className="service-teaser-item reveal">
+            <span className="service-teaser-num">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <h3>{s.title}</h3>
+            <p>{s.problem}</p>
+          </li>
         ))}
-      </div>
+      </ol>
       <Link className="hero-cta teaser-cta reveal" to="/services">
-        See all services →
+        Explore the engagements →
       </Link>
     </section>
   );

@@ -200,16 +200,18 @@ export const projects = [
     problem:
       "A research prototype had to become something a customer could buy: photonics, driver electronics and control software integrated into one system, with a defensible answer to who it is for.",
     description:
-      "Joined the system integration effort for a programmable photonic processor combining photonic circuits, driver electronics, and control software — a reconfigurable mesh, the class of circuit the industry is now pursuing for optical switching and analog optical compute. Participated in product positioning, user-story definition, and early-stage commercialization discussions.",
+      "Joined the system integration effort for a programmable photonic processor combining photonic circuits, driver electronics, and control software — a reconfigurable mesh, the class of circuit the industry is now pursuing for optical switching and analog optical compute. Worked the electronic-to-optical seam directly: multi-channel DAC and ADC drive between the control software and the mesh, and the timing, triggering and acquisition that keep the read-out synchronised to the optical event. Participated in product positioning, user-story definition, and early-stage commercialization discussions.",
     highlights: [
-      "Full-stack integration: photonics + electronics + software",
+      "Multi-channel DAC/ADC drive between control software and chip",
+      "Timing, triggering and acquisition synchronised to the optical event",
       "Contributed to product roadmap and market assessment",
     ],
     outcome:
-      "Full-stack integration across photonics, electronics and software, carried through a TRL 3→6 transition with the documentation needed for industrial handover.",
+      "Integration across photonics, electronics and software carried end to end, through a TRL 3→6 transition, with the documentation needed for industrial handover.",
     tags: [
       "Programmable Photonics",
       "System Integration",
+      "Embedded Control",
       "Product Development",
     ],
   },

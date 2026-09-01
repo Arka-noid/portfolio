@@ -15,7 +15,8 @@ import SymptomRouter from "./SymptomRouter";
 // rather than as a preamble to it.
 //
 // The heading and promise line are §9's, verbatim. The thesis is stated once
-// on this page, here.
+// on this page, here: the failure is at the seams between domains, and the
+// three engagements are the three sides of that seam.
 export default function Services() {
   // The split is applied only when the image slot is actually set. The
   // alternative — a 1fr base promoted by :has(.themed-img) — still leaves a
@@ -30,11 +31,12 @@ export default function Services() {
         <div>
           <div className="section-eyebrow">Consulting</div>
           <h2 className="section-title svc-h2">
-            Which layer is your problem in?
+            From photonic concept to working hardware.
           </h2>
           <p className="svc-promise">
-            Three engagements, one job: find where a photonic programme will
-            actually fail, before the budget is committed to finding out.
+            Photonics rarely fails on paper. It fails where optics meets boards,
+            packaging, control and test. Three engagements, one job: get your
+            hardware across that gap.
           </p>
         </div>
         {sideImage && (

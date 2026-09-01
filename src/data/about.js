@@ -22,9 +22,10 @@ export const firm = {
     especially when performance is uncertain, timelines are tight, \
     and an in-house team needs specialist support to make a critical decision. ",
 
-    "My work includes optical-system architecture, fiber and free-space link budgets, \
-    coherent and microwave-photonic systems, tape-out and design reviews, prototype integration, \
-    and automated characterization setups.",
+    "That work covers optical-system and PIC architecture, fiber and free-space link budgets, \
+    coherent and microwave-photonic systems, tape-out and design reviews, prototype integration — \
+    driver electronics, embedded control, packaging and thermal budgets — \
+    and automated characterization benches.",
 
     "Merilight exists for the moments when a photonics project cannot afford another blind iteration.",
 

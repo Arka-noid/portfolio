@@ -18,12 +18,12 @@ const RELATED_KEYWORDS = ["Radar", "Aperture", "Satellite", "Spaceborne", "Beamf
 const relatedPubs = filterPubsByKeywords(publications, RELATED_KEYWORDS);
 
 const ARCH_BLOCKS = [
-  { x: 0, label: "ANTENNA\nARRAY", sub: "X-band", color: "#e8edf5", w: 90 },
-  { x: 110, label: "RF\nFRONT-END", sub: "LNA + Filter", color: "#e8edf5", w: 90 },
-  { x: 220, label: "E/O\nCONVERSION", sub: "MZM", color: "#00C8FF", w: 90 },
-  { x: 330, label: "PHOTONIC\nBEAMFORMER", sub: "SiN + InP", color: "#00C8FF", w: 110 },
-  { x: 460, label: "O/E\nDETECTION", sub: "Balanced PD", color: "#00C8FF", w: 90 },
-  { x: 570, label: "DIGITAL\nBACK-END", sub: "ADC + DSP", color: "#e8edf5", w: 90 },
+  { x: 0, label: "ANTENNA\nARRAY", sub: "X-band", color: "#e6eaf0", w: 90 },
+  { x: 110, label: "RF\nFRONT-END", sub: "LNA + Filter", color: "#e6eaf0", w: 90 },
+  { x: 220, label: "E/O\nCONVERSION", sub: "MZM", color: "#5FB3BF", w: 90 },
+  { x: 330, label: "PHOTONIC\nBEAMFORMER", sub: "SiN + InP", color: "#5FB3BF", w: 110 },
+  { x: 460, label: "O/E\nDETECTION", sub: "Balanced PD", color: "#5FB3BF", w: 90 },
+  { x: 570, label: "DIGITAL\nBACK-END", sub: "ADC + DSP", color: "#e6eaf0", w: 90 },
 ];
 
 function StarfieldCanvas({ reduced }) {
@@ -79,7 +79,7 @@ function StarfieldCanvas({ reduced }) {
 
       ctx.beginPath();
       ctx.arc(cx, cy + earthR * 0.3, earthR, 0, Math.PI * 2);
-      ctx.strokeStyle = "rgba(0, 200, 255, 0.06)";
+      ctx.strokeStyle = "rgba(95, 179, 191, 0.06)";
       ctx.lineWidth = 1;
       ctx.stroke();
 
@@ -104,12 +104,12 @@ function SatelliteSvg({ animate }) {
     <svg viewBox="0 0 480 320" className="cs-satellite-svg" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs>
         <linearGradient id="beam1" x1="240" y1="130" x2="140" y2="310" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#00C8FF" stopOpacity="0.4" />
-          <stop offset="1" stopColor="#00C8FF" stopOpacity="0" />
+          <stop stopColor="#5FB3BF" stopOpacity="0.4" />
+          <stop offset="1" stopColor="#5FB3BF" stopOpacity="0" />
         </linearGradient>
         <linearGradient id="beam2" x1="240" y1="130" x2="340" y2="310" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#00C8FF" stopOpacity="0.3" />
-          <stop offset="1" stopColor="#00C8FF" stopOpacity="0" />
+          <stop stopColor="#5FB3BF" stopOpacity="0.3" />
+          <stop offset="1" stopColor="#5FB3BF" stopOpacity="0" />
         </linearGradient>
         <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
           <stop stopColor="#1a3a6a" />
@@ -129,45 +129,45 @@ function SatelliteSvg({ animate }) {
       </polygon>
 
       <g>
-        <rect x="100" y="88" width="55" height="28" fill="url(#panel)" stroke="#00C8FF" strokeWidth="0.5" opacity="0.7" />
-        <rect x="160" y="88" width="55" height="28" fill="url(#panel)" stroke="#00C8FF" strokeWidth="0.5" opacity="0.7" />
-        <line x1="110" y1="88" x2="110" y2="116" stroke="#00C8FF" strokeWidth="0.3" opacity="0.3" />
-        <line x1="125" y1="88" x2="125" y2="116" stroke="#00C8FF" strokeWidth="0.3" opacity="0.3" />
-        <line x1="140" y1="88" x2="140" y2="116" stroke="#00C8FF" strokeWidth="0.3" opacity="0.3" />
-        <line x1="170" y1="88" x2="170" y2="116" stroke="#00C8FF" strokeWidth="0.3" opacity="0.3" />
-        <line x1="185" y1="88" x2="185" y2="116" stroke="#00C8FF" strokeWidth="0.3" opacity="0.3" />
-        <line x1="200" y1="88" x2="200" y2="116" stroke="#00C8FF" strokeWidth="0.3" opacity="0.3" />
+        <rect x="100" y="88" width="55" height="28" fill="url(#panel)" stroke="#5FB3BF" strokeWidth="0.5" opacity="0.7" />
+        <rect x="160" y="88" width="55" height="28" fill="url(#panel)" stroke="#5FB3BF" strokeWidth="0.5" opacity="0.7" />
+        <line x1="110" y1="88" x2="110" y2="116" stroke="#5FB3BF" strokeWidth="0.3" opacity="0.3" />
+        <line x1="125" y1="88" x2="125" y2="116" stroke="#5FB3BF" strokeWidth="0.3" opacity="0.3" />
+        <line x1="140" y1="88" x2="140" y2="116" stroke="#5FB3BF" strokeWidth="0.3" opacity="0.3" />
+        <line x1="170" y1="88" x2="170" y2="116" stroke="#5FB3BF" strokeWidth="0.3" opacity="0.3" />
+        <line x1="185" y1="88" x2="185" y2="116" stroke="#5FB3BF" strokeWidth="0.3" opacity="0.3" />
+        <line x1="200" y1="88" x2="200" y2="116" stroke="#5FB3BF" strokeWidth="0.3" opacity="0.3" />
 
-        <rect x="270" y="88" width="55" height="28" fill="url(#panel)" stroke="#00C8FF" strokeWidth="0.5" opacity="0.7" />
-        <rect x="330" y="88" width="55" height="28" fill="url(#panel)" stroke="#00C8FF" strokeWidth="0.5" opacity="0.7" />
-        <line x1="280" y1="88" x2="280" y2="116" stroke="#00C8FF" strokeWidth="0.3" opacity="0.3" />
-        <line x1="295" y1="88" x2="295" y2="116" stroke="#00C8FF" strokeWidth="0.3" opacity="0.3" />
-        <line x1="310" y1="88" x2="310" y2="116" stroke="#00C8FF" strokeWidth="0.3" opacity="0.3" />
-        <line x1="340" y1="88" x2="340" y2="116" stroke="#00C8FF" strokeWidth="0.3" opacity="0.3" />
-        <line x1="355" y1="88" x2="355" y2="116" stroke="#00C8FF" strokeWidth="0.3" opacity="0.3" />
-        <line x1="370" y1="88" x2="370" y2="116" stroke="#00C8FF" strokeWidth="0.3" opacity="0.3" />
+        <rect x="270" y="88" width="55" height="28" fill="url(#panel)" stroke="#5FB3BF" strokeWidth="0.5" opacity="0.7" />
+        <rect x="330" y="88" width="55" height="28" fill="url(#panel)" stroke="#5FB3BF" strokeWidth="0.5" opacity="0.7" />
+        <line x1="280" y1="88" x2="280" y2="116" stroke="#5FB3BF" strokeWidth="0.3" opacity="0.3" />
+        <line x1="295" y1="88" x2="295" y2="116" stroke="#5FB3BF" strokeWidth="0.3" opacity="0.3" />
+        <line x1="310" y1="88" x2="310" y2="116" stroke="#5FB3BF" strokeWidth="0.3" opacity="0.3" />
+        <line x1="340" y1="88" x2="340" y2="116" stroke="#5FB3BF" strokeWidth="0.3" opacity="0.3" />
+        <line x1="355" y1="88" x2="355" y2="116" stroke="#5FB3BF" strokeWidth="0.3" opacity="0.3" />
+        <line x1="370" y1="88" x2="370" y2="116" stroke="#5FB3BF" strokeWidth="0.3" opacity="0.3" />
 
-        <rect x="220" y="80" width="45" height="44" rx="2" fill="#111827" stroke="#00C8FF" strokeWidth="0.8" />
-        <rect x="225" y="85" width="35" height="12" rx="1" fill="#0a0f1e" stroke="#00C8FF" strokeWidth="0.3" opacity="0.5" />
-        <circle cx="242" cy="112" r="3" fill="#00C8FF" opacity="0.6" filter="url(#glow)">
+        <rect x="220" y="80" width="45" height="44" rx="2" fill="#141a23" stroke="#5FB3BF" strokeWidth="0.8" />
+        <rect x="225" y="85" width="35" height="12" rx="1" fill="#0d1117" stroke="#5FB3BF" strokeWidth="0.3" opacity="0.5" />
+        <circle cx="242" cy="112" r="3" fill="#5FB3BF" opacity="0.6" filter="url(#glow)">
           {animate && <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite" />}
         </circle>
 
-        <rect x="222" y="124" width="40" height="8" rx="1" fill="#111827" stroke="#00C8FF" strokeWidth="0.5" opacity="0.6" />
+        <rect x="222" y="124" width="40" height="8" rx="1" fill="#141a23" stroke="#5FB3BF" strokeWidth="0.5" opacity="0.6" />
         <line x1="215" y1="102" x2="220" y2="102" stroke="#3a4560" strokeWidth="1.5" />
         <line x1="265" y1="102" x2="270" y2="102" stroke="#3a4560" strokeWidth="1.5" />
       </g>
 
       <g opacity="0.3">
-        <circle cx="80" cy="50" r="1" fill="#e8edf5" />
-        <circle cx="420" cy="30" r="0.8" fill="#e8edf5" />
-        <circle cx="60" cy="150" r="0.6" fill="#e8edf5" />
-        <circle cx="440" cy="120" r="1.2" fill="#e8edf5" />
-        <circle cx="30" cy="90" r="0.5" fill="#e8edf5" />
-        <circle cx="460" cy="70" r="0.7" fill="#e8edf5" />
+        <circle cx="80" cy="50" r="1" fill="#e6eaf0" />
+        <circle cx="420" cy="30" r="0.8" fill="#e6eaf0" />
+        <circle cx="60" cy="150" r="0.6" fill="#e6eaf0" />
+        <circle cx="440" cy="120" r="1.2" fill="#e6eaf0" />
+        <circle cx="30" cy="90" r="0.5" fill="#e6eaf0" />
+        <circle cx="460" cy="70" r="0.7" fill="#e6eaf0" />
       </g>
 
-      <path d="M 0 300 Q 120 280 240 290 Q 360 300 480 285" stroke="#00C8FF" strokeWidth="0.5" opacity="0.1" fill="none" />
+      <path d="M 0 300 Q 120 280 240 290 Q 360 300 480 285" stroke="#5FB3BF" strokeWidth="0.5" opacity="0.1" fill="none" />
     </svg>
   );
 }
@@ -185,9 +185,9 @@ function PhotonicChipSvg({ animate }) {
           <stop offset="1" stopColor="#100828" />
         </linearGradient>
         <linearGradient id="wg" x1="0" y1="0" x2="1" y2="0">
-          <stop stopColor="#00C8FF" stopOpacity="0.2" />
-          <stop offset="0.5" stopColor="#00C8FF" stopOpacity="0.8" />
-          <stop offset="1" stopColor="#00C8FF" stopOpacity="0.2" />
+          <stop stopColor="#5FB3BF" stopOpacity="0.2" />
+          <stop offset="0.5" stopColor="#5FB3BF" stopOpacity="0.8" />
+          <stop offset="1" stopColor="#5FB3BF" stopOpacity="0.2" />
         </linearGradient>
         <linearGradient id="wgInp" x1="0" y1="0" x2="1" y2="0">
           <stop stopColor="#8B5CF6" stopOpacity="0.2" />
@@ -196,16 +196,16 @@ function PhotonicChipSvg({ animate }) {
         </linearGradient>
       </defs>
 
-      <rect x="30" y="20" width="260" height="240" rx="3" fill="url(#sinChip)" stroke="#00C8FF" strokeWidth="0.8" opacity="0.8" />
-      <text x="40" y="42" fontFamily="Space Grotesk, sans-serif" fontSize="9" fill="#00C8FF" opacity="0.6" letterSpacing="0.15em">SILICON NITRIDE</text>
+      <rect x="30" y="20" width="260" height="240" rx="3" fill="url(#sinChip)" stroke="#5FB3BF" strokeWidth="0.8" opacity="0.8" />
+      <text x="40" y="42" fontFamily="Space Grotesk, sans-serif" fontSize="9" fill="#5FB3BF" opacity="0.6" letterSpacing="0.15em">SILICON NITRIDE</text>
 
       <rect x="310" y="20" width="260" height="240" rx="3" fill="url(#inpChip)" stroke="#8B5CF6" strokeWidth="0.8" opacity="0.8" />
       <text x="320" y="42" fontFamily="Space Grotesk, sans-serif" fontSize="9" fill="#8B5CF6" opacity="0.6" letterSpacing="0.15em">INDIUM PHOSPHIDE</text>
 
       {[70, 110, 150, 190].map((y, i) => (
         <g key={`sin-wg-${i}`}>
-          <line x1="10" y1={y} x2="50" y2={y} stroke="#00C8FF" strokeWidth="1.5" opacity="0.4" />
-          <text x="2" y={y + 3} fontFamily="monospace" fontSize="6" fill="#00C8FF" opacity="0.4">RF{i + 1}</text>
+          <line x1="10" y1={y} x2="50" y2={y} stroke="#5FB3BF" strokeWidth="1.5" opacity="0.4" />
+          <text x="2" y={y + 3} fontFamily="monospace" fontSize="6" fill="#5FB3BF" opacity="0.4">RF{i + 1}</text>
 
           <path
             d={`M 50 ${y} C 80 ${y} 90 ${y + (i % 2 ? 5 : -5)} 120 ${y}`}
@@ -218,8 +218,8 @@ function PhotonicChipSvg({ animate }) {
             {animate && <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur={`${2 + i * 0.3}s`} repeatCount="indefinite" />}
           </path>
 
-          <rect x="170" y={y - 6} width="20" height="12" rx="2" fill="none" stroke="#00C8FF" strokeWidth="0.5" opacity="0.5" />
-          <text x="174" y={y + 3} fontFamily="monospace" fontSize="5" fill="#00C8FF" opacity="0.4">φ{i + 1}</text>
+          <rect x="170" y={y - 6} width="20" height="12" rx="2" fill="none" stroke="#5FB3BF" strokeWidth="0.5" opacity="0.5" />
+          <text x="174" y={y + 3} fontFamily="monospace" fontSize="5" fill="#5FB3BF" opacity="0.4">φ{i + 1}</text>
 
           <path
             d={`M 190 ${y} C 220 ${y} 240 ${130} 270 ${130}`}
@@ -228,10 +228,10 @@ function PhotonicChipSvg({ animate }) {
         </g>
       ))}
 
-      <rect x="255" y="118" width="30" height="24" rx="3" fill="none" stroke="#00C8FF" strokeWidth="0.8" opacity="0.7" />
-      <text x="259" y="134" fontFamily="monospace" fontSize="6" fill="#00C8FF" opacity="0.5">Σ</text>
+      <rect x="255" y="118" width="30" height="24" rx="3" fill="none" stroke="#5FB3BF" strokeWidth="0.8" opacity="0.7" />
+      <text x="259" y="134" fontFamily="monospace" fontSize="6" fill="#5FB3BF" opacity="0.5">Σ</text>
 
-      <line x1="290" y1="130" x2="310" y2="130" stroke="#00C8FF" strokeWidth="1.5" opacity="0.5" strokeDasharray="3 2" />
+      <line x1="290" y1="130" x2="310" y2="130" stroke="#5FB3BF" strokeWidth="1.5" opacity="0.5" strokeDasharray="3 2" />
 
       {[90, 130, 170].map((y, i) => (
         <g key={`inp-wg-${i}`}>
@@ -251,8 +251,8 @@ function PhotonicChipSvg({ animate }) {
 
       <text x="520" y="78" fontFamily="monospace" fontSize="6" fill="#8B5CF6" opacity="0.3">OUT</text>
 
-      <rect x="295" y="120" width="20" height="20" rx="0" fill="none" stroke="#e8edf5" strokeWidth="0.5" strokeDasharray="2 1" opacity="0.3" />
-      <text x="298" y="145" fontFamily="monospace" fontSize="4" fill="#e8edf5" opacity="0.25">BOND</text>
+      <rect x="295" y="120" width="20" height="20" rx="0" fill="none" stroke="#e6eaf0" strokeWidth="0.5" strokeDasharray="2 1" opacity="0.3" />
+      <text x="298" y="145" fontFamily="monospace" fontSize="4" fill="#e6eaf0" opacity="0.25">BOND</text>
     </svg>
   );
 }
@@ -334,7 +334,7 @@ export default function SpaceRadarCaseStudy() {
           <div className="cs-col cs-challenge-cards reveal">
             <div className="cs-challenge-card">
               <div className="cs-challenge-icon">
-                <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="#00C8FF" strokeWidth="1.5" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="#5FB3BF" strokeWidth="1.5" aria-hidden="true">
                   <rect x="4" y="8" width="24" height="16" rx="2" />
                   <line x1="4" y1="14" x2="28" y2="14" />
                   <line x1="4" y1="18" x2="28" y2="18" />
@@ -346,7 +346,7 @@ export default function SpaceRadarCaseStudy() {
             </div>
             <div className="cs-challenge-card">
               <div className="cs-challenge-icon">
-                <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="#00C8FF" strokeWidth="1.5" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="#5FB3BF" strokeWidth="1.5" aria-hidden="true">
                   <path d="M16 4 L28 10 L28 22 L16 28 L4 22 L4 10 Z" />
                   <line x1="16" y1="4" x2="16" y2="28" />
                   <line x1="4" y1="10" x2="28" y2="10" />
@@ -357,10 +357,10 @@ export default function SpaceRadarCaseStudy() {
             </div>
             <div className="cs-challenge-card">
               <div className="cs-challenge-icon">
-                <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="#00C8FF" strokeWidth="1.5" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="#5FB3BF" strokeWidth="1.5" aria-hidden="true">
                   <circle cx="16" cy="16" r="10" />
                   <path d="M16 6 A10 10 0 0 1 26 16" strokeWidth="2.5" />
-                  <circle cx="16" cy="16" r="2" fill="#00C8FF" />
+                  <circle cx="16" cy="16" r="2" fill="#5FB3BF" />
                 </svg>
               </div>
               <h4>Multi-Beam</h4>
@@ -393,7 +393,7 @@ export default function SpaceRadarCaseStudy() {
         </div>
         <div className="cs-platform-grid reveal">
           <div className="cs-platform-card">
-            <div className="cs-platform-tag" style={{ color: "#00C8FF", borderColor: "#00C8FF" }}>Silicon Nitride</div>
+            <div className="cs-platform-tag" style={{ color: "#5FB3BF", borderColor: "#5FB3BF" }}>Silicon Nitride</div>
             <p>Ultra-low optical losses for passive signal routing, splitting, and delay lines. The backbone of the beamforming network.</p>
             <ul>
               <li>Propagation loss &lt; 0.1 dB/cm</li>
@@ -514,19 +514,19 @@ export default function SpaceRadarCaseStudy() {
         </div>
         <div className="cs-outcome-bar reveal">
           <div className="cs-outcome">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8FF" strokeWidth="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5FB3BF" strokeWidth="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
             <span>Hybrid module fabricated and packaged for space compliance</span>
           </div>
           <div className="cs-outcome">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8FF" strokeWidth="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5FB3BF" strokeWidth="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
             <span>Simulation framework validated against measured data</span>
           </div>
           <div className="cs-outcome">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8FF" strokeWidth="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5FB3BF" strokeWidth="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
             <span>Results published in top-tier photonics and radar venues</span>
           </div>
           <div className="cs-outcome">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8FF" strokeWidth="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5FB3BF" strokeWidth="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
             <span>Collaboration with major European aerospace industry partners</span>
           </div>
         </div>

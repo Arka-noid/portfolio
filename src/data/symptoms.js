@@ -28,7 +28,7 @@ export const symptomRouter = {
 export const symptoms = [
   {
     id: "on-chip-boundary",
-    text: "What belongs on the chip, and what stays off?",
+    text: "What components belong on the chip, and what stays discrete?",
     offer: "system-architecture",
   },
   {
@@ -38,7 +38,7 @@ export const symptoms = [
   },
   {
     id: "mass-power-budget",
-    text: `We have a mass and power budget, and an architecture that won't fit inside it.`,
+    text: `We have a SWaP budget, and an architecture that won't fit inside it.`,
     offer: "system-architecture",
   },
   // {
@@ -48,12 +48,12 @@ export const symptoms = [
   // },
   {
     id: "no-driver",
-    text: "We have a chip and nothing to drive it.",
+    text: "We have a chip, but we don't know how to drive it.",
     offer: "prototype-integration",
   },
   {
     id: "optical-table-demo",
-    text: `The demo still depends on an optical table and one operator.`,
+    text: `The demo still depends on an optical table, delicate alignment and one operator.`,
     offer: "prototype-integration",
   },
   {

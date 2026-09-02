@@ -10,12 +10,12 @@ export const homePage = {
   },
   services: {
     eyebrow: "Services",
-    heading: "Let us move the hardware forward.",
+    heading: "Let us move the product forward.",
     action: "Explore the engagements →",
   },
   credibility: {
     eyebrow: "Proof of Work",
-    heading: "Systems Shipped, Not Just Studied",
+    heading: "Projects portfolio",
     cardAction: "Read the case study →",
     action: "See all case studies →",
   },

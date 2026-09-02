@@ -27,14 +27,14 @@ export const firm = {
   // *discovers* it is one person feels misled, while one who is *told* does
   // not. Stating it plainly converts the weakness into a trust signal.
   structure:
-    `Merilight is Manuel Reza — an independent engineer, not an agency. The person you brief
+    `Merilight is Manuel Reza. The person you brief
       is the person who does the work.`,
 
   // Firm voice throughout: what Merilight is, why the gaps are where products
   // fail, and how it is engaged. Traces to docs/positioning.md §1–§5; no
   // figure or claim here that is not already elsewhere in src/data (§6).
   paragraphs: [
-    `We are an engineering boutique specialized in solving problems in optical and photonic
+    `We are an engineering studio specialized in solving problems in optical and photonic
       systems`,
 
     `We help teams moving from devices and demonstrations to working systems by resolving
@@ -47,7 +47,7 @@ export const firm = {
       integration — driver electronics, embedded control, packaging and thermal budgets — and
       automated characterization benches.`,
 
-    `Merilight exists for the moments when a photonics project cannot afford another blind
+    `Merilight exists for the moments when a photonic project cannot afford another blind
       iteration.`,
 
     // "",

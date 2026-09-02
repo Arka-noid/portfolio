@@ -12,7 +12,7 @@ export const sharedPage = {
     contactAction: "Get in touch",
   },
   footer: {
-    description: `Merilight · Independent photonic systems consultancy · Manuel Reza ·`,
+    description: `Merilight · Independent optical systems engineering consultancy · Manuel Reza ·`,
     profileAction: "Profile",
   },
   markets: {
@@ -21,7 +21,7 @@ export const sharedPage = {
     proofLabel: "Proof",
   },
   perspectiveLabel: "Market perspective",
-  partnerLabel: "Institutions and partners behind this work",
+  partnerLabel: "Institutions and partners",
   publications: {
     eyebrow: "Research",
     heading: "Publications",
@@ -36,9 +36,7 @@ export const sharedPage = {
     expandSuffix: "more ↓",
     collapseLabel: "Show fewer ↑",
     intro:
-      `Grouped by subject rather than by date. The spread — from III-V material growth through
-        spaceborne radar to nonlinear laser sources — is what lets me tell you which layer a
-        problem sits in.`,
+      `Grouped by subject `,
     scholarAction: "View on Google Scholar →",
   },
   testimonials: {

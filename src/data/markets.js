@@ -69,7 +69,8 @@ export const marketFocus = [
   {
     id: "industrial-sensing",
     label: "Industrial & environmental sensing",
-    image: null,
+    image: "/images/oil-gas.webp",
+    imageFlip: true,
     context:
       `Mid-infrared gas sensing and optical process instrumentation`,
     proof:

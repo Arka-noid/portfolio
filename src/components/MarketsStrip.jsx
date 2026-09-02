@@ -34,7 +34,10 @@ export default function MarketsStrip({ compact = false }) {
                 <span className="market-card-bg" aria-hidden="true">
                   <span
                     className="market-card-photo"
-                    style={{ backgroundImage: `url(${m.image})` }}
+                    style={{
+                      backgroundImage: `url(${m.image})`,
+                      transform: m.imageFlip ? "scaleX(-1)" : undefined,
+                    }}
                   />
                 </span>
               )}

@@ -31,7 +31,7 @@ set, and a null `image` leaves the card on flat `--surface`.
 | `telecom-optical-networks` | `optical-communications-1.jpg` | Illuminated optical-fibre bundle against black | **source and licence unverified** |
 | `space-defense` | `earth-night.jpg` | Earth at night from orbit (shared with the space-radar hero) | [Unsplash](https://unsplash.com/license) (NASA) |
 | `autonomous-sensing` | `lidar-point-cloud.png` | Ouster OS1-64 point cloud, Folsom/Dore St, San Francisco | Ouster, via Wikimedia Commons — **check the CC terms, attribution is likely required** |
-| `industrial-sensing` | *unsourced* | Gas-analysis cell, optical process sensor, industrial spectroscopy hardware or environmental monitoring instrument | [Unsplash](https://unsplash.com/s/photos/gas-analyzer) · [Pexels](https://www.pexels.com/search/industrial%20sensor/) · [NIST image galleries](https://www.nist.gov/image-galleries) |
+| `industrial-sensing` | `oil-gas.webp` | Gas flare and emissions plume at an industrial facility | **source and licence unverified** |
 | `life-sciences-imaging` | `pulse-oximeter.jpg` | Pulse oximeter clipped to a finger — optical biosensing, no face | [Unsplash](https://unsplash.com/license) (Engin Akyurt) |
 
 Two caveats before this ships:

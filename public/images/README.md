@@ -20,7 +20,7 @@ visual impact and topical fit, not final art. Swap any of it freely.
 
 ## Market card backdrops
 
-The four market cards carry their own photo, wired as `image` in
+The six market cards carry their own photo, wired as `image` in
 `src/data/markets.js` rather than as a slot here — it belongs to the market,
 not to a page position. Same rules apply; the card dims and tints whatever is
 set, and a null `image` leaves the card on flat `--surface`.
@@ -28,9 +28,11 @@ set, and a null `image` leaves the card on flat `--surface`.
 | Market | File | Subject | Source |
 |---|---|---|---|
 | `ai-infrastructure` | `datacenter-racks.jpg` | Datacenter cold aisle, blue-lit racks | **licence unverified** |
+| `telecom-optical-networks` | *unsourced* | Real optical transceiver, DWDM line card, fibre array or dense optical patch panel — no copper Ethernet | [Unsplash](https://unsplash.com/s/photos/fiber-optic) · [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Fiber-optic_communications) |
 | `space-defense` | `earth-night.jpg` | Earth at night from orbit (shared with the space-radar hero) | [Unsplash](https://unsplash.com/license) (NASA) |
 | `autonomous-sensing` | `lidar-point-cloud.png` | Ouster OS1-64 point cloud, Folsom/Dore St, San Francisco | Ouster, via Wikimedia Commons — **check the CC terms, attribution is likely required** |
-| `sensing-imaging` | `pulse-oximeter.jpg` | Pulse oximeter clipped to a finger — optical biosensing, no face | [Unsplash](https://unsplash.com/license) (Engin Akyurt) |
+| `industrial-sensing` | *unsourced* | Gas-analysis cell, optical process sensor, industrial spectroscopy hardware or environmental monitoring instrument | [Unsplash](https://unsplash.com/s/photos/gas-analyzer) · [Pexels](https://www.pexels.com/search/industrial%20sensor/) · [NIST image galleries](https://www.nist.gov/image-galleries) |
+| `life-sciences-imaging` | `pulse-oximeter.jpg` | Pulse oximeter clipped to a finger — optical biosensing, no face | [Unsplash](https://unsplash.com/license) (Engin Akyurt) |
 
 Two caveats before this ships:
 

@@ -34,6 +34,17 @@ export const marketFocus = [
     evidence: { label: "See the platform and mesh work", to: "/work" },
   },
   {
+    id: "telecom-optical-networks",
+    label: "Telecom & optical networks",
+    image: null,
+    context:
+      `DWDM transport, photonic transceivers and microwave-photonic signal processing`,
+    proof:
+      `A SiN platform developed for telecommunications, AWG-based wavelength multiplexing for
+        DWDM PIC architectures, and validation of an industrial photonic transceiver prototype.`,
+    evidence: { label: "See the platform and transceiver work", to: "/work" },
+  },
+  {
     id: "space-defense",
     label: "Space & defense",
     image: "/images/earth-night.jpg",
@@ -56,17 +67,26 @@ export const marketFocus = [
     evidence: { label: "Read the LiDAR case study", to: "/work/lidar" },
   },
   {
-    id: "sensing-imaging",
-    label: "Industrial, life-science & imaging",
+    id: "industrial-sensing",
+    label: "Industrial & environmental sensing",
+    image: null,
+    context:
+      `Mid-infrared gas sensing and optical process instrumentation`,
+    proof:
+      `Mid-infrared gas sensor devices developed with Gas Sensing Solutions Ltd. from epitaxy
+        and device design through fabrication and characterization.`,
+    evidence: { label: "See the gas-sensing work", to: "/work" },
+  },
+  {
+    id: "life-sciences-imaging",
+    label: "Life sciences & biomedical imaging",
     image: "/images/pulse-oximeter.jpg",
     context:
-      `Gas sensing, computer vision, biomedical sensors with microfluidics, optical coherence
-        tomography`,
+      `Optical coherence tomography, chip-scale imaging and sensor integration`,
     proof:
-      `Mid-infrared gas sensor devices developed with an industrial partner from epitaxy
-        through to characterization, and chip-scale biomedical imaging architectures at
-        Sant'Anna.`,
-    evidence: { label: "See the sensing projects", to: "/work" },
+      `A 16-element optical phased array for chip-scale OCT, integrated with custom drive
+        electronics and automated beam calibration.`,
+    evidence: { label: "See the biomedical imaging work", to: "/work" },
   },
 ];
 
@@ -75,6 +95,6 @@ export const marketFocus = [
 // thesis: on /services that line belongs to the page promise (positioning §9),
 // and three restatements of it used to land within one scroll.
 export const marketIntro =
-  `The same three engagements, addressed to four fields. Photonics is being pulled out of
+  `The same three engagements, addressed to six fields. Photonics is being pulled out of
     the lab in all of them at once — what changes between them is which constraint decides
     the architecture first.`;

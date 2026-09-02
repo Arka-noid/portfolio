@@ -100,10 +100,13 @@ programme.
 offers addressed to a buyer who recognises their own field. In order:
 **AI infrastructure & datacenter optics** (optical interconnect, co-packaged
 optics, optical I/O, programmable and analog optical compute — named first
-because that is where the demand is); **space & defense** (SAR and radar
-payloads, EW, constellations); **LiDAR & 3D sensing** (FMCW LiDAR, coherent
-detection, beam steering); **industrial, life-science & imaging** (gas sensing,
-OCT, metrology). A market is a doorway, never an offer.
+because that is where the demand is); **telecom & optical networks** (DWDM,
+photonic transceivers, microwave-photonic signal processing); **space & defense**
+(SAR and radar payloads, EW, constellations); **LiDAR & 3D sensing** (FMCW
+LiDAR, coherent detection, beam steering); **industrial & environmental
+sensing** (gas sensing, process instrumentation, metrology); **life sciences &
+biomedical imaging** (OCT, chip-scale imaging, sensor integration). A market is
+a doorway, never an offer.
 
 ## 5.1 Symptoms, in the buyer's words
 
@@ -181,9 +184,11 @@ first.
 | Market | Proof |
 |---|---|
 | AI infrastructure & datacenter optics | Fiber-to-chip coupling (edge and grating couplers) in SOI and SiN; micro-transfer-printed SOAs; hybrid SiN+InP multi-chip assembly; AWG-based wavelength multiplexing for DWDM PIC architectures; a programmable photonic mesh carried TRL 3→6; the first imec SiN platform PDK |
+| Telecom & optical networks | SiN platform developed for telecommunications; AWG-based wavelength multiplexing for DWDM PIC architectures; industrial photonic transceiver prototype validated with Leonardo and Thales; microwave-photonic signal-processing record |
 | Space & defense | SCORE-SAR hybrid SiN–InP receiver for EU SPACEBEAM; full analog link budget in VPI; multi-static satellite radar network; multiband RF transceivers for defense programmes |
 | LiDAR & 3D sensing | 16-element optical phased array on SOI, 1.7° over 20°; photonic design of imec's first end-to-end FMCW LiDAR demonstrator |
-| Industrial, life-science & imaging | Mid-IR gas sensor devices with Gas Sensing Solutions Ltd.; chip-scale biomedical imaging (OCT) at Sant'Anna |
+| Industrial & environmental sensing | Mid-IR gas sensor devices with Gas Sensing Solutions Ltd., developed from epitaxy and device design through fabrication and characterization |
+| Life sciences & biomedical imaging | Chip-scale biomedical imaging architecture for OCT at Sant'Anna; 16-element SOI optical phased array; custom drive electronics and automated beam calibration |
 
 The AI-infrastructure row is a **component and platform** record, not a delivery
 record — see the guard in §7.

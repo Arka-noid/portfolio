@@ -5,7 +5,7 @@
 }
 
 :root {
-  /* Ground and surfaces — deep navy, lifting toward the card slate */
+  /* Ground and surfaces — deep navy, lifting toward the card slate. */
   --bg: #0a0f1e;
   --bg-rgb: 10, 15, 30;
   --bg-alt: #111827;
@@ -16,8 +16,8 @@
   --text: #e8edf5;
   --muted: #8a9bb8;
 
-  /* Accent — cyan carries the UI; hairlines and tints composite off
-     --accent-rgb rather than repeating the literal. */
+  /* Accent — saturated cyan carries the UI; hairlines and tints
+     composite off --accent-rgb rather than repeating the literal. */
   --accent: #00c8ff;
   --accent-rgb: 0, 200, 255;
   --accent-soft: rgba(var(--accent-rgb), 0.12);

@@ -157,7 +157,7 @@ a.cs-pub:hover {
 .market-proof span,
 .teaser-card-tag,
 .symptom-offer {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.62rem;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -183,7 +183,7 @@ a.cs-pub:hover {
 .stack-evidence,
 .market-evidence,
 .person-strip-cta {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -211,7 +211,7 @@ a.cs-pub:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
   text-transform: uppercase;
   color: var(--accent);
@@ -442,12 +442,12 @@ nav {
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 1.5rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
 }
 
 .hero-title {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: clamp(2.8rem, 6vw, 5rem);
   font-weight: 700;
   line-height: 1.05;
@@ -471,7 +471,7 @@ nav {
 
 /* The markets named under the pitch — see docs/positioning.md §5. */
 .hero-markets {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.68rem;
   font-weight: 500;
   letter-spacing: 0.12em;
@@ -499,7 +499,7 @@ nav {
 }
 
 .stat-num {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 2rem;
   font-weight: 700;
   color: var(--text);
@@ -538,7 +538,7 @@ section {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--accent);
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
   margin-bottom: 1rem;
   display: flex;
@@ -556,7 +556,7 @@ section {
 }
 
 .section-title {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -638,7 +638,7 @@ section {
 /* The organisation leads and the job title sits under it — the record is
    provenance, not a CV. See docs/positioning.md §7. */
 .timeline-org {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--text);
@@ -714,7 +714,7 @@ section {
   background: transparent;
   border: 1px solid rgba(var(--accent-rgb), 0.18);
   color: var(--muted);
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.08em;
@@ -744,7 +744,7 @@ section {
 }
 
 .proj-market-heading {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.18em;
@@ -800,7 +800,7 @@ section {
 }
 
 .proj-card-badge {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -815,7 +815,7 @@ section {
 }
 
 .proj-card-title {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--text);
@@ -859,7 +859,7 @@ section {
    than as a footnote. */
 .proj-card-toggle {
   margin-top: 1rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -887,7 +887,7 @@ section {
   color: var(--muted);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   opacity: 0.6;
 }
 
@@ -935,7 +935,7 @@ section {
   background: var(--accent-soft);
   color: var(--accent);
   letter-spacing: 0.06em;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 /* ── PUBLICATIONS ── */
@@ -961,7 +961,7 @@ section {
 }
 
 .pub-metric strong {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--text);
@@ -970,7 +970,7 @@ section {
 
 .pub-note {
   font-size: 0.65rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1005,7 +1005,7 @@ section {
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -1025,7 +1025,7 @@ section {
 }
 
 .pub-year {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -1067,7 +1067,7 @@ a.pub-item {
   background: none;
   border: none;
   cursor: pointer;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.12em;
@@ -1083,7 +1083,7 @@ a.pub-item {
 
 .pub-type {
   font-size: 0.65rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1101,7 +1101,7 @@ a.pub-item {
 }
 
 .pub-title {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.84rem;
   font-weight: 600;
   color: var(--text);
@@ -1158,7 +1158,7 @@ a.pub-item {
 
 .perspective-label {
   display: block;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.62rem;
   font-weight: 600;
   letter-spacing: 0.18em;
@@ -1226,7 +1226,7 @@ a.pub-item {
 }
 
 .about-card-name {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--text);
@@ -1262,7 +1262,7 @@ a.pub-item {
 
 .about-fact-label {
   display: block;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -1313,7 +1313,7 @@ a.pub-item {
 }
 
 .partner-band-label {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.18em;
@@ -1374,7 +1374,7 @@ a.pub-item {
 .service-teaser-num {
   display: block;
   margin-bottom: 0.8rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.62rem;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -1383,7 +1383,7 @@ a.pub-item {
 
 .service-teaser-item h3 {
   margin-bottom: 0.65rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   line-height: 1.45;
@@ -1502,7 +1502,7 @@ a.pub-item {
 }
 
 .svc-num {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--accent);
@@ -1513,7 +1513,7 @@ a.pub-item {
 }
 
 .svc-title {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--text);
@@ -1542,7 +1542,7 @@ a.pub-item {
 }
 
 .svc-shape {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.62rem;
   font-weight: 500;
   letter-spacing: 0.14em;
@@ -1697,7 +1697,7 @@ a.pub-item {
 .svc-continuation-track li {
   position: relative;
   padding-top: 1.25rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -1728,7 +1728,7 @@ a.pub-item {
 /* ── ABOUT: WHO "WE" IS ── */
 
 .about-structure {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.75;
@@ -1779,7 +1779,7 @@ a.pub-item {
 }
 
 .quote-name {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--text);
@@ -1804,7 +1804,7 @@ a.pub-item {
 
 .contact-entity {
   margin-top: 1rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.65rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1857,7 +1857,7 @@ a.pub-item {
 .stack-teaser-layers li {
   position: relative;
   padding-top: 1.25rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.68rem;
   font-weight: 500;
   line-height: 1.5;
@@ -1879,7 +1879,7 @@ a.pub-item {
 
 .stack-cap {
   display: block;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.62rem;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -1946,7 +1946,7 @@ a.pub-item {
 }
 
 .stack-row-name {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.88rem;
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -1992,7 +1992,7 @@ a.pub-item {
 }
 
 .stack-detail-title {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.15rem;
   font-weight: 600;
   color: var(--text);
@@ -2034,7 +2034,7 @@ a.pub-item {
 
 .proof-num {
   display: block;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.9rem;
   font-weight: 700;
   line-height: 1;
@@ -2165,7 +2165,7 @@ a.pub-item {
 }
 
 .market-label {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.15rem;
   font-weight: 600;
   color: var(--text);
@@ -2208,7 +2208,7 @@ a.pub-item {
 }
 
 .teaser-card-title {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.15rem;
   font-weight: 600;
   color: var(--text);
@@ -2226,7 +2226,7 @@ a.pub-item {
 .teaser-card-link {
   font-size: 0.78rem;
   color: var(--accent);
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 /* ── PERSON STRIP ── */
@@ -2373,13 +2373,13 @@ footer {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--accent);
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
   margin-bottom: 1.5rem;
 }
 
 .cs-hero-title {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: clamp(2.2rem, 5vw, 3.8rem);
   font-weight: 700;
   line-height: 1.1;
@@ -2417,7 +2417,7 @@ footer {
   color: var(--muted);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   margin-bottom: 0.25rem;
 }
 
@@ -2519,7 +2519,7 @@ footer {
 }
 
 .cs-challenge-card h4 {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--text);
@@ -2566,7 +2566,7 @@ footer {
 }
 
 .cs-platform-tag {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -2613,7 +2613,7 @@ footer {
 }
 
 .cs-scope-list h3 {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.18em;
@@ -2639,7 +2639,7 @@ footer {
 }
 
 .cs-scope-num {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--accent);
@@ -2649,7 +2649,7 @@ footer {
 }
 
 .cs-scope-item h4 {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--text);
@@ -2685,7 +2685,7 @@ footer {
 }
 
 .cs-phase-num {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--accent);
@@ -2719,7 +2719,7 @@ footer {
 }
 
 .cs-phase-title {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--text);
@@ -2764,7 +2764,7 @@ footer {
 }
 
 .cs-metric-value {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--text);
@@ -2782,7 +2782,7 @@ footer {
   color: var(--muted);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 /* ── OUTCOMES ── */
@@ -2838,7 +2838,7 @@ a.cs-pub:hover {
 }
 
 .cs-pub-title {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--text);
@@ -3233,7 +3233,7 @@ a.cs-pub:hover {
 
 .themed-img-caption {
   margin-top: 0.7rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.68rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -3387,346 +3387,18 @@ a.cs-pub:hover {
   }
 }
 
-/* ── THEME LAB ── */
-
-.theme-lab {
-  min-height: 100vh;
-  padding: clamp(2rem, 4vw, 4.5rem);
-  background: #e9eaec;
-  color: #141820;
-  font-family: "Inter", sans-serif;
-}
-
-.theme-lab-header {
-  width: min(100%, 1680px);
-  margin: 0 auto clamp(2rem, 4vw, 3.5rem);
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 2rem;
-}
-
-.theme-lab-kicker {
-  margin-bottom: 0.65rem;
-  color: #52606d;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.theme-lab-header h1 {
-  max-width: 720px;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(2rem, 4vw, 4.4rem);
-  font-weight: 500;
-  line-height: 1.02;
-  letter-spacing: 0;
-}
-
-.theme-lab-header p {
-  margin-top: 0.8rem;
-  color: #52606d;
-}
-
-.theme-lab-header > a {
-  flex: none;
-  padding-bottom: 0.2rem;
-  color: #141820;
-  border-bottom: 1px solid #141820;
-  text-decoration: none;
-  font-size: 0.82rem;
-  font-weight: 500;
-}
-
-.theme-comparison {
-  width: min(100%, 1680px);
-  max-width: none;
-  margin: 0 auto;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(0.75rem, 1.5vw, 1.5rem);
-  align-items: stretch;
-}
-
-.theme-specimen {
-  --spec-bg: #0a0f1e;
-  --spec-surface: #1e2a45;
-  --spec-text: #e8edf5;
-  --spec-muted: #8a9bb8;
-  --spec-accent: #00c8ff;
-  --spec-highlight: #ffbd59;
-  --spec-heading: "Space Grotesk", sans-serif;
-  --spec-body: "Inter", sans-serif;
-  position: relative;
-  min-width: 0;
-  min-height: 720px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  color: var(--spec-text);
-  background-color: var(--spec-bg);
-  border: 1px solid color-mix(in srgb, var(--spec-text) 14%, transparent);
-  box-shadow: 0 20px 50px rgba(24, 31, 40, 0.12);
-  font-family: var(--spec-body);
-}
-
-.theme-specimen::before {
-  content: "";
-  position: absolute;
-  inset: auto -16% 17% 12%;
-  height: 30%;
-  opacity: 0.18;
-  background: repeating-linear-gradient(
-    165deg,
-    transparent 0 17px,
-    var(--spec-accent) 18px 19px,
-    transparent 20px 34px
-  );
-  transform: skewY(-9deg);
-  pointer-events: none;
-}
-
-.theme-specimen-nav {
-  position: relative;
-  z-index: 1;
-  min-height: 58px;
-  padding: 0 1.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  border-bottom: 1px solid color-mix(in srgb, var(--spec-text) 13%, transparent);
-  color: var(--spec-muted);
-  font-family: var(--spec-heading);
-  font-size: 0.52rem;
-  letter-spacing: 0;
-}
-
-.theme-specimen-brand {
-  color: var(--spec-text);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.13em;
-}
-
-.theme-specimen-hero {
-  position: relative;
-  z-index: 1;
-  padding: clamp(2.4rem, 4vw, 4.5rem) 1.4rem 2.5rem;
-  flex: 1;
-}
-
-.theme-specimen-eyebrow {
-  margin-bottom: 1.25rem;
-  color: var(--spec-accent);
-  font-family: var(--spec-heading);
-  font-size: 0.58rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-.theme-specimen h2 {
-  font-family: var(--spec-heading);
-  font-size: clamp(2rem, 2.7vw, 3.3rem);
-  font-weight: 500;
-  line-height: 1.06;
-  letter-spacing: 0;
-}
-
-.theme-specimen h2 em {
-  color: var(--spec-accent);
-  font-style: normal;
-}
-
-.theme-specimen-hero p {
-  max-width: 28rem;
-  margin-top: 1.35rem;
-  color: var(--spec-muted);
-  font-size: 0.8rem;
-  line-height: 1.55;
-}
-
-.theme-specimen-cta {
-  width: fit-content;
-  margin-top: 1.6rem;
-  padding-bottom: 0.3rem;
-  display: block;
-  border-bottom: 1px solid var(--spec-accent);
-  color: var(--spec-text);
-  font-family: var(--spec-heading);
-  font-size: 0.7rem;
-  font-weight: 500;
-}
-
-.theme-specimen-cta b {
-  color: var(--spec-accent);
-}
-
-.theme-specimen-proof {
-  position: relative;
-  z-index: 1;
-  margin: 0 1.4rem 1.2rem;
-  padding: 1rem;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.9rem;
-  background: color-mix(in srgb, var(--spec-surface) 87%, transparent);
-  border-top: 2px solid var(--spec-accent);
-}
-
-.theme-specimen-proof > span {
-  color: var(--spec-accent);
-  font-family: var(--spec-heading);
-  font-size: 0.65rem;
-  font-weight: 600;
-}
-
-.theme-specimen-proof strong,
-.theme-specimen-proof small,
-.theme-specimen-footer strong,
-.theme-specimen-footer small {
-  display: block;
-}
-
-.theme-specimen-proof strong {
-  font-family: var(--spec-heading);
-  font-size: 0.72rem;
-  line-height: 1.3;
-}
-
-.theme-specimen-proof small {
-  margin-top: 0.35rem;
-  color: var(--spec-muted);
-  font-size: 0.62rem;
-  line-height: 1.45;
-}
-
-.theme-specimen-footer {
-  position: relative;
-  z-index: 1;
-  min-height: 88px;
-  padding: 1.1rem 1.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.8rem;
-  background: color-mix(in srgb, var(--spec-surface) 94%, transparent);
-  border-top: 1px solid color-mix(in srgb, var(--spec-text) 13%, transparent);
-}
-
-.theme-specimen-footer strong {
-  font-family: var(--spec-heading);
-  font-size: 0.65rem;
-  font-weight: 600;
-}
-
-.theme-specimen-footer small {
-  margin-top: 0.2rem;
-  color: var(--spec-muted);
-  font-size: 0.58rem;
-}
-
-.theme-swatches {
-  display: flex;
-  flex: none;
-  gap: 0.25rem;
-}
-
-.theme-swatches span {
-  width: 15px;
-  height: 15px;
-  display: block;
-  border: 1px solid color-mix(in srgb, var(--spec-text) 18%, transparent);
-  border-radius: 50%;
-}
-
-.theme-specimen--precision {
-  --spec-bg: #f4f2ec;
-  --spec-surface: #dbe7ec;
-  --spec-text: #172733;
-  --spec-muted: #536975;
-  --spec-accent: #397a96;
-  --spec-highlight: #82df68;
-  --spec-heading: "Manrope", sans-serif;
-  --spec-body: "Source Sans 3", sans-serif;
-}
-
-.theme-specimen--spectral {
-  --spec-bg: #f3f0fa;
-  --spec-surface: #e4dcf4;
-  --spec-text: #241052;
-  --spec-muted: #6f618a;
-  --spec-accent: #6126e8;
-  --spec-highlight: #c8ff58;
-  --spec-heading: "Sora", sans-serif;
-  --spec-body: "DM Sans", sans-serif;
-}
-
-.theme-specimen--field {
-  --spec-bg: #f3f0e8;
-  --spec-surface: #dce8e7;
-  --spec-text: #192936;
-  --spec-muted: #5e6c70;
-  --spec-accent: #075b68;
-  --spec-highlight: #ce6237;
-  --spec-heading: "Archivo", sans-serif;
-  --spec-body: "IBM Plex Sans", sans-serif;
-}
-
-.theme-specimen--precision::after,
-.theme-specimen--field::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.22;
-  background-image: repeating-linear-gradient(
-    0deg,
-    rgba(23, 39, 51, 0.04) 0,
-    rgba(23, 39, 51, 0.04) 1px,
-    transparent 1px,
-    transparent 4px
-  );
-  pointer-events: none;
-}
-
-.theme-specimen--precision .theme-specimen-proof {
-  border-top-color: var(--spec-highlight);
-}
-
-.theme-specimen--spectral .theme-specimen-proof {
-  box-shadow: inset 3px 0 0 var(--spec-highlight);
-}
-
-.theme-specimen--field .theme-specimen-cta b,
-.theme-specimen--field .theme-specimen-proof > span {
-  color: var(--spec-highlight);
-}
-
-@media (max-width: 1250px) {
-  .theme-comparison {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 700px) {
-  .theme-lab {
-    padding: 1.25rem;
-  }
-
-  .theme-lab-header {
-    align-items: start;
-    flex-direction: column;
-  }
-
-  .theme-comparison {
-    grid-template-columns: 1fr;
-  }
-
-  .theme-specimen {
-    min-height: 640px;
-  }
+/* Headings use a distinct display voice; body copy and controls stay in Inter. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h1[class],
+h2[class],
+h3[class],
+h4[class],
+h5[class],
+h6[class] {
+  font-family: "Sora", sans-serif;
 }

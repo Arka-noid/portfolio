@@ -148,8 +148,8 @@ function FmcwChirpSvg({ animate }) {
       {/* axes */}
       <line x1="60" y1="230" x2="560" y2="230" stroke="#8a9bb8" strokeWidth="0.8" opacity="0.5" />
       <line x1="60" y1="230" x2="60" y2="30" stroke="#8a9bb8" strokeWidth="0.8" opacity="0.5" />
-      <text x="545" y="248" fontFamily="Space Grotesk, sans-serif" fontSize="9" fill="#8a9bb8" opacity="0.6">TIME</text>
-      <text x="30" y="40" fontFamily="Space Grotesk, sans-serif" fontSize="9" fill="#8a9bb8" opacity="0.6">FREQ</text>
+      <text x="545" y="248" fontFamily="Inter, sans-serif" fontSize="9" fill="#8a9bb8" opacity="0.6">TIME</text>
+      <text x="30" y="40" fontFamily="Inter, sans-serif" fontSize="9" fill="#8a9bb8" opacity="0.6">FREQ</text>
 
       {/* TX chirp: two up-ramps */}
       <path d="M 60 210 L 280 60 L 280 210 L 500 60" stroke="#00C8FF" strokeWidth="1.8" fill="none">
@@ -164,17 +164,17 @@ function FmcwChirpSvg({ animate }) {
       <line x1="60" y1="210" x2="120" y2="210" stroke="#e8edf5" strokeWidth="0.8" opacity="0.4" />
       <line x1="60" y1="205" x2="60" y2="215" stroke="#e8edf5" strokeWidth="0.8" opacity="0.4" />
       <line x1="120" y1="205" x2="120" y2="215" stroke="#e8edf5" strokeWidth="0.8" opacity="0.4" />
-      <text x="72" y="202" fontFamily="monospace" fontSize="8" fill="#e8edf5" opacity="0.55">τ = 2R/c</text>
+      <text x="72" y="202" fontFamily="IBM Plex Mono, monospace" fontSize="8" fill="#e8edf5" opacity="0.55">τ = 2R/c</text>
 
       {/* beat frequency between the curves */}
       <line x1="230" y1="94" x2="230" y2="135" stroke="#00C8FF" strokeWidth="0.8" strokeDasharray="3 2" opacity="0.7" />
-      <text x="240" y="120" fontFamily="monospace" fontSize="9" fill="#00C8FF" opacity="0.8">f_beat ∝ distance</text>
+      <text x="240" y="120" fontFamily="IBM Plex Mono, monospace" fontSize="9" fill="#00C8FF" opacity="0.8">f_beat ∝ distance</text>
 
       {/* legend */}
       <line x1="380" y1="240" x2="404" y2="240" stroke="#00C8FF" strokeWidth="1.8" />
-      <text x="410" y="243" fontFamily="Space Grotesk, sans-serif" fontSize="8" fill="#00C8FF" opacity="0.8">TRANSMITTED</text>
+      <text x="410" y="243" fontFamily="Inter, sans-serif" fontSize="8" fill="#00C8FF" opacity="0.8">TRANSMITTED</text>
       <line x1="478" y1="240" x2="502" y2="240" stroke="#8B5CF6" strokeWidth="1.8" strokeDasharray="6 4" />
-      <text x="508" y="243" fontFamily="Space Grotesk, sans-serif" fontSize="8" fill="#8B5CF6" opacity="0.8">RECEIVED</text>
+      <text x="508" y="243" fontFamily="Inter, sans-serif" fontSize="8" fill="#8B5CF6" opacity="0.8">RECEIVED</text>
     </svg>
   );
 }
@@ -201,11 +201,11 @@ function OpaChipSvg({ animate }) {
       </defs>
 
       <rect x="30" y="20" width="330" height="240" rx="3" fill="url(#opaChip)" stroke="#00C8FF" strokeWidth="0.8" opacity="0.8" />
-      <text x="40" y="42" fontFamily="Space Grotesk, sans-serif" fontSize="9" fill="#00C8FF" opacity="0.6" letterSpacing="0.15em">SILICON PHOTONIC OPA</text>
+      <text x="40" y="42" fontFamily="Inter, sans-serif" fontSize="9" fill="#00C8FF" opacity="0.6" letterSpacing="0.15em">SILICON PHOTONIC OPA</text>
 
       {/* laser input + splitter tree */}
       <line x1="10" y1="140" x2="60" y2="140" stroke="#00C8FF" strokeWidth="1.5" opacity="0.5" />
-      <text x="2" y="132" fontFamily="monospace" fontSize="6" fill="#00C8FF" opacity="0.5">IN</text>
+      <text x="2" y="132" fontFamily="IBM Plex Mono, monospace" fontSize="6" fill="#00C8FF" opacity="0.5">IN</text>
       {emitters.map((y, i) => (
         <path
           key={`split-${i}`}
@@ -218,7 +218,7 @@ function OpaChipSvg({ animate }) {
       {emitters.map((y, i) => (
         <g key={`ch-${i}`}>
           <rect x="150" y={y - 6} width="26" height="12" rx="2" fill="none" stroke="#00C8FF" strokeWidth="0.5" opacity="0.5" />
-          <text x="155" y={y + 3} fontFamily="monospace" fontSize="5" fill="#00C8FF" opacity="0.4">φ{i + 1}</text>
+          <text x="155" y={y + 3} fontFamily="IBM Plex Mono, monospace" fontSize="5" fill="#00C8FF" opacity="0.4">φ{i + 1}</text>
           <path d={`M 176 ${y} L 300 ${y}`} stroke="url(#opaWg)" strokeWidth="1.4" fill="none">
             {animate && <animate attributeName="stroke-opacity" values="0.4;0.9;0.4" dur={`${2 + i * 0.25}s`} repeatCount="indefinite" />}
           </path>
@@ -228,7 +228,7 @@ function OpaChipSvg({ animate }) {
           ))}
         </g>
       ))}
-      <text x="290" y="240" fontFamily="monospace" fontSize="6" fill="#00C8FF" opacity="0.4">ANTENNA ARRAY</text>
+      <text x="290" y="240" fontFamily="IBM Plex Mono, monospace" fontSize="6" fill="#00C8FF" opacity="0.4">ANTENNA ARRAY</text>
 
       {/* steered wavefront */}
       <polygon points="340,60 590,20 590,180 340,225" fill="url(#opaBeam)" opacity="0.5">
@@ -242,7 +242,7 @@ function OpaChipSvg({ animate }) {
           stroke="#00C8FF" strokeWidth="0.8" opacity={0.35 - k * 0.08}
         />
       ))}
-      <text x="480" y="250" fontFamily="Space Grotesk, sans-serif" fontSize="7" fill="#00C8FF" opacity="0.4" letterSpacing="0.12em">STEERED BEAM</text>
+      <text x="480" y="250" fontFamily="Inter, sans-serif" fontSize="7" fill="#00C8FF" opacity="0.4" letterSpacing="0.12em">STEERED BEAM</text>
     </svg>
   );
 }

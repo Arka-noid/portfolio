@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout";
 import Home from "./pages/Home";
@@ -7,13 +8,25 @@ import CaseStudy from "./pages/CaseStudy";
 import AboutPage from "./pages/AboutPage";
 import ProfilePage from "./pages/ProfilePage";
 import ContactPage from "./pages/ContactPage";
-import ThemeLab from "./pages/ThemeLab";
 import NotFound from "./pages/NotFound";
+
+const ThemeLab = import.meta.env.DEV
+  ? lazy(() => import("./pages/ThemeLab"))
+  : null;
 
 export default function App() {
   return (
     <Routes>
-      <Route path="theme-lab" element={<ThemeLab />} />
+      {ThemeLab && (
+        <Route
+          path="theme-lab"
+          element={
+            <Suspense fallback={null}>
+              <ThemeLab />
+            </Suspense>
+          }
+        />
+      )}
       <Route element={<RootLayout />}>
         <Route index element={<Home />} />
         <Route path="services" element={<ServicesPage />} />

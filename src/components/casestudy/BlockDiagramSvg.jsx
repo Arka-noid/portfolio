@@ -18,7 +18,7 @@ export default function BlockDiagramSvg({ blocks, domain, viewWidth = 680, viewH
               x={b.x + b.w / 2}
               y={48 + li * 14}
               textAnchor="middle"
-              fontFamily="Space Grotesk, sans-serif"
+              fontFamily="Inter, sans-serif"
               fontSize="8"
               fontWeight="600"
               fill={b.color}
@@ -31,7 +31,7 @@ export default function BlockDiagramSvg({ blocks, domain, viewWidth = 680, viewH
           <text
             x={b.x + b.w / 2} y="88"
             textAnchor="middle"
-            fontFamily="monospace" fontSize="6"
+            fontFamily="IBM Plex Mono, monospace" fontSize="6"
             fill={b.color} opacity="0.4"
           >
             {b.sub}
@@ -54,7 +54,7 @@ export default function BlockDiagramSvg({ blocks, domain, viewWidth = 680, viewH
       {domain && (
         <>
           <rect x={domain.x} y="10" width={domain.width} height="100" rx="4" fill="none" stroke="#00C8FF" strokeWidth="0.5" strokeDasharray="4 3" opacity="0.25" />
-          <text x={domain.x + domain.width / 2} y="125" textAnchor="middle" fontFamily="Space Grotesk, sans-serif" fontSize="7" fill="#00C8FF" opacity="0.35" letterSpacing="0.12em">{domain.label}</text>
+          <text x={domain.x + domain.width / 2} y="125" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="7" fill="#00C8FF" opacity="0.35" letterSpacing="0.12em">{domain.label}</text>
         </>
       )}
     </svg>

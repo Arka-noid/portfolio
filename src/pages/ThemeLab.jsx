@@ -1,10 +1,12 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./ThemeLab.css";
 
 const directions = [
   {
     id: "controlled",
     label: "Controlled Light",
-    heading: "Space Grotesk + Inter",
+    heading: "Sora + Inter + IBM Plex Mono",
     note: "Current direction",
     swatches: ["#0a0f1e", "#1e2a45", "#e8edf5", "#00c8ff", "#ffbd59"],
   },
@@ -77,6 +79,15 @@ function DirectionCard({ direction }) {
 }
 
 export default function ThemeLab() {
+  useEffect(() => {
+    const fontLink = document.createElement("link");
+    fontLink.rel = "stylesheet";
+    fontLink.href = "https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=DM+Sans:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Inter:wght@300;400;500&family=Sora:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap";
+    document.head.appendChild(fontLink);
+
+    return () => fontLink.remove();
+  }, []);
+
   return (
     <main className="theme-lab">
       <header className="theme-lab-header">

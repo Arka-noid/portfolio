@@ -197,15 +197,15 @@ function PhotonicChipSvg({ animate }) {
       </defs>
 
       <rect x="30" y="20" width="260" height="240" rx="3" fill="url(#sinChip)" stroke="#00C8FF" strokeWidth="0.8" opacity="0.8" />
-      <text x="40" y="42" fontFamily="Space Grotesk, sans-serif" fontSize="9" fill="#00C8FF" opacity="0.6" letterSpacing="0.15em">SILICON NITRIDE</text>
+      <text x="40" y="42" fontFamily="Inter, sans-serif" fontSize="9" fill="#00C8FF" opacity="0.6" letterSpacing="0.15em">SILICON NITRIDE</text>
 
       <rect x="310" y="20" width="260" height="240" rx="3" fill="url(#inpChip)" stroke="#8B5CF6" strokeWidth="0.8" opacity="0.8" />
-      <text x="320" y="42" fontFamily="Space Grotesk, sans-serif" fontSize="9" fill="#8B5CF6" opacity="0.6" letterSpacing="0.15em">INDIUM PHOSPHIDE</text>
+      <text x="320" y="42" fontFamily="Inter, sans-serif" fontSize="9" fill="#8B5CF6" opacity="0.6" letterSpacing="0.15em">INDIUM PHOSPHIDE</text>
 
       {[70, 110, 150, 190].map((y, i) => (
         <g key={`sin-wg-${i}`}>
           <line x1="10" y1={y} x2="50" y2={y} stroke="#00C8FF" strokeWidth="1.5" opacity="0.4" />
-          <text x="2" y={y + 3} fontFamily="monospace" fontSize="6" fill="#00C8FF" opacity="0.4">RF{i + 1}</text>
+          <text x="2" y={y + 3} fontFamily="IBM Plex Mono, monospace" fontSize="6" fill="#00C8FF" opacity="0.4">RF{i + 1}</text>
 
           <path
             d={`M 50 ${y} C 80 ${y} 90 ${y + (i % 2 ? 5 : -5)} 120 ${y}`}
@@ -219,7 +219,7 @@ function PhotonicChipSvg({ animate }) {
           </path>
 
           <rect x="170" y={y - 6} width="20" height="12" rx="2" fill="none" stroke="#00C8FF" strokeWidth="0.5" opacity="0.5" />
-          <text x="174" y={y + 3} fontFamily="monospace" fontSize="5" fill="#00C8FF" opacity="0.4">φ{i + 1}</text>
+          <text x="174" y={y + 3} fontFamily="IBM Plex Mono, monospace" fontSize="5" fill="#00C8FF" opacity="0.4">φ{i + 1}</text>
 
           <path
             d={`M 190 ${y} C 220 ${y} 240 ${130} 270 ${130}`}
@@ -229,7 +229,7 @@ function PhotonicChipSvg({ animate }) {
       ))}
 
       <rect x="255" y="118" width="30" height="24" rx="3" fill="none" stroke="#00C8FF" strokeWidth="0.8" opacity="0.7" />
-      <text x="259" y="134" fontFamily="monospace" fontSize="6" fill="#00C8FF" opacity="0.5">Σ</text>
+      <text x="259" y="134" fontFamily="IBM Plex Mono, monospace" fontSize="6" fill="#00C8FF" opacity="0.5">Σ</text>
 
       <line x1="290" y1="130" x2="310" y2="130" stroke="#00C8FF" strokeWidth="1.5" opacity="0.5" strokeDasharray="3 2" />
 
@@ -242,17 +242,17 @@ function PhotonicChipSvg({ animate }) {
             {animate && <animate attributeName="stroke-opacity" values="0.4;0.9;0.4" dur={`${2.5 + i * 0.4}s`} repeatCount="indefinite" />}
           </path>
           <rect x="350" y={y - 6} width="24" height="12" rx="2" fill="none" stroke="#8B5CF6" strokeWidth="0.5" opacity="0.5" />
-          <text x="354" y={y + 3} fontFamily="monospace" fontSize="5" fill="#8B5CF6" opacity="0.4">{["MOD", "SOA", "PD"][i]}</text>
+          <text x="354" y={y + 3} fontFamily="IBM Plex Mono, monospace" fontSize="5" fill="#8B5CF6" opacity="0.4">{["MOD", "SOA", "PD"][i]}</text>
 
           <line x1="430" y1={y} x2="590" y2={y} stroke="#8B5CF6" strokeWidth="1" opacity="0.3" />
           <circle cx="590" cy={y} r="2.5" fill="#8B5CF6" opacity="0.4" />
         </g>
       ))}
 
-      <text x="520" y="78" fontFamily="monospace" fontSize="6" fill="#8B5CF6" opacity="0.3">OUT</text>
+      <text x="520" y="78" fontFamily="IBM Plex Mono, monospace" fontSize="6" fill="#8B5CF6" opacity="0.3">OUT</text>
 
       <rect x="295" y="120" width="20" height="20" rx="0" fill="none" stroke="#e8edf5" strokeWidth="0.5" strokeDasharray="2 1" opacity="0.3" />
-      <text x="298" y="145" fontFamily="monospace" fontSize="4" fill="#e8edf5" opacity="0.25">BOND</text>
+      <text x="298" y="145" fontFamily="IBM Plex Mono, monospace" fontSize="4" fill="#e8edf5" opacity="0.25">BOND</text>
     </svg>
   );
 }

@@ -11,31 +11,31 @@ export const pageSeo = {
     path: "/",
     title: "Merilight — Optical Systems Engineering",
     description:
-      "Studio for optical and photonic system engineering between lab result and shipping prototype — for AI infrastructure and datacenter, space and defense, and quantum sensing. Integration architecture and link budgets, optical interconnect and co-packaged optics, measurement enablement, PDK and TRL maturation, system integration — led by Manuel Reza.",
+      "Independent optical systems engineering that resolves integration gaps across photonics, electronics, packaging and control.",
   },
   services: {
     path: "/services",
     title: "Services — Optical System & PIC Architecture | Merilight",
     description:
-      "Three productized engagements: optical system & PIC architecture, optoelectronic prototype integration, and automated test & calibration — for photonic hardware teams moving from lab result to shipping product.",
+      "Optical system and PIC architecture, optoelectronic prototype integration, and automated test and calibration for photonic hardware teams.",
   },
   work: {
     path: "/work",
-    title: "Case Studies — Client Evidence | Merilight",
+    title: "Photonic Engineering Case Studies | Merilight",
     description:
-      "Eight photonic and optoelectronic systems shipped across AI infrastructure, space and defense, and autonomous sensing — from architecture through packaged, tested hardware.",
+      "Engineering case studies across integrated LiDAR, space radar, sensing, photonic platforms and optoelectronic system integration.",
   },
   about: {
     path: "/about",
     title: "About Merilight — Optical Systems Consultancy",
     description:
-      "Merilight is a consultancy for photonic and optoelectronic system integration, built on a record of shipped hardware spanning silicon photonics, LiDAR, space radar and datacenter optics.",
+      "Meet Merilight, an independent optical systems consultancy built to resolve integration gaps across photonics, electronics and control.",
   },
   profile: {
     path: "/profile",
     title: "Manuel Reza — Optical Systems Engineer | Merilight",
     description:
-      "Manuel Reza's employment record: photonic and optoelectronic system integration across imec, Scuola Superiore Sant'Anna and industry programmes in AI infrastructure, space and defense.",
+      "Meet Manuel Reza, Merilight's principal, and explore his record across photonic system integration, LiDAR, space radar and platform development.",
   },
   contact: {
     path: "/contact",
@@ -51,13 +51,13 @@ export const caseStudySeo = {
     path: "/work/lidar",
     title: "Integrated LiDAR System Case Study | Merilight",
     description:
-      "Photonic design of a frequency-modulated continuous-wave LiDAR system for autonomous sensing — optical phased arrays, phase shifters, directional couplers and antennas for solid-state beam steering, at imec.",
+      "FMCW LiDAR case study covering optical phased arrays, phase shifters, couplers and antennas developed for solid-state beam steering at imec.",
   },
   "space-radar": {
     path: "/work/space-radar",
     title: "Photonics for Space Radar Case Study | Merilight",
     description:
-      "A hybrid silicon nitride and indium phosphide photonic beamforming network for a satellite-borne synthetic aperture radar — architecture, link-budget simulation and packaged-assembly characterization.",
+      "Space radar case study covering a hybrid SiN-InP photonic beamforming network, link-budget simulation and packaged-assembly characterization.",
   },
 };
 

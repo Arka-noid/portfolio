@@ -1,12 +1,15 @@
-// The firm and the person are two exports because they are two pages. /about
-// speaks as Merilight and says "we"; /profile speaks as Manuel and says "I".
-// Keeping both voices in one object is what let them leak into one page — see
-// docs/positioning.md §7.
+// The firm and the person are two exports because they are two pages, not
+// because they are two voices — the whole site says "I" (docs/positioning.md
+// §7). /about is what Merilight does and how it is engaged; /profile is the
+// record that account rests on.
 
 export const aboutPage = {
   heading: "What Merilight is",
   team: {
-    eyebrow: "The team",
+    // Not "The team" — Merilight is one engineer, and a label that implies
+    // otherwise is the exact thing §7 bans. The key stays `team` so
+    // RecordTeaser.jsx does not churn; only the words are the claim.
+    eyebrow: "Who you work with",
     heading: "The person behind Merilight",
   },
 };
@@ -23,21 +26,22 @@ export const profilePage = {
 
 // Rendered on /about, beside the hardware photograph.
 export const firm = {
-  // The site says "we" because Merilight is the firm — but a buyer who
-  // *discovers* it is one person feels misled, while one who is *told* does
-  // not. Stating it plainly converts the weakness into a trust signal.
+  // A buyer who *discovers* Merilight is one person feels misled; one who is
+  // *told* does not. Stating it first converts the weakness into a trust
+  // signal — the contrast is a firm that sells you a partner and staffs a
+  // junior. This must render, not merely exist here (§7).
   structure:
-    `Merilight is Manuel Reza. The person you brief
-      is the person who does the work.`,
+    `Merilight is my independent practice. The engineer
+      you brief is the engineer who does the work.`,
 
-  // Firm voice throughout: what Merilight is, why the gaps are where products
-  // fail, and how it is engaged. Traces to docs/positioning.md §1–§5; no
-  // figure or claim here that is not already elsewhere in src/data (§6).
+  // First person throughout (§7). What Merilight does, why the gaps are where
+  // products fail, and how it is engaged. Traces to docs/positioning.md §1–§5;
+  // no figure or claim here that is not already elsewhere in src/data (§6).
   paragraphs: [
-    `We are an engineering studio specialized in solving problems in optical and photonic
-      systems`,
+    `I am an optical systems engineer. My work sits between photonics and everything it has
+      to connect to.`,
 
-    `We help teams moving from devices and demonstrations to working systems by resolving
+    `I help teams moving from devices and demonstrations to working systems by resolving
       problems across optical architecture, packaging, electronics, control software, and test
       especially when performance is uncertain, timelines are tight, and an in-house team
       needs specialist support to make a critical decision.`,
@@ -109,5 +113,5 @@ export const entity = {
 // Shown next to the contact details. Defense- and pre-competitive work makes
 // this a selling point rather than a disclaimer — see docs/positioning.md §7.
 export const confidentiality =
-  `We work under NDA as a matter of course, and can sign yours before the first call. Some
+  `I work under NDA as a matter of course, and can sign yours before the first call. Some
     of the work on this site is described only at the level its agreements allow.`;

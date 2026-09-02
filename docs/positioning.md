@@ -10,10 +10,11 @@ Last reviewed: 2026-09
 
 ## 1. What this business is
 
-**Merilight** is an independent engineering boutique in optical and photonic
-systems. **Manuel Reza** is its principal, the named author of all first-person
-copy, and the person a client actually hires. The site sells consulting
-engagements and addresses buyers of services and nobody else.
+**Merilight** is **Manuel Reza's** independent consulting practice in optical and
+photonic systems — one engineer, no staff, and the site says so plainly (§7).
+Merilight is the name a client contracts with; Manuel is the person they hire and
+the person who does the work. The site sells consulting engagements and addresses
+buyers of services and nobody else.
 
 **The record, and why it is on the site.** Merilight has no client roster yet,
 so its only evidence is Manuel's employment history — a CV's worth of material
@@ -27,8 +28,8 @@ track record, and every institution named is the context that work was done in
 ## 2. Positioning statement
 
 > Photonics rarely fails on paper. It fails in integration — where optical
-> signals meet custom boards, packaging, thermal limits and control code. We
-> are the single cross-domain engineer who works on both sides of every one of
+> signals meet custom boards, packaging, thermal limits and control code. I am
+> the single cross-domain engineer who works on both sides of every one of
 > those boundaries.
 
 **The promise, in one sentence:** resolve the multidisciplinary bottleneck that
@@ -220,8 +221,10 @@ Never use, anywhere on the site:
 - **Mechanical or optomechanical design, or CAD, sold as a capability.** Thermal
   and mechanical budgets are *specified and integrated* (`stack.js` depth 3);
   fixtures are a deliverable inside a rig, never an offer
-- **"Turnkey", "full-stack", or any phrasing implying a team.** §7's structure
-  rule below is the reason
+- **"Turnkey", "full-stack", or any phrasing implying a team, premises or
+  staff** — including "studio", "agency", "our team", and the first person
+  plural in any firm-voice sentence. §7's voice and structure rules below are
+  the reason
 - A market presented as an offer. AI infrastructure in particular is a market
   (§5) and enters through Offer 01; it never becomes a fourth card, a fourth
   adjacent field, or a stack layer
@@ -235,21 +238,32 @@ Never use, anywhere on the site:
 
 ### Required
 
-- **Voice: "we" for the firm, "I" for the track record.** Merilight offers,
-  builds and delivers — so Home, Services, About, Contact and the nav say "we".
-  The personal record is Manuel's and stays first person singular: /profile,
-  /work ("my role", "what I did"), the case studies, the Expertise Stack and the
-  publications. Never let "we" claim a credential only Manuel holds, and never
-  let "I" describe what the business sells. **The two voices are separated by
-  page, not by paragraph**: /about carries no first-person copy at all, because
-  a buyer sizing up a firm should not meet a person's autobiography halfway down
-  it — the person is one click away on /profile. The one exception is a symptom
-  quoted in the buyer's own voice (§5.1).
-- **State the structure, do not hide it.** `firm.structure` says plainly that
-  Merilight is Manuel, working alone. A buyer who discovers a "we" is one person
-  feels misled; one who is told does not — and "you brief the person who does
-  the work" is an advantage over a firm that sells you a partner and staffs a
-  junior.
+- **Voice: first person singular, everywhere.** Merilight is one engineer, so
+  the site says "I" on every surface — Home, Services, About and Contact as much
+  as /profile, /work, the case studies, the Expertise Stack and the
+  publications. There is no firm-voice "we": a plural pronoun implies staff, and
+  it also launders a record only Manuel holds into an anonymous entity, which
+  costs more than it buys. **Merilight stays as the name** — it is the trading
+  entity a client contracts with, signs an NDA with and raises a purchase order
+  against, and none of that needs a "we". The one exception is a symptom quoted
+  in the buyer's own voice (§5.1), where the "we" is the client's team.
+- **State the structure, do not hide it — and make it render.** `firm.structure`
+  says plainly that Merilight is Manuel, working alone, and it leads /about
+  above every other claim; `recordIntro` frames the record the same way. A
+  buyer who discovers that a supplier is one person feels misled; one who is
+  told does not — and "the engineer you brief is the engineer who does the work"
+  is an advantage over a firm that sells you a partner and staffs a junior.
+  **Both sentences existing in `data/about.js` is not enough** — they were once
+  commented out of `About.jsx` and `RecordTeaser.jsx`, which left the live site
+  making a firm-shaped impression with the correction switched off. If the
+  structure is not on screen, this rule is not satisfied.
+- **Solo is the mechanism, not a limitation to manage.** §2's promise is that one
+  cross-domain engineer removes the need to hire four specialists — so working
+  alone is what the offer is made of. Never write apologetic or
+  expectation-lowering copy ("small but", "one-man operation", "limited
+  capacity"); it undercuts the claim it is trying to soften. Bounded commitment
+  belongs in the *shape* of an engagement — the fixed scopes and week counts in
+  §9 — not in hedging prose.
 - **The record is provenance, not a resume.** No section labelled "Career",
   "Experience" or "Skills"; no CV download; no competency grid (the Expertise
   Stack carries capability, and §4 bans capability lists); no entry led by a job

@@ -1,16 +1,18 @@
 export const homePage = {
   hero: {
-    eyebrow: "Optical systems engineering · Consulting and design",
+    // "Independent" carries the structure on the first surface a buyer sees,
+    // so the one-engineer fact is never a later discovery (positioning §7).
+    eyebrow: "Optical systems engineering · Independent consulting",
     titleBeforeAccent: "Shining ",
     titleAccent: "light",
     titleSecondLine: "into your products.",
-    description: `We bring optical and photonic expertise to the boundaries to bring your products to life,
+    description: `I bring optical and photonic expertise to the boundaries to bring your products to life,
       connecting devices, electronics, packaging and control into hardware that performs as one.`,
-    action: "See our services →",
+    action: "See the services →",
   },
   services: {
     eyebrow: "Services",
-    heading: "Let us move the product forward.",
+    heading: "Move the product forward.",
     action: "Explore the engagements →",
   },
   credibility: {

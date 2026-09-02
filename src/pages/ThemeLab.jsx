@@ -49,10 +49,10 @@ function DirectionCard({ direction }) {
           into your products.
         </h2>
         <p>
-          We connect devices, electronics, packaging and control into hardware
+          I connect devices, electronics, packaging and control into hardware
           that performs as one.
         </p>
-        <span className="theme-specimen-cta">See our services <b>→</b></span>
+        <span className="theme-specimen-cta">See the services <b>→</b></span>
       </div>
 
       <div className="theme-specimen-proof">

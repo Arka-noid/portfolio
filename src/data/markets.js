@@ -11,7 +11,7 @@
 // Named `marketFocus`, not `markets`: projects.js already exports a `markets`
 // string array for the /work filter, and the two must not collide on import.
 //
-// Voice: this renders on Home and /services, which are firm surfaces — "we".
+// Voice: first person singular everywhere on the site (§7).
 //
 // `image` is the card's own photographic backdrop: a path under /images, or
 // null for no photo (the card then renders on flat --surface, as before).

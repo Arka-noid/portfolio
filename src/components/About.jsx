@@ -2,9 +2,10 @@ import { firm, aboutPage } from "../data/about";
 import { siteImages } from "../data/images";
 import ThemedImage from "./ThemedImage";
 
-// /about is the firm, and only the firm — it speaks as "we" throughout. The
-// principal, his portrait and his first-person account live on /profile, which
-// is what keeps the two voices from mixing on one page (positioning §7).
+// /about is what Merilight does and how it is engaged. The structure sentence
+// leads: a buyer sizing up a supplier learns it is one engineer here, before
+// anything is claimed, rather than discovering it later (positioning §7). The
+// portrait and the record live on /profile.
 export default function About() {
   return (
     <section id="about">
@@ -20,9 +21,9 @@ export default function About() {
           <ThemedImage src={siteImages.aboutSide} variant="figure" />
         </div>
         <div className="about-body reveal">
-          {/* {firm.structure && (
+          {firm.structure && (
             <p className="about-structure">{firm.structure}</p>
-          )} */}
+          )}
           {firm.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}

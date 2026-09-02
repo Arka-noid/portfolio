@@ -139,7 +139,7 @@ export const serviceScopeStages = [
 ];
 
 export const serviceFootnote = `These engagements are just part of the journey,
-  but we can operate further. A review can continue into prototype bring-up, a
+  but I can operate further. A review can continue into prototype bring-up, a
   bench can expose architecture changes, and a first driven prototype can run
-  through validation, documentation, and industrial handover. We can support the
+  through validation, documentation, and industrial handover. I can support the
   journey at every stage.`;

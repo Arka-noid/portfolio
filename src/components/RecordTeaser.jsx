@@ -5,10 +5,11 @@ import { recordIntro, principal, aboutPage } from "../data/about";
 // provenance sentence, so the history is framed before it is opened rather
 // than discovered as a resume mid-introduction (docs/positioning.md §7).
 //
-// "The team" for a firm of one is not a dodge: firm.structure says plainly on
-// this same page that Merilight is one engineer. The strip below is the whole
-// introduction — face, name, role and the way through as a single target —
-// because a bare button asks the buyer to click before meeting anyone.
+// The eyebrow is "Who you work with", not "The team": Merilight is one
+// engineer and firm.structure says so higher up this same page. The strip
+// below is the whole introduction — face, name, role and the way through as a
+// single target — because a bare button asks the buyer to click before
+// meeting anyone.
 export default function RecordTeaser() {
   return (
     <section id="record">
@@ -16,7 +17,7 @@ export default function RecordTeaser() {
         <div className="section-eyebrow">{aboutPage.team.eyebrow}</div>
         <h2 className="section-title">{aboutPage.team.heading}</h2>
       </div>
-      {/* <p className="stack-intro reveal">{recordIntro}</p> */}
+      <p className="stack-intro reveal">{recordIntro}</p>
       <Link className="person-strip reveal" to="/profile">
         {principal.photoUrl && (
           <img

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { isPublishedWorkPath } from "../data/caseStudies";
 import { stackLayers, stackIntro, stackTeaserIntro, stackSection } from "../data/stack";
 
 // `compact` is the home-page teaser: the stack itself, without the detail
@@ -66,9 +67,11 @@ export default function ExpertiseStack({ compact = false }) {
               <p className="stack-proof">
                 <span>{copy.proofLabel}</span> {active.proof}
               </p>
-              <Link className="stack-evidence" to={active.evidence.to}>
-                {active.evidence.label} →
-              </Link>
+              {isPublishedWorkPath(active.evidence.to) && (
+                <Link className="stack-evidence" to={active.evidence.to}>
+                  {active.evidence.label} →
+                </Link>
+              )}
             </div>
           </div>
         </>

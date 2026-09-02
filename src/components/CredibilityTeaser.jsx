@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { projects } from "../data/projects";
+import { isCaseStudyPublished } from "../data/caseStudies";
 import { homePage } from "../data/pages/home";
 
 const FEATURED_SLUGS = ["space-radar", "lidar"];
@@ -7,8 +8,10 @@ const FEATURED_SLUGS = ["space-radar", "lidar"];
 export default function CredibilityTeaser() {
   const { credibility: copy } = homePage;
   const featured = projects.filter((p) =>
-    FEATURED_SLUGS.includes(p.caseStudySlug)
+    FEATURED_SLUGS.includes(p.caseStudySlug) && isCaseStudyPublished(p.caseStudySlug)
   );
+
+  if (featured.length === 0) return null;
 
   return (
     <section id="work-teaser">

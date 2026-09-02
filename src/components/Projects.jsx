@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { projects, categoryMeta, markets, workPage } from "../data/projects";
+import { isCaseStudyPublished } from "../data/caseStudies";
 import { perspectives } from "../data/perspectives";
 import { siteImages } from "../data/images";
 import Perspective from "./Perspective";
@@ -80,7 +81,7 @@ function ProjectCard({ project, isExpanded, onToggle }) {
             ))}
           </div>
           {/* <p className="proj-card-institution">{project.institution}</p> */}
-          {project.caseStudySlug && (
+          {isCaseStudyPublished(project.caseStudySlug) && (
             <Link
               className="proj-case-study-link"
               to={`/work/${project.caseStudySlug}`}

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { isPublishedWorkPath } from "../data/caseStudies";
 import { marketFocus } from "../data/markets";
 import { siteImages } from "../data/images";
 import { sharedPage } from "../data/pages/shared";
@@ -45,9 +46,11 @@ export default function MarketsStrip({ compact = false }) {
                     <p className="market-proof">
                       <span>{copy.proofLabel}</span> {m.proof}
                     </p>
-                    <Link className="market-evidence" to={m.evidence.to}>
-                      {m.evidence.label} →
-                    </Link>
+                    {isPublishedWorkPath(m.evidence.to) && (
+                      <Link className="market-evidence" to={m.evidence.to}>
+                        {m.evidence.label} →
+                      </Link>
+                    )}
                   </>
                 )}
               </div>

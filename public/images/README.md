@@ -28,7 +28,7 @@ set, and a null `image` leaves the card on flat `--surface`.
 | Market | File | Subject | Source |
 |---|---|---|---|
 | `ai-infrastructure` | `datacenter-racks.jpg` | Datacenter cold aisle, blue-lit racks | **licence unverified** |
-| `telecom-optical-networks` | *unsourced* | Real optical transceiver, DWDM line card, fibre array or dense optical patch panel — no copper Ethernet | [Unsplash](https://unsplash.com/s/photos/fiber-optic) · [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Fiber-optic_communications) |
+| `telecom-optical-networks` | `optical-communications-1.jpg` | Illuminated optical-fibre bundle against black | **source and licence unverified** |
 | `space-defense` | `earth-night.jpg` | Earth at night from orbit (shared with the space-radar hero) | [Unsplash](https://unsplash.com/license) (NASA) |
 | `autonomous-sensing` | `lidar-point-cloud.png` | Ouster OS1-64 point cloud, Folsom/Dore St, San Francisco | Ouster, via Wikimedia Commons — **check the CC terms, attribution is likely required** |
 | `industrial-sensing` | *unsourced* | Gas-analysis cell, optical process sensor, industrial spectroscopy hardware or environmental monitoring instrument | [Unsplash](https://unsplash.com/s/photos/gas-analyzer) · [Pexels](https://www.pexels.com/search/industrial%20sensor/) · [NIST image galleries](https://www.nist.gov/image-galleries) |

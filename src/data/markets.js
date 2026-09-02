@@ -36,7 +36,7 @@ export const marketFocus = [
   {
     id: "telecom-optical-networks",
     label: "Telecom & optical networks",
-    image: null,
+    image: "/images/optical-communications-1.jpg",
     context:
       `DWDM transport, photonic transceivers and microwave-photonic signal processing`,
     proof:

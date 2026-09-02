@@ -349,20 +349,41 @@ nav {
    it differs between the site nav and the case-study nav. */
 
 .nav-logo {
-  display: inline-flex;
-  align-items: center;
+  position: relative;
+  width: 234px;
+  height: 72px;
+  display: inline-block;
   text-decoration: none;
   line-height: 0;
 }
 
-.nav-logo img {
+.nav-logo-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   display: block;
-  height: 56px;
-  width: auto;
+}
+
+.nav-logo-text {
+  position: absolute;
+  top: -0.2rem;
+  left: 0.2rem;
+  display: block;
+  font-family: "Manrope", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 500;
+  letter-spacing: 0.065em;
+  line-height: 1;
+  color: transparent;
+  background: linear-gradient(to top, #38daf9 0%, rgba(189, 223, 243, 0.42) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
   transition: opacity 0.25s ease;
 }
 
-.nav-logo:hover img {
+.nav-logo:hover .nav-logo-art,
+.nav-logo:hover .nav-logo-text {
   opacity: 0.75;
 }
 
@@ -2862,8 +2883,13 @@ a.cs-pub:hover {
     padding: 1rem 1.5rem;
   }
 
-  .nav-logo img {
-    height: 52px;
+  .nav-logo {
+    width: 214px;
+    height: 66px;
+  }
+
+  .nav-logo-text {
+    font-size: 2.2rem;
   }
 
   .nav-toggle {
@@ -2976,8 +3002,13 @@ a.cs-pub:hover {
 }
 
 @media (max-width: 600px) {
-  .nav-logo img {
-    height: 44px;
+  .nav-logo {
+    width: 195px;
+    height: 60px;
+  }
+
+  .nav-logo-text {
+    font-size: 2rem;
   }
 
   section {

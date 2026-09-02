@@ -7,11 +7,13 @@ import CaseStudy from "./pages/CaseStudy";
 import AboutPage from "./pages/AboutPage";
 import ProfilePage from "./pages/ProfilePage";
 import ContactPage from "./pages/ContactPage";
+import ThemeLab from "./pages/ThemeLab";
 import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
     <Routes>
+      <Route path="theme-lab" element={<ThemeLab />} />
       <Route element={<RootLayout />}>
         <Route index element={<Home />} />
         <Route path="services" element={<ServicesPage />} />

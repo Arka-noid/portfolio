@@ -118,7 +118,6 @@ credible. Do not inflate them, and do not add a layer without real evidence in
 - `data/about.js`: education entries. `photoUrl` is wired to `/manuel.jpg` and rendered as the team card on /about — the shot is a casual outdoor portrait cropped square in CSS; swap for a proper headshot when one exists
 - `data/images.js`: `lidarHero` is still unsourced (wants a night-highway long exposure). The other five slots hold **placeholder** stock imagery — fine to ship, but swap for better art when available. Sourcing guide in `public/images/README.md`; slots fail gracefully when null/broken
 - `data/publications.js`: `CITATIONS` count (update periodically from Scholar)
-- `index.html`: `og:image` once a production image exists
 - `data/testimonials.js`: empty array — `Testimonials.jsx` renders nothing until real references exist. Get written permission for the wording, especially for anything touching defense work
 - `data/about.js`: `entity` (name, VAT, registered address) — EU B2B buyers check an invoice can be raised before starting procurement
 - A day-rate band, for the engagement-model section — tracked as a GitHub issue

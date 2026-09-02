@@ -1,7 +1,7 @@
 export const lidarCaseStudy = {
   relatedKeywords: ["LiDAR", "FMCW", "Phase Shifter", "Hybrid Coupler", "Frequency Sweep"],
   hero: {
-    eyebrow: "Case Study · Autonomous Sensing",
+    eyebrow: "Case Study · LiDAR & 3D Sensing",
     title: {
       firstLineBeforeAccent: "Solid-State ",
       accent: "FMCW LiDAR",

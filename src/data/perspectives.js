@@ -11,7 +11,7 @@ export const perspectives = {
       infrastructure, solid-state LiDAR on vehicles, radar photonics in orbit.`,
   services:
     `AI infrastructure is pulling photonics into the compute path — interconnect, optical
-      I/O, and circuits that compute with light — while autonomous sensing and European space
+      I/O, and circuits that compute with light — while LiDAR, 3D sensing and European space
       & defense programs pull it out of the lab from the other side.`,
   spaceRadar:
     `European space and defense programs are investing heavily in photonic payloads — the

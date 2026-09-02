@@ -101,7 +101,7 @@ offers addressed to a buyer who recognises their own field. In order:
 **AI infrastructure & datacenter optics** (optical interconnect, co-packaged
 optics, optical I/O, programmable and analog optical compute — named first
 because that is where the demand is); **space & defense** (SAR and radar
-payloads, EW, constellations); **autonomous sensing** (FMCW LiDAR, coherent
+payloads, EW, constellations); **LiDAR & 3D sensing** (FMCW LiDAR, coherent
 detection, beam steering); **industrial, life-science & imaging** (gas sensing,
 OCT, metrology). A market is a doorway, never an offer.
 
@@ -182,7 +182,7 @@ first.
 |---|---|
 | AI infrastructure & datacenter optics | Fiber-to-chip coupling (edge and grating couplers) in SOI and SiN; micro-transfer-printed SOAs; hybrid SiN+InP multi-chip assembly; AWG-based wavelength multiplexing for DWDM PIC architectures; a programmable photonic mesh carried TRL 3→6; the first imec SiN platform PDK |
 | Space & defense | SCORE-SAR hybrid SiN–InP receiver for EU SPACEBEAM; full analog link budget in VPI; multi-static satellite radar network; multiband RF transceivers for defense programmes |
-| Autonomous sensing | 16-element optical phased array on SOI, 1.7° over 20°; photonic design of imec's first end-to-end FMCW LiDAR demonstrator |
+| LiDAR & 3D sensing | 16-element optical phased array on SOI, 1.7° over 20°; photonic design of imec's first end-to-end FMCW LiDAR demonstrator |
 | Industrial, life-science & imaging | Mid-IR gas sensor devices with Gas Sensing Solutions Ltd.; chip-scale biomedical imaging (OCT) at Sant'Anna |
 
 The AI-infrastructure row is a **component and platform** record, not a delivery

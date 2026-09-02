@@ -190,10 +190,10 @@ export const projects = [
     id: "lidar",
     title: "Integrated LIDAR System",
     category: "system",
-    market: "Autonomous sensing",
+    market: "LiDAR & 3D sensing",
     period: "2023 – 2024",
     institution: "imec",
-    tagline: "Shaping the beam for autonomous sensing",
+    tagline: "Shaping the beam for solid-state LiDAR",
     role: `Photonic design of beam-steering and coherent receive building blocks`,
     problem:
       `Automotive-grade LiDAR has to be solid state, which means steering the beam on a chip.
@@ -201,7 +201,7 @@ export const projects = [
         to test at all.`,
     description:
       `Contributed to the photonic design of a frequency-modulated continuous-wave LIDAR system
-        for autonomous sensing. Designed optical phased arrays, phase shifters, directional
+        for solid-state 3D sensing. Designed optical phased arrays, phase shifters, directional
         couplers, and optical antennas — core building blocks for solid-state beam steering.`,
     highlights: [
       "Multiple device architectures designed and validated",
@@ -295,7 +295,7 @@ export const categoryMeta = {
 export const markets = [
   "AI infrastructure & datacenter optics",
   "Space & defense",
-  "Autonomous sensing",
+  "LiDAR & 3D sensing",
   "Life sciences & imaging",
   "Industrial & environmental sensing",
 ];

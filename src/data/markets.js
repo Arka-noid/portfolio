@@ -46,7 +46,7 @@ export const marketFocus = [
   },
   {
     id: "autonomous-sensing",
-    label: "Autonomous sensing",
+    label: "LiDAR & 3D sensing",
     image: "/images/lidar-point-cloud.png",
     context:
       "Coherent FMCW LiDAR and solid-state beam steering",

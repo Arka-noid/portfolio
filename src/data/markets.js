@@ -30,8 +30,8 @@ export const marketFocus = [
     proof:
       `Fiber-to-chip coupling in SOI and SiN, micro-transfer-printed SOAs, hybrid SiN–InP
         multi-chip assembly, AWG-based wavelength multiplexing for DWDM architectures, and a
-        programmable photonic mesh processor carried from TRL 3 to TRL 6.`,
-    evidence: { label: "See the platform and processor work", to: "/work" },
+        programmable photonic mesh carried from TRL 3 to TRL 6.`,
+    evidence: { label: "See the platform and mesh work", to: "/work" },
   },
   {
     id: "space-defense",
@@ -40,8 +40,8 @@ export const marketFocus = [
     context:
       "Photonic payloads for Earth observation and radars",
     proof:
-      `The SCORE-SAR hybrid SiN–InP receiver for EU SPACEBEAM, a full analog link budget
-        modelled in VPI, and a multi-static satellite radar network study.`,
+      `The SCORE-SAR hybrid SiN–InP receiver, a full analog link budget
+        modelled, and a multi-static satellite radar network study.`,
     evidence: { label: "Read the space radar case study", to: "/work/space-radar" },
   },
   {
@@ -51,7 +51,7 @@ export const marketFocus = [
     context:
       "Coherent FMCW LiDAR and solid-state beam steering",
     proof:
-      `A 16-element optical phased array on SOI steering 20° at 1.7° beamwidth, and the
+      `A 128-element optical phased array and a Focal Plane array system, and the
         photonic design behind a first end-to-end FMCW LiDAR demonstrator.`,
     evidence: { label: "Read the LiDAR case study", to: "/work/lidar" },
   },

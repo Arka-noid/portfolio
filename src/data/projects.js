@@ -78,7 +78,7 @@ export const projects = [
         optimization algorithm.`,
     highlights: [
       "1.7° beamwidth over 20° steering range",
-      "16-element optical phased array on SOI",
+      "optical phased array on SOI",
       "Custom PCB + GUI for automated calibration",
     ],
     outcome:
@@ -114,7 +114,7 @@ export const projects = [
         characterization of the packaged assembly.`,
     highlights: [
       "Hybrid SiN + InP multi-chip assembly",
-      `Full analog link budget simulation with VPI Design Suite`,
+      `Full analog link budget simulation`,
       "Module packaged for space compliance testing",
     ],
     outcome:

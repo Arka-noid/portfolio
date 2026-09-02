@@ -51,8 +51,8 @@ export const services = [
     ],
     shape: "1–2 weeks review · 3–6 weeks full study",
     proof: `I converted fiber-based microwave photonic receivers into integrated
-      architectures — including the hybrid SiN–InP SCORE-SAR receiver, where no
-      single platform could supply every function the system needed.Designed and
+      architectures — including a hybrid SiN–InP SCORE-SAR receiver, where no
+      single platform could supply every function the system needed. Designed and
       validated across several material platforms — SOI, SiN, InP and III-V`,
   },
   {
@@ -80,11 +80,10 @@ export const services = [
     ],
     shape: "4–10 weeks · on-site or remote",
     proof: `I built the electronics-to-optics chain for optical phased arrays - a
-      custom multi-channel current-source PCB with a MATLAB control interface -
+      custom multi-channel current-source PCB with a control interface -
       and, on a programmable photonic mesh at imec, the multi-channel DAC/ADC drive
       between control software and chip plus the timing and triggering that kept
-      read-out synchronised to the optical event. Hybrid SiN + InP multi-chip
-      assembly packaged for space compliance testing.`,
+      read-out synchronised to the optical event.`,
   },
   {
     id: "characterization",
@@ -105,10 +104,10 @@ export const services = [
       },
     ],
     shape: "On-site · 2–8 weeks",
-    proof: `I automated the calibration of a phased array — beam optimization in
+    proof: `Beam optimization in
       software rather than by hand, which is the difference between a demo and
       something another group can actually use — and ran electro-optical
-      characterization end to end, from cleanroom to FTIR, at Glasgow.`,
+      characterization end to end.`,
   },
 ];
 

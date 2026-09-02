@@ -9,7 +9,7 @@ export default function BlockDiagramSvg({ blocks, domain, viewWidth = 680, viewH
         <g key={i}>
           <rect
             x={b.x + 5} y="20" width={b.w - 10} height="80" rx="2"
-            fill={b.color === "#5FB3BF" ? "rgba(95,179,191,0.06)" : "rgba(230,234,240,0.04)"}
+            fill={b.color === "#00C8FF" ? "rgba(0,200,255,0.06)" : "rgba(232,237,245,0.04)"}
             stroke={b.color} strokeWidth="0.8" opacity="0.8"
           />
           {b.label.split("\n").map((line, li) => (
@@ -53,8 +53,8 @@ export default function BlockDiagramSvg({ blocks, domain, viewWidth = 680, viewH
       ))}
       {domain && (
         <>
-          <rect x={domain.x} y="10" width={domain.width} height="100" rx="4" fill="none" stroke="#5FB3BF" strokeWidth="0.5" strokeDasharray="4 3" opacity="0.25" />
-          <text x={domain.x + domain.width / 2} y="125" textAnchor="middle" fontFamily="Space Grotesk, sans-serif" fontSize="7" fill="#5FB3BF" opacity="0.35" letterSpacing="0.12em">{domain.label}</text>
+          <rect x={domain.x} y="10" width={domain.width} height="100" rx="4" fill="none" stroke="#00C8FF" strokeWidth="0.5" strokeDasharray="4 3" opacity="0.25" />
+          <text x={domain.x + domain.width / 2} y="125" textAnchor="middle" fontFamily="Space Grotesk, sans-serif" fontSize="7" fill="#00C8FF" opacity="0.35" letterSpacing="0.12em">{domain.label}</text>
         </>
       )}
     </svg>

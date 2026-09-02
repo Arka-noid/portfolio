@@ -1,7 +1,7 @@
 # Color themes
 
 Reference palettes explored for the site, each a full set of values for the
-tokens in `:root` in `src/App.css`. **Currently active: Quiet Instrument.**
+tokens in `:root` in `src/App.css`. **Currently active: Deep Navy / Cyan.**
 
 ## How to switch
 
@@ -11,8 +11,7 @@ tokens in `:root` in `src/App.css`. **Currently active: Quiet Instrument.**
 2. Canvas and SVG art can't read CSS custom properties, so the same hex/rgb
    values are hardcoded in a few places and need updating too — search for the
    *previous* theme's `--accent` hex (case-insensitive) across `src/` and
-   replace every hit with the new one. As of the Quiet Instrument switch, the
-   files carrying literals are:
+   replace every hit with the new one. The files carrying literals are:
    - `src/components/Hero.jsx` — waveguide canvas glow (`rgba(accent-rgb, …)`)
    - `src/components/casestudy/BlockDiagramSvg.jsx` — signal-chain diagram
    - `src/components/casestudy/HeroPhoto.jsx` — case-study hero scrim (uses `--bg-rgb`, not accent)
@@ -28,26 +27,7 @@ tokens in `:root` in `src/App.css`. **Currently active: Quiet Instrument.**
 
 ## Active
 
-### Quiet Instrument / Muted Cyan — *current*
-Desaturated version of the original cyan: same structure, pulled from
-saturated to a slate-teal for a calmer "instrument panel" read instead of a
-neon dev-tool one.
-
-| token | value |
-|---|---|
-| `--bg` | `#0d1117` |
-| `--bg-rgb` | `13, 17, 23` |
-| `--bg-alt` | `#141a23` |
-| `--surface` | `#1c2531` |
-| `--surface-rgb` | `28, 37, 49` |
-| `--text` | `#e6eaf0` |
-| `--muted` | `#8b96a5` |
-| `--accent` | `#5fb3bf` |
-| `--accent-rgb` | `95, 179, 191` |
-
-## Rollback
-
-### Deep Navy / Cyan — original
+### Deep Navy / Cyan — original, current
 The palette the site shipped with before this exploration.
 
 | token | value |
@@ -63,6 +43,23 @@ The palette the site shipped with before this exploration.
 | `--accent-rgb` | `0, 200, 255` |
 
 ## Other dark proposals (not applied)
+
+### Quiet Instrument / Muted Cyan
+Desaturated version of the original cyan: same structure, pulled from
+saturated to a slate-teal for a calmer "instrument panel" read instead of a
+neon dev-tool one.
+
+| token | value |
+|---|---|
+| `--bg` | `#0d1117` |
+| `--bg-rgb` | `13, 17, 23` |
+| `--bg-alt` | `#141a23` |
+| `--surface` | `#1c2531` |
+| `--surface-rgb` | `28, 37, 49` |
+| `--text` | `#e6eaf0` |
+| `--muted` | `#8b96a5` |
+| `--accent` | `#5fb3bf` |
+| `--accent-rgb` | `95, 179, 191` |
 
 ### Graphite / Amber Signal
 Benchtop-instrument warmth — the amber of a calibration rig's status LED.

@@ -38,7 +38,7 @@ function WaveguideCanvas({ reduced }) {
           const y = yBase + Math.sin(x * freq + t * speed) * amp;
           ctx.lineTo(x, y);
         }
-        ctx.strokeStyle = `rgba(95,179,191,${alpha})`;
+        ctx.strokeStyle = `rgba(0,200,255,${alpha})`;
         ctx.lineWidth = 1;
         ctx.stroke();
       }
@@ -50,8 +50,8 @@ function WaveguideCanvas({ reduced }) {
         pulseX, pulseY, 0,
         pulseX, pulseY, 20
       );
-      grad.addColorStop(0, "rgba(95,179,191,0.7)");
-      grad.addColorStop(1, "rgba(95,179,191,0)");
+      grad.addColorStop(0, "rgba(0,200,255,0.7)");
+      grad.addColorStop(1, "rgba(0,200,255,0)");
       ctx.beginPath();
       ctx.arc(pulseX, pulseY, 20, 0, Math.PI * 2);
       ctx.fillStyle = grad;

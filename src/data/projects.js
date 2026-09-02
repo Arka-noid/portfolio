@@ -218,7 +218,7 @@ export const projects = [
 ];
 
 export const categoryMeta = {
-  device: { label: "Device", color: "#5FB3BF" },
+  device: { label: "Device", color: "#00C8FF" },
   system: { label: "System", color: "#00A89D" },
   platform: { label: "Platform", color: "#4A6CF7" },
   product: { label: "Product", color: "#8B5CF6" },

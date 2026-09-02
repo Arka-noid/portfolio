@@ -8,7 +8,7 @@ export default function HeroPhoto({ src }) {
       className="cs-hero-photo"
       aria-hidden="true"
       style={{
-        backgroundImage: `linear-gradient(100deg, rgba(13, 17, 23, 0.94) 0%, rgba(13, 17, 23, 0.6) 55%, rgba(13, 17, 23, 0.85) 100%), url(${src})`,
+        backgroundImage: `linear-gradient(100deg, rgba(10, 15, 30, 0.94) 0%, rgba(10, 15, 30, 0.6) 55%, rgba(10, 15, 30, 0.85) 100%), url(${src})`,
       }}
     />
   );

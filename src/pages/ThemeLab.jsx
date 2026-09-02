@@ -6,7 +6,7 @@ const directions = [
   {
     id: "controlled",
     label: "Controlled Light",
-    heading: "Sora + Inter + IBM Plex Mono",
+    heading: "Manrope + Inter + IBM Plex Mono",
     note: "Current direction",
     swatches: ["#0a0f1e", "#1e2a45", "#e8edf5", "#00c8ff", "#ffbd59"],
   },

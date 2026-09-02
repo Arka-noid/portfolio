@@ -66,7 +66,7 @@ Each page component calls `useScrollReveal()` itself (pages mount/unmount per ro
 
 - **Palette:** Dark navy (`#0A0F1E`) background, cyan (`#00C8FF`) accents, off-white text; category accents teal/indigo/violet
 - **Colour tokens:** all in `:root` in `App.css` — `--bg`, `--bg-alt`, `--surface`, `--text`, `--muted`, `--accent`, `--accent-soft`, `--accent-glow`, plus `--bg-rgb`/`--surface-rgb`/`--accent-rgb` for `rgba()` compositing. Names are semantic, not value-derived, so a palette change is a `:root` edit rather than a rename. Use the tokens; avoid new hardcoded literals. Canvas/SVG art in JSX carries its own hex values since it cannot read CSS variables.
-- **Typography:** Sora for headlines, Inter for body/UI text, IBM Plex Mono for technical labels and diagrams
+- **Typography:** Manrope for headlines, Inter for body/UI text, IBM Plex Mono for technical labels and diagrams
 - **Aesthetic:** Minimal, technical, clean — no rounded corners, uppercase labels, generous letter-spacing
 - **Motion:** Canvas hero animations (waveguide, starfield, LiDAR sweep), scroll-reveal (IntersectionObserver), SMIL-animated SVG diagrams, hover transforms. All motion respects `prefers-reduced-motion` (canvases render a static frame, SMIL is omitted via the `animate` prop).
 - **Imagery:** All photography is placeholder stock and decorative. It renders through `components/ThemedImage.jsx`, which desaturates the image and applies a cyan-into-navy scrim, a faint scanline, and a slow cyan sweep (dropped under `prefers-reduced-motion`) so stock photos read as part of the site. Case-study hero backdrops use `casestudy/HeroPhoto.jsx` instead. Pick images for *subject*, not colour — the treatment handles the palette.

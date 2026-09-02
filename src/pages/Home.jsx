@@ -20,7 +20,7 @@ export default function Home() {
       <MarketsStrip compact />
       <ExpertiseStack compact />
       {/* <CredibilityTeaser /> */}
-      <PartnerLogos />
+      {/* <PartnerLogos /> */}
       <Contact />
     </>
   );

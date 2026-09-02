@@ -12,18 +12,9 @@ import RelatedPubs from "./casestudy/RelatedPubs";
 import HeroPhoto from "./casestudy/HeroPhoto";
 import Perspective from "./Perspective";
 import { siteImages } from "../data/images";
+import { lidarCaseStudy } from "../data/pages/caseStudies/lidar";
 
-const RELATED_KEYWORDS = ["LiDAR", "FMCW", "Phase Shifter", "Hybrid Coupler", "Frequency Sweep"];
-const relatedPubs = filterPubsByKeywords(publications, RELATED_KEYWORDS);
-
-const CHAIN_BLOCKS = [
-  { x: 0, label: "TUNABLE\nLASER", sub: "FMCW chirp", color: "#00C8FF", w: 100 },
-  { x: 120, label: "SPLITTER", sub: "LO tap", color: "#00C8FF", w: 90 },
-  { x: 230, label: "OPA\nTRANSMITTER", sub: "Beam steering", color: "#00C8FF", w: 100 },
-  { x: 350, label: "TARGET", sub: "Reflection", color: "#e8edf5", w: 80 },
-  { x: 450, label: "COHERENT\nRECEIVER", sub: "90° hybrid + BPD", color: "#00C8FF", w: 110 },
-  { x: 580, label: "DIGITAL\nBACK-END", sub: "FFT: range + velocity", color: "#e8edf5", w: 90 },
-];
+const relatedPubs = filterPubsByKeywords(publications, lidarCaseStudy.relatedKeywords);
 
 // Radar-style sweep with an accumulating point cloud — the LiDAR
 // counterpart to the space study's starfield.
@@ -251,6 +242,7 @@ export default function LidarCaseStudy() {
   useScrollReveal();
   const reduced = usePrefersReducedMotion();
   const [scrollY, setScrollY] = useState(0);
+  const copy = lidarCaseStudy;
 
   useEffect(() => {
     if (reduced) return;
@@ -266,29 +258,19 @@ export default function LidarCaseStudy() {
         <HeroPhoto src={siteImages.lidarHero} />
         <LidarSweepCanvas reduced={reduced} />
         <div className="cs-hero-content" style={{ transform: `translateY(${scrollY * 0.15}px)` }}>
-          <div className="cs-hero-eyebrow reveal">Case Study · Autonomous Sensing</div>
+          <div className="cs-hero-eyebrow reveal">{copy.hero.eyebrow}</div>
           <h1 className="cs-hero-title reveal">
-            Solid-State <span>FMCW LiDAR</span><br />
-            on a Chip
+            {copy.hero.title.firstLineBeforeAccent}<span>{copy.hero.title.accent}</span><br />
+            {copy.hero.title.secondLine}
           </h1>
-          <p className="cs-hero-sub reveal">
-            Designing the photonic building blocks of a coherent LiDAR system —
-            replacing spinning scanners with silicon circuits that steer light,
-            and measure distance and velocity in a single shot.
-          </p>
+          <p className="cs-hero-sub reveal">{copy.hero.description}</p>
           <div className="cs-hero-meta reveal">
-            <div className="cs-meta-item">
-              <div className="cs-meta-label">Program</div>
-              <div className="cs-meta-value">imec R&amp;D</div>
-            </div>
-            <div className="cs-meta-item">
-              <div className="cs-meta-label">Duration</div>
-              <div className="cs-meta-value">2023 – 2024</div>
-            </div>
-            <div className="cs-meta-item">
-              <div className="cs-meta-label">Role</div>
-              <div className="cs-meta-value">Photonic Designer</div>
-            </div>
+            {copy.hero.meta.map((item) => (
+              <div className="cs-meta-item" key={item.label}>
+                <div className="cs-meta-label">{item.label}</div>
+                <div className="cs-meta-value">{item.value}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -296,28 +278,14 @@ export default function LidarCaseStudy() {
       {/* ── THE CHALLENGE ── */}
       <section className="cs-section">
         <div className="cs-section-header reveal">
-          <div className="section-eyebrow">01 — The Challenge</div>
-          <h2 className="section-title">Why Solid-State Coherent LiDAR?</h2>
+          <div className="section-eyebrow">{copy.challenge.eyebrow}</div>
+          <h2 className="section-title">{copy.challenge.heading}</h2>
         </div>
         <div className="cs-two-col">
           <div className="cs-col reveal">
-            <p>
-              Autonomous vehicles, robots, and industrial systems need to perceive
-              the world in 3D — reliably, at range, in any lighting. LiDAR is the
-              sensor of choice, but most systems still rely on mechanically rotating
-              optics and pulsed time-of-flight detection.
-            </p>
-            <p>
-              Mechanical scanners wear out, cost too much, and don't survive
-              automotive qualification easily. Pulsed direct detection struggles
-              with sunlight and interference from other LiDARs, and says nothing
-              about how fast a target is moving.
-            </p>
-            <p>
-              The alternative: frequency-modulated continuous-wave (FMCW) operation
-              with coherent detection, built on silicon photonics — no moving parts,
-              velocity in every pixel, and wafer-scale manufacturability.
-            </p>
+            {copy.challenge.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
           <div className="cs-col cs-challenge-cards reveal">
             <div className="cs-challenge-card">
@@ -328,8 +296,8 @@ export default function LidarCaseStudy() {
                   <line x1="16" y1="16" x2="23" y2="9" />
                 </svg>
               </div>
-              <h4>No Moving Parts</h4>
-              <p>Mechanical scanning limits lifetime and cost — optical phased arrays steer the beam electronically, on-chip.</p>
+              <h4>{copy.challenge.cards[0].title}</h4>
+              <p>{copy.challenge.cards[0].description}</p>
             </div>
             <div className="cs-challenge-card">
               <div className="cs-challenge-icon">
@@ -339,8 +307,8 @@ export default function LidarCaseStudy() {
                   <line x1="9" y1="21" x2="23" y2="21" />
                 </svg>
               </div>
-              <h4>Interference Immunity</h4>
-              <p>Coherent detection only amplifies light that matches the local oscillator — sunlight and other LiDARs are rejected by physics.</p>
+              <h4>{copy.challenge.cards[1].title}</h4>
+              <p>{copy.challenge.cards[1].description}</p>
             </div>
             <div className="cs-challenge-card">
               <div className="cs-challenge-icon">
@@ -349,8 +317,8 @@ export default function LidarCaseStudy() {
                   <polyline points="22 6 28 6 28 12" />
                 </svg>
               </div>
-              <h4>Velocity Per Pixel</h4>
-              <p>FMCW measures the Doppler shift directly — every point in the cloud carries its own speed, not just position.</p>
+              <h4>{copy.challenge.cards[2].title}</h4>
+              <p>{copy.challenge.cards[2].description}</p>
             </div>
           </div>
         </div>
@@ -359,36 +327,23 @@ export default function LidarCaseStudy() {
       {/* ── THE APPROACH ── */}
       <section className="cs-section cs-section--dark">
         <div className="cs-section-header reveal">
-          <div className="section-eyebrow">02 — The Approach</div>
-          <h2 className="section-title">Ranging with Frequency, Steering with Phase</h2>
+          <div className="section-eyebrow">{copy.approach.eyebrow}</div>
+          <h2 className="section-title">{copy.approach.heading}</h2>
         </div>
-        <p className="cs-lead reveal">
-          An FMCW LiDAR sweeps the laser frequency and mixes the returning echo
-          with a copy of the transmitted light. The delay shows up as a beat
-          frequency — distance becomes a spectral measurement, and Doppler shift
-          reveals velocity.
-        </p>
+        <p className="cs-lead reveal">{copy.approach.lead}</p>
         <div className="cs-chip-diagram reveal">
           <FmcwChirpSvg animate={!reduced} />
         </div>
         <div className="cs-platform-grid reveal">
           <div className="cs-platform-card">
-            <div className="cs-platform-tag" style={{ color: "#00C8FF", borderColor: "#00C8FF" }}>FMCW + Coherent Detection</div>
-            <p>The receive chain mixes echo and local oscillator in an optical hybrid, extracting range and velocity from the beat spectrum.</p>
-            <ul>
-              <li>Distance and Doppler in a single measurement</li>
-              <li>Heterodyne gain lifts weak echoes above noise</li>
-              <li>Wavelength-independent 90° hybrid couplers</li>
-            </ul>
+            <div className="cs-platform-tag" style={{ color: copy.approach.platforms[0].color, borderColor: copy.approach.platforms[0].color }}>{copy.approach.platforms[0].tag}</div>
+            <p>{copy.approach.platforms[0].description}</p>
+            <ul>{copy.approach.platforms[0].points.map((point) => <li key={point}>{point}</li>)}</ul>
           </div>
           <div className="cs-platform-card">
-            <div className="cs-platform-tag" style={{ color: "#8B5CF6", borderColor: "#8B5CF6" }}>Solid-State Beam Steering</div>
-            <p>Optical phased arrays replace the spinning mirror: phase shifters set the wavefront tilt, optical antennas launch the beam.</p>
-            <ul>
-              <li>Optical phased arrays with dense emitter pitch</li>
-              <li>Energy-efficient thermo-optic phase shifters</li>
-              <li>Directional couplers and optical antennas</li>
-            </ul>
+            <div className="cs-platform-tag" style={{ color: copy.approach.platforms[1].color, borderColor: copy.approach.platforms[1].color }}>{copy.approach.platforms[1].tag}</div>
+            <p>{copy.approach.platforms[1].description}</p>
+            <ul>{copy.approach.platforms[1].points.map((point) => <li key={point}>{point}</li>)}</ul>
           </div>
         </div>
       </section>
@@ -396,47 +351,42 @@ export default function LidarCaseStudy() {
       {/* ── SYSTEM DESIGN ── */}
       <section className="cs-section">
         <div className="cs-section-header reveal">
-          <div className="section-eyebrow">03 — System Design</div>
-          <h2 className="section-title">End-to-End Signal Chain</h2>
+          <div className="section-eyebrow">{copy.system.eyebrow}</div>
+          <h2 className="section-title">{copy.system.heading}</h2>
         </div>
-        <p className="cs-lead reveal">
-          A chirped laser feeds the transmitter; a tapped copy becomes the local
-          oscillator. The optical phased array launches the beam, and the echo is
-          mixed coherently on-chip before digital processing turns beat spectra
-          into a 3D point cloud.
-        </p>
+        <p className="cs-lead reveal">{copy.system.lead}</p>
         <div className="cs-arch-diagram reveal">
-          <BlockDiagramSvg blocks={CHAIN_BLOCKS} domain={{ x: -2, width: 564, label: "OPTICAL DOMAIN" }} />
+          <BlockDiagramSvg blocks={copy.system.blocks} domain={copy.system.domain} />
         </div>
         <div className="cs-scope-list reveal">
-          <h3>My Contributions</h3>
+          <h3>{copy.system.contributionsHeading}</h3>
           <div className="cs-scope-grid">
             <div className="cs-scope-item">
               <span className="cs-scope-num">01</span>
               <div>
-                <h4>Device Architectures</h4>
-                <p>Designed core building blocks — optical phased arrays, phase shifters, directional couplers, and optical antennas — across multiple architecture variants.</p>
+                <h4>{copy.system.contributions[0].title}</h4>
+                <p>{copy.system.contributions[0].description}</p>
               </div>
             </div>
             <div className="cs-scope-item">
               <span className="cs-scope-num">02</span>
               <div>
-                <h4>Coherent Receive Path</h4>
-                <p>Contributed to the coherent-detection chain, including tunable 90° hybrid couplers for wavelength-independent receivers.</p>
+                <h4>{copy.system.contributions[1].title}</h4>
+                <p>{copy.system.contributions[1].description}</p>
               </div>
             </div>
             <div className="cs-scope-item">
               <span className="cs-scope-num">03</span>
               <div>
-                <h4>Simulation to Tape-Out</h4>
-                <p>Owned the full design pipeline: photonic simulation, layout, and verification through to fabrication-ready tape-out.</p>
+                <h4>{copy.system.contributions[2].title}</h4>
+                <p>{copy.system.contributions[2].description}</p>
               </div>
             </div>
             <div className="cs-scope-item">
               <span className="cs-scope-num">04</span>
               <div>
-                <h4>Demonstrator Support</h4>
-                <p>Supported bring-up and validation of the first functional end-to-end FMCW LiDAR prototype.</p>
+                <h4>{copy.system.contributions[3].title}</h4>
+                <p>{copy.system.contributions[3].description}</p>
               </div>
             </div>
           </div>
@@ -446,72 +396,44 @@ export default function LidarCaseStudy() {
       {/* ── BUILDING BLOCKS ── */}
       <section className="cs-section cs-section--dark">
         <div className="cs-section-header reveal">
-          <div className="section-eyebrow">04 — Building Blocks</div>
-          <h2 className="section-title">From Component Library to System</h2>
+          <div className="section-eyebrow">{copy.buildingBlocks.eyebrow}</div>
+          <h2 className="section-title">{copy.buildingBlocks.heading}</h2>
         </div>
-        <p className="cs-lead reveal">
-          Solid-state LiDAR lives or dies on its components: every dB of loss in a
-          phase shifter, every degree of beam divergence in an antenna, multiplies
-          across hundreds of channels. The work progressed from a validated
-          component library to an integrated system.
-        </p>
+        <p className="cs-lead reveal">{copy.buildingBlocks.lead}</p>
         <div className="cs-chip-diagram reveal">
           <OpaChipSvg animate={!reduced} />
         </div>
         <div className="cs-phases">
-          <PhaseCard
-            phase="I"
-            title="Validated Component Library"
-            period="2023"
-            description="Device-level design and validation of the beam-steering toolkit — phased arrays, phase shifters, couplers, and antennas — proven in silicon."
-            points={[
-              "Multiple device architectures designed and validated",
-              "Ultralow-loss, energy-efficient thermo-optic phase shifters",
-              "Tunable 90° hybrid couplers for coherent receivers",
-            ]}
-          />
-          <PhaseCard
-            phase="II"
-            title="Integrated LiDAR Demonstrator"
-            period="2023 – 2024"
-            description="Components assembled into a working coherent LiDAR system — combining silicon photonics with InP gain elements for a complete transmit-receive chain."
-            points={[
-              "First functional end-to-end FMCW prototype",
-              "Hybrid SOI-InP integration for on-chip gain",
-              "System results published at OFC and ECOC",
-            ]}
-          />
+          {copy.buildingBlocks.phases.map((phase) => <PhaseCard key={phase.phase} {...phase} />)}
         </div>
       </section>
 
       {/* ── KEY METRICS ── */}
       <section className="cs-section">
         <div className="cs-section-header reveal">
-          <div className="section-eyebrow">05 — Results</div>
-          <h2 className="section-title">Key Outcomes</h2>
+          <div className="section-eyebrow">{copy.results.eyebrow}</div>
+          <h2 className="section-title">{copy.results.heading}</h2>
         </div>
         <div className="cs-metrics-grid">
-          <MetricCard value="4" unit="+" label="Device architectures designed" />
-          <MetricCard value="2" unit="" label="Platforms combined (SOI + InP)" />
-          <MetricCard value="1" unit="st" label="End-to-end FMCW demonstrator" />
-          <MetricCard value={relatedPubs.length} unit="" label="Related publications" />
+          {copy.results.metrics.map((metric) => <MetricCard key={metric.label} {...metric} />)}
+          <MetricCard value={relatedPubs.length} unit="" label={copy.results.relatedPublicationsLabel} />
         </div>
         <div className="cs-outcome-bar reveal">
           <div className="cs-outcome">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8FF" strokeWidth="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
-            <span>Beam-steering component library designed and validated in silicon</span>
+            <span>{copy.results.outcomes[0]}</span>
           </div>
           <div className="cs-outcome">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8FF" strokeWidth="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
-            <span>Coherent-detection LiDAR results published at OFC (postdeadline) and ECOC</span>
+            <span>{copy.results.outcomes[1]}</span>
           </div>
           <div className="cs-outcome">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8FF" strokeWidth="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
-            <span>Hybrid SOI-InP integration demonstrated for the receive chain</span>
+            <span>{copy.results.outcomes[2]}</span>
           </div>
           <div className="cs-outcome">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8FF" strokeWidth="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
-            <span>Full design pipeline established from simulation through tape-out</span>
+            <span>{copy.results.outcomes[3]}</span>
           </div>
         </div>
         <Perspective>{perspectives.lidar}</Perspective>
@@ -520,8 +442,8 @@ export default function LidarCaseStudy() {
       {/* ── PUBLICATIONS ── */}
       <section className="cs-section cs-section--dark">
         <div className="cs-section-header reveal">
-          <div className="section-eyebrow">06 — Publications</div>
-          <h2 className="section-title">Related Research</h2>
+          <div className="section-eyebrow">{copy.publications.eyebrow}</div>
+          <h2 className="section-title">{copy.publications.heading}</h2>
         </div>
         <RelatedPubs pubs={relatedPubs} />
       </section>

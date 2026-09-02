@@ -1,4 +1,5 @@
 import { partners } from "../data/partners";
+import { sharedPage } from "../data/pages/shared";
 
 // Full-width logo band at the foot of the home page. Logos are transparent
 // PNGs rendered as flat monochrome marks (see .partner-logo in App.css) so a
@@ -13,7 +14,7 @@ export default function PartnerLogos() {
           label has to be true of every mark in it and must not imply these
           organisations are clients — see docs/positioning.md §7. */}
       <p className="partner-band-label reveal">
-        Institutions and partners behind this work
+        {sharedPage.partnerLabel}
       </p>
       <div className="partner-band-row reveal">
         {partners.map((p) => (

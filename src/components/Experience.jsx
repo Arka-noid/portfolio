@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { experience } from "../data/experience";
+import { experience, experienceSection } from "../data/experience";
 
 // The employment record, framed as provenance rather than as a CV — see
 // docs/positioning.md §7. The organisation and period lead each entry; the job
@@ -16,8 +16,8 @@ export default function Experience() {
   return (
     <section id="experience">
       <div className="reveal">
-        <div className="section-eyebrow">Track record</div>
-        <h2 className="section-title">Where this capability was built</h2>
+        <div className="section-eyebrow">{experienceSection.eyebrow}</div>
+        <h2 className="section-title">{experienceSection.heading}</h2>
       </div>
       <div className="timeline">
         {experience.map((item, i) => (
@@ -45,7 +45,9 @@ export default function Experience() {
                   aria-expanded={!!expanded[i]}
                   onClick={() => toggle(i)}
                 >
-                  {expanded[i] ? "Show less ↑" : "Show more ↓"}
+                  {expanded[i]
+                    ? experienceSection.collapseLabel
+                    : experienceSection.expandLabel}
                 </button>
               )}
             </div>

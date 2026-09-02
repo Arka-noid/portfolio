@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import { services } from "../data/services";
+import { homePage } from "../data/pages/home";
 
 export default function ServicesTeaser() {
+  const { services: copy } = homePage;
+
   return (
     <section id="services">
       <div className="reveal">
-        <div className="section-eyebrow">Services</div>
-        <h2 className="section-title">Let us move the hardware forward.</h2>
+        <div className="section-eyebrow">{copy.eyebrow}</div>
+        <h2 className="section-title">{copy.heading}</h2>
       </div>
       <ol className="service-teaser-list">
         {services.map((s, i) => (
@@ -18,7 +21,7 @@ export default function ServicesTeaser() {
         ))}
       </ol>
       <Link className="hero-cta teaser-cta reveal" to="/services">
-        Explore the engagements →
+        {copy.action}
       </Link>
     </section>
   );

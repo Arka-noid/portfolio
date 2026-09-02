@@ -1,4 +1,5 @@
 import { services } from "../data/services";
+import { symptomRouter } from "../data/symptoms";
 
 // The symptom router — see docs/positioning.md §5.1.
 //
@@ -32,7 +33,7 @@ export default function SymptomRouter({ items }) {
   return (
     <div className="symptom-router">
       <p className="symptom-lead reveal">
-        If any of these problems resonates, start here.
+        {symptomRouter.lead}
       </p>
       <ul className="symptom-list">
         {rows.map((s) => {

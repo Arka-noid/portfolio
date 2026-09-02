@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { projects, categoryMeta, markets } from "../data/projects";
+import { projects, categoryMeta, markets, workPage } from "../data/projects";
 import { perspectives } from "../data/perspectives";
 import { siteImages } from "../data/images";
 import Perspective from "./Perspective";
 import ThemedImage from "./ThemedImage";
 
-const ALL = "All";
+const ALL = workPage.allFilter;
 
 function ProjectCard({ project, isExpanded, onToggle }) {
   const meta = categoryMeta[project.category];
@@ -30,7 +30,7 @@ function ProjectCard({ project, isExpanded, onToggle }) {
         <h3 className="proj-card-title">{project.title}</h3>
         {/* <p className="proj-card-tagline">{project.tagline}</p> */}
         <p className="proj-card-problem">
-          <span>The problem</span> {project.problem}
+          <span>{workPage.problemLabel}</span> {project.problem}
         </p>
         {!isClassified && (
           <button
@@ -41,7 +41,7 @@ function ProjectCard({ project, isExpanded, onToggle }) {
               onToggle();
             }}
           >
-            {isExpanded ? "Show less ↑" : "What I did ↓"}
+            {isExpanded ? workPage.collapseLabel : workPage.expandLabel}
           </button>
         )}
         {isClassified && (
@@ -50,14 +50,14 @@ function ProjectCard({ project, isExpanded, onToggle }) {
               <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
               <path d="M7 11V7a5 5 0 0 1 10 0v4" />
             </svg>
-            Restricted — outcome under NDA
+            {workPage.restrictedLabel}
           </div>
         )}
       </div>
       {isExpanded && !isClassified && (
         <div className="proj-card-detail">
           <p className="proj-card-role">
-            <span>My role</span> {project.role}
+            <span>{workPage.roleLabel}</span> {project.role}
           </p>
           <p className="proj-card-desc">{project.description}</p>
           {project.highlights.length > 0 && (
@@ -69,7 +69,7 @@ function ProjectCard({ project, isExpanded, onToggle }) {
           )}
           {project.outcome && (
             <p className="proj-card-outcome">
-              <span>Outcome</span> {project.outcome}
+              <span>{workPage.outcomeLabel}</span> {project.outcome}
             </p>
           )}
           <div className="proj-card-tags">
@@ -86,7 +86,7 @@ function ProjectCard({ project, isExpanded, onToggle }) {
               to={`/work/${project.caseStudySlug}`}
               onClick={(e) => e.stopPropagation()}
             >
-              View case study →
+              {workPage.caseStudyAction}
             </Link>
           )}
         </div>
@@ -108,8 +108,8 @@ export default function Projects() {
   return (
     <section id="projects">
       <div className="reveal">
-        <div className="section-eyebrow">Evidence</div>
-        <h1 className="section-title">Case studies</h1>
+        <div className="section-eyebrow">{workPage.eyebrow}</div>
+        <h1 className="section-title">{workPage.heading}</h1>
         {/* <p className="proj-intro">
           Eight projects, grouped by the market that paid for them. Each one
           started as somebody's hard problem.
@@ -124,7 +124,7 @@ export default function Projects() {
       </div>
       <Perspective>{perspectives.projects}</Perspective>
 
-      <div className="proj-filters reveal" role="group" aria-label="Filter work by market">
+      <div className="proj-filters reveal" role="group" aria-label={workPage.filterAriaLabel}>
         {[ALL, ...markets].map((m) => (
           <button
             key={m}

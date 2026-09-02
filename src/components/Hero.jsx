@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { publications } from "../data/publications";
+import { homePage } from "../data/pages/home";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 
 function WaveguideCanvas({ reduced }) {
@@ -75,27 +76,27 @@ function WaveguideCanvas({ reduced }) {
 
 export default function Hero() {
   const reduced = usePrefersReducedMotion();
+  const { hero } = homePage;
 
   return (
     <div className="hero">
       <WaveguideCanvas reduced={reduced} />
       <div className="hero-content">
         <div className="hero-eyebrow">
-          Optical systems engineering · Consulting and design
+          {hero.eyebrow}
         </div>
         <h1 className="hero-title">
-          Shining <span>light</span>
+          {hero.titleBeforeAccent}<span>{hero.titleAccent}</span>
           <br />
-          into your products.
+          {hero.titleSecondLine}
         </h1>
         {/* The markets used to be listed again here; the Markets section sits
             directly below on the home page, so the line was repetition. */}
         <p className="hero-sub">
-          We bring optical and photonic expertise to the boundaries to bring your products to life, 
-          connecting devices, electronics, packaging and control into hardware that performs as one.
+          {hero.description}
         </p>
         <Link className="hero-cta" to="/services">
-          See our services →
+          {hero.action}
         </Link>
       </div>
       {/* <div className="hero-stats">

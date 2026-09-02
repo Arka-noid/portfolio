@@ -1,3 +1,5 @@
+import { sharedPage } from "../../data/pages/shared";
+
 export default function RelatedPubs({ pubs }) {
   return (
     <div className="cs-pubs">
@@ -5,7 +7,9 @@ export default function RelatedPubs({ pubs }) {
         <a key={i} href={pub.url} target="_blank" rel="noopener noreferrer" className="cs-pub reveal">
           <div className="cs-pub-top">
             <span className={`pub-type pub-type--${pub.type}`}>
-              {pub.type === "journal" ? "Journal" : "Conference"}
+              {pub.type === "journal"
+                ? sharedPage.publications.journalLabel
+                : sharedPage.publications.conferenceLabel}
             </span>
             <span className="cs-pub-year">{pub.year}</span>
           </div>

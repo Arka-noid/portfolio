@@ -3,6 +3,7 @@ import {
   serviceProof,
   serviceFootnote,
   serviceScopeStages,
+  servicesPage,
 } from "../data/services";
 import { symptoms } from "../data/symptoms";
 import { siteImages } from "../data/images";
@@ -34,17 +35,18 @@ export default function Services() {
   // with display:none and it stays in the DOM. Deciding in JS from the slot
   // handles the null case exactly, which is the one that ships today.
   const sideImage = siteImages.servicesSide;
+  const copy = servicesPage;
 
   return (
     <section id="services">
       <div className={`svc-head-block reveal${sideImage ? " svc-split" : ""}`}>
         <div>
-          <div className="section-eyebrow">Services</div>
+          <div className="section-eyebrow">{copy.eyebrow}</div>
           <h1 className="section-title svc-h2">
-            From photonic concept to working hardware.
+            {copy.heading}
           </h1>
           <p className="svc-promise">
-            Decide the architecture. Integrate the hardware. Trust the measurements.
+            {copy.promise}
           </p>
         </div>
         {sideImage && (
@@ -70,12 +72,12 @@ export default function Services() {
                 <h3 className="svc-title">{s.title}</h3>
                 <p className="svc-shape">{s.shape}</p>
                 <p className="svc-for">
-                  <span>For</span> {s.forWho}
+                  <span>{copy.forLabel}</span> {s.forWho}
                 </p>
               </div>
               <div className="svc-strip-main">
                 {serviceSymptoms.length > 0 && (
-                  <ul className="svc-quotes" aria-label="Client symptoms this engagement addresses">
+                  <ul className="svc-quotes" aria-label={copy.symptomsAriaLabel}>
                     {serviceSymptoms.map((symptom) => (
                       <li key={symptom.id}>
                         <blockquote>{symptom.text}</blockquote>
@@ -97,7 +99,7 @@ export default function Services() {
       </div>
 
       <div className="svc-continuation reveal">
-        <div className="section-eyebrow">And beyond</div>
+        <div className="section-eyebrow">{copy.continuationEyebrow}</div>
         <ol className="svc-continuation-track">
           {serviceScopeStages.map((stage) => (
             <li key={stage}>{stage}</li>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { recordIntro, principal } from "../data/about";
+import { recordIntro, principal, aboutPage } from "../data/about";
 
 // The door on /about to the person and the record on /profile. It carries the
 // provenance sentence, so the history is framed before it is opened rather
@@ -13,8 +13,8 @@ export default function RecordTeaser() {
   return (
     <section id="record">
       <div className="reveal">
-        <div className="section-eyebrow">The team</div>
-        <h2 className="section-title">The person behind Merilight</h2>
+        <div className="section-eyebrow">{aboutPage.team.eyebrow}</div>
+        <h2 className="section-title">{aboutPage.team.heading}</h2>
       </div>
       {/* <p className="stack-intro reveal">{recordIntro}</p> */}
       <Link className="person-strip reveal" to="/profile">

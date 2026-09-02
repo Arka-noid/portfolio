@@ -1,4 +1,4 @@
-import { principal } from "../data/about";
+import { principal, profilePage } from "../data/about";
 import { perspectives } from "../data/perspectives";
 import { siteImages } from "../data/images";
 import Perspective from "./Perspective";
@@ -12,8 +12,8 @@ export default function Principal() {
   return (
     <section id="principal">
       <div className="reveal">
-        <div className="section-eyebrow">The principal</div>
-        <h1 className="section-title">The person behind Merilight</h1>
+        <div className="section-eyebrow">{profilePage.principal.eyebrow}</div>
+        <h1 className="section-title">{profilePage.principal.heading}</h1>
       </div>
       <div className="about-layout">
         {/* Falls back to the decorative image when no portrait is set, so the
@@ -22,7 +22,7 @@ export default function Principal() {
           <figure className="about-photo about-card reveal">
             <img
               src={principal.photoUrl}
-              alt={`Portrait of ${principal.name}`}
+              alt={`${profilePage.principal.portraitAltPrefix} ${principal.name}`}
             />
             <figcaption>
               <span className="about-card-name">{principal.name}</span>
@@ -42,7 +42,7 @@ export default function Principal() {
           {principal.education.length > 0 && (
             <div className="about-facts">
               <div className="about-fact">
-                <span className="about-fact-label">Education</span>
+                <span className="about-fact-label">{profilePage.principal.educationLabel}</span>
                 <ul>
                   {principal.education.map((e, i) => (
                     <li key={i}>{e}</li>

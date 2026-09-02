@@ -1,4 +1,5 @@
 import { testimonials } from "../data/testimonials";
+import { sharedPage } from "../data/pages/shared";
 
 // Renders nothing at all when there are no references yet — no empty heading,
 // no placeholder. Same degrade-gracefully rule as the image slots in
@@ -9,8 +10,8 @@ export default function Testimonials() {
   return (
     <section id="references">
       <div className="reveal">
-        <div className="section-eyebrow">References</div>
-        <h2 className="section-title">What clients say</h2>
+        <div className="section-eyebrow">{sharedPage.testimonials.eyebrow}</div>
+        <h2 className="section-title">{sharedPage.testimonials.heading}</h2>
       </div>
       <div className="quote-grid">
         {testimonials.map((t, i) => (

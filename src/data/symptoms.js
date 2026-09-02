@@ -20,6 +20,11 @@
 //
 // `offer` values are services[].id, and group the quotes inside the matching
 // /services strip. Change an offer id here and in services.js together.
+export const symptomRouter = {
+  lead: `If any of these problems resonates,
+    start here.`,
+};
+
 export const symptoms = [
   {
     id: "on-chip-boundary",
@@ -33,7 +38,7 @@ export const symptoms = [
   },
   {
     id: "mass-power-budget",
-    text: "We have a mass and power budget, and an architecture that won't fit inside it.",
+    text: `We have a mass and power budget, and an architecture that won't fit inside it.`,
     offer: "system-architecture",
   },
   // {
@@ -48,12 +53,12 @@ export const symptoms = [
   },
   {
     id: "optical-table-demo",
-    text: "The demo still depends on an optical table and one operator.",
+    text: `The demo still depends on an optical table and one operator.`,
     offer: "prototype-integration",
   },
   {
     id: "packaging-undecided",
-    text: "The design depends on packaging that is not decided yet.",
+    text: `The design depends on packaging that is not decided yet.`,
     offer: "prototype-integration",
   },
   {

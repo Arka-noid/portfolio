@@ -1,29 +1,26 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { sharedPage } from "../data/pages/shared";
 
 // The route stays /work — the labels changed, not the URLs, so shared
 // case-study links keep resolving. "Work" read as ambiguous and collided with
 // the old "Work with us" CTA, which read as a careers link.
-const links = [
-  { to: "/services", label: "Services" },
-  { to: "/work", label: "Case studies" },
-  { to: "/about", label: "About" },
-];
+const { navigation } = sharedPage;
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
     <nav>
-      <Link className="nav-logo" to="/" aria-label="Merilight — home" onClick={() => setOpen(false)}>
+      <Link className="nav-logo" to="/" aria-label={navigation.homeAriaLabel} onClick={() => setOpen(false)}>
         <img className="nav-logo-art" src="/logo-merilight.svg" alt="" />
-        <span className="nav-logo-text">merilight</span>
+        <span className="nav-logo-text">{navigation.brand}</span>
       </Link>
       <button
         className="nav-toggle"
         aria-expanded={open}
         aria-controls="nav-menu"
-        aria-label={open ? "Close menu" : "Open menu"}
+        aria-label={open ? navigation.closeMenuAriaLabel : navigation.openMenuAriaLabel}
         onClick={() => setOpen((o) => !o)}
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
@@ -35,7 +32,7 @@ export default function Nav() {
         </svg>
       </button>
       <ul id="nav-menu" className={`nav-links${open ? " nav-links--open" : ""}`}>
-        {links.map((l) => (
+        {navigation.links.map((l) => (
           <li key={l.to}>
             <NavLink
               to={l.to}
@@ -48,7 +45,7 @@ export default function Nav() {
         ))}
         <li>
           <Link className="nav-cta" to="/contact" onClick={() => setOpen(false)}>
-            Get in touch
+            {navigation.contactAction}
           </Link>
         </li>
       </ul>

@@ -1,4 +1,4 @@
-import { firm } from "../data/about";
+import { firm, aboutPage } from "../data/about";
 import { siteImages } from "../data/images";
 import ThemedImage from "./ThemedImage";
 
@@ -10,7 +10,7 @@ export default function About() {
     <section id="about">
       <div className="reveal">
         {/* <div className="section-eyebrow">The firm</div> */}
-        <h1 className="section-title">What Merilight is</h1>
+        <h1 className="section-title">{aboutPage.heading}</h1>
       </div>
       <div className="about-layout">
         {/* Hardware rather than a face: the buyer is sizing up a firm here.

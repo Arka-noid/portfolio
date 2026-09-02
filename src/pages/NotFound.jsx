@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import { notFoundSeo } from "../data/seo";
+import { notFoundPage } from "../data/pages/notFound";
 
 export default function NotFound() {
   useSEO({ ...notFoundSeo, noindex: true });
@@ -8,14 +9,14 @@ export default function NotFound() {
   return (
     <section id="not-found" style={{ textAlign: "center", padding: "10rem 1.5rem" }}>
       <div className="section-eyebrow" style={{ justifyContent: "center" }}>
-        404
+        {notFoundPage.eyebrow}
       </div>
-      <h1 className="section-title">Page not found</h1>
+      <h1 className="section-title">{notFoundPage.heading}</h1>
       <p style={{ color: "var(--muted)", marginBottom: "2.5rem" }}>
-        That page doesn't exist — it may have moved.
+        {notFoundPage.description}
       </p>
       <Link className="hero-cta" to="/">
-        Back to home →
+        {notFoundPage.action}
       </Link>
     </section>
   );

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { marketFocus } from "../data/markets";
 import { siteImages } from "../data/images";
+import { sharedPage } from "../data/pages/shared";
 import SectionBackdrop from "./SectionBackdrop";
 
 // The markets we name — docs/positioning.md §5. A doorway, not an offer: each
@@ -14,13 +15,15 @@ import SectionBackdrop from "./SectionBackdrop";
 // they are dim, card-sized and carry the market's subject, so they run in both
 // modes; a market with no `image` simply keeps the flat surface.
 export default function MarketsStrip({ compact = false }) {
+  const copy = sharedPage.markets;
+
   return (
     <section id="markets" className={compact ? undefined : "section--backdrop"}>
       {!compact && <SectionBackdrop src={siteImages.marketsBackdrop} />}
       <div className="markets-body">
         <div className="reveal">
-          <div className="section-eyebrow">Markets</div>
-          <h2 className="section-title">Application domains</h2>
+          <div className="section-eyebrow">{copy.eyebrow}</div>
+          <h2 className="section-title">{copy.heading}</h2>
         </div>
 
         <ul className={`markets-grid${compact ? " markets-grid--compact" : ""}`}>
@@ -40,7 +43,7 @@ export default function MarketsStrip({ compact = false }) {
                 {!compact && (
                   <>
                     <p className="market-proof">
-                      <span>Proof</span> {m.proof}
+                      <span>{copy.proofLabel}</span> {m.proof}
                     </p>
                     <Link className="market-evidence" to={m.evidence.to}>
                       {m.evidence.label} →

@@ -1,4 +1,5 @@
 import { entity, confidentiality } from "../data/about";
+import { contactPage } from "../data/pages/contact";
 
 // `pageTitle` renders the heading as an h1 for /contact, where this is the
 // only content on the page; Home and Services already have their own h1 and
@@ -13,21 +14,20 @@ export default function Contact({ pageTitle = false }) {
     <div className="contact-section" id="contact">
       <div className="reveal">
         <div className="section-eyebrow" style={{ justifyContent: "center" }}>
-          Get in touch
+          {contactPage.eyebrow}
         </div>
         <Heading className="section-title" style={{ marginBottom: "0.5rem" }}>
-          Let's build something.
+          {contactPage.heading}
         </Heading>
         <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: "0.5rem" }}>
-          System integration, productization, design reviews, link budgets, device design,
-          characterization setups.
+          {contactPage.description}
         </p>
         <div className="contact-links">
-          <a className="contact-link" href="mailto:info@merilight.com">
-            <span aria-hidden="true">✉</span> info@merilight.com
+          <a className="contact-link" href={contactPage.email.href}>
+            <span aria-hidden="true">✉</span> {contactPage.email.label}
           </a>
-          <a className="contact-link" href="tel:+393281873926">
-            <span aria-hidden="true">📞</span> +39 328 1873926
+          <a className="contact-link" href={contactPage.phone.href}>
+            <span aria-hidden="true">📞</span> {contactPage.phone.label}
           </a>
         </div>
         {confidentiality && (

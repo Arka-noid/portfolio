@@ -5,6 +5,9 @@ import {
   SCHOLAR_URL,
   CITATIONS,
 } from "../data/publications";
+import { sharedPage } from "../data/pages/shared";
+
+const copy = sharedPage.publications;
 
 // How many papers each domain group shows before the expander. The six groups
 // are the breadth evidence (docs/positioning.md §4), so every group stays
@@ -22,7 +25,7 @@ function PubItem({ pub }) {
       <div className="pub-title">{pub.title}</div>
       <div className="pub-item-meta">
         <span className={`pub-type pub-type--${pub.type}`}>
-          {pub.type === "journal" ? "Journal" : "Conference"}
+          {pub.type === "journal" ? copy.journalLabel : copy.conferenceLabel}
         </span>
         <span className="pub-venue">{pub.venue}</span>
         <span className="pub-year">{pub.year}</span>
@@ -43,7 +46,7 @@ function PubGroup({ group }) {
       <h4 className="pub-group-label">
         {group.label}
         <span className="pub-group-count">
-          {group.items.length} {group.items.length === 1 ? "paper" : "papers"}
+          {group.items.length} {group.items.length === 1 ? copy.singularPaper : copy.pluralPapers}
         </span>
       </h4>
       <div className="pub-list">
@@ -57,7 +60,9 @@ function PubGroup({ group }) {
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
         >
-          {open ? "Show fewer ↑" : `Show ${hidden} more ↓`}
+          {open
+            ? copy.collapseLabel
+            : `${copy.expandPrefix} ${hidden} ${copy.expandSuffix}`}
         </button>
       )}
     </div>
@@ -84,25 +89,23 @@ export default function Publications() {
   return (
     <section id="publications">
       <div className="reveal">
-        <div className="section-eyebrow">Research</div>
-        <h2 className="section-title">Publications</h2>
+        <div className="section-eyebrow">{copy.eyebrow}</div>
+        <h2 className="section-title">{copy.heading}</h2>
         <div className="pub-header">
           <div className="pub-metrics">
             <span className="pub-metric">
-              <strong>{publications.length}</strong> publications
+              <strong>{publications.length}</strong> {copy.publicationMetric}
             </span>
             <span className="pub-metric">
-              <strong>{CITATIONS}</strong> citations
+              <strong>{CITATIONS}</strong> {copy.citationMetric}
             </span>
             <span className="pub-metric">
-              <strong>{groups.length}</strong> research areas
+              <strong>{groups.length}</strong> {copy.areaMetric}
             </span>
           </div>
         </div>
         <p className="pub-intro">
-          Grouped by subject rather than by date. The spread — from III-V
-          material growth through spaceborne radar to nonlinear laser sources —
-          is what lets me tell you which layer a problem sits in.
+          {copy.intro}
         </p>
       </div>
 
@@ -119,7 +122,7 @@ export default function Publications() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          View on Google Scholar &rarr;
+          {copy.scholarAction}
         </a>
       </div>
     </section>

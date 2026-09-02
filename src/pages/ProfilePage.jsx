@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { useSEO } from "../hooks/useSEO";
 import { pageSeo } from "../data/seo";
+import { profilePage } from "../data/about";
 import Principal from "../components/Principal";
 import Experience from "../components/Experience";
 import Publications from "../components/Publications";
@@ -21,7 +22,7 @@ export default function ProfilePage() {
       <Publications />
       <div className="profile-back reveal">
         <Link className="hero-cta" to="/about">
-          ← About Merilight
+          {profilePage.backAction}
         </Link>
       </div>
     </>

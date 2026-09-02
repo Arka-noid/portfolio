@@ -13,18 +13,9 @@ import ThemedImage from "./ThemedImage";
 import Perspective from "./Perspective";
 import { perspectives } from "../data/perspectives";
 import { siteImages } from "../data/images";
+import { spaceRadarCaseStudy } from "../data/pages/caseStudies/spaceRadar";
 
-const RELATED_KEYWORDS = ["Radar", "Aperture", "Satellite", "Spaceborne", "Beamform"];
-const relatedPubs = filterPubsByKeywords(publications, RELATED_KEYWORDS);
-
-const ARCH_BLOCKS = [
-  { x: 0, label: "ANTENNA\nARRAY", sub: "X-band", color: "#e8edf5", w: 90 },
-  { x: 110, label: "RF\nFRONT-END", sub: "LNA + Filter", color: "#e8edf5", w: 90 },
-  { x: 220, label: "E/O\nCONVERSION", sub: "MZM", color: "#00C8FF", w: 90 },
-  { x: 330, label: "PHOTONIC\nBEAMFORMER", sub: "SiN + InP", color: "#00C8FF", w: 110 },
-  { x: 460, label: "O/E\nDETECTION", sub: "Balanced PD", color: "#00C8FF", w: 90 },
-  { x: 570, label: "DIGITAL\nBACK-END", sub: "ADC + DSP", color: "#e8edf5", w: 90 },
-];
+const relatedPubs = filterPubsByKeywords(publications, spaceRadarCaseStudy.relatedKeywords);
 
 function StarfieldCanvas({ reduced }) {
   const canvasRef = useRef(null);
@@ -261,6 +252,7 @@ export default function SpaceRadarCaseStudy() {
   useScrollReveal();
   const reduced = usePrefersReducedMotion();
   const [scrollY, setScrollY] = useState(0);
+  const copy = spaceRadarCaseStudy;
 
   useEffect(() => {
     if (reduced) return;
@@ -276,29 +268,19 @@ export default function SpaceRadarCaseStudy() {
         <HeroPhoto src={siteImages.spaceRadarHero} />
         <StarfieldCanvas reduced={reduced} />
         <div className="cs-hero-content" style={{ transform: `translateY(${scrollY * 0.15}px)` }}>
-          <div className="cs-hero-eyebrow reveal">Case Study · Aerospace</div>
+          <div className="cs-hero-eyebrow reveal">{copy.hero.eyebrow}</div>
           <h1 className="cs-hero-title reveal">
-            Photonic Beamforming<br />
-            for <span>Space Radar</span>
+            {copy.hero.title.firstLine}<br />
+            {copy.hero.title.secondLineBeforeAccent}<span>{copy.hero.title.accent}</span>
           </h1>
-          <p className="cs-hero-sub reveal">
-            Designing light-based signal processing for next-generation
-            Earth observation from orbit — replacing bulky electronics
-            with a chip-scale photonic receiver.
-          </p>
+          <p className="cs-hero-sub reveal">{copy.hero.description}</p>
           <div className="cs-hero-meta reveal">
-            <div className="cs-meta-item">
-              <div className="cs-meta-label">Program</div>
-              <div className="cs-meta-value">EU Space Program</div>
-            </div>
-            <div className="cs-meta-item">
-              <div className="cs-meta-label">Duration</div>
-              <div className="cs-meta-value">3 Years</div>
-            </div>
-            <div className="cs-meta-item">
-              <div className="cs-meta-label">Role</div>
-              <div className="cs-meta-value">Photonic Architect</div>
-            </div>
+            {copy.hero.meta.map((item) => (
+              <div className="cs-meta-item" key={item.label}>
+                <div className="cs-meta-label">{item.label}</div>
+                <div className="cs-meta-value">{item.value}</div>
+              </div>
+            ))}
           </div>
         </div>
         <div className="cs-hero-illustration" style={{ transform: `translateY(${scrollY * -0.08}px)` }}>
@@ -309,27 +291,14 @@ export default function SpaceRadarCaseStudy() {
       {/* ── THE CHALLENGE ── */}
       <section className="cs-section">
         <div className="cs-section-header reveal">
-          <div className="section-eyebrow">01 — The Challenge</div>
-          <h2 className="section-title">Why Photonics in Space?</h2>
+          <div className="section-eyebrow">{copy.challenge.eyebrow}</div>
+          <h2 className="section-title">{copy.challenge.heading}</h2>
         </div>
         <div className="cs-two-col">
           <div className="cs-col reveal">
-            <p>
-              Synthetic aperture radar satellites are workhorses of Earth observation —
-              mapping terrain, monitoring climate, and tracking changes across the planet
-              with all-weather, day-and-night imaging.
-            </p>
-            <p>
-              But as missions demand higher resolution and wider swath coverage, conventional
-              electronic receivers hit a fundamental wall: bulky RF distribution networks,
-              power-hungry analog-to-digital conversion, and bandwidth limitations that
-              constrain the number of simultaneous beams.
-            </p>
-            <p>
-              The question driving this project: could integrated photonics — processing
-              radar signals with light instead of electrons — unlock a new class of
-              lightweight, wideband spaceborne receivers?
-            </p>
+            {copy.challenge.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
           <div className="cs-col cs-challenge-cards reveal">
             <div className="cs-challenge-card">
@@ -341,8 +310,8 @@ export default function SpaceRadarCaseStudy() {
                   <line x1="16" y1="8" x2="16" y2="24" />
                 </svg>
               </div>
-              <h4>Size &amp; Weight</h4>
-              <p>Traditional RF beamformers scale poorly — every added beam means more hardware, more mass, more power.</p>
+              <h4>{copy.challenge.cards[0].title}</h4>
+              <p>{copy.challenge.cards[0].description}</p>
             </div>
             <div className="cs-challenge-card">
               <div className="cs-challenge-icon">
@@ -352,8 +321,8 @@ export default function SpaceRadarCaseStudy() {
                   <line x1="4" y1="10" x2="28" y2="10" />
                 </svg>
               </div>
-              <h4>Bandwidth</h4>
-              <p>Electronic systems struggle above a few GHz of instantaneous bandwidth — photonic links handle tens of GHz natively.</p>
+              <h4>{copy.challenge.cards[1].title}</h4>
+              <p>{copy.challenge.cards[1].description}</p>
             </div>
             <div className="cs-challenge-card">
               <div className="cs-challenge-icon">
@@ -363,8 +332,8 @@ export default function SpaceRadarCaseStudy() {
                   <circle cx="16" cy="16" r="2" fill="#00C8FF" />
                 </svg>
               </div>
-              <h4>Multi-Beam</h4>
-              <p>Scan-on-receive architectures need simultaneous beam steering — photonic true-time delays enable this without squint.</p>
+              <h4>{copy.challenge.cards[2].title}</h4>
+              <p>{copy.challenge.cards[2].description}</p>
             </div>
           </div>
         </div>
@@ -372,7 +341,7 @@ export default function SpaceRadarCaseStudy() {
           <ThemedImage
             src={siteImages.insarFigure}
             variant="figure"
-            caption="Interferometric SAR — each colour fringe is one wavelength of range change. Receiver phase fidelity is what makes this measurable."
+            caption={copy.challenge.figureCaption}
           />
         </div>
       </section>
@@ -380,35 +349,23 @@ export default function SpaceRadarCaseStudy() {
       {/* ── THE APPROACH ── */}
       <section className="cs-section cs-section--dark">
         <div className="cs-section-header reveal">
-          <div className="section-eyebrow">02 — The Approach</div>
-          <h2 className="section-title">Hybrid Photonic Architecture</h2>
+          <div className="section-eyebrow">{copy.approach.eyebrow}</div>
+          <h2 className="section-title">{copy.approach.heading}</h2>
         </div>
-        <p className="cs-lead reveal">
-          The core innovation was a multi-chip photonic module combining two
-          complementary integrated photonics platforms — each bringing strengths
-          the other lacked.
-        </p>
+        <p className="cs-lead reveal">{copy.approach.lead}</p>
         <div className="cs-chip-diagram reveal">
           <PhotonicChipSvg animate={!reduced} />
         </div>
         <div className="cs-platform-grid reveal">
           <div className="cs-platform-card">
-            <div className="cs-platform-tag" style={{ color: "#00C8FF", borderColor: "#00C8FF" }}>Silicon Nitride</div>
-            <p>Ultra-low optical losses for passive signal routing, splitting, and delay lines. The backbone of the beamforming network.</p>
-            <ul>
-              <li>Propagation loss &lt; 0.1 dB/cm</li>
-              <li>Wideband optical transparency</li>
-              <li>Phase shifters for beam control</li>
-            </ul>
+            <div className="cs-platform-tag" style={{ color: copy.approach.platforms[0].color, borderColor: copy.approach.platforms[0].color }}>{copy.approach.platforms[0].tag}</div>
+            <p>{copy.approach.platforms[0].description}</p>
+            <ul>{copy.approach.platforms[0].points.map((point) => <li key={point}>{point}</li>)}</ul>
           </div>
           <div className="cs-platform-card">
-            <div className="cs-platform-tag" style={{ color: "#8B5CF6", borderColor: "#8B5CF6" }}>Indium Phosphide</div>
-            <p>Active photonic functions: modulation, amplification, and detection. The engine that drives the signal chain.</p>
-            <ul>
-              <li>High-speed Mach-Zehnder modulators</li>
-              <li>Semiconductor optical amplifiers</li>
-              <li>Balanced photodetectors</li>
-            </ul>
+            <div className="cs-platform-tag" style={{ color: copy.approach.platforms[1].color, borderColor: copy.approach.platforms[1].color }}>{copy.approach.platforms[1].tag}</div>
+            <p>{copy.approach.platforms[1].description}</p>
+            <ul>{copy.approach.platforms[1].points.map((point) => <li key={point}>{point}</li>)}</ul>
           </div>
         </div>
       </section>
@@ -416,46 +373,42 @@ export default function SpaceRadarCaseStudy() {
       {/* ── SYSTEM ARCHITECTURE ── */}
       <section className="cs-section">
         <div className="cs-section-header reveal">
-          <div className="section-eyebrow">03 — System Design</div>
-          <h2 className="section-title">End-to-End Signal Chain</h2>
+          <div className="section-eyebrow">{copy.system.eyebrow}</div>
+          <h2 className="section-title">{copy.system.heading}</h2>
         </div>
-        <p className="cs-lead reveal">
-          Radar returns captured by the antenna array are converted to optical signals,
-          processed through the photonic beamforming network, and converted back to
-          the electrical domain for digital processing.
-        </p>
+        <p className="cs-lead reveal">{copy.system.lead}</p>
         <div className="cs-arch-diagram reveal">
-          <BlockDiagramSvg blocks={ARCH_BLOCKS} domain={{ x: 218, width: 340, label: "PHOTONIC DOMAIN" }} />
+          <BlockDiagramSvg blocks={copy.system.blocks} domain={copy.system.domain} />
         </div>
         <div className="cs-scope-list reveal">
-          <h3>My Contributions</h3>
+          <h3>{copy.system.contributionsHeading}</h3>
           <div className="cs-scope-grid">
             <div className="cs-scope-item">
               <span className="cs-scope-num">01</span>
               <div>
-                <h4>Architecture Design</h4>
-                <p>Defined the photonic receiver architecture from first principles, selecting components and topology for a scan-on-receive SAR.</p>
+                <h4>{copy.system.contributions[0].title}</h4>
+                <p>{copy.system.contributions[0].description}</p>
               </div>
             </div>
             <div className="cs-scope-item">
               <span className="cs-scope-num">02</span>
               <div>
-                <h4>Link Budget Simulation</h4>
-                <p>Built full analog link-budget models combining optical, RF, and noise analysis to validate system performance before fabrication.</p>
+                <h4>{copy.system.contributions[1].title}</h4>
+                <p>{copy.system.contributions[1].description}</p>
               </div>
             </div>
             <div className="cs-scope-item">
               <span className="cs-scope-num">03</span>
               <div>
-                <h4>Component Characterization</h4>
-                <p>Measured and validated individual photonic components — modulators, filters, amplifiers — against simulation targets.</p>
+                <h4>{copy.system.contributions[2].title}</h4>
+                <p>{copy.system.contributions[2].description}</p>
               </div>
             </div>
             <div className="cs-scope-item">
               <span className="cs-scope-num">04</span>
               <div>
-                <h4>Module Integration</h4>
-                <p>Guided the multi-chip assembly from die-level bonding through to a packaged module ready for space-compliance testing.</p>
+                <h4>{copy.system.contributions[3].title}</h4>
+                <p>{copy.system.contributions[3].description}</p>
               </div>
             </div>
           </div>
@@ -465,69 +418,40 @@ export default function SpaceRadarCaseStudy() {
       {/* ── PHASE 2: CONSTELLATION ── */}
       <section className="cs-section cs-section--dark">
         <div className="cs-section-header reveal">
-          <div className="section-eyebrow">04 — Scaling Up</div>
-          <h2 className="section-title">From One Satellite to a Constellation</h2>
+          <div className="section-eyebrow">{copy.scaling.eyebrow}</div>
+          <h2 className="section-title">{copy.scaling.heading}</h2>
         </div>
-        <p className="cs-lead reveal">
-          Building on the single-satellite beamformer, the research expanded to a
-          multi-static radar system — multiple satellites working coherently as a
-          distributed synthetic aperture, with photonics enabling the precision
-          signal distribution that makes it possible.
-        </p>
+        <p className="cs-lead reveal">{copy.scaling.lead}</p>
         <div className="cs-phases">
-          <PhaseCard
-            phase="I"
-            title="Single-Satellite Photonic Receiver"
-            period="2020 – 2022"
-            description="A hybrid SiN-InP beamforming module for scan-on-receive SAR. The foundation — proving photonics could handle the signal chain in a space-qualified package."
-            points={[
-              "Hybrid multi-chip assembly validated",
-              "Full analog link budget simulation framework",
-              "Module packaged for space compliance testing",
-            ]}
-          />
-          <PhaseCard
-            phase="II"
-            title="Coherent Multi-Satellite Network"
-            period="2021 – 2023"
-            description="Photonic integrated circuits for signal generation, distribution, and down-conversion across a satellite constellation — enabling coherent radar imaging from multiple orbital positions."
-            points={[
-              "Advanced SOI platform with micro-transfer printed amplifiers",
-              "System spanning optical, RF, and free-space links",
-              "Multi-band operation for enhanced imaging capability",
-            ]}
-          />
+          {copy.scaling.phases.map((phase) => <PhaseCard key={phase.phase} {...phase} />)}
         </div>
       </section>
 
       {/* ── KEY METRICS ── */}
       <section className="cs-section">
         <div className="cs-section-header reveal">
-          <div className="section-eyebrow">05 — Results</div>
-          <h2 className="section-title">Key Outcomes</h2>
+          <div className="section-eyebrow">{copy.results.eyebrow}</div>
+          <h2 className="section-title">{copy.results.heading}</h2>
         </div>
         <div className="cs-metrics-grid">
-          <MetricCard value="3" unit="" label="Photonic platforms integrated" />
-          <MetricCard value="X" unit="-band" label="Operating frequency" />
-          <MetricCard value="2" unit="" label="Chip architectures designed" />
-          <MetricCard value="8" unit="+" label="Peer-reviewed publications" />
+          {copy.results.metrics.map((metric) => <MetricCard key={metric.label} {...metric} />)}
         </div>
         <div className="cs-outcome-bar reveal">
           <div className="cs-outcome">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8FF" strokeWidth="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
-            <span>Hybrid module fabricated and packaged for space compliance</span>
+            <span>{copy.results.outcomes[0]}</span>
           </div>
           <div className="cs-outcome">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8FF" strokeWidth="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
-            <span>Simulation framework validated against measured data</span>
+            <span>{copy.results.outcomes[1]}</span>
           </div>
           <div className="cs-outcome">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8FF" strokeWidth="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
-            <span>Results published in top-tier photonics and radar venues</span>
+            <span>{copy.results.outcomes[2]}</span>
           </div>
           <div className="cs-outcome">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8FF" strokeWidth="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
-            <span>Collaboration with major European aerospace industry partners</span>
+            <span>{copy.results.outcomes[3]}</span>
           </div>
         </div>
         <Perspective>{perspectives.spaceRadar}</Perspective>
@@ -536,8 +460,8 @@ export default function SpaceRadarCaseStudy() {
       {/* ── PUBLICATIONS ── */}
       <section className="cs-section cs-section--dark">
         <div className="cs-section-header reveal">
-          <div className="section-eyebrow">06 — Publications</div>
-          <h2 className="section-title">Related Research</h2>
+          <div className="section-eyebrow">{copy.publications.eyebrow}</div>
+          <h2 className="section-title">{copy.publications.heading}</h2>
         </div>
         <RelatedPubs pubs={relatedPubs} />
       </section>

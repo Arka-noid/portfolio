@@ -10,7 +10,7 @@ export default function About() {
     <section id="about">
       <div className="reveal">
         {/* <div className="section-eyebrow">The firm</div> */}
-        <h2 className="section-title">What Merilight is</h2>
+        <h1 className="section-title">What Merilight is</h1>
       </div>
       <div className="about-layout">
         {/* Hardware rather than a face: the buyer is sizing up a firm here.

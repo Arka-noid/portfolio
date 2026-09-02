@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import { useSEO } from "../hooks/useSEO";
+import { pageSeo } from "../data/seo";
 import Principal from "../components/Principal";
 import Experience from "../components/Experience";
 import Publications from "../components/Publications";
@@ -10,6 +12,7 @@ import Publications from "../components/Publications";
 // not acknowledge.
 export default function ProfilePage() {
   useScrollReveal();
+  useSEO(pageSeo.profile);
 
   return (
     <>

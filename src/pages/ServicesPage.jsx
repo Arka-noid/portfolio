@@ -1,4 +1,6 @@
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import { useSEO } from "../hooks/useSEO";
+import { pageSeo } from "../data/seo";
 import Services from "../components/Services";
 import MarketsStrip from "../components/MarketsStrip";
 import ExpertiseStack from "../components/ExpertiseStack";
@@ -14,6 +16,7 @@ import Contact from "../components/Contact";
 // nothing to click; Contact is the same closing CTA the home page uses.
 export default function ServicesPage() {
   useScrollReveal();
+  useSEO(pageSeo.services);
 
   return (
     <>

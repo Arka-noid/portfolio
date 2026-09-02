@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useSEO } from "../hooks/useSEO";
+import { notFoundSeo } from "../data/seo";
 
 export default function NotFound() {
+  useSEO({ ...notFoundSeo, noindex: true });
+
   return (
     <section id="not-found" style={{ textAlign: "center", padding: "10rem 1.5rem" }}>
       <div className="section-eyebrow" style={{ justifyContent: "center" }}>

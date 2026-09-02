@@ -1,4 +1,6 @@
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import { useSEO } from "../hooks/useSEO";
+import { pageSeo } from "../data/seo";
 import Hero from "../components/Hero";
 import ServicesTeaser from "../components/ServicesTeaser";
 import MarketsStrip from "../components/MarketsStrip";
@@ -9,6 +11,7 @@ import Contact from "../components/Contact";
 
 export default function Home() {
   useScrollReveal();
+  useSEO(pageSeo.home);
 
   return (
     <>

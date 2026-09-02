@@ -1,9 +1,13 @@
 import { entity, confidentiality } from "../data/about";
 
-export default function Contact() {
+// `pageTitle` renders the heading as an h1 for /contact, where this is the
+// only content on the page; Home and Services already have their own h1 and
+// get the default h2.
+export default function Contact({ pageTitle = false }) {
   const entityLine = [entity.name, entity.registered, entity.vat && `VAT ${entity.vat}`]
     .filter(Boolean)
     .join(" · ");
+  const Heading = pageTitle ? "h1" : "h2";
 
   return (
     <div className="contact-section" id="contact">
@@ -11,9 +15,9 @@ export default function Contact() {
         <div className="section-eyebrow" style={{ justifyContent: "center" }}>
           Get in touch
         </div>
-        <h2 className="section-title" style={{ marginBottom: "0.5rem" }}>
+        <Heading className="section-title" style={{ marginBottom: "0.5rem" }}>
           Let's build something.
-        </h2>
+        </Heading>
         <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: "0.5rem" }}>
           System integration, productization, design reviews, link budgets, device design,
           characterization setups.

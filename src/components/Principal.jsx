@@ -13,7 +13,7 @@ export default function Principal() {
     <section id="principal">
       <div className="reveal">
         <div className="section-eyebrow">The principal</div>
-        <h2 className="section-title">The person behind Merilight</h2>
+        <h1 className="section-title">The person behind Merilight</h1>
       </div>
       <div className="about-layout">
         {/* Falls back to the decorative image when no portrait is set, so the

@@ -40,9 +40,9 @@ export default function Services() {
       <div className={`svc-head-block reveal${sideImage ? " svc-split" : ""}`}>
         <div>
           <div className="section-eyebrow">Services</div>
-          <h2 className="section-title svc-h2">
+          <h1 className="section-title svc-h2">
             From photonic concept to working hardware.
-          </h2>
+          </h1>
           <p className="svc-promise">
             Decide the architecture. Integrate the hardware. Trust the measurements.
           </p>

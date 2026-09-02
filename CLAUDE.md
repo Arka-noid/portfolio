@@ -94,11 +94,12 @@ Each page component calls `useScrollReveal()` itself (pages mount/unmount per ro
 - Responsive breakpoints: 900px and 600px, in `App.css` (separate blocks for main page and `.cs-*` case-study classes)
 - New top-level pages: add a component under `src/pages/`, register a `<Route>` in `App.jsx`, add a `Nav.jsx` link if it belongs in primary nav
 - New case studies: add a bespoke component (compose from `components/casestudy/`, keep per-story SVG/canvas art bespoke) and one entry in the slug registry in `pages/CaseStudy.jsx` — no new route needed
+- **Per-page SEO:** every routed page calls `useSEO()` (`hooks/useSEO.js`) with an entry from `data/seo.js` (`pageSeo`, `caseStudySeo`, or `notFoundSeo`) to set `document.title`, meta description, canonical link and OG/Twitter tags at mount — no `react-helmet-async` dependency. `index.html`'s static tags are only the pre-hydration fallback for `/`. A new routed page needs a new entry in `data/seo.js` plus a `useSEO(...)` call, and a new line in `public/sitemap.xml`. This only benefits crawlers that execute JS (Google); social-preview bots (Slack/Twitter/LinkedIn) read the static `index.html` tags for every route since there's no prerendering/SSR — known limitation, not yet addressed
 
 ## Deferred / follow-up ideas
 
 - Real lead-capture contact form (e.g. Formspree or a Vercel function) — `Contact.jsx` is currently mailto/tel/social links only
-- Per-page `<title>`/meta tags (e.g. via `react-helmet-async`) now that `/services`, `/work/:slug` etc. are independently shareable/indexable URLs
+- Prerendering/SSR (or per-route edge functions) so social link-preview bots see per-page OG tags instead of the homepage's, for shared `/work/:slug` etc. links
 
 ## The USP, and how the site expresses it
 

@@ -13,7 +13,8 @@
 export const siteImages = {
   // Space-radar case-study hero backdrop.
   // Earth at night from orbit — dark ground, warm city lights, wide empty
-  // sky for the headline to sit in. Unsplash (NASA), no attribution required.
+  // sky for the headline to sit in. NASA ID iss042e037793; photographed by
+  // ESA astronaut Samantha Cristoforetti aboard the ISS, 13 December 2014.
   spaceRadarHero: "/images/earth-night.jpg",
 
   // LiDAR case-study hero backdrop — a night-highway or city-lights

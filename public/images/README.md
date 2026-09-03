@@ -15,7 +15,7 @@ only terms stated on the originating asset page are recorded as verified.
 
 | Slot | File | Subject | Creator · licence · source |
 |---|---|---|---|
-| `spaceRadarHero` | `earth-night.jpg` | Earth at night from orbit, city lights | **Unresolved.** Google Lens found many exact reposts but no originating NASA or Unsplash asset page. |
+| `spaceRadarHero` | `earth-night.jpg` | Aurora and city lights over northern Europe and England from the ISS | ESA astronaut Samantha Cristoforetti · NASA ID `iss042e037793` · [NASA Image and Video Library source](https://images.nasa.gov/details/iss042e037793), photographed 13 December 2014 · [NASA Media Usage Guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/) |
 | `aboutSide` | `wafer-dies.jpg` | Wafer die macro, gold/orange — standing in for an assembled/packaged photonic module, which would read as "outcome" rather than "substrate" | Maxence Pira · [Unsplash License](https://unsplash.com/license) · [original photo `7hR3FrFs4Q0`](https://unsplash.com/photos/a-close-up-of-a-pattern-of-small-squares-7hR3FrFs4Q0), published 29 December 2022 |
 | `workBanner` | `orbital-hardware.jpg` | Cygnus capsule on the ISS robotic arm | NASA · public-domain claim **not yet audited to an asset page** · [NASA Image and Video Library](https://images.nasa.gov) |
 | `marketsBackdrop` | `fiber-switch.jpg` | OM3 fibre jumpers in SFP cages | **Unresolved.** Google Lens found many exact reposts but no originating asset page. |
@@ -34,7 +34,7 @@ set, and a null `image` leaves the card on flat `--surface`.
 |---|---|---|---|
 | `ai-infrastructure` | `datacenter-racks.jpg` | Datacenter cold aisle, blue-lit racks | **Unresolved.** Google Lens found exact reposts dating to 2011 but no originating asset or licence page. |
 | `telecom-optical-networks` | `optical-communications-1.jpg` | Illuminated optical-fibre bundle against black | Creator unresolved · historical FreeImages stock, commonly titled “Lighting effect” · [oldest confirmed use and FreeImages credit](https://www.phocuswire.com/Top-of-the-tech-pops-Blockchain-voice-bots-and-virtual-reality-finds-their-way), 12 December 2016 · **licence unresolved because FreeImages now redirects to iStock** |
-| `space-defense` | `earth-night.jpg` | Earth at night from orbit (shared with the space-radar hero) | **Unresolved.** Same audit status as `spaceRadarHero` above. |
+| `space-defense` | `earth-night.jpg` | Aurora and city lights over northern Europe from the ISS | Samantha Cristoforetti · NASA ID `iss042e037793` · same NASA source and usage terms as `spaceRadarHero` above |
 | `autonomous-sensing` | `lidar-point-cloud.png` | Ouster OS1-64 point cloud, Folsom/Dore St, San Francisco | Daniel L. Lu · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) · [Wikimedia Commons source](https://commons.wikimedia.org/wiki/File:Ouster_OS1-64_lidar_point_cloud_of_intersection_of_Folsom_and_Dore_St,_San_Francisco.png), created 3 December 2019 |
 | `industrial-sensing` | `oil-gas.webp` | Gas flare at Preemraff Lysekil, Sweden | W.carter · [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) · [Wikimedia Commons source](https://commons.wikimedia.org/wiki/File:Gas_flare_on_top_of_a_flare_stack_at_Preemraff_Lysekil_4.jpg), photographed 25 June 2018 |
 | `life-sciences-imaging` | `pulse-oximeter.jpg` | Pulse oximeter clipped to a finger — optical biosensing, no face | Engin Akyurt (`Engin_Akyurt`) · [Pixabay Content License](https://pixabay.com/service/license-summary/) · [Pixabay asset `8687775`](https://pixabay.com/es/photos/paciente-masculino-cuidado-8687775/), published 10 April 2024 |
@@ -42,8 +42,13 @@ set, and a null `image` leaves the card on flat `--surface`.
 Two caveats before this ships:
 
 - **Replace or independently clear unresolved assets.** In particular,
-  `datacenter-racks.jpg`, `earth-night.jpg`, `fiber-switch.jpg` and
-  `optical-communications-1.jpg` do not yet have a verified reusable licence.
+  `datacenter-racks.jpg`, `fiber-switch.jpg` and `optical-communications-1.jpg`
+  do not yet have a verified reusable licence.
+- **NASA usage.** `earth-night.jpg` is an official NASA library asset with no
+  third-party copyright notice on its asset page. NASA says its media are
+  generally not subject to copyright in the United States and permits factual,
+  informational website use. Credit NASA as the source and do not imply NASA
+  endorsement; NASA names, identifiers and logos have separate restrictions.
 - **Attribution.** The LiDAR point cloud requires credit to Daniel L. Lu, a link
   to CC BY 4.0, and an indication that this site resizes, crops, tints and
   overlays the image. The gas-flare image is CC0 and does not require credit,

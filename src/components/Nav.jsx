@@ -14,7 +14,6 @@ export default function Nav() {
     <nav>
       <Link className="nav-logo" to="/" aria-label={navigation.homeAriaLabel} onClick={() => setOpen(false)}>
         <img className="nav-logo-art" src="/logo-merilight.svg" alt="" />
-        <span className="nav-logo-text">{navigation.brand}</span>
       </Link>
       <button
         className="nav-toggle"

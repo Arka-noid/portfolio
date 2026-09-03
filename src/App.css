@@ -365,31 +365,7 @@ nav {
   display: block;
 }
 
-.nav-logo-text {
-  position: absolute;
-  top: -0.2rem;
-  left: 0.2rem;
-  display: block;
-  font-family: "Manrope", sans-serif;
-  font-size: 2.4rem;
-  font-weight: 500;
-  letter-spacing: 0.065em;
-  line-height: 1;
-  color: transparent;
-  background: linear-gradient(
-    to top,
-    #38d9f9 0%,
-    #38d9f9 12%,
-    #bddff3 34%,
-    #f4fbff 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  transition: opacity 0.25s ease;
-}
-
-.nav-logo:hover .nav-logo-art,
-.nav-logo:hover .nav-logo-text {
+.nav-logo:hover .nav-logo-art {
   opacity: 0.75;
 }
 
@@ -2894,10 +2870,6 @@ a.cs-pub:hover {
     height: 66px;
   }
 
-  .nav-logo-text {
-    font-size: 2.2rem;
-  }
-
   .nav-toggle {
     display: inline-flex;
   }
@@ -3011,10 +2983,6 @@ a.cs-pub:hover {
   .nav-logo {
     width: 195px;
     height: 60px;
-  }
-
-  .nav-logo-text {
-    font-size: 2rem;
   }
 
   section {

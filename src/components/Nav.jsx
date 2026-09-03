@@ -13,7 +13,7 @@ export default function Nav() {
   return (
     <nav>
       <Link className="nav-logo" to="/" aria-label={navigation.homeAriaLabel} onClick={() => setOpen(false)}>
-        <img className="nav-logo-art" src="/logo-merilight.svg" alt="" />
+        <img className="nav-logo-art" src="/logo-merilight-light.svg" alt="" />
       </Link>
       <button
         className="nav-toggle"

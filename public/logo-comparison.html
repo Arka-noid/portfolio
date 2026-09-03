@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Merilight logo comparison</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: "Segoe UI", sans-serif;
+        background: #edf1f5;
+        color: #111827;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        padding: clamp(1.5rem, 5vw, 4rem);
+      }
+
+      main {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        margin: 0 0 0.5rem;
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+        letter-spacing: 0.02em;
+      }
+
+      .intro {
+        max-width: 54rem;
+        margin: 0 0 2rem;
+        color: #526071;
+        line-height: 1.6;
+      }
+
+      .comparison {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .sample {
+        min-height: 220px;
+        display: grid;
+        align-content: center;
+        gap: 1.25rem;
+        padding: clamp(1.25rem, 4vw, 3rem);
+        border: 1px solid #cbd5e1;
+      }
+
+      .sample--white { background: #fff; }
+      .sample--black { background: #05070b; border-color: #263244; }
+      .sample--navy { background: #0a0f1e; border-color: #1e2a45; }
+      .sample--blue { background: #168cbf; border-color: #56c8e9; }
+
+      .sample h2,
+      .sample p {
+        margin: 0;
+      }
+
+      .sample h2 {
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .sample--black h2,
+      .sample--black p,
+      .sample--navy h2,
+      .sample--navy p,
+      .sample--blue h2,
+      .sample--blue p { color: #f8fafc; }
+      .sample--white h2 { color: #334155; }
+      .sample p { font-size: 0.82rem; opacity: 0.72; }
+
+      .logo {
+        width: min(100%, 360px);
+        height: auto;
+        display: block;
+      }
+
+      .logo--cobalt {
+        filter: brightness(0) saturate(100%) invert(36%) sepia(99%) saturate(1974%) hue-rotate(210deg) brightness(95%) contrast(98%);
+      }
+
+      .palette {
+        margin-top: 2.5rem;
+      }
+
+      .palette h2 {
+        margin: 0 0 0.35rem;
+        font-size: 1.2rem;
+      }
+
+      .palette > p {
+        margin: 0 0 1rem;
+        color: #526071;
+      }
+
+      .palette-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .sample--orange .logo--solid { background: #d9482b; }
+      .sample--teal .logo--solid { background: #007f78; }
+      .sample--cobalt .logo--solid { background: #2563eb; }
+      .sample--signal-blue .logo--solid { background: #168cbf; }
+      .sample--ink .logo--solid { background: #111827; }
+
+      .logo--solid {
+        width: min(100%, 360px);
+        aspect-ratio: 468 / 144;
+        display: block;
+        background: #2563eb;
+        mask: url("/logo-merilight.svg") center / contain no-repeat;
+        -webkit-mask: url("/logo-merilight.svg") center / contain no-repeat;
+      }
+
+      @media (max-width: 650px) {
+        .comparison { grid-template-columns: 1fr; }
+        .palette-grid { grid-template-columns: 1fr; }
+        .sample { min-height: 180px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Merilight logo comparison</h1>
+      <p class="intro">Current cyan gradient versus a solid cobalt treatment. The cobalt sample is a CSS preview only; final artwork should be exported as a clean solid-color SVG.</p>
+      <section class="comparison" aria-label="Logo comparison">
+        <article class="sample sample--white">
+          <h2>Current on white</h2>
+          <img class="logo" src="/logo-merilight.svg" alt="Merilight current logo" />
+          <p>Gradient and transparency lose weight.</p>
+        </article>
+        <article class="sample sample--white">
+          <h2>Cobalt on white</h2>
+          <img class="logo logo--cobalt" src="/logo-merilight.svg" alt="Merilight cobalt logo" />
+          <p>Solid #2563EB gives the mark a firmer edge.</p>
+        </article>
+        <article class="sample sample--black">
+          <h2>Current on black</h2>
+          <img class="logo" src="/logo-merilight.svg" alt="Merilight current logo" />
+          <p>Matches the existing dark-site direction.</p>
+        </article>
+        <article class="sample sample--black">
+          <h2>Cobalt on black</h2>
+          <img class="logo logo--cobalt" src="/logo-merilight.svg" alt="Merilight cobalt logo" />
+          <p>Still distinct, though less luminous than cyan.</p>
+        </article>
+      </section>
+      <section class="palette" aria-label="Dark and blue background comparison">
+        <h2>Dark and blue backgrounds</h2>
+        <p>These are the practical dark-surface choices: original gradient, solid Signal Blue, and the revised high-contrast gradient.</p>
+        <div class="palette-grid">
+          <article class="sample sample--navy">
+            <h2>Original · navy</h2>
+            <img class="logo" src="/logo-merilight.svg" alt="Original Merilight logo on navy" />
+            <p>Reference gradient</p>
+          </article>
+          <article class="sample sample--navy">
+            <h2>Dark variant · navy</h2>
+            <img class="logo" src="/logo-merilight-light.svg" alt="Dark-background Merilight logo on navy" />
+            <p>Blue-to-cyan, higher contrast</p>
+          </article>
+          <article class="sample sample--blue">
+            <h2>Original · Signal Blue</h2>
+            <img class="logo" src="/logo-merilight.svg" alt="Original Merilight logo on Signal Blue" />
+            <p>Reference gradient on brand color</p>
+          </article>
+          <article class="sample sample--blue">
+            <h2>Light variant · Signal Blue</h2>
+            <img class="logo" src="/logo-merilight-light.svg" alt="Dark-background Merilight logo on Signal Blue" />
+            <p>Brightest and clearest on a blue field</p>
+          </article>
+        </div>
+      </section>
+      <section class="palette" aria-label="Alternative logo palettes">
+        <h2>Alternative palettes</h2>
+        <p>Solid-color previews using the same mark. Each is shown on white and black.</p>
+        <div class="palette-grid">
+          <article class="sample sample--white sample--cobalt">
+            <h2>Cobalt signal · white</h2>
+            <span class="logo--solid" role="img" aria-label="Cobalt Merilight logo"></span>
+            <p>#2563EB · balanced, technical, dependable</p>
+          </article>
+          <article class="sample sample--black sample--cobalt">
+            <h2>Cobalt signal · black</h2>
+            <span class="logo--solid" role="img" aria-label="Cobalt Merilight logo"></span>
+            <p>#2563EB · balanced, technical, dependable</p>
+          </article>
+          <article class="sample sample--white sample--signal-blue">
+            <h2>Signal blue · white</h2>
+            <span class="logo--solid" role="img" aria-label="Signal blue Merilight logo"></span>
+            <p>#168CBF · cyan energy with stronger paper contrast</p>
+          </article>
+          <article class="sample sample--black sample--signal-blue">
+            <h2>Signal blue · black</h2>
+            <span class="logo--solid" role="img" aria-label="Signal blue Merilight logo"></span>
+            <p>#168CBF · cyan energy with stronger paper contrast</p>
+          </article>
+          <article class="sample sample--white sample--teal">
+            <h2>Deep teal · white</h2>
+            <span class="logo--solid" role="img" aria-label="Deep teal Merilight logo"></span>
+            <p>#007F78 · optical, measured, less digital</p>
+          </article>
+          <article class="sample sample--black sample--teal">
+            <h2>Deep teal · black</h2>
+            <span class="logo--solid" role="img" aria-label="Deep teal Merilight logo"></span>
+            <p>#007F78 · optical, measured, less digital</p>
+          </article>
+          <article class="sample sample--white sample--orange">
+            <h2>Signal orange · white</h2>
+            <span class="logo--solid" role="img" aria-label="Signal orange Merilight logo"></span>
+            <p>#D9482B · warm, confident, distinctive</p>
+          </article>
+          <article class="sample sample--black sample--orange">
+            <h2>Signal orange · black</h2>
+            <span class="logo--solid" role="img" aria-label="Signal orange Merilight logo"></span>
+            <p>#D9482B · warm, confident, distinctive</p>
+          </article>
+          <article class="sample sample--white sample--ink">
+            <h2>Ink neutral · white</h2>
+            <span class="logo--solid" role="img" aria-label="Ink Merilight logo"></span>
+            <p>#111827 · quiet, premium, maximally legible</p>
+          </article>
+          <article class="sample sample--black sample--ink">
+            <h2>Ink neutral · black</h2>
+            <span class="logo--solid" role="img" aria-label="Ink Merilight logo"></span>
+            <p>#111827 · too subdued here; use the reversed neutral instead</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

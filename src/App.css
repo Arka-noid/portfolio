@@ -1637,6 +1637,13 @@ a.pub-item {
   padding-right: 2.5rem;
 }
 
+.svc-diagram {
+  display: block;
+  width: 88px;
+  height: 54px;
+  margin: 0 0 1rem;
+}
+
 .svc-strip .svc-num {
   font-size: 1.15rem;
   margin-bottom: 0.6rem;

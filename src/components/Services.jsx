@@ -5,6 +5,9 @@ import {
   serviceScopeStages,
   servicesPage,
 } from "../data/services";
+import automatedTestDiagram from "../assets/service-icons/automated-test.svg";
+import prototypeIntegrationDiagram from "../assets/service-icons/prototype-integration.svg";
+import systemArchitectureDiagram from "../assets/service-icons/system-architecture.svg";
 import { symptoms } from "../data/symptoms";
 import { siteImages } from "../data/images";
 import ThemedImage from "./ThemedImage";
@@ -15,6 +18,12 @@ const symptomsByOffer = symptoms.reduce((groups, symptom) => {
   groups.get(symptom.offer).push(symptom);
   return groups;
 }, new Map());
+
+const serviceDiagrams = {
+  "system-architecture": systemArchitectureDiagram,
+  "prototype-integration": prototypeIntegrationDiagram,
+  characterization: automatedTestDiagram,
+};
 
 // The primary sales page — docs/positioning.md §9.
 //
@@ -68,7 +77,7 @@ export default function Services() {
           return (
             <article key={s.id} id={`offer-${s.id}`} className="svc-strip reveal">
               <div className="svc-strip-aside">
-                {/* <span className="svc-num">{String(i + 1).padStart(2, "0")}</span> */}
+                <img className="svc-diagram" src={serviceDiagrams[s.id]} alt="" />
                 <h3 className="svc-title">{s.title}</h3>
                 <p className="svc-shape">{s.shape}</p>
                 <p className="svc-for">

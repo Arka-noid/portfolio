@@ -27,16 +27,16 @@ export const servicesPage = {
 export const services = [
   {
     id: "system-architecture",
-    title: "Optical System & PIC Architecture",
+    title: "PIC & Optical System Co‑Design",
     forWho: `Teams moving an optical concept onto a PIC, or approaching tapeout
       without an independent system review.`,
-    problem: `Decide what goes on chip, choose the right platform, and close the
-      link budget before expensive decisions become fixed.`,
+    problem: `Design the components, choose the platform, and close the link
+      budget before expensive tapeout decisions become fixed.`,
     items: [
       {
-        label: "Pre-Tapeout & Layout Reviews",
-        text: `Find packaging, thermal, and testability risks before committing
-          to the foundry.`,
+        label: "Component Design, Simulation & Layout",
+        text: `Design the PIC functions your system needs and validate their
+          performance before committing to the foundry.`,
       },
       {
         label: "Link Budget & Performance Analysis",

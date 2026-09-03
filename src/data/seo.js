@@ -21,9 +21,9 @@ export const pageSeo = {
   },
   services: {
     path: "/services",
-    title: `Services — Optical System & PIC Architecture | Merilight`,
+    title: `Services — PIC & Optical System Co‑Design | Merilight`,
     description: metadata(
-      `Optical system and PIC architecture, optoelectronic prototype integration, and automated
+      `PIC and optical system co-design, optoelectronic prototype integration, and automated
         test and calibration for photonic hardware teams.`
     ),
   },

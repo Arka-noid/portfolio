@@ -58,7 +58,7 @@ function DirectionCard({ direction }) {
       <div className="theme-specimen-proof">
         <span>01</span>
         <div>
-          <strong>Optical System &amp; PIC Architecture</strong>
+          <strong>PIC &amp; Optical System Co‑Design</strong>
           <small>From requirements to an integration-ready system.</small>
         </div>
       </div>

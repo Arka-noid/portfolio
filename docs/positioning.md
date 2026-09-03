@@ -307,7 +307,7 @@ proves it, then make the bench tell you the truth about what you built.
 
 | # | Offer | For | Deliverable | Shape |
 |---|---|---|---|---|
-| 01 | **Optical System & PIC Architecture** *(flagship)* | A | Architecture, platform selection, component inventory, read-out definition, a link-budget model they keep, ranked integration risks. Short form: pre-tape-out layout review or technical DD memo | 1–2 weeks review · 3–6 weeks full study |
+| 01 | **PIC & Optical System Co‑Design** *(flagship)* | A | Component design, simulation and layout; architecture and platform selection; read-out definition; a link-budget model they keep; ranked integration risks. Short form: pre-tape-out layout review or technical DD memo | 1–2 weeks review · 3–6 weeks full study |
 | 02 | Optoelectronic Prototype Integration | B | A driven, coupled, controlled prototype: driver and read-out electronics, embedded and programmable-logic control, packaging/thermal budgets, control software, rebuild documentation | 4–10 weeks, on-site or remote |
 | 03 | Automated Test & Calibration | C | A characterization rig that runs unattended, with closed-loop calibration and documentation | On-site · 2–8 weeks |
 

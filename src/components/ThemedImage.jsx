@@ -1,4 +1,5 @@
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
+import { getImageAttributionProps } from "../data/images";
 
 // Blends a photograph into the navy/cyan identity so stock imagery reads as
 // part of the site rather than pasted onto it. Three stacked layers:
@@ -21,7 +22,10 @@ export default function ThemedImage({
   const decorative = alt === "";
 
   return (
-    <figure className={`themed-img themed-img--${variant} ${className}`.trim()}>
+    <figure
+      className={`themed-img themed-img--${variant} ${className}`.trim()}
+      {...getImageAttributionProps(src)}
+    >
       <div className="themed-img-frame">
         <img
           src={src}

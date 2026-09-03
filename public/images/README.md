@@ -59,6 +59,22 @@ Two caveats before this ships:
 `earth-night.jpg` is deliberately reused rather than duplicated under a second
 name.
 
+## Published attribution metadata
+
+Every content photograph has a record in `imageAttributions` in
+`src/data/images.js`. The shared image renderers publish the available creator,
+source, licence, asset ID, modification notice and provenance status as
+`data-image-*` attributes on the corresponding DOM element. These attributes
+are visible in the browser's live DOM inspector after React renders the page,
+but add no visible text or layout to the site. They are not present in the raw
+pre-hydration HTML returned by this SPA.
+
+This metadata preserves provenance; it does not grant usage rights. An
+unresolved record must still be cleared or replaced. Inspection-only metadata
+may also be weaker than the attribution expected by CC BY 4.0, so the LiDAR
+image should receive visible credit or be replaced with an asset that does not
+require attribution before relying on it commercially.
+
 ## Rendering — you do not need to match the palette
 
 Photographs render through `components/ThemedImage.jsx`, which desaturates the
@@ -104,4 +120,8 @@ and images with large areas of flat sky or shadow give headlines somewhere to si
 - After adding a file, update the slot in `src/data/images.js`
 
 Licences: the [Unsplash License](https://unsplash.com/license) allows free
-commercial use without attribution. NASA imagery is public domain.
+commercial use without attribution. NASA content is used under the
+[NASA Images and Media Usage Guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/);
+NASA says its content is generally not subject to copyright in the United
+States, but its identifiers and some third-party material have separate
+restrictions.

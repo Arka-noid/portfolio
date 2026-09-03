@@ -49,3 +49,77 @@ export const siteImages = {
   // ramp is deliberately loud and only works as a contained figure.
   insarFigure: "/images/insar-interferogram.jpg",
 };
+
+// Published as nonvisual data attributes on each photographic surface. These
+// records keep attribution attached to an image when it is reused, while the
+// fuller provenance audit remains in public/images/README.md.
+export const imageAttributions = {
+  "/images/earth-night.jpg": {
+    id: "NASA iss042e037793",
+    credit: "NASA / ESA - Samantha Cristoforetti",
+    source: "https://images.nasa.gov/details/iss042e037793",
+    license: "NASA Images and Media Usage Guidelines",
+  },
+  "/images/wafer-dies.jpg": {
+    credit: "Maxence Pira",
+    source: "https://unsplash.com/photos/a-close-up-of-a-pattern-of-small-squares-7hR3FrFs4Q0",
+    license: "Unsplash License",
+  },
+  "/images/orbital-hardware.jpg": {
+    credit: "NASA",
+    source: "https://images.nasa.gov",
+    license: "NASA Images and Media Usage Guidelines",
+    status: "Exact NASA asset page not yet verified",
+  },
+  "/images/fiber-switch.jpg": {
+    status: "Creator, source, and license unresolved",
+  },
+  "/images/insar-interferogram.jpg": {
+    id: "NASA PIA02713",
+    credit: "NASA/JPL/NIMA",
+    source: "https://images.nasa.gov/details/PIA02713",
+    license: "NASA Images and Media Usage Guidelines",
+  },
+  "/images/datacenter-racks.jpg": {
+    status: "Creator, source, and license unresolved",
+  },
+  "/images/optical-communications-1.jpg": {
+    credit: "Creator unresolved",
+    source: "https://www.phocuswire.com/Top-of-the-tech-pops-Blockchain-voice-bots-and-virtual-reality-finds-their-way",
+    status: "Historical FreeImages stock; license unresolved",
+  },
+  "/images/lidar-point-cloud.png": {
+    credit: "Daniel L. Lu",
+    source: "https://commons.wikimedia.org/wiki/File:Ouster_OS1-64_lidar_point_cloud_of_intersection_of_Folsom_and_Dore_St,_San_Francisco.png",
+    license: "CC BY 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
+    modifications: "Resized, cropped, tinted, and overlaid by Merilight",
+  },
+  "/images/oil-gas.webp": {
+    credit: "W.carter",
+    source: "https://commons.wikimedia.org/wiki/File:Gas_flare_on_top_of_a_flare_stack_at_Preemraff_Lysekil_4.jpg",
+    license: "CC0 1.0",
+    licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+    modifications: "Cropped, mirrored, tinted, and overlaid by Merilight",
+  },
+  "/images/pulse-oximeter.jpg": {
+    credit: "Engin Akyurt",
+    source: "https://pixabay.com/es/photos/paciente-masculino-cuidado-8687775/",
+    license: "Pixabay Content License",
+  },
+};
+
+export function getImageAttributionProps(src) {
+  const attribution = imageAttributions[src];
+  if (!attribution) return {};
+
+  return {
+    "data-image-id": attribution.id,
+    "data-image-credit": attribution.credit,
+    "data-image-source": attribution.source,
+    "data-image-license": attribution.license,
+    "data-image-license-url": attribution.licenseUrl,
+    "data-image-modifications": attribution.modifications,
+    "data-image-provenance-status": attribution.status,
+  };
+}

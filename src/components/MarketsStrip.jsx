@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { isPublishedWorkPath } from "../data/caseStudies";
 import { marketFocus } from "../data/markets";
-import { siteImages } from "../data/images";
+import { getImageAttributionProps, siteImages } from "../data/images";
 import { sharedPage } from "../data/pages/shared";
 import SectionBackdrop from "./SectionBackdrop";
 
@@ -31,7 +31,11 @@ export default function MarketsStrip({ compact = false }) {
           {marketFocus.map((m) => (
             <li key={m.id} className="market-card reveal">
               {m.image && (
-                <span className="market-card-bg" aria-hidden="true">
+                <span
+                  className="market-card-bg"
+                  aria-hidden="true"
+                  {...getImageAttributionProps(m.image)}
+                >
                   <span
                     className="market-card-photo"
                     style={{

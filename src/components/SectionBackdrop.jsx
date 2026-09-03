@@ -1,3 +1,5 @@
+import { getImageAttributionProps } from "../data/images";
+
 // Dimmed, gradient-masked photographic backdrop for a full section — the
 // "images on the background or on the side" half of the imagery brief, as
 // opposed to a full-bleed banner interrupting the content.
@@ -18,6 +20,7 @@ export default function SectionBackdrop({ src }) {
     <div
       className="section-backdrop"
       aria-hidden="true"
+      {...getImageAttributionProps(src)}
       style={{
         backgroundImage: `linear-gradient(160deg, rgba(var(--bg-rgb), 0.97) 0%, rgba(var(--bg-rgb), 0.82) 45%, rgba(var(--bg-rgb), 0.97) 100%), url(${src})`,
       }}

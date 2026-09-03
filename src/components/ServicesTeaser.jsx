@@ -27,12 +27,19 @@ function ServiceDiagram({ serviceId }) {
   if (serviceId === "prototype-integration") {
     return (
       <svg viewBox="0 0 72 44" aria-hidden="true">
-        <rect {...commonProps} x="4" y="12" width="21" height="20" />
-        <rect {...commonProps} x="47" y="7" width="21" height="30" />
-        <path {...commonProps} d="M25 17h11v-5h11M25 27h11v5h11" />
-        <circle cx="14.5" cy="22" r="3" {...commonProps} />
-        <circle cx="57.5" cy="16" r="2" fill="currentColor" />
-        <circle cx="57.5" cy="28" r="2" fill="currentColor" />
+        <rect {...commonProps} x="8" y="7" width="56" height="30" />
+        <circle cx="14" cy="13" r="2" {...commonProps} />
+        <circle cx="58" cy="13" r="2" {...commonProps} />
+        <circle cx="14" cy="31" r="2" {...commonProps} />
+        <circle cx="58" cy="31" r="2" {...commonProps} />
+        <path {...commonProps} d="M2 19h20m-20 5h20" />
+        <circle cx="14" cy="21.5" r="2.5" {...commonProps} />
+        <rect {...commonProps} x="27" y="15" width="17" height="13" />
+        <path {...commonProps} d="M27 21h11" />
+        <path {...commonProps} d="M29 15c0-4 5-4 5 0m2 0c0-4 5-4 5 0" />
+        <path {...commonProps} d="M29 28c0 4 5 4 5 0m2 0c0 4 5 4 5 0" />
+        <path {...commonProps} d="M44 17h12m-12 5h12m-12 5h12" />
+        <path {...commonProps} d="M56 15v14" />
       </svg>
     );
   }

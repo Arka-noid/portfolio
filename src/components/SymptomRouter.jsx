@@ -24,7 +24,7 @@ const offers = new Map(
   ]),
 );
 
-export default function SymptomRouter({ items }) {
+export default function SymptomRouter({ items, destination = "" }) {
   // A symptom pointing at an offer that no longer exists renders nothing
   // rather than a dead row — unset content degrades to absence.
   const rows = items.filter((s) => offers.has(s.offer));
@@ -42,7 +42,7 @@ export default function SymptomRouter({ items }) {
             <li key={s.id} className="reveal">
               <a
                 className="symptom-row"
-                href={`#offer-${s.offer}`}
+                href={`${destination}#offer-${s.offer}`}
                 aria-label={`${s.text} — ${offer.title}`}
               >
                 <span className="symptom-text">{s.text}</span>

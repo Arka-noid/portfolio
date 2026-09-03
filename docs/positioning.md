@@ -113,7 +113,8 @@ a doorway, never an offer.
 
 §5 describes the buying situations from the outside. These say the same things
 from the inside, as the sentence the buyer would say out loud — a visitor who
-recognises their own sentence has self-identified. Rendered as quoted symptoms
+recognises their own sentence has self-identified. Rendered as linked symptom
+rows on the home page, routing to the matching offer, and as quoted symptoms
 inside the `/services` strip for the offer that answers them.
 
 **Voice.** These are quotations of the buyer, so the "we" in them is the

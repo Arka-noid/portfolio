@@ -1417,13 +1417,25 @@ a.pub-item {
    and an uppercase micro-label for the offer number. */
 
 .symptom-router {
-  margin-bottom: 2.5rem;
+  margin-top: 2.25rem;
+}
+
+.home-symptoms {
+  padding-top: 3.25rem;
+  padding-bottom: 3.25rem;
+  background: var(--bg-alt);
 }
 
 /* Tighter than the other section intros: the rows it introduces are the
    next thing to read, not a section below it. */
 .symptom-lead {
   margin-bottom: 1.4rem;
+}
+
+.home-symptoms .symptom-lead {
+  max-width: 34rem;
+  color: var(--text);
+  font-size: 1rem;
 }
 
 .symptom-list {
@@ -1445,8 +1457,10 @@ a.pub-item {
   text-decoration: none;
 }
 
-.symptom-row:hover {
-  transform: translateX(2px);
+@media (prefers-reduced-motion: no-preference) {
+  .symptom-row:hover {
+    transform: translateX(2px);
+  }
 }
 
 .symptom-row:focus-visible {
@@ -3085,6 +3099,10 @@ a.cs-pub:hover {
 
   .symptom-text {
     font-size: 0.82rem;
+  }
+
+  .home-symptoms .symptom-lead {
+    font-size: 0.92rem;
   }
 
   .svc-continuation-track {

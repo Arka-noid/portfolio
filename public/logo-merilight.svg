@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- The "merilight" wordmark is outlined (Object to Path), not live <text>.
      It was set in Bahnschrift, a Windows-only font; this file is loaded via
      <img>, which cannot pull page webfonts, so live text fell back to a wider

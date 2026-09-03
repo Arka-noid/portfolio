@@ -39,11 +39,15 @@ function ServiceDiagram({ serviceId }) {
 
   return (
     <svg viewBox="0 0 72 44" aria-hidden="true">
-      <path {...commonProps} d="M7 31c8-1 9-18 18-18 8 0 9 18 18 18 7 0 9-10 15-15" />
-      <path {...commonProps} d="M58 16h8v8" />
-      <path {...commonProps} d="M66 24c-8 12-21 14-32 9" />
-      <path {...commonProps} d="M34 33l4-4m-4 4 5 2" />
-      <circle cx="7" cy="31" r="2.5" fill="currentColor" />
+      <path {...commonProps} d="M12 7h48" />
+      <path {...commonProps} d="M22 7l7 14m7-14v14m14-14-7 14" />
+      <path {...commonProps} d="M29 21l1.5 3m5.5-3v3m7.5-3-1.5 3" />
+      <ellipse {...commonProps} cx="36" cy="29" rx="18" ry="7" />
+      <path {...commonProps} d="M18 29v7h36v-7" />
+      <path {...commonProps} d="M26 29h20" />
+      <circle cx="30.5" cy="29" r="1.2" fill="currentColor" />
+      <circle cx="36" cy="29" r="1.2" fill="currentColor" />
+      <circle cx="41.5" cy="29" r="1.2" fill="currentColor" />
     </svg>
   );
 }

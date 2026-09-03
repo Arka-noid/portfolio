@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deck:build": "node scripts/presentation/build-master-deck.mjs",
+    "deck:validate": "node scripts/presentation/validate-pptx.mjs"
   },
   "dependencies": {
     "react": "^19.1.0",
@@ -15,6 +17,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.4.1",
+    "jszip": "^3.10.1",
+    "pptxgenjs": "^4.0.1",
     "vite": "^6.3.5"
   }
 }

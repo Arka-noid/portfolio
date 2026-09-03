@@ -6,6 +6,7 @@ dist
 
 *.pdf
 *.pptx
+/artifacts/
 
 # Editor
 .vscode/*

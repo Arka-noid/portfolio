@@ -3,19 +3,24 @@
 Slots are wired in `src/data/images.js`; drop files in this folder and point
 the slot at `/images/<name>`. Every slot is optional and degrades gracefully.
 
-**Everything currently here is a placeholder** — free-licence stock picked for
-visual impact and topical fit, not final art. Swap any of it freely.
+**Everything currently here is a placeholder** — stock or open-source imagery
+picked for visual impact and topical fit, not final art. Do not assume an image
+is reusable unless its row below names a verified licence.
+
+Provenance was audited with Google Lens exact-match search and the linked source
+pages on 2 September 2026. A search result is discovery evidence, not a licence;
+only terms stated on the originating asset page are recorded as verified.
 
 ## Current images
 
-| Slot | File | Subject | Source |
+| Slot | File | Subject | Creator · licence · source |
 |---|---|---|---|
-| `spaceRadarHero` | `earth-night.jpg` | Earth at night from orbit, city lights | [Unsplash](https://unsplash.com/license) (NASA) |
-| `aboutSide` | `wafer-dies.jpg` | Wafer die macro, gold/orange — standing in for an assembled/packaged photonic module, which would read as "outcome" rather than "substrate" | [Unsplash](https://unsplash.com/license) |
-| `workBanner` | `orbital-hardware.jpg` | Cygnus capsule on the ISS robotic arm | [NASA](https://images.nasa.gov) (public domain) |
-| `marketsBackdrop` | `fiber-switch.jpg` | OM3 fibre jumpers in SFP cages | [Unsplash](https://unsplash.com/license) |
+| `spaceRadarHero` | `earth-night.jpg` | Earth at night from orbit, city lights | **Unresolved.** Google Lens found many exact reposts but no originating NASA or Unsplash asset page. |
+| `aboutSide` | `wafer-dies.jpg` | Wafer die macro, gold/orange — standing in for an assembled/packaged photonic module, which would read as "outcome" rather than "substrate" | Maxence Pira · [Unsplash License](https://unsplash.com/license) · [original photo `7hR3FrFs4Q0`](https://unsplash.com/photos/a-close-up-of-a-pattern-of-small-squares-7hR3FrFs4Q0), published 29 December 2022 |
+| `workBanner` | `orbital-hardware.jpg` | Cygnus capsule on the ISS robotic arm | NASA · public-domain claim **not yet audited to an asset page** · [NASA Image and Video Library](https://images.nasa.gov) |
+| `marketsBackdrop` | `fiber-switch.jpg` | OM3 fibre jumpers in SFP cages | **Unresolved.** Google Lens found many exact reposts but no originating asset page. |
 | `servicesSide` | *unsourced* | Probe needle on a photonic die, or a fibre array butt-coupled to a chip edge — macro, real hardware | [Unsplash](https://unsplash.com/s/photos/semiconductor-probe-station) |
-| `insarFigure` | `insar-interferogram.jpg` | Phase-wrapped InSAR interferogram | [NASA PIA02713](https://images.nasa.gov) (public domain) |
+| `insarFigure` | `insar-interferogram.jpg` | Phase-wrapped InSAR interferogram | NASA/JPL-Caltech · public-domain claim **not yet audited to an asset page** · NASA image PIA02713 |
 | `lidarHero` | *unsourced* | Night highway / city-lights long exposure | [Unsplash](https://unsplash.com/s/photos/night-highway-long-exposure) · [Pexels](https://www.pexels.com/search/night%20highway/) |
 
 ## Market card backdrops
@@ -25,21 +30,24 @@ The six market cards carry their own photo, wired as `image` in
 not to a page position. Same rules apply; the card dims and tints whatever is
 set, and a null `image` leaves the card on flat `--surface`.
 
-| Market | File | Subject | Source |
+| Market | File | Subject | Creator · licence · source |
 |---|---|---|---|
-| `ai-infrastructure` | `datacenter-racks.jpg` | Datacenter cold aisle, blue-lit racks | **licence unverified** |
-| `telecom-optical-networks` | `optical-communications-1.jpg` | Illuminated optical-fibre bundle against black | **source and licence unverified** |
-| `space-defense` | `earth-night.jpg` | Earth at night from orbit (shared with the space-radar hero) | [Unsplash](https://unsplash.com/license) (NASA) |
-| `autonomous-sensing` | `lidar-point-cloud.png` | Ouster OS1-64 point cloud, Folsom/Dore St, San Francisco | Ouster, via Wikimedia Commons — **check the CC terms, attribution is likely required** |
-| `industrial-sensing` | `oil-gas.webp` | Gas flare and emissions plume at an industrial facility | **source and licence unverified** |
-| `life-sciences-imaging` | `pulse-oximeter.jpg` | Pulse oximeter clipped to a finger — optical biosensing, no face | [Unsplash](https://unsplash.com/license) (Engin Akyurt) |
+| `ai-infrastructure` | `datacenter-racks.jpg` | Datacenter cold aisle, blue-lit racks | **Unresolved.** Google Lens found exact reposts dating to 2011 but no originating asset or licence page. |
+| `telecom-optical-networks` | `optical-communications-1.jpg` | Illuminated optical-fibre bundle against black | Creator unresolved · historical FreeImages stock, commonly titled “Lighting effect” · [oldest confirmed use and FreeImages credit](https://www.phocuswire.com/Top-of-the-tech-pops-Blockchain-voice-bots-and-virtual-reality-finds-their-way), 12 December 2016 · **licence unresolved because FreeImages now redirects to iStock** |
+| `space-defense` | `earth-night.jpg` | Earth at night from orbit (shared with the space-radar hero) | **Unresolved.** Same audit status as `spaceRadarHero` above. |
+| `autonomous-sensing` | `lidar-point-cloud.png` | Ouster OS1-64 point cloud, Folsom/Dore St, San Francisco | Daniel L. Lu · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) · [Wikimedia Commons source](https://commons.wikimedia.org/wiki/File:Ouster_OS1-64_lidar_point_cloud_of_intersection_of_Folsom_and_Dore_St,_San_Francisco.png), created 3 December 2019 |
+| `industrial-sensing` | `oil-gas.webp` | Gas flare at Preemraff Lysekil, Sweden | W.carter · [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) · [Wikimedia Commons source](https://commons.wikimedia.org/wiki/File:Gas_flare_on_top_of_a_flare_stack_at_Preemraff_Lysekil_4.jpg), photographed 25 June 2018 |
+| `life-sciences-imaging` | `pulse-oximeter.jpg` | Pulse oximeter clipped to a finger — optical biosensing, no face | Engin Akyurt (`Engin_Akyurt`) · [Pixabay Content License](https://pixabay.com/service/license-summary/) · [Pixabay asset `8687775`](https://pixabay.com/es/photos/paciente-masculino-cuidado-8687775/), published 10 April 2024 |
 
 Two caveats before this ships:
 
-- **Provenance.** `datacenter-racks.jpg` arrived under a scraped filename with
-  no known source, and the Ouster point cloud is a Wikimedia file whose licence
-  probably demands a credit line. Confirm both, or replace them — everything
-  else here is Unsplash/NASA, i.e. free of attribution duty.
+- **Replace or independently clear unresolved assets.** In particular,
+  `datacenter-racks.jpg`, `earth-night.jpg`, `fiber-switch.jpg` and
+  `optical-communications-1.jpg` do not yet have a verified reusable licence.
+- **Attribution.** The LiDAR point cloud requires credit to Daniel L. Lu, a link
+  to CC BY 4.0, and an indication that this site resizes, crops, tints and
+  overlays the image. The gas-flare image is CC0 and does not require credit,
+  though its source is retained here.
 - `lidar-point-cloud.png` is only 330 px wide, so it is upscaled on the card.
   The dimming hides most of that, but a larger frame would be better.
 

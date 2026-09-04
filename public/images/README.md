@@ -16,7 +16,7 @@ only terms stated on the originating asset page are recorded as verified.
 | Slot | File | Subject | Creator · licence · source |
 |---|---|---|---|
 | `spaceRadarHero` | `earth-night.jpg` | Aurora and city lights over northern Europe and England from the ISS | ESA astronaut Samantha Cristoforetti · NASA ID `iss042e037793` · [NASA Image and Video Library source](https://images.nasa.gov/details/iss042e037793), photographed 13 December 2014 · [NASA Media Usage Guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/) |
-| `aboutSide` | `wafer-dies.jpg` | Wafer die macro, gold/orange — standing in for an assembled/packaged photonic module, which would read as "outcome" rather than "substrate" | Maxence Pira · [Unsplash License](https://unsplash.com/license) · [original photo `7hR3FrFs4Q0`](https://unsplash.com/photos/a-close-up-of-a-pattern-of-small-squares-7hR3FrFs4Q0), published 29 December 2022 |
+| `aboutSide` | `AgilentPhotonicSwitch.jpg` | Assembled 32x32 photonic switch — silica planar waveguides on silicon, crosspoint heaters | LieslHaliburton · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) · [Wikimedia Commons source](https://commons.wikimedia.org/wiki/File:AgilentPhotonicSwitch.jpg), uploaded 24 January 2017 |
 | `workBanner` | `orbital-hardware.jpg` | Cygnus capsule on the ISS robotic arm | NASA · public-domain claim **not yet audited to an asset page** · [NASA Image and Video Library](https://images.nasa.gov) |
 | `marketsBackdrop` | `fiber-switch.jpg` | OM3 fibre jumpers in SFP cages | **Unresolved.** Google Lens found many exact reposts but no originating asset page. |
 | `servicesSide` | *unsourced* | Probe needle on a photonic die, or a fibre array butt-coupled to a chip edge — macro, real hardware | [Unsplash](https://unsplash.com/s/photos/semiconductor-probe-station) |
@@ -52,7 +52,13 @@ Two caveats before this ships:
 - **Attribution.** The LiDAR point cloud requires credit to Daniel L. Lu, a link
   to CC BY 4.0, and an indication that this site resizes, crops, tints and
   overlays the image. The gas-flare image is CC0 and does not require credit,
-  though its source is retained here.
+  though its source is retained here. `AgilentPhotonicSwitch.jpg` is
+  CC BY-SA 4.0 — same requirements, plus ShareAlike on any redistributed
+  adaptation — so it carries a visible credit line on `/about`
+  (`About.jsx`'s `caption` prop) rather than metadata-only attribution.
+- `wafer-dies.jpg` is no longer wired to a slot (replaced by
+  `AgilentPhotonicSwitch.jpg` on `aboutSide`) but is left in this folder
+  unused rather than deleted.
 - `lidar-point-cloud.png` is only 330 px wide, so it is upscaled on the card.
   The dimming hides most of that, but a larger frame would be better.
 

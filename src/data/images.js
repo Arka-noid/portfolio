@@ -21,12 +21,14 @@ export const siteImages = {
   // long exposure works best. Still unsourced. e.g. "/images/night-road.jpg"
   lidarHero: null,
 
-  // /about side image — wafer die macro. Permanent now that /about is the
-  // firm and the portrait has moved to /profile: the buyer sizing up a
-  // consultancy should meet hardware here, not a face. Placeholder — an
-  // assembled/packaged photonic module would say "product" more directly than
-  // bare dies do. Also the fallback if principal.photoUrl is ever unset.
-  aboutSide: "/images/wafer-dies.jpg",
+  // /about side image — an assembled 32x32 photonic switch (silica planar
+  // waveguides on silicon, crosspoint heaters). Permanent now that /about is
+  // the firm and the portrait has moved to /profile: the buyer sizing up a
+  // consultancy should meet hardware here, not a face. Also the fallback if
+  // principal.photoUrl is ever unset. Replaces the earlier wafer-die-macro
+  // placeholder with an assembled/packaged module, which reads as "product"
+  // more directly than bare dies do.
+  aboutSide: "/images/AgilentPhotonicSwitch.jpg",
 
   // Work/projects page banner — Cygnus cargo vehicle on the ISS robotic arm.
   // Real flight hardware rather than a render. NASA, public domain.
@@ -64,6 +66,13 @@ export const imageAttributions = {
     credit: "Maxence Pira",
     source: "https://unsplash.com/photos/a-close-up-of-a-pattern-of-small-squares-7hR3FrFs4Q0",
     license: "Unsplash License",
+  },
+  "/images/AgilentPhotonicSwitch.jpg": {
+    credit: "LieslHaliburton",
+    source: "https://commons.wikimedia.org/wiki/File:AgilentPhotonicSwitch.jpg",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    modifications: "Desaturated, tinted, and overlaid by Merilight",
   },
   "/images/orbital-hardware.jpg": {
     credit: "NASA",

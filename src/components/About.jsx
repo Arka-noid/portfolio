@@ -18,7 +18,11 @@ export default function About() {
             The slot is decorative and fails gracefully — a null or broken
             source removes its own frame. */}
         <div className="about-photo reveal">
-          <ThemedImage src={siteImages.aboutSide} variant="figure" />
+          <ThemedImage
+            src={siteImages.aboutSide}
+            variant="figure"
+            caption="32×32 photonic switch — LieslHaliburton / Wikimedia Commons, CC BY-SA 4.0"
+          />
         </div>
         <div className="about-body reveal">
           {firm.structure && (

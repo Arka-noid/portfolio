@@ -70,15 +70,15 @@ export const principal = {
 
   paragraphs: [
     `I'm an optical systems engineer who has worked at every altitude of the photonics value
-      chain — from designing and etching III-V quantum-well devices in a Glasgow cleanroom, to
-      architecting microwave-photonic receivers for spaceborne radar in Pisa, to maturing
-      silicon photonics platforms and products at imec in Leuven.`,
-    `That breadth is the point: I speak device physics with fab engineers, link budgets with
-      system architects, and roadmaps with product owners — and I translate between them. Most
+      chain — from designing and etching III-V quantum-well devices, to
+      architecting microwave-photonic receivers for spaceborne radar, to maturing
+      silicon photonics platforms and products.`,
+    `That breadth is the point: I speak device physics with design engineers, link budgets with
+      system architects, and roadmaps with product owners, and I translate between them. Most
       photonics projects fail in the gaps between those worlds; my job is closing them.`,
-    `Today the field is moving fast — AI infrastructure is pulling optics into the compute
-      path, from co-packaged interconnect to circuits that compute with light; coherent
-      sensing is going solid-state; and Europe is investing seriously in photonic sovereignty.
+    `Today the field is moving fast. AI infrastructure is pulling optics into the equation, 
+    from co-packaged interconnects to circuits that compute with light; coherent
+      sensing is going solid-state; and many companies are investing seriously in photonic.
       The couplers, hybrid assemblies, multiplexers and mesh processors those roadmaps are
       built from are the things I have spent the last decade designing, integrating and
       measuring. I help teams turn that momentum into working hardware.`,
@@ -96,8 +96,7 @@ export const principal = {
 // deliberately — the framing has to be read before the record is.
 // See docs/positioning.md §1 and §7.
 export const recordIntro =
-  `Merilight has one engineer, so the firm's capability is one person's record. This is
-    where it was built — three institutions, one stack, ten years of it.`;
+  `Merilight has one engineer, so the capability is one person's record.`;
 
 // Trading details shown on /contact. EU B2B buyers check that an invoice can
 // actually be raised before they start a procurement conversation, so this is

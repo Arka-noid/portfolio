@@ -22,7 +22,7 @@ export const stackLayers = [
   {
     id: "product",
     name: "Product integration & handover",
-    domain: `Product integration · electronics · software · documentation`,
+    domain: `Product integration · electronics · software/firmware · documentation`,
     depth: 4,
     depthLabel: "Led a TRL 3→6 transition",
     whatIDo:
@@ -30,10 +30,11 @@ export const stackLayers = [
         planning, integration across photonics, electronics and software, and documentation an
         industrial team can build from without me.`,
     proof:
-      `Led the system-level transition of a programmable photonic mesh chip from TRL 3 to TRL 6
-        for a deep-tech startup at imec, and wrote the technical guidelines for the industrial
-        handover.`,
-    evidence: { label: "Programmable photonic processor", to: "/work" },
+      `Led the system-level transition of a programmable photonic mesh chip from TRL 4 to TRL 6
+       by designing the driver electronics, the acquisition system, the microcontroller firmware, 
+       and the high-level interface software,
+       and wrote the technical guidelines for the industrial knowledge transfer.`,
+    evidence: { label: "Programmable photonic system", to: "/work" },
   },
   {
     id: "packaging",
@@ -43,7 +44,7 @@ export const stackLayers = [
     depthLabel: "Specified and integrated",
     whatIDo:
       `The interfaces where a working chip stops working: coupling losses, thermal and
-        mechanical budgets, and what a multi-chip assembly does that neither chip did alone.`,
+        mechanical constraints, and what a multi-chip assembly does that neither chip did alone.`,
     proof:
       `Hybrid SiN + InP multi-chip assembly packaged for space compliance testing; edge and
         grating coupler design in SOI and SiN; micro-transfer-printed SOAs on an advanced SOI
@@ -57,14 +58,12 @@ export const stackLayers = [
     depth: 5,
     depthLabel: "Architected and modelled end to end",
     whatIDo:
-      `Follow the signal across the optical/RF boundary, where most photonic systems actually
-        fail. Architecture, link budgets built to be argued with, and trade-offs made explicit
-        before they become schedule.`,
+      `Follow the signal across the optical/RF boundary. Architecture, 
+      link budgets and trade-offs made explicit before committing to a design.`,
     proof:
       `Full analog link budget for a spaceborne SAR receiver in VPI Design Suite, behind a
-        hybrid photonic beamforming network for the EU SPACEBEAM programme — validated against
-        measured hardware.`,
-    evidence: { label: "Photonics for space radar", to: "/work/space-radar" },
+        hybrid photonic beamforming network, validated against measured hardware.`,
+    evidence: { label: "SCORE-SAR Beamforming", to: "/work" },
   },
   // {
   //   id: "platform",
@@ -88,11 +87,10 @@ export const stackLayers = [
       `The building blocks themselves — simulated, laid out, fabricated and then measured, so
         the model and the hardware are reconciled rather than assumed to agree.`,
     proof:
-      `16-element optical phased array on SOI reaching 1.7° beamwidth over a 20° steering
-        range; MZMs, Bragg grating filters, phase shifters, directional couplers and optical
-        antennas across multiple tape-outs; the first imec SiN platform PDK supported through
-        DoE and validation benchmarks.`,
-    evidence: { label: "Integrated LiDAR system", to: "/work/lidar" },
+      `Optical phased array on SOI and SiN; MZMs, Bragg grating filters, phase shifters, 
+      directional couplers and optical antennas across multiple tape-outs; 
+      the first imec SiN platform PDK supported through DoE and validation benchmarks.`,
+    evidence: { label: "Integrated LiDAR system", to: "/work" },
   },
   {
     id: "process",
@@ -102,7 +100,8 @@ export const stackLayers = [
     depthLabel: "Developed the process myself",
     whatIDo:
       `What the fab can actually make, and why your yield is not what the simulation promised.
-        Process development, etch, and the metrology that tells you which of the two is lying.`,
+        Process development, etch, and the metrology to investigate why the devices are not
+        performing as expected.`,
     proof:
       `Developed a novel ICP-RIE dry-etch recipe for AlGaInSb, a non-standard III-V system, and
         ran the full device lifecycle from material stack through cleanroom fabrication to
@@ -116,9 +115,8 @@ export const stackLayers = [
     depth: 4,
     depthLabel: "Designed and characterised",
     whatIDo:
-      `Where the physics sets the ceiling. Material stack design and multivariable
-        optimisation, so the rest of the stack is not fighting a limit that was fixed before
-        layout began.`,
+      `Material stack design and multivariable
+        optimisation, and methods to validate the resulting material stack.`,
     proof:
       `22 strain-balanced quantum wells targeting 4.26 µm, delivering a 9× electroluminescence
         improvement over bulk structures.`,
@@ -130,8 +128,7 @@ export const stackIntro =
   `Most photonics projects do not fail inside one layer. They fail at the boundaries: a
     device that meets specification but cannot be coupled, a link budget built on
     unrealistic fabrication assumptions, or a demonstrator that only one person can operate.
-    I have worked across every layer below, so I can follow the failure across the boundary
-    rather than guess where it began.`;
+    I have worked across every layer below, so I can follow the failure across the boundary.`;
 
 export const stackTeaserIntro =
   `The value does not sit in any specific layer. It is the ability to connect the dots.`;

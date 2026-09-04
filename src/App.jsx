@@ -7,6 +7,7 @@ import Work from "./pages/Work";
 import AboutPage from "./pages/AboutPage";
 import ProfilePage from "./pages/ProfilePage";
 import ContactPage from "./pages/ContactPage";
+import GratingCouplerCalculator from "./pages/GratingCouplerCalculator";
 import NotFound from "./pages/NotFound";
 
 const ThemeLab = import.meta.env.DEV
@@ -33,6 +34,7 @@ export default function App() {
         <Route path="about" element={<AboutPage />} />
         <Route path="profile" element={<ProfilePage />} />
         <Route path="contact" element={<ContactPage />} />
+        <Route path="tools/grating-coupler-calculator" element={<GratingCouplerCalculator />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

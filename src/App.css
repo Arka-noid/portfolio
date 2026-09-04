@@ -2862,6 +2862,178 @@ a.cs-pub:hover {
 
 /* ── BACK CTA ── */
 
+/* ── GRATING COUPLER CALCULATOR ── */
+
+.gc-intro {
+  max-width: 66ch;
+  color: var(--muted);
+  margin-bottom: 3rem;
+}
+
+.gc-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 2.5rem;
+}
+
+.gc-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--accent);
+  padding: 1.8rem;
+}
+
+.gc-slider-row + .gc-slider-row {
+  margin-top: 1.6rem;
+}
+
+.gc-slider-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.gc-slider-head label {
+  color: var(--muted);
+}
+
+.gc-slider-value {
+  font-family: "IBM Plex Mono", monospace;
+  color: var(--accent);
+}
+
+.gc-slider-row input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.gc-presets {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.gc-preset {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.gc-preset:hover {
+  border-color: var(--line-hover);
+  color: var(--text);
+}
+
+.gc-preset--active {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.gc-diagram {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+.gc-diagram-normal {
+  stroke: var(--line-strong);
+  stroke-dasharray: 3 4;
+}
+
+.gc-diagram-label {
+  fill: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 8px;
+}
+
+.gc-diagram-chip rect {
+  fill: var(--bg-alt);
+  stroke: var(--line-strong);
+}
+
+.gc-ray line {
+  stroke: rgba(var(--accent-rgb), 0.35);
+  stroke-width: 1.5;
+}
+
+.gc-ray text {
+  fill: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 8px;
+}
+
+.gc-ray--primary line {
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.gc-ray--primary text {
+  fill: var(--accent);
+}
+
+.gc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.85rem;
+}
+
+.gc-table th,
+.gc-table td {
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.gc-table th {
+  color: var(--muted);
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+}
+
+.gc-row-primary {
+  background: var(--accent-soft);
+}
+
+.gc-status {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.gc-status--propagating {
+  color: var(--accent);
+}
+
+.gc-status--evanescent {
+  color: var(--muted);
+}
+
+.gc-formula {
+  max-width: 66ch;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-left: 2px solid var(--accent);
+  padding-left: 1.2rem;
+  margin-bottom: 3rem;
+}
+
 /* ── MAIN RESPONSIVE ── */
 
 @media (max-width: 900px) {
@@ -2979,6 +3151,10 @@ a.cs-pub:hover {
   }
 
   .svc-split {
+    grid-template-columns: 1fr;
+  }
+
+  .gc-layout {
     grid-template-columns: 1fr;
   }
 }

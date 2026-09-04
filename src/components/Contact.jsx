@@ -1,10 +1,16 @@
 import { entity, confidentiality } from "../data/about";
 import { contactPage } from "../data/pages/contact";
+import ContactForm from "./ContactForm";
 
 // `pageTitle` renders the heading as an h1 for /contact, where this is the
 // only content on the page; Home and Services already have their own h1 and
 // get the default h2.
-export default function Contact({ pageTitle = false }) {
+//
+// `form` adds the lead-capture form. It is opt-in rather than always-on
+// because this component is also the closing CTA on Home and Services, where a
+// full form would outweigh the section it is closing — there, the links alone
+// are the CTA and the page's own hero button already points at /contact.
+export default function Contact({ pageTitle = false, form = false }) {
   const entityLine = [entity.name, entity.registered, entity.vat && `VAT ${entity.vat}`]
     .filter(Boolean)
     .join(" · ");
@@ -22,6 +28,7 @@ export default function Contact({ pageTitle = false }) {
         <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: "0.5rem" }}>
           {contactPage.description}
         </p>
+        {form && <ContactForm />}
         <div className="contact-links">
           <a className="contact-link" href={contactPage.email.href}>
             <span aria-hidden="true">✉</span> {contactPage.email.label}

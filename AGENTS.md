@@ -7,7 +7,8 @@ Multi-page consultancy site. **Merilight is Manuel Reza's solo consulting practi
 ## Tech Stack
 
 - **Framework:** Vite + React (SPA) with `react-router-dom` (`BrowserRouter`)
-- **Deployment:** Vercel — `vercel.json` has a catch-all rewrite to `/index.html`, required for client-side routing to work on direct/refreshed URLs
+- **Deployment:** Vercel — `vercel.json` has a catch-all rewrite to `/index.html`, required for client-side routing to work on direct/refreshed URLs. The rewrite's negative lookahead (`/((?!api/).*)`) keeps `/api/*` out of it: Vercel checks the filesystem before rewrites so the function would resolve anyway, but relying on that ordering means a misroute returns `200 text/html` and surfaces client-side as an inscrutable JSON parse error
+- **Serverless:** one Node function, `api/contact.js` (repo root, *not* under `src/`), backing the contact form. `npm run dev` does **not** serve it — Vite has no function runtime, so test on a Vercel preview deploy or with `npx vercel dev`
 - **Language:** JavaScript (JSX)
 
 ## Development Commands
@@ -23,6 +24,7 @@ npm run preview   # Preview production build locally
 ```
 index.html                     SEO meta, OG/Twitter tags, JSON-LD Person schema, fonts
 vercel.json                    SPA catch-all rewrite (required for BrowserRouter on Vercel)
+api/contact.js                 Serverless handler behind the /contact form
 public/favicon.svg             Hand-drawn SVG favicon
 docs/positioning.md            Message hierarchy — source of truth for all copy
 src/
@@ -37,6 +39,7 @@ src/
     ServiceProofStrip.jsx      Counted-proof strip above the offer grid
     PartnerLogos.jsx           Institution logo band at the foot of the home page
     Testimonials.jsx           Client references; renders nothing when empty
+    ContactForm.jsx            Lead capture; only where Contact gets `form`
     ThemedImage.jsx            Blends any photo into the palette (see Imagery)
     casestudy/                 Shared case-study pieces (Shell, MetricCard,
                                PhaseCard, BlockDiagramSvg, RelatedPubs)
@@ -81,7 +84,7 @@ Each page component calls `useScrollReveal()` itself (pages mount/unmount per ro
 - **Case study (`/work/:slug`)** — bespoke long-form page per story (challenge → approach → system design → results → related publications)
 - **About (`/about`)** — **what the practice is and how it is engaged** ("What Merilight is"): `firm.structure` — the one-engineer sentence, which **leads the page** above every other claim — plus the copy from `data/about.js`, beside a hardware photograph (`siteImages.aboutSide`) rather than a portrait — the buyer sizing up a supplier meets hardware, not a face. Then `RecordTeaser` — labelled **"Who you work with"** (never "The team"), carrying the provenance sentence and closing with a person strip (portrait, name, role and the link to `/profile` as one clickable row) — then Publications. Manuel's own account and the timeline stay on `/profile`, so this page reads as an offer rather than an autobiography. **The record is provenance, not a resume** — it exists to explain where the firm's capability came from, since Merilight has no client roster yet and its only evidence is Manuel's employment history. So: no "Career"/"Experience"/"Skills" labels, no CV download, no competency grid, and each timeline entry leads with the organisation and period with the job title demoted underneath. **The timeline itself lives on `/profile`, not here** — a full history in the middle of the firm's introduction reads as a resume however it is labelled, so /about carries only the framing sentence and the link. Read `docs/positioning.md` §1 and §7 before touching this page; `recordIntro` in `data/about.js` is the sentence that carries the framing. Publications are grouped by **domain** (`PUB_DOMAINS` in `data/publications.js`), not by year: the spread across six research areas is the breadth evidence, and reverse-chronological order buried it
 - **Profile (`/profile`)** — **the person behind the firm**: `Principal` (portrait card, name/role, Manuel's first-person account and the market-perspective callout, all from `principal` in `data/about.js`) above `Experience`, the employment timeline, with a link back to /about. Reached from the `RecordTeaser` on /about and from the footer; kept out of the primary nav so the nav keeps selling engagements
-- **Contact (`/contact`)** — email/phone/Scholar, the conversion destination
+- **Contact (`/contact`)** — the conversion destination: a three-field lead-capture form (`ContactForm.jsx` → `api/contact.js` → Resend), then email/phone, the NDA sentence and the trading entity. **`Contact.jsx` renders in two places** — here and as the closing CTA on Home — so the form is opt-in via a `form` prop that only `ContactPage` passes; a full form at the foot of the home page outweighs the section it closes, and Home's hero button already points here. **The mailto/tel links stay beside the form, never replaced by it**: a corporate desktop that silently swallows a `mailto:` is the case the form exists for, and the reverse case exists too. Fields are name/email/message only — qualifying happens in the reply, and every extra field costs submissions. Spam is handled without a third party by an off-screen honeypot plus a minimum fill time; both failures return **success** and send nothing, because a bot told it was caught simply comes back correct. **There is deliberately no booking/scheduler widget** — the first thing sold is a 1–2 week review, not a 30-minute slot; the `confidentiality` line promises an NDA *before* the first call, which a third-party scheduler asking "what would you like to discuss?" undercuts; and a second CTA splits intent on the one page that must not. A scheduling link for outbound belongs in an email, not on the page
 
 "Market perspective" callouts (`components/Perspective.jsx`, text in `data/perspectives.js`) are woven into About, Projects, Services/ServicesTeaser, and both case studies.
 
@@ -99,7 +102,6 @@ Each page component calls `useScrollReveal()` itself (pages mount/unmount per ro
 
 ## Deferred / follow-up ideas
 
-- Real lead-capture contact form (e.g. Formspree or a Vercel function) — `Contact.jsx` is currently mailto/tel/social links only
 - Prerendering/SSR (or per-route edge functions) so social link-preview bots see per-page OG tags instead of the homepage's, for shared `/work/:slug` etc. links
 
 ## The USP, and how the site expresses it
@@ -115,6 +117,19 @@ credible. Do not inflate them, and do not add a layer without real evidence in
 `data/experience.js` or `data/projects.js`.
 
 ## Pending user-supplied content
+
+- **Contact form env + DNS (blocks the form actually sending).** Mail *lands* in
+  Fastmail; Resend only *sends*, and the two coexist only if the root domain's
+  Fastmail records are left alone. So: verify a **subdomain** (`send.merilight.com`)
+  in Resend, not the apex — the subdomain carries its own SPF/DKIM and Fastmail's
+  root SPF, `fm1/fm2/fm3._domainkey` and MX records are never touched. Verifying
+  the apex instead means hand-merging Resend's `include:` into Fastmail's SPF,
+  where one typo breaks mail for the whole domain. Then set `RESEND_API_KEY`,
+  `CONTACT_FROM` (an address on the verified subdomain) and `CONTACT_TO` in Vercel
+  for **Production and Preview**. Until verification completes Resend sends only
+  from `onboarding@resend.dev` and only to the Resend account's own address —
+  which is the handler's default, so an unconfigured deploy fails in a way that
+  looks like a code bug
 
 - `data/about.js`: education entries. `photoUrl` is wired to `/manuel.jpg` and rendered as the team card on /about — the shot is a casual outdoor portrait cropped square in CSS; swap for a proper headshot when one exists
 - `data/images.js`: `lidarHero` is still unsourced (wants a night-highway long exposure). The other five slots hold **placeholder** stock imagery — fine to ship, but swap for better art when available. Sourcing guide in `public/images/README.md`; slots fail gracefully when null/broken

@@ -1149,6 +1149,137 @@ a.pub-item {
   color: var(--accent);
 }
 
+/* ── CONTACT FORM ──
+   Only on /contact (Contact.jsx takes `form`); the closing CTA on Home renders
+   the links alone. The section is centred, so the form re-establishes left
+   alignment inside its own column — labels and inputs read as a column, not as
+   three centred captions. */
+
+.contact-form {
+  max-width: 560px;
+  margin: 2.5rem auto 0;
+  text-align: left;
+}
+
+.contact-field {
+  margin-bottom: 1.4rem;
+}
+
+.contact-field-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.contact-field input,
+.contact-field textarea {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: rgba(var(--surface-rgb), 0.4);
+  border: 1px solid var(--line-strong);
+  border-radius: 0;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.contact-field textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: var(--muted);
+  opacity: 0.75;
+}
+
+.contact-field input:hover,
+.contact-field textarea:hover {
+  border-color: var(--line-hover);
+}
+
+/* The global :focus-visible outline still applies; this adds the accent edge
+   so the focused field reads as lit rather than merely ringed. */
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-color: var(--accent);
+  background: rgba(var(--surface-rgb), 0.6);
+}
+
+.contact-field input:disabled,
+.contact-field textarea:disabled {
+  opacity: 0.55;
+}
+
+/* Off-screen rather than display:none — some bots skip anything hidden. It is
+   aria-hidden and tabIndex=-1 in the markup, so it is unreachable regardless. */
+.contact-form-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contact-form-submit {
+  margin-top: 0.4rem;
+}
+
+.contact-form-submit:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+/* Always in the DOM so the live region is present before it has anything to
+   announce; empty, it collapses to nothing. */
+.contact-form-status:not(:empty) {
+  margin-top: 1.2rem;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--accent);
+}
+
+.contact-form-privacy {
+  margin-top: 1.2rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  opacity: 0.8;
+}
+
+.contact-form-sent {
+  max-width: 560px;
+  margin: 2.5rem auto 0;
+  padding: 1.6rem 1.8rem;
+  border: 1px solid var(--line-strong);
+  border-left: 2px solid var(--accent);
+  background: rgba(var(--accent-rgb), 0.04);
+  text-align: left;
+}
+
+.contact-form-sent-heading {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.contact-form-sent-body {
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
 /* ── PERSPECTIVE CALLOUT ── */
 
 .perspective {
@@ -3152,6 +3283,17 @@ a.cs-pub:hover {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+  }
+
+  /* Full-width submit: at this width a centred outlined button beside nothing
+     reads as stranded, and the thumb target improves. */
+  .contact-form-submit {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .contact-form-sent {
+    padding: 1.3rem 1.2rem;
   }
 }
 

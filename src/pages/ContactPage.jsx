@@ -7,5 +7,5 @@ export default function ContactPage() {
   useScrollReveal();
   useSEO(pageSeo.contact);
 
-  return <Contact pageTitle />;
+  return <Contact pageTitle form />;
 }

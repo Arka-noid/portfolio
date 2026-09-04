@@ -40,14 +40,13 @@ export const projects = [
         optimization, a novel dry-etch process for non-standard III-V semiconductors, cleanroom
         fabrication, and electro-optical characterization.`,
     highlights: [
-      `9× electroluminescence improvement over bulk structures`,
+      `Significant electroluminescence improvement over bulk structures`,
       "Novel ICP-RIE etch recipe for AlGaInSb materials",
-      `22 strain-balanced quantum wells at target 4.26 µm wavelength`,
+      `Novel strain-balanced quantum wells material stack targeting mid-infrared wavelengths`,
     ],
     outcome:
       `A 9× brighter emitter than the bulk baseline, and a repeatable etch process for AlGaInSb
-        that everything downstream depended on. Ran alongside a commercial sensing partner
-        rather than in isolation.`,
+        for the realization of mid-infrared devices. Ran alongside a commercial gas sensing partner.`,
     tags: [
       "III-V Semiconductors",
       "Quantum Wells",
@@ -69,22 +68,19 @@ export const projects = [
     problem:
       `Optical coherence tomography steers its beam mechanically, which caps speed and adds a
         part that wears out. Moving the scanner onto a chip means solving beam steering,
-        calibration and control at once — a photonics problem, a PCB problem and a software
-        problem in one.`,
+        calibration and control at once.`,
     description:
       `Designed silicon photonic phased arrays to replace mechanical scanning in optical
         coherence tomography systems for biomedical imaging. Built the full chain: PIC layout,
         custom PCB for multi-channel current sources, MATLAB control interface, and a beam
         optimization algorithm.`,
     highlights: [
-      "1.7° beamwidth over 20° steering range",
-      "optical phased array on SOI",
-      "Custom PCB + GUI for automated calibration",
+      "Optical phased array on SOI",
+      "Custom PCB for multi-channel current sources + GUI for automated calibration",
     ],
     outcome:
-      `1.7° beamwidth across a 20° steering range from a 16-element array, with calibration
-        automated rather than done by hand — the difference between a demo and something another
-        group can actually use.`,
+      `An optical phased array steering beam suitable for OCT, with calibration
+        automated rather than done by hand.`,
     tags: [
       "Optical Phased Arrays",
       "SOI Photonics",
@@ -105,7 +101,7 @@ export const projects = [
     role: `Photonic architecture, link-budget modelling, component characterisation`,
     problem:
       `A satellite-borne synthetic aperture radar needed beamforming a conventional RF payload
-        could not deliver inside its mass and bandwidth budget — and no single photonic platform
+        could not deliver inside its SWaP and bandwidth budget. No single photonic platform
         offered every function the receiver required.`,
     description:
       `Designed a hybrid photonic beamforming network combining silicon nitride and indium
@@ -141,9 +137,9 @@ export const projects = [
     tagline: `Coherent photonic links across a satellite constellation`,
     role: `PIC design for signal generation, distribution and down-conversion`,
     problem:
-      `A multi-static radar constellation only works if every satellite shares a coherent
-        reference — an optical, RF and free-space problem simultaneously. The chosen SOI
-        platform had no on-chip optical gain to carry it.`,
+      `A multi-static radar constellation that works only if every satellite shares a coherent
+        reference: an optical, RF and free-space problem simultaneously. The chosen SOI
+        platform needed on-chip optical gain to boost the carrier.`,
     description:
       `Designed photonic integrated circuits for a multi-static satellite radar system using
         photonic signal generation, distribution, and down-conversion. The chip, fabricated on
@@ -240,12 +236,12 @@ export const projects = [
     ],
     outcome:
       `A SiN PDK with active and passive devices, DoE-validated, plus the design and
-        version-control workflows that let 10+ partner organizations build on it.`,
+        version-control workflows that organizations build on it.`,
     tags: ["SiN", "PDK", "Process Integration", "AWG / DWDM", "Fiber Coupling", "EDA"],
   },
   {
     id: "programmable-photonics",
-    title: "Programmable Photonic Processor",
+    title: "Programmable Photonic System",
     category: "product",
     market: "AI infrastructure & datacenter optics",
     period: "2024 – 2026",
@@ -254,13 +250,12 @@ export const projects = [
     role: "System integration and product definition",
     problem:
       `A research prototype had to become something a customer could buy: photonics, driver
-        electronics and control software integrated into one system, with a defensible answer to
-        who it is for.`,
+        electronics and control software integrated into one system, to remove the barriers
+        to adoption of photonics.`,
     description:
-      `Joined the system integration effort for a programmable photonic processor combining
-        photonic circuits, driver electronics, and control software — a reconfigurable mesh, the
-        class of circuit the industry is now pursuing for optical switching and analog optical
-        compute. Worked the electronic-to-optical seam directly: multi-channel DAC and ADC drive
+      `Joined the system integration effort for a system around
+        a photonic circuit with a reconfigurable mesh, driver electronics, and control software. 
+        Worked the electronic-to-optical seam directly: multi-channel DAC and ADC drive
         between the control software and the mesh, and the timing, triggering and acquisition
         that keep the read-out synchronised to the optical event. Participated in product
         positioning, user-story definition, and early-stage commercialization discussions.`,
@@ -271,7 +266,7 @@ export const projects = [
     ],
     outcome:
       `Integration across photonics, electronics and software carried end to end, through a TRL
-        3→6 transition, with the documentation needed for industrial handover.`,
+        4→6 transition, with the documentation needed for industrial handover.`,
     tags: [
       "Programmable Photonics",
       "System Integration",
